@@ -10,6 +10,7 @@ import StorageManager from '../utils/storage-manager.js';
 class APIInterceptor {
   constructor() {
     this.isListening = false;
+    this.debugMode = false;
     this.capturedRequests = new Map(); // requestId -> request data
     this.listeners = {
       onBeforeRequest: null,
@@ -20,12 +21,15 @@ class APIInterceptor {
 
   /**
    * Start listening for API calls
+   * @param {boolean} debugMode - If true, captures all payloads without auto-stopping
    */
-  startListening() {
+  startListening(debugMode = false) {
     if (this.isListening) {
       console.log('⚠️  Already listening');
       return;
     }
+
+    this.debugMode = debugMode;
 
     console.log('🔍 API Interceptor: Started listening...');
     this.isListening = true;
@@ -86,18 +90,22 @@ class APIInterceptor {
       hasBody: !!details.requestBody
     });
 
-    // Only capture POST requests (form submissions)
-    if (details.method !== 'POST') {
-      console.log('⏭️  Skipping non-POST request');
-      return;
-    }
+    // In debug mode, capture ALL requests (GET, POST, PUT, etc.)
+    // In normal mode, only capture POST requests
+    if (!this.debugMode) {
+      // Only capture POST requests (form submissions)
+      if (details.method !== 'POST') {
+        console.log('⏭️  Skipping non-POST request');
+        return;
+      }
 
-    // Skip login and other non-event endpoints
-    if (details.url.includes('/auth/login') ||
-        details.url.includes('/logout') ||
-        details.url.includes('/me')) {
-      console.log('⏭️  Skipping auth endpoint');
-      return;
+      // Skip login and other non-event endpoints
+      if (details.url.includes('/auth/login') ||
+          details.url.includes('/logout') ||
+          details.url.includes('/me')) {
+        console.log('⏭️  Skipping auth endpoint');
+        return;
+      }
     }
 
     console.log('📡 ✅ CAPTURED API REQUEST:', {
@@ -158,20 +166,32 @@ class APIInterceptor {
       status: details.statusCode
     });
 
-    // If successful and looks like an event submission, analyze and save
-    if (details.statusCode >= 200 && details.statusCode < 300) {
-      console.log('🔍 Checking if this is an event submission...');
-      const isEvent = this.isEventSubmission(request);
-      console.log('📊 Is event submission?', isEvent);
-
-      if (isEvent) {
-        console.log('🎯 ✅ EVENT SUBMISSION DETECTED! Analyzing...');
-        await this.analyzeAndSave(request);
+    // If in debug mode, capture ALL successful requests
+    if (this.debugMode) {
+      if (details.statusCode >= 200 && details.statusCode < 300) {
+        console.log('🐛 DEBUG MODE: Saving request');
+        await this.saveDebugPayload(request);
       } else {
-        console.log('⏭️  Not an event submission, skipping');
+        console.log('❌ Request failed with status:', details.statusCode);
+        // Still save failed requests in debug mode for troubleshooting
+        await this.saveDebugPayload(request);
       }
     } else {
-      console.log('❌ Request failed with status:', details.statusCode);
+      // Normal discovery mode - only capture event submissions
+      if (details.statusCode >= 200 && details.statusCode < 300) {
+        console.log('🔍 Checking if this is an event submission...');
+        const isEvent = this.isEventSubmission(request);
+        console.log('📊 Is event submission?', isEvent);
+
+        if (isEvent) {
+          console.log('🎯 ✅ EVENT SUBMISSION DETECTED!');
+          await this.analyzeAndSave(request);
+        } else {
+          console.log('⏭️  Not an event submission, skipping');
+        }
+      } else {
+        console.log('❌ Request failed with status:', details.statusCode);
+      }
     }
   }
 
@@ -274,6 +294,85 @@ class APIInterceptor {
     });
 
     return hasExpectedFields;
+  }
+
+  /**
+   * Save payload for debug inspection (debug mode only)
+   */
+  async saveDebugPayload(request) {
+    try {
+      console.log('🐛 Saving debug payload...');
+
+      // Parse URL to extract query parameters for GET requests
+      const urlObj = new URL(request.url);
+      const queryParams = {};
+      urlObj.searchParams.forEach((value, key) => {
+        queryParams[key] = value;
+      });
+
+      const debugPayload = {
+        url: request.url,
+        pathname: urlObj.pathname,
+        method: request.method,
+        timestamp: request.timestamp,
+        statusCode: request.statusCode,
+        payload: request.payload || null,
+        queryParams: Object.keys(queryParams).length > 0 ? queryParams : null,
+        responseHeaders: request.responseHeaders,
+        requestType: this.categorizeRequest(request.url),
+        // Add readable formatting
+        _metadata: {
+          capturedAt: new Date(request.timestamp).toLocaleString(),
+          status: request.statusCode >= 200 && request.statusCode < 300 ? 'success' : 'error',
+          hasPayload: !!request.payload,
+          payloadSize: request.payload ? JSON.stringify(request.payload).length : 0
+        }
+      };
+
+      await StorageManager.saveCapturedPayload(debugPayload);
+
+      console.log('💾 Debug payload saved');
+
+      // Notify popup that a new payload was captured
+      chrome.runtime.sendMessage({
+        type: 'PAYLOAD_CAPTURED',
+        payload: debugPayload
+      }).catch(() => {
+        // Popup might not be open
+      });
+
+      // Show notification (but not too frequently to avoid spam)
+      const now = Date.now();
+      if (!this.lastNotification || now - this.lastNotification > 5000) {
+        this.lastNotification = now;
+        chrome.notifications.create({
+          type: 'basic',
+          iconUrl: '/icons/icon-48.png',
+          title: '🐛 Request Captured',
+          message: `${request.method} ${urlObj.pathname}`,
+          priority: 0
+        });
+      }
+
+    } catch (error) {
+      console.error('Failed to save debug payload:', error);
+    }
+  }
+
+  /**
+   * Categorize request type based on URL
+   */
+  categorizeRequest(url) {
+    if (url.includes('/api/me')) return 'User Profile';
+    if (url.includes('/auth/')) return 'Authentication';
+    if (url.includes('/events')) return 'Event Submission';
+    if (url.includes('/tracker')) return 'Tracker';
+    if (url.includes('/dataValues')) return 'Data Values';
+    if (url.includes('/organisationUnits')) return 'Organization Units';
+    if (url.includes('/programs')) return 'Programs';
+    if (url.includes('/dataElements')) return 'Data Elements';
+    if (url.includes('/api/')) return 'API Call';
+    return 'Other';
   }
 
   /**

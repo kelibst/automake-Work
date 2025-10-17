@@ -7,11 +7,12 @@ import * as XLSX from 'xlsx';
 
 class ExcelParser {
   /**
-   * Parse Excel file and return structured data
+   * Parse Excel file and return structured data with all sheets
    * @param {File} file - Excel file from input
-   * @returns {Promise<Object>} Parsed data with headers and rows
+   * @param {String} selectedSheet - Optional: specific sheet to parse
+   * @returns {Promise<Object>} Parsed data with sheets info
    */
-  static async parseFile(file) {
+  static async parseFile(file, selectedSheet = null) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
@@ -20,41 +21,31 @@ class ExcelParser {
           const data = new Uint8Array(e.target.result);
           const workbook = XLSX.read(data, { type: 'array' });
 
-          // Get first sheet
-          const firstSheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[firstSheetName];
+          // Get all sheet names
+          const availableSheets = workbook.SheetNames;
 
-          // Convert to JSON with headers
-          const jsonData = XLSX.utils.sheet_to_json(worksheet, {
-            header: 1, // Return as array of arrays
-            defval: '', // Default value for empty cells
-            blankrows: false // Skip blank rows
-          });
-
-          if (jsonData.length === 0) {
-            reject(new Error('Excel file is empty'));
+          if (availableSheets.length === 0) {
+            reject(new Error('Excel file has no sheets'));
             return;
           }
 
-          // First row is headers
-          const headers = jsonData[0];
-          const rows = jsonData.slice(1);
+          // Determine which sheet to parse
+          const targetSheet = selectedSheet || availableSheets[0];
 
-          // Convert to array of objects
-          const records = rows.map((row, index) => {
-            const record = { _rowNumber: index + 2 }; // Excel row number (1-based + header)
-            headers.forEach((header, colIndex) => {
-              record[header] = row[colIndex] || '';
-            });
-            return record;
-          });
+          if (!availableSheets.includes(targetSheet)) {
+            reject(new Error(`Sheet "${targetSheet}" not found. Available sheets: ${availableSheets.join(', ')}`));
+            return;
+          }
+
+          // Parse the selected sheet
+          const sheetData = this.parseSheet(workbook.Sheets[targetSheet], targetSheet);
 
           resolve({
             fileName: file.name,
-            sheetName: firstSheetName,
-            headers,
-            records,
-            totalRecords: records.length
+            availableSheets,
+            selectedSheet: targetSheet,
+            totalSheets: availableSheets.length,
+            ...sheetData
           });
         } catch (error) {
           reject(new Error(`Failed to parse Excel: ${error.message}`));
@@ -67,6 +58,101 @@ class ExcelParser {
 
       reader.readAsArrayBuffer(file);
     });
+  }
+
+  /**
+   * Parse all sheets in Excel file (for preview)
+   * @param {File} file - Excel file from input
+   * @returns {Promise<Object>} All sheets with preview data
+   */
+  static async parseAllSheets(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        try {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+
+          const sheets = {};
+
+          workbook.SheetNames.forEach(sheetName => {
+            try {
+              const sheetData = this.parseSheet(workbook.Sheets[sheetName], sheetName);
+              sheets[sheetName] = {
+                ...sheetData,
+                preview: this.getSampleRecords(sheetData.records, 3)
+              };
+            } catch (err) {
+              console.warn(`Failed to parse sheet "${sheetName}":`, err);
+              sheets[sheetName] = {
+                error: err.message,
+                sheetName,
+                headers: [],
+                records: [],
+                totalRecords: 0
+              };
+            }
+          });
+
+          resolve({
+            fileName: file.name,
+            totalSheets: workbook.SheetNames.length,
+            availableSheets: workbook.SheetNames,
+            sheets
+          });
+        } catch (error) {
+          reject(new Error(`Failed to parse Excel: ${error.message}`));
+        }
+      };
+
+      reader.onerror = () => {
+        reject(new Error('Failed to read file'));
+      };
+
+      reader.readAsArrayBuffer(file);
+    });
+  }
+
+  /**
+   * Parse a single worksheet
+   * @param {Object} worksheet - XLSX worksheet object
+   * @param {String} sheetName - Name of the sheet
+   * @returns {Object} Parsed sheet data
+   */
+  static parseSheet(worksheet, sheetName) {
+    // Convert to JSON with headers
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+      header: 1, // Return as array of arrays
+      defval: '', // Default value for empty cells
+      blankrows: false // Skip blank rows
+    });
+
+    if (jsonData.length === 0) {
+      throw new Error(`Sheet "${sheetName}" is empty`);
+    }
+
+    // First row is headers
+    const headers = jsonData[0].map(h => String(h || '').trim()).filter(h => h !== '');
+    const rows = jsonData.slice(1);
+
+    // Convert to array of objects
+    const records = rows
+      .filter(row => row.some(cell => cell !== '')) // Filter out empty rows
+      .map((row, index) => {
+        const record = { _rowNumber: index + 2, _sheetName: sheetName }; // Excel row number
+        headers.forEach((header, colIndex) => {
+          record[header] = row[colIndex] || '';
+        });
+        return record;
+      });
+
+    return {
+      sheetName,
+      headers,
+      records,
+      totalRecords: records.length
+    };
   }
 
   /**

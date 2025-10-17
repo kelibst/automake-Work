@@ -55,6 +55,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ success: true });
       break;
 
+    case 'TOGGLE_DEBUG_MODE':
+      handleToggleDebugMode(message.enabled, sendResponse);
+      break;
+
     default:
       sendResponse({ success: false, error: 'Unknown message type' });
   }
@@ -135,6 +139,28 @@ async function handleClearConfig(sendResponse) {
     sendResponse({ success: true, message: 'Configuration cleared' });
   } catch (error) {
     console.error('Error clearing config:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle toggle debug mode request
+ */
+async function handleToggleDebugMode(enabled, sendResponse) {
+  try {
+    await StorageManager.setDebugMode(enabled);
+
+    if (enabled) {
+      console.log('🐛 Debug mode enabled - Will capture API payloads');
+      apiInterceptor.startListening(true); // true = debug mode
+    } else {
+      console.log('🐛 Debug mode disabled');
+      apiInterceptor.stopListening();
+    }
+
+    sendResponse({ success: true, enabled });
+  } catch (error) {
+    console.error('Error toggling debug mode:', error);
     sendResponse({ success: false, error: error.message });
   }
 }

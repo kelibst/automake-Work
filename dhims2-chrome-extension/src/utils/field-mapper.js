@@ -11,6 +11,33 @@ class FieldMapper {
   }
 
   /**
+   * Get all available DHIMS2 fields from discovered API
+   * @returns {Array} Array of field info objects
+   */
+  getDHIMSFields() {
+    return Object.entries(this.fieldMappings).map(([dataElement, info]) => ({
+      id: dataElement,
+      name: this.extractFieldName(info),
+      type: info.type || 'text',
+      sampleValue: info.value,
+      required: true // Can be enhanced based on validation rules
+    }));
+  }
+
+  /**
+   * Extract human-readable field name from field info
+   * @param {Object} fieldInfo - Field information
+   * @returns {String} Field name
+   */
+  extractFieldName(fieldInfo) {
+    // Try to derive name from sample value or use ID
+    if (fieldInfo.value && typeof fieldInfo.value === 'string') {
+      return fieldInfo.value;
+    }
+    return `Field ${fieldInfo.index || ''}`;
+  }
+
+  /**
    * Create mapping between Excel columns and DHIMS2 data elements
    * @param {Array} excelHeaders - Column headers from Excel
    * @returns {Object} Mapping configuration
@@ -295,6 +322,154 @@ class FieldMapper {
       valid: errors.length === 0,
       errors,
       warnings
+    };
+  }
+
+  /**
+   * Create custom mapping from user selections
+   * @param {Object} userMappings - User-defined mappings { excelColumn: dhimsFieldId }
+   * @param {Array} excelHeaders - All Excel column headers
+   * @returns {Object} Custom mapping configuration
+   */
+  createCustomMapping(userMappings, excelHeaders) {
+    const mapping = {};
+    const unmapped = [];
+
+    excelHeaders.forEach(header => {
+      if (userMappings[header]) {
+        const dhimsFieldId = userMappings[header];
+        const fieldInfo = this.fieldMappings[dhimsFieldId];
+
+        mapping[header] = {
+          dataElement: dhimsFieldId,
+          excelColumn: header,
+          type: fieldInfo?.type || 'text',
+          required: true
+        };
+      } else {
+        unmapped.push(header);
+      }
+    });
+
+    return {
+      mapping,
+      unmapped,
+      totalMapped: Object.keys(mapping).length,
+      totalUnmapped: unmapped.length
+    };
+  }
+
+  /**
+   * Update a single field mapping
+   * @param {Object} currentMapping - Current mapping object
+   * @param {String} excelColumn - Excel column to map
+   * @param {String} dhimsFieldId - DHIMS2 field ID to map to (null to unmap)
+   * @returns {Object} Updated mapping
+   */
+  updateFieldMapping(currentMapping, excelColumn, dhimsFieldId) {
+    const updatedMapping = { ...currentMapping };
+
+    // Remove from unmapped if it was there
+    updatedMapping.unmapped = updatedMapping.unmapped.filter(col => col !== excelColumn);
+
+    if (dhimsFieldId) {
+      // Add/update mapping
+      const fieldInfo = this.fieldMappings[dhimsFieldId];
+      updatedMapping.mapping[excelColumn] = {
+        dataElement: dhimsFieldId,
+        excelColumn: excelColumn,
+        type: fieldInfo?.type || 'text',
+        required: true
+      };
+    } else {
+      // Remove mapping
+      delete updatedMapping.mapping[excelColumn];
+      if (!updatedMapping.unmapped.includes(excelColumn)) {
+        updatedMapping.unmapped.push(excelColumn);
+      }
+    }
+
+    updatedMapping.totalMapped = Object.keys(updatedMapping.mapping).length;
+    updatedMapping.totalUnmapped = updatedMapping.unmapped.length;
+
+    return updatedMapping;
+  }
+
+  /**
+   * Get mapping statistics
+   * @param {Object} mapping - Current mapping
+   * @returns {Object} Statistics
+   */
+  getMappingStats(mapping) {
+    const totalColumns = Object.keys(mapping.mapping).length + mapping.unmapped.length;
+    const mappedCount = Object.keys(mapping.mapping).length;
+    const unmappedCount = mapping.unmapped.length;
+    const coveragePercent = totalColumns > 0 ? Math.round((mappedCount / totalColumns) * 100) : 0;
+
+    // Get unique DHIMS fields used
+    const usedDHIMSFields = new Set(
+      Object.values(mapping.mapping).map(m => m.dataElement)
+    );
+
+    const totalDHIMSFields = Object.keys(this.fieldMappings).length;
+    const unusedDHIMSFields = totalDHIMSFields - usedDHIMSFields.size;
+
+    return {
+      totalColumns,
+      mappedCount,
+      unmappedCount,
+      coveragePercent,
+      usedDHIMSFields: usedDHIMSFields.size,
+      totalDHIMSFields,
+      unusedDHIMSFields
+    };
+  }
+
+  /**
+   * Export mapping as template
+   * @param {Object} mapping - Current mapping
+   * @param {String} templateName - Name for the template
+   * @returns {Object} Template object
+   */
+  exportTemplate(mapping, templateName) {
+    return {
+      id: `template_${Date.now()}`,
+      name: templateName,
+      created: new Date().toISOString(),
+      lastUsed: new Date().toISOString(),
+      excelColumns: Object.keys(mapping.mapping),
+      mappings: mapping.mapping,
+      metadata: {
+        totalMapped: Object.keys(mapping.mapping).length,
+        apiConfigTimestamp: this.apiConfig?.discoveryDate
+      }
+    };
+  }
+
+  /**
+   * Import mapping from template
+   * @param {Object} template - Template object
+   * @param {Array} excelHeaders - Current Excel headers
+   * @returns {Object} Mapping configuration
+   */
+  importTemplate(template, excelHeaders) {
+    const mapping = {};
+    const unmapped = [];
+
+    excelHeaders.forEach(header => {
+      if (template.mappings[header]) {
+        mapping[header] = template.mappings[header];
+      } else {
+        unmapped.push(header);
+      }
+    });
+
+    return {
+      mapping,
+      unmapped,
+      totalMapped: Object.keys(mapping).length,
+      totalUnmapped: unmapped.length,
+      templateName: template.name
     };
   }
 }

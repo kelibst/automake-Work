@@ -8,21 +8,30 @@ import {
   Play,
   Pause,
   XCircle,
-  FileText
+  FileText,
+  FolderOpen,
+  ArrowLeft
 } from 'lucide-react';
 import ExcelParser from '../../utils/excel-parser';
 import FieldMapper from '../../utils/field-mapper';
 import DataValidator from '../../utils/data-validator';
+import WorkbookSheetSelector from '../components/WorkbookSheetSelector';
+import FieldMappingEditor from '../components/FieldMappingEditor';
+import MappingPreview from '../components/MappingPreview';
+import MappingTemplateManager from '../components/MappingTemplateManager';
 
 function Upload() {
   const [apiConfig, setApiConfig] = useState(null);
   const [file, setFile] = useState(null);
+  const [selectedSheet, setSelectedSheet] = useState(null);
   const [parsedData, setParsedData] = useState(null);
   const [mapping, setMapping] = useState(null);
+  const [userMapping, setUserMapping] = useState({});
   const [validation, setValidation] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
-  const [step, setStep] = useState('upload'); // upload, preview, validate, ready
+  const [step, setStep] = useState('upload'); // upload, sheet, mapping, preview, ready
+  const [showTemplateManager, setShowTemplateManager] = useState(false);
 
   // Load API config on mount
   useEffect(() => {
@@ -57,26 +66,20 @@ function Upload() {
         throw new Error(fileValidation.errors.join(', '));
       }
 
-      // Parse Excel file
-      const data = await ExcelParser.parseFile(selectedFile);
-      console.log('📊 Parsed data:', data);
-
       setFile(selectedFile);
-      setParsedData(data);
 
-      // Auto-create field mapping
-      if (apiConfig) {
-        const mapper = new FieldMapper(apiConfig);
-        const fieldMapping = mapper.createMapping(data.headers);
-        console.log('🗺️  Field mapping:', fieldMapping);
-        setMapping(fieldMapping);
+      // Check if file has multiple sheets
+      const allSheets = await ExcelParser.parseAllSheets(selectedFile);
 
-        // Validate data
-        const dataValidation = DataValidator.validateDataset(data.records, fieldMapping);
-        console.log('✅ Validation:', dataValidation);
-        setValidation(dataValidation);
-
-        setStep('preview');
+      if (allSheets.totalSheets > 1) {
+        // Multiple sheets - go to sheet selection
+        setStep('sheet');
+      } else {
+        // Single sheet - parse and continue
+        const data = await ExcelParser.parseFile(selectedFile);
+        setParsedData(data);
+        setSelectedSheet(data.selectedSheet);
+        setStep('mapping');
       }
     } catch (err) {
       console.error('Error processing file:', err);
@@ -87,15 +90,210 @@ function Upload() {
   };
 
   /**
+   * Handle sheet selection
+   */
+  const handleSheetSelect = async (sheetName) => {
+    setSelectedSheet(sheetName);
+  };
+
+  const handleSheetConfirm = async () => {
+    if (!selectedSheet || !file) return;
+
+    setIsProcessing(true);
+    try {
+      const data = await ExcelParser.parseFile(file, selectedSheet);
+      console.log('📊 Parsed data from sheet:', data);
+      setParsedData(data);
+      setStep('mapping');
+    } catch (err) {
+      console.error('Error parsing sheet:', err);
+      setError(err.message);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  /**
+   * Handle mapping changes
+   */
+  const handleMappingChange = (newMapping) => {
+    setUserMapping(newMapping);
+  };
+
+  /**
+   * Continue to preview after mapping
+   */
+  const handleContinueToPreview = () => {
+    if (!apiConfig) return;
+
+    const mapper = new FieldMapper(apiConfig);
+    const fieldMapping = mapper.createCustomMapping(userMapping, parsedData.headers);
+    console.log('🗺️  Field mapping:', fieldMapping);
+    setMapping(fieldMapping);
+
+    // Validate data
+    const dataValidation = DataValidator.validateDataset(parsedData.records, fieldMapping);
+    console.log('✅ Validation:', dataValidation);
+    setValidation(dataValidation);
+
+    setStep('preview');
+  };
+
+  /**
+   * Load template from template manager
+   */
+  const handleLoadTemplate = (template) => {
+    if (template.mappings) {
+      setUserMapping(template.mappings);
+    }
+  };
+
+  /**
+   * Save current mapping as template
+   */
+  const handleSaveTemplate = () => {
+    setShowTemplateManager(true);
+  };
+
+  /**
    * Reset and start over
    */
   const handleReset = () => {
     setFile(null);
+    setSelectedSheet(null);
     setParsedData(null);
     setMapping(null);
+    setUserMapping({});
     setValidation(null);
     setError(null);
     setStep('upload');
+    setShowTemplateManager(false);
+  };
+
+  /**
+   * Render sheet selection step
+   */
+  const renderSheetStep = () => (
+    <div className="p-6">
+      <div className="mb-4">
+        <h2 className="text-lg font-bold text-gray-900 mb-1">
+          Select Sheet
+        </h2>
+        <p className="text-sm text-gray-600">
+          {file?.name} contains multiple sheets
+        </p>
+      </div>
+
+      <WorkbookSheetSelector
+        file={file}
+        selectedSheet={selectedSheet}
+        onSheetSelect={handleSheetSelect}
+      />
+
+      <div className="flex gap-2 mt-4">
+        <button
+          onClick={handleReset}
+          className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+        >
+          <ArrowLeft className="w-4 h-4 inline mr-2" />
+          Back
+        </button>
+        <button
+          onClick={handleSheetConfirm}
+          disabled={!selectedSheet || isProcessing}
+          className={`flex-1 px-4 py-2 text-sm font-medium text-white rounded-lg ${
+            selectedSheet && !isProcessing
+              ? 'bg-blue-600 hover:bg-blue-700'
+              : 'bg-gray-300 cursor-not-allowed'
+          }`}
+        >
+          {isProcessing ? (
+            <>
+              <Loader2 className="w-4 h-4 inline mr-2 animate-spin" />
+              Loading...
+            </>
+          ) : (
+            'Continue'
+          )}
+        </button>
+      </div>
+    </div>
+  );
+
+  /**
+   * Render field mapping step
+   */
+  const renderMappingStep = () => {
+    if (showTemplateManager) {
+      return (
+        <MappingTemplateManager
+          currentMapping={userMapping}
+          onLoadTemplate={handleLoadTemplate}
+          onClose={() => setShowTemplateManager(false)}
+        />
+      );
+    }
+
+    const mapper = new FieldMapper(apiConfig);
+    const dhimsFields = mapper.getDHIMSFields();
+    const autoMapping = mapper.createMapping(parsedData.headers);
+
+    return (
+      <div className="flex flex-col h-full">
+        <div className="px-3 py-2 border-b border-gray-200 bg-gray-50 flex-shrink-0">
+          <div className="flex items-center justify-between">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-sm font-bold text-gray-900 truncate">
+                Map Fields
+              </h2>
+              <p className="text-xs text-gray-600 truncate">
+                {file?.name} • {parsedData?.totalRecords} records
+              </p>
+            </div>
+            <button
+              onClick={() => setShowTemplateManager(true)}
+              className="ml-2 px-2 py-1 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded hover:bg-blue-100 transition-colors flex items-center flex-shrink-0"
+            >
+              <FolderOpen className="w-3 h-3 mr-1" />
+              Templates
+            </button>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-hidden min-h-0">
+          <FieldMappingEditor
+            excelHeaders={parsedData.headers}
+            dhimsFields={dhimsFields}
+            initialMapping={autoMapping}
+            onMappingChange={handleMappingChange}
+            onSaveTemplate={handleSaveTemplate}
+          />
+        </div>
+
+        <div className="px-3 py-2 border-t border-gray-200 bg-white flex-shrink-0">
+          <div className="flex gap-2">
+            <button
+              onClick={() => setStep('sheet')}
+              className="px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50"
+            >
+              <ArrowLeft className="w-3 h-3 inline mr-1" />
+              Back
+            </button>
+            <button
+              onClick={handleContinueToPreview}
+              disabled={Object.keys(userMapping).length === 0}
+              className={`flex-1 px-3 py-1.5 text-xs font-medium text-white rounded ${
+                Object.keys(userMapping).length > 0
+                  ? 'bg-blue-600 hover:bg-blue-700'
+                  : 'bg-gray-300 cursor-not-allowed'
+              }`}
+            >
+              Preview & Validate
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   /**
@@ -239,15 +437,24 @@ function Upload() {
 
       {/* Field Mapping Summary */}
       {mapping && (
-        <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-sm font-medium text-blue-900 mb-2">
-            Field Mapping: {mapping.totalMapped} / {parsedData.headers.length} columns mapped
-          </p>
-          {mapping.unmapped.length > 0 && (
-            <p className="text-xs text-blue-700">
-              ⚠️  Unmapped: {mapping.unmapped.join(', ')}
+        <div className="mb-4">
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg mb-4">
+            <p className="text-sm font-medium text-blue-900 mb-2">
+              Field Mapping: {mapping.totalMapped} / {parsedData.headers.length} columns mapped
             </p>
-          )}
+            {mapping.unmapped.length > 0 && (
+              <p className="text-xs text-blue-700">
+                ⚠️  Unmapped: {mapping.unmapped.join(', ')}
+              </p>
+            )}
+          </div>
+
+          {/* Show mapping preview */}
+          <MappingPreview
+            records={parsedData.records}
+            mapping={mapping.mapping}
+            fieldMapper={new FieldMapper(apiConfig)}
+          />
         </div>
       )}
 
@@ -293,8 +500,15 @@ function Upload() {
       {/* Actions */}
       <div className="flex gap-2">
         <button
+          onClick={() => setStep('mapping')}
+          className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+        >
+          <ArrowLeft className="w-4 h-4 inline mr-2" />
+          Edit Mapping
+        </button>
+        <button
           onClick={handleReset}
-          className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+          className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
         >
           Cancel
         </button>
@@ -384,6 +598,14 @@ function Upload() {
   );
 
   // Render based on current step
+  if (step === 'sheet' && file) {
+    return renderSheetStep();
+  }
+
+  if (step === 'mapping' && parsedData) {
+    return renderMappingStep();
+  }
+
   if (step === 'preview' && parsedData) {
     return renderPreviewStep();
   }

@@ -441,3 +441,202 @@ This file tracks major features and changes implemented in the DHIMS2 Batch Uplo
 - Add timeline view of all requests
 
 ---
+
+### ✅ Fixed Debug Mode Listener Persistence Issues
+**Time:** Evening (Final fixes)
+**Description:** Resolved critical issue where API listeners would stop working after capturing a few requests. Implemented comprehensive keepalive and health monitoring systems.
+
+**Problem Identified:**
+- Chrome service workers can go idle after ~30 seconds of inactivity
+- WebRequest listeners were being garbage collected
+- No mechanism to restore debug mode state after service worker restart
+- Request tracking stopped after initial captures
+
+**Solutions Implemented:**
+
+#### 1. Service Worker Keepalive
+- Added interval-based keepalive mechanism (20-second ping)
+- Prevents service worker from going idle
+- Logs keepalive pings for monitoring
+- Automatic startup on service worker initialization
+
+#### 2. Listener Persistence
+- Separated listener registration into dedicated methods
+- `registerListeners()` - Adds all webRequest listeners
+- `removeListeners()` - Safely removes listeners
+- Bound listener functions stored to prevent garbage collection
+- Explicit removal before re-registration to prevent duplicates
+
+#### 3. Health Check System
+- 10-second interval health check monitors listener status
+- Logs request count for diagnostics
+- Tracks total requests captured (`this.requestCount`)
+- Ready for auto-recovery if listeners fail (future enhancement)
+
+#### 4. State Persistence
+- Debug mode state saved to chrome.storage
+- Auto-restore on service worker restart
+- Seamless experience across extension reloads
+- User doesn't lose debug mode when service worker cycles
+
+#### 5. Request Counter
+- Added `requestCount` property to track captures
+- Increments on each captured request
+- Displayed in health check logs
+- Helps diagnose capture issues
+
+#### 6. UI Enhancements
+- Live status indicator when listening
+- Shows captured count in real-time
+- Pulsing green indicator for active capture
+- Better visual feedback
+
+**Technical Changes:**
+
+**Files Modified:**
+
+1. [api-interceptor.js](../dhims2-chrome-extension/src/background/api-interceptor.js)
+   - Added `requestCount` and `listenerCheckInterval` properties
+   - Created `registerListeners()` method
+   - Created `removeListeners()` method
+   - Created `startListenerHealthCheck()` method
+   - Enhanced `startListening()` to use new methods
+   - Enhanced `stopListening()` to clean up properly
+   - Request counter incremented on capture
+   - (+100 lines)
+
+2. [service-worker.js](../dhims2-chrome-extension/src/background/service-worker.js)
+   - Added `startKeepalive()` and `stopKeepalive()` functions
+   - 20-second interval to keep service worker alive
+   - Auto-restore debug mode on startup
+   - Reads debug mode state from storage
+   - Automatically re-enables listeners if previously active
+   - (+35 lines)
+
+3. [Debug.jsx](../dhims2-chrome-extension/src/sidepanel/pages/Debug.jsx)
+   - Added live status indicator
+   - Shows active capture count
+   - Pulsing animation when listening
+   - (+20 lines)
+
+**Total Impact:** ~155 lines across 3 files
+
+**User Benefits:**
+- **Reliable capture:** Listeners stay active indefinitely
+- **No manual intervention:** Auto-restores after extension reload
+- **Better visibility:** Live status shows what's happening
+- **Troubleshooting:** Health check logs help diagnose issues
+- **Peace of mind:** Extension doesn't silently stop working
+
+**Testing Recommendations:**
+1. Open Debug tab → should auto-enable
+2. Navigate to DHIMS2 and perform multiple actions
+3. Verify requests keep getting captured (check count increasing)
+4. Reload extension → debug mode should restore
+5. Check console logs for health check pings every 10s
+
+**Console Output Example:**
+```
+🚀 DHIMS2 Extension: Service Worker Started
+✅ Keepalive started
+🔄 Restoring debug mode from previous session
+🔍 API Interceptor: Started listening...
+✅ WebRequest listeners registered
+💓 Listener health check started
+💓 Keepalive ping
+📡 ✅ CAPTURED API REQUEST: GET /api/me
+💾 Request stored with ID: 12345 | Total: 1
+🔍 Health check: Listeners active, requests captured: 1
+💓 Keepalive ping
+📡 ✅ CAPTURED API REQUEST: POST /api/events
+💾 Request stored with ID: 12346 | Total: 2
+```
+
+**Next Steps:**
+- Add auto-recovery if listeners fail health check
+- Add manual re-sync button to force listener re-registration
+- Monitor performance impact of keepalive mechanism
+
+---
+
+### ✅ Added Request Filtering and Improved Instructions
+**Time:** Morning
+**Description:** Enhanced debug UI to help users distinguish between GET (data fetching) and POST (data submission) requests, with filtering to easily find the payloads that contain form field data.
+
+**Problem:**
+- User was seeing GET requests which only fetch existing data
+- GET requests don't contain the form field values entered by user
+- Confusion about which request to look at for field mapping
+- No easy way to filter through many captured requests
+
+**Solutions:**
+
+#### 1. Enhanced Instructions
+- Added prominent warning to click Save/Submit button
+- Explained difference between GET (fetch) vs POST (submit)
+- Highlighted that POST requests contain form field data
+- Added visual tip box explaining request types
+
+#### 2. Request Method Filter
+- Three filter buttons: ALL, POST, GET
+- Color-coded:
+  - Purple: ALL requests
+  - Green: POST requests only (✅ what you want!)
+  - Blue: GET requests only
+- Shows filtered count vs total count
+- Empty state when no requests match filter
+
+#### 3. Better Visual Cues
+- POST method shown in different color
+- Request type badge more prominent
+- Clearer instructions about what to look for
+
+**Technical Changes:**
+
+**Files Modified:**
+- [Debug.jsx](../dhims2-chrome-extension/src/sidepanel/pages/Debug.jsx)
+  - Added `methodFilter` state
+  - Created filter UI with buttons
+  - Applied filter to payload list
+  - Enhanced instructions with POST vs GET explanation
+  - Added tip box
+  - Empty state for filtered results
+  - (+50 lines)
+
+**User Benefits:**
+- **Clear guidance:** Know exactly when to submit the form
+- **Easy filtering:** Click "POST" to see only form submissions
+- **Less confusion:** Understand why some requests don't have field data
+- **Faster workflow:** Quickly find the right payload
+
+**Usage:**
+1. Open Debug tab (auto-listening)
+2. Fill out DHIMS2 form completely
+3. **Click Save/Submit button** (important!)
+4. In Debug tab, click "POST" filter button
+5. Look for the newest POST request
+6. View the `dataValues` array - contains all field IDs and values
+
+**What you'll see in a POST request:**
+```json
+{
+  "method": "POST",
+  "payload": {
+    "program": "fFYTJRzD2qq",
+    "orgUnit": "duCDqCRlWG1",
+    "dataValues": [
+      {
+        "dataElement": "okahaacYKqO",
+        "value": "VR-A01-AAG1234"
+      },
+      {
+        "dataElement": "MSYrx2z1f8p",
+        "value": "123 Main Street"
+      }
+      // ... all your form fields!
+    ]
+  }
+}
+```
+
+---

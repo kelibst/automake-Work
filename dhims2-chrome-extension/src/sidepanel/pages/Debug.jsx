@@ -8,6 +8,7 @@ export default function Debug() {
   const [apiConfig, setApiConfig] = useState(null);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [isListening, setIsListening] = useState(false);
+  const [methodFilter, setMethodFilter] = useState('ALL'); // ALL, POST, GET
 
   useEffect(() => {
     loadData();
@@ -256,20 +257,43 @@ export default function Debug() {
         </button>
       </div>
 
-      {/* Instructions */}
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-        <h3 className="font-semibold text-yellow-900 mb-2">How to Use:</h3>
-        <ol className="list-decimal list-inside space-y-1 text-sm text-yellow-800">
-          <li>Debug mode is automatically listening when you open this tab</li>
-          <li>Navigate to DHIMS2 and submit a form manually</li>
-          <li>All API requests will be captured and logged automatically</li>
-          <li>View the captured data to understand field mappings and structure</li>
-          <li>Use this information to map your Excel columns correctly</li>
-        </ol>
+      {/* Status & Instructions */}
+      <div className="space-y-3">
+        {/* Status Bar */}
+        {isListening && (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-green-900">
+                  Actively capturing requests
+                </span>
+              </div>
+              <div className="text-xs text-green-700">
+                {payloads.length} captured
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Instructions */}
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <h3 className="font-semibold text-yellow-900 mb-2">How to Use:</h3>
+          <ol className="list-decimal list-inside space-y-1 text-sm text-yellow-800">
+            <li>Debug mode is automatically listening when you open this tab</li>
+            <li>Navigate to DHIMS2 and <strong>fill out the form completely</strong></li>
+            <li><strong className="text-red-700">IMPORTANT: Click the Save/Submit button</strong> to trigger the POST request</li>
+            <li>Look for a <span className="font-semibold bg-purple-100 px-1 rounded">POST</span> request (not GET) - it will contain all field data</li>
+            <li>View the captured data to understand field mappings and structure</li>
+          </ol>
+          <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded text-xs text-blue-800">
+            <strong>💡 Tip:</strong> GET requests fetch existing data. POST requests submit new data with all your field values!
+          </div>
+        </div>
       </div>
 
-      {/* Actions */}
-      <div className="flex gap-2">
+      {/* Actions & Filters */}
+      <div className="flex flex-wrap gap-2 items-center">
         <button
           onClick={loadData}
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
@@ -285,24 +309,67 @@ export default function Debug() {
           <Trash2 className="w-4 h-4" />
           Clear All
         </button>
+
+        {/* Method Filter */}
+        <div className="flex items-center gap-2 ml-auto">
+          <span className="text-xs font-semibold text-gray-600">Filter:</span>
+          <div className="flex gap-1">
+            {['ALL', 'POST', 'GET'].map((method) => (
+              <button
+                key={method}
+                onClick={() => setMethodFilter(method)}
+                className={`px-3 py-1.5 text-xs font-semibold rounded transition-colors ${
+                  methodFilter === method
+                    ? method === 'POST'
+                      ? 'bg-green-600 text-white'
+                      : method === 'GET'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-purple-600 text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+              >
+                {method}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Payloads List */}
-      {payloads.length === 0 ? (
-        <div className="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
-          <Bug className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-          <p className="text-gray-600 mb-1">No payloads captured yet</p>
-          <p className="text-sm text-gray-500">Enable listening and submit a form in DHIMS2</p>
-        </div>
-      ) : (
+      {(() => {
+        // Apply filter
+        const filteredPayloads = methodFilter === 'ALL'
+          ? payloads
+          : payloads.filter(p => p.method === methodFilter);
+
+        if (payloads.length === 0) {
+          return (
+            <div className="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+              <Bug className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+              <p className="text-gray-600 mb-1">No payloads captured yet</p>
+              <p className="text-sm text-gray-500">Enable listening and submit a form in DHIMS2</p>
+            </div>
+          );
+        }
+
+        if (filteredPayloads.length === 0) {
+          return (
+            <div className="text-center py-12 bg-gray-50 rounded-lg border border-gray-300">
+              <p className="text-gray-600 mb-1">No {methodFilter} requests captured</p>
+              <p className="text-sm text-gray-500">Try changing the filter or capturing more requests</p>
+            </div>
+          );
+        }
+
+        return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Payload List */}
           <div className="lg:col-span-1 space-y-2">
             <h3 className="font-semibold text-gray-900">
-              Captured Payloads ({payloads.length})
+              Captured Payloads ({filteredPayloads.length}{methodFilter !== 'ALL' && ` of ${payloads.length}`})
             </h3>
             <div className="space-y-2 max-h-[600px] overflow-y-auto">
-              {payloads.map((payload, index) => (
+              {filteredPayloads.map((payload, index) => (
                 <div
                   key={index}
                   onClick={() => setSelectedPayload(payload)}
@@ -427,7 +494,8 @@ export default function Debug() {
             )}
           </div>
         </div>
-      )}
+        );
+      })()}
     </div>
   );
 }

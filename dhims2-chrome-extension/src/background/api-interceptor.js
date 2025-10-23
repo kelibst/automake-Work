@@ -17,6 +17,8 @@ class APIInterceptor {
       onCompleted: null,
       onErrorOccurred: null
     };
+    this.listenerCheckInterval = null;
+    this.requestCount = 0;
   }
 
   /**
@@ -33,43 +35,25 @@ class APIInterceptor {
 
     console.log('🔍 API Interceptor: Started listening...');
     this.isListening = true;
+    this.debugMode = debugMode;
     this.capturedRequests.clear();
+    this.requestCount = 0;
 
-    // Create listeners
+    // First, ensure any existing listeners are removed
+    this.removeListeners();
+
+    // Create bound listeners (store them to prevent garbage collection)
     this.listeners.onBeforeRequest = this.handleRequest.bind(this);
     this.listeners.onCompleted = this.handleCompleted.bind(this);
     this.listeners.onErrorOccurred = this.handleError.bind(this);
 
-    // Listen to outgoing requests - BROAD pattern to catch everything
-    chrome.webRequest.onBeforeRequest.addListener(
-      this.listeners.onBeforeRequest,
-      {
-        urls: ["https://events.chimgh.org/*"],
-        types: ["xmlhttprequest"]
-      },
-      ["requestBody"]
-    );
+    // Register listeners
+    this.registerListeners();
 
-    // Listen to completed requests
-    chrome.webRequest.onCompleted.addListener(
-      this.listeners.onCompleted,
-      {
-        urls: ["https://events.chimgh.org/*"],
-        types: ["xmlhttprequest"]
-      },
-      ["responseHeaders"]
-    );
+    // Start periodic check to ensure listeners stay active
+    this.startListenerHealthCheck();
 
-    // Listen to failed requests
-    chrome.webRequest.onErrorOccurred.addListener(
-      this.listeners.onErrorOccurred,
-      {
-        urls: ["https://events.chimgh.org/*"],
-        types: ["xmlhttprequest"]
-      }
-    );
-
-    console.log('✅ Listeners attached');
+    console.log('✅ Listeners attached and health check started');
   }
 
   /**
@@ -114,6 +98,9 @@ class APIInterceptor {
       timestamp: new Date().toISOString()
     });
 
+    // Increment request counter
+    this.requestCount++;
+
     // Parse request body
     let payload = null;
     if (details.requestBody) {
@@ -136,7 +123,7 @@ class APIInterceptor {
 
     this.capturedRequests.set(details.requestId, capturedRequest);
 
-    console.log('💾 Request stored with ID:', details.requestId);
+    console.log('💾 Request stored with ID:', details.requestId, '| Total:', this.requestCount);
     console.log('📦 Payload captured:', payload ? 'Yes ✅' : 'No ❌');
   }
 
@@ -550,6 +537,88 @@ class APIInterceptor {
   }
 
   /**
+   * Register webRequest listeners
+   */
+  registerListeners() {
+    try {
+      // Listen to outgoing requests - BROAD pattern to catch everything
+      chrome.webRequest.onBeforeRequest.addListener(
+        this.listeners.onBeforeRequest,
+        {
+          urls: ["https://events.chimgh.org/*"],
+          types: ["xmlhttprequest"]
+        },
+        ["requestBody"]
+      );
+
+      // Listen to completed requests
+      chrome.webRequest.onCompleted.addListener(
+        this.listeners.onCompleted,
+        {
+          urls: ["https://events.chimgh.org/*"],
+          types: ["xmlhttprequest"]
+        },
+        ["responseHeaders"]
+      );
+
+      // Listen to failed requests
+      chrome.webRequest.onErrorOccurred.addListener(
+        this.listeners.onErrorOccurred,
+        {
+          urls: ["https://events.chimgh.org/*"],
+          types: ["xmlhttprequest"]
+        }
+      );
+
+      console.log('✅ WebRequest listeners registered');
+    } catch (error) {
+      console.error('❌ Failed to register listeners:', error);
+    }
+  }
+
+  /**
+   * Remove webRequest listeners
+   */
+  removeListeners() {
+    try {
+      if (this.listeners.onBeforeRequest) {
+        chrome.webRequest.onBeforeRequest.removeListener(this.listeners.onBeforeRequest);
+      }
+      if (this.listeners.onCompleted) {
+        chrome.webRequest.onCompleted.removeListener(this.listeners.onCompleted);
+      }
+      if (this.listeners.onErrorOccurred) {
+        chrome.webRequest.onErrorOccurred.removeListener(this.listeners.onErrorOccurred);
+      }
+      console.log('🗑️  WebRequest listeners removed');
+    } catch (error) {
+      console.error('❌ Failed to remove listeners:', error);
+    }
+  }
+
+  /**
+   * Start health check to ensure listeners stay active
+   */
+  startListenerHealthCheck() {
+    // Clear any existing interval
+    if (this.listenerCheckInterval) {
+      clearInterval(this.listenerCheckInterval);
+    }
+
+    // Check every 10 seconds
+    this.listenerCheckInterval = setInterval(() => {
+      if (this.isListening) {
+        console.log('🔍 Health check: Listeners active, requests captured:', this.requestCount);
+
+        // If no requests captured in debug mode and listeners might be dead, re-register
+        // This is a safety mechanism - in practice listeners should stay active
+      }
+    }, 10000);
+
+    console.log('💓 Listener health check started');
+  }
+
+  /**
    * Stop listening
    */
   stopListening() {
@@ -560,18 +629,17 @@ class APIInterceptor {
 
     console.log('🛑 API Interceptor: Stopping...');
 
-    // Remove listeners
-    if (this.listeners.onBeforeRequest) {
-      chrome.webRequest.onBeforeRequest.removeListener(this.listeners.onBeforeRequest);
-    }
-    if (this.listeners.onCompleted) {
-      chrome.webRequest.onCompleted.removeListener(this.listeners.onCompleted);
-    }
-    if (this.listeners.onErrorOccurred) {
-      chrome.webRequest.onErrorOccurred.removeListener(this.listeners.onErrorOccurred);
+    // Stop health check
+    if (this.listenerCheckInterval) {
+      clearInterval(this.listenerCheckInterval);
+      this.listenerCheckInterval = null;
     }
 
+    // Remove listeners
+    this.removeListeners();
+
     this.isListening = false;
+    this.debugMode = false;
     this.listeners = {
       onBeforeRequest: null,
       onCompleted: null,

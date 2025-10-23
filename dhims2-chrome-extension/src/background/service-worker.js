@@ -4,6 +4,31 @@ import StorageManager from '../utils/storage-manager.js';
 
 console.log('🚀 DHIMS2 Extension: Service Worker Started');
 
+// Keepalive mechanism - prevents service worker from going idle
+let keepaliveInterval = null;
+
+function startKeepalive() {
+  if (keepaliveInterval) return;
+
+  keepaliveInterval = setInterval(() => {
+    // Empty function just to keep service worker alive
+    console.log('💓 Keepalive ping');
+  }, 20000); // Every 20 seconds
+
+  console.log('✅ Keepalive started');
+}
+
+function stopKeepalive() {
+  if (keepaliveInterval) {
+    clearInterval(keepaliveInterval);
+    keepaliveInterval = null;
+    console.log('🛑 Keepalive stopped');
+  }
+}
+
+// Start keepalive when service worker starts
+startKeepalive();
+
 // Listen for extension installation
 chrome.runtime.onInstalled.addListener((details) => {
   console.log('Extension installed:', details.reason);
@@ -14,6 +39,15 @@ chrome.runtime.onInstalled.addListener((details) => {
     console.log('Extension updated');
   }
 });
+
+// Restore debug mode state on service worker startup
+(async () => {
+  const debugMode = await StorageManager.getDebugMode();
+  if (debugMode) {
+    console.log('🔄 Restoring debug mode from previous session');
+    apiInterceptor.startListening(true);
+  }
+})();
 
 // Open side panel when extension icon is clicked
 chrome.action.onClicked.addListener(async (tab) => {

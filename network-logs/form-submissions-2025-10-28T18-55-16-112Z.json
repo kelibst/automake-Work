@@ -1,0 +1,107 @@
+[
+  {
+    "timestamp": "2025-10-28T18:25:49.662Z",
+    "method": "POST",
+    "url": "https://events.chimgh.org/events/api/41/auth/login",
+    "resourceType": "fetch",
+    "isAjax": true,
+    "headers": {
+      "accept": "application/json",
+      "content-type": "application/json",
+      "cookie": "JSESSIONID=18EA7A1FAF884CF7DD9E8E05179991B9",
+      "origin": "https://events.chimgh.org",
+      "referer": "https://events.chimgh.org/events/dhis-web-login/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "x-requested-with": "XMLHttpRequest",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "postData": "{\"username\":\"Hohoe Hospital\",\"password\":\"HIHMH@2021\"}",
+    "response": {
+      "status": 401,
+      "statusText": "",
+      "headers": {
+        "x-robots-tag": "noindex, nofollow",
+        "access-control-expose-headers": "ETag, Location",
+        "x-content-type-options": "nosniff",
+        "keep-alive": "timeout=30, max=100",
+        "date": "Tue, 28 Oct 2025 18:25:50 GMT",
+        "content-type": "application/json;charset=UTF-8",
+        "vary": "Origin",
+        "x-frame-options": "SAMEORIGIN",
+        "strict-transport-security": "max-age=63072000; includeSubdomains;",
+        "content-security-policy": "frame-ancestors 'self' https://dhims.chimgh.org https://dhims.chimgh.org/dhims https://dhims.chimgh.org/dhims/app;",
+        "cache-control": "no-cache, private",
+        "connection": "Keep-Alive",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-origin": "https://events.chimgh.org",
+        "content-length": "95",
+        "x-xss-protection": "1; mode=block",
+        "server": "Apache"
+      },
+      "body": "{\"httpStatus\":\"Unauthorized\",\"httpStatusCode\":401,\"status\":\"ERROR\",\"message\":\"Bad credentials\"}"
+    }
+  },
+  {
+    "timestamp": "2025-10-28T18:26:04.700Z",
+    "method": "POST",
+    "url": "https://events.chimgh.org/events/api/41/auth/login",
+    "resourceType": "fetch",
+    "isAjax": true,
+    "headers": {
+      "accept": "application/json",
+      "content-type": "application/json",
+      "cookie": "JSESSIONID=18EA7A1FAF884CF7DD9E8E05179991B9",
+      "origin": "https://events.chimgh.org",
+      "referer": "https://events.chimgh.org/events/dhis-web-login/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "x-requested-with": "XMLHttpRequest",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "postData": "{\"username\":\"Hohoe Hospital\",\"password\":\"HIHMH@2022\"}"
+  },
+  {
+    "timestamp": "2025-10-28T18:26:08.709Z",
+    "method": "POST",
+    "url": "https://events.chimgh.org/events/api/41/dataStatistics?eventType=PASSIVE_DASHBOARD_VIEW&favorite=B3LJXeR4zhy",
+    "resourceType": "fetch",
+    "isAjax": true,
+    "headers": {
+      "accept": "application/json",
+      "cookie": "JSESSIONID=AFF7B48EA881C367523D6AFD4D97E653",
+      "origin": "https://events.chimgh.org",
+      "referer": "https://events.chimgh.org/events/dhis-web-dashboard/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "x-requested-with": "XMLHttpRequest",
+      "sec-ch-ua": "\"Chromium\";v=\"141\", \"Not?A_Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    },
+    "postData": null,
+    "response": {
+      "status": 201,
+      "statusText": "",
+      "headers": {
+        "strict-transport-security": "max-age=63072000; includeSubdomains;",
+        "x-robots-tag": "noindex, nofollow",
+        "content-security-policy": "frame-ancestors 'self' https://dhims.chimgh.org https://dhims.chimgh.org/dhims https://dhims.chimgh.org/dhims/app;",
+        "access-control-expose-headers": "ETag, Location",
+        "connection": "Keep-Alive",
+        "access-control-allow-credentials": "true",
+        "x-content-type-options": "nosniff",
+        "access-control-allow-origin": "https://events.chimgh.org",
+        "content-length": "0",
+        "keep-alive": "timeout=30, max=96",
+        "date": "Tue, 28 Oct 2025 18:26:08 GMT",
+        "x-xss-protection": "1; mode=block",
+        "vary": "Origin",
+        "server": "Apache",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "body": ""
+    }
+  }
+]

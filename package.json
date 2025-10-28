@@ -1,0 +1,23 @@
+{
+  "name": "automake-work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "capture-form-submission.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelibst/automake-Work.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelibst/automake-Work/issues"
+  },
+  "homepage": "https://github.com/kelibst/automake-Work#readme",
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}

@@ -83,19 +83,55 @@ class DataCleaner {
 
   /**
    * Match single diagnosis code with fuzzy logic
+   * Implements ICD-10 hierarchy matching: specific → parent codes
    */
   matchSingleDiagnosisCode(rawCode, rowNumber, type) {
     // Try exact match first
     let matchedCode = this.findDiagnosisMatch(rawCode);
 
-    // If no match, try without decimal
-    if (!matchedCode) {
+    if (matchedCode) {
+      return matchedCode;
+    }
+
+    // Step 1: Try removing decimal (I64.0 → I64)
+    if (!matchedCode && rawCode.includes('.')) {
       const codeWithoutDecimal = rawCode.replace(/\.\d+$/, '');
       matchedCode = this.findDiagnosisMatch(codeWithoutDecimal);
 
       if (matchedCode) {
         this.addError(type === 'Principal' ? 'principalDiagnosis' : 'additionalDiagnosis',
-                     `ℹ️ INFO: Using "${matchedCode}" (matched from "${rawCode}" by removing decimal suffix)`,
+                     `✅ AUTO-MATCHED: "${rawCode}" → "${matchedCode}" (using parent ICD-10 code)`,
+                     rowNumber, 'info');
+        return matchedCode;
+      }
+    }
+
+    // Step 2: Try parent code hierarchy (I64.00 → I64.0 → I64)
+    if (!matchedCode && rawCode.includes('.')) {
+      const parts = rawCode.split('.');
+      const baseCode = parts[0];
+      const subCode = parts[1];
+
+      // Try progressively shorter subcodes: I64.123 → I64.12 → I64.1
+      if (subCode && subCode.length > 1) {
+        for (let len = subCode.length - 1; len > 0; len--) {
+          const parentCode = `${baseCode}.${subCode.substring(0, len)}`;
+          matchedCode = this.findDiagnosisMatch(parentCode);
+
+          if (matchedCode) {
+            this.addError(type === 'Principal' ? 'principalDiagnosis' : 'additionalDiagnosis',
+                         `✅ AUTO-MATCHED: "${rawCode}" → "${matchedCode}" (using parent ICD-10 category)`,
+                         rowNumber, 'info');
+            return matchedCode;
+          }
+        }
+      }
+
+      // Finally try base code without any decimal
+      matchedCode = this.findDiagnosisMatch(baseCode);
+      if (matchedCode) {
+        this.addError(type === 'Principal' ? 'principalDiagnosis' : 'additionalDiagnosis',
+                     `✅ AUTO-MATCHED: "${rawCode}" → "${matchedCode}" (using parent ICD-10 category)`,
                      rowNumber, 'info');
         return matchedCode;
       }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, XCircle, AlertTriangle, Download, ChevronDown, ChevronUp, Upload as UploadIcon, Wand2 } from 'lucide-react';
+import { CheckCircle2, XCircle, AlertTriangle, Download, ChevronDown, ChevronUp, Upload as UploadIcon, Wand2, Check, X } from 'lucide-react';
 
 /**
  * Comprehensive validation results display
@@ -10,7 +10,12 @@ export default function ValidationResults({
   parsedData,
   onUploadValid,
   onDownloadInvalid,
-  onCancel
+  onCancel,
+  onAcceptSuggestion,
+  onRejectSuggestion,
+  onAcceptTransformation,
+  onRejectTransformation,
+  onCorrectError
 }) {
   const [expandedSections, setExpandedSections] = useState({
     autoFixed: true,
@@ -19,11 +24,62 @@ export default function ValidationResults({
     valid: false
   });
 
+  // Track accepted/rejected items
+  const [acceptedItems, setAcceptedItems] = useState(new Set());
+  const [rejectedItems, setRejectedItems] = useState(new Set());
+
   const toggleSection = (section) => {
     setExpandedSections(prev => ({
       ...prev,
       [section]: !prev[section]
     }));
+  };
+
+  // Handle accepting a suggestion/transformation
+  const handleAccept = (itemId, type) => {
+    setAcceptedItems(prev => new Set([...prev, itemId]));
+    setRejectedItems(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(itemId);
+      return newSet;
+    });
+
+    // Call parent handler if provided
+    if (type === 'suggestion' && onAcceptSuggestion) {
+      onAcceptSuggestion(itemId);
+    } else if (type === 'transformation' && onAcceptTransformation) {
+      onAcceptTransformation(itemId);
+    }
+  };
+
+  // Handle rejecting a suggestion/transformation
+  const handleReject = (itemId, type) => {
+    setRejectedItems(prev => new Set([...prev, itemId]));
+    setAcceptedItems(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(itemId);
+      return newSet;
+    });
+
+    // Call parent handler if provided
+    if (type === 'suggestion' && onRejectSuggestion) {
+      onRejectSuggestion(itemId);
+    } else if (type === 'transformation' && onRejectTransformation) {
+      onRejectTransformation(itemId);
+    }
+  };
+
+  // Accept all suggestions/transformations
+  const handleAcceptAll = (items, type) => {
+    const itemIds = items.map((item, i) => `${type}-${i}`);
+    setAcceptedItems(prev => new Set([...prev, ...itemIds]));
+    setRejectedItems(new Set());
+
+    if (type === 'suggestion' && onAcceptSuggestion) {
+      itemIds.forEach(id => onAcceptSuggestion(id));
+    } else if (type === 'transformation' && onAcceptTransformation) {
+      itemIds.forEach(id => onAcceptTransformation(id));
+    }
   };
 
   if (!validation) return null;
@@ -109,51 +165,110 @@ export default function ValidationResults({
           </button>
 
           {expandedSections.autoFixed && (
-            <div className="px-6 pb-4 space-y-3 max-h-96 overflow-y-auto">
-              {validation.suggestions.map((sug, index) => (
-                <div key={index} className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm font-medium text-gray-700">Row {sug.rowNumber}</span>
-                    <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                      sug.confidence >= 0.9 ? 'bg-green-100 text-green-700' :
-                      sug.confidence >= 0.8 ? 'bg-blue-100 text-blue-700' :
-                      'bg-yellow-100 text-yellow-700'
-                    }`}>
-                      {Math.round(sug.confidence * 100)}% match
-                    </span>
-                  </div>
+            <div className="px-6 pb-4">
+              {/* Accept All Button */}
+              <div className="mb-3 flex justify-end">
+                <button
+                  onClick={() => handleAcceptAll(validation.suggestions, 'suggestion')}
+                  className="px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded hover:bg-green-700 transition-colors"
+                >
+                  Accept All ({validation.suggestions.length})
+                </button>
+              </div>
 
-                  <div className="space-y-1 text-sm">
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-500 w-20">Original:</span>
-                      <span className="font-mono text-red-600">{sug.original}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-500 w-20">Fixed to:</span>
-                      <span className="font-mono text-green-600">{sug.suggested}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-gray-500 w-20">Name:</span>
-                      <span className="text-gray-700 flex-1">{sug.suggestedName || 'N/A'}</span>
-                    </div>
-                  </div>
+              <div className="space-y-3 max-h-96 overflow-y-auto">
+                {validation.suggestions.map((sug, index) => {
+                  const itemId = `suggestion-${index}`;
+                  const isAccepted = acceptedItems.has(itemId);
+                  const isRejected = rejectedItems.has(itemId);
 
-                  {sug.alternatives && sug.alternatives.length > 0 && (
-                    <details className="mt-2">
-                      <summary className="text-xs text-blue-600 cursor-pointer hover:text-blue-700">
-                        View {sug.alternatives.length} alternative{sug.alternatives.length > 1 ? 's' : ''}
-                      </summary>
-                      <div className="mt-2 pl-4 space-y-1">
-                        {sug.alternatives.map((alt, i) => (
-                          <div key={i} className="text-xs text-gray-600">
-                            • {alt.code}: {alt.name} ({Math.round(alt.similarity * 100)}%)
-                          </div>
-                        ))}
+                  return (
+                    <div
+                      key={index}
+                      className={`p-3 border rounded-lg transition-all ${
+                        isAccepted ? 'bg-green-50 border-green-300' :
+                        isRejected ? 'bg-red-50 border-red-300 opacity-50' :
+                        'bg-blue-50 border-blue-200'
+                      }`}
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="text-sm font-medium text-gray-700">Row {sug.rowNumber}</span>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            sug.confidence >= 0.9 ? 'bg-green-100 text-green-700' :
+                            sug.confidence >= 0.8 ? 'bg-blue-100 text-blue-700' :
+                            'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            {Math.round(sug.confidence * 100)}% match
+                          </span>
+
+                          {/* Accept/Reject Buttons */}
+                          {!isAccepted && !isRejected && (
+                            <div className="flex gap-1">
+                              <button
+                                onClick={() => handleAccept(itemId, 'suggestion')}
+                                className="p-1 text-green-600 hover:bg-green-100 rounded transition-colors"
+                                title="Accept this suggestion"
+                              >
+                                <Check className="w-4 h-4" />
+                              </button>
+                              <button
+                                onClick={() => handleReject(itemId, 'suggestion')}
+                                className="p-1 text-red-600 hover:bg-red-100 rounded transition-colors"
+                                title="Reject this suggestion"
+                              >
+                                <X className="w-4 h-4" />
+                              </button>
+                            </div>
+                          )}
+
+                          {isAccepted && (
+                            <span className="flex items-center gap-1 text-xs font-medium text-green-700">
+                              <Check className="w-3 h-3" /> Accepted
+                            </span>
+                          )}
+
+                          {isRejected && (
+                            <span className="flex items-center gap-1 text-xs font-medium text-red-700">
+                              <X className="w-3 h-3" /> Rejected
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </details>
-                  )}
-                </div>
-              ))}
+
+                      <div className="space-y-1 text-sm">
+                        <div className="flex items-center gap-2">
+                          <span className="text-gray-500 w-20">Original:</span>
+                          <span className="font-mono text-red-600 line-through">{sug.original}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-gray-500 w-20">Fixed to:</span>
+                          <span className="font-mono text-green-600 font-medium">{sug.suggested}</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-gray-500 w-20">Name:</span>
+                          <span className="text-gray-700 flex-1">{sug.suggestedName || 'N/A'}</span>
+                        </div>
+                      </div>
+
+                      {sug.alternatives && sug.alternatives.length > 0 && (
+                        <details className="mt-2">
+                          <summary className="text-xs text-blue-600 cursor-pointer hover:text-blue-700">
+                            View {sug.alternatives.length} alternative{sug.alternatives.length > 1 ? 's' : ''}
+                          </summary>
+                          <div className="mt-2 pl-4 space-y-1">
+                            {sug.alternatives.map((alt, i) => (
+                              <div key={i} className="text-xs text-gray-600">
+                                • {alt.code}: {alt.name} ({Math.round(alt.similarity * 100)}%)
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
@@ -185,25 +300,89 @@ export default function ValidationResults({
           </button>
 
           {expandedSections.cleaned && (
-            <div className="px-6 pb-4 space-y-2 max-h-96 overflow-y-auto">
-              {validation.transformations.map((t, i) => (
-                <div key={i} className="p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                  <div className="text-sm">
-                    <span className="font-medium text-gray-700">
-                      Row {t.rowNumber} - {t.field}:
-                    </span>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="font-mono text-sm text-red-600 line-through">
-                        {String(t.original)}
-                      </span>
-                      <span className="text-gray-400">→</span>
-                      <span className="font-mono text-sm text-green-600 font-medium">
-                        {String(t.cleaned)}
-                      </span>
+            <div className="px-6 pb-4">
+              {/* Accept All Button */}
+              <div className="mb-3 flex justify-end">
+                <button
+                  onClick={() => handleAcceptAll(validation.transformations, 'transformation')}
+                  className="px-3 py-1.5 text-sm font-medium text-white bg-green-600 rounded hover:bg-green-700 transition-colors"
+                >
+                  Accept All ({validation.transformations.length})
+                </button>
+              </div>
+
+              <div className="space-y-2 max-h-96 overflow-y-auto">
+                {validation.transformations.map((t, i) => {
+                  const itemId = `transformation-${i}`;
+                  const isAccepted = acceptedItems.has(itemId);
+                  const isRejected = rejectedItems.has(itemId);
+
+                  return (
+                    <div
+                      key={i}
+                      className={`p-3 border rounded-lg transition-all ${
+                        isAccepted ? 'bg-green-50 border-green-300' :
+                        isRejected ? 'bg-red-50 border-red-300 opacity-50' :
+                        'bg-purple-50 border-purple-200'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex-1 text-sm">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="font-medium text-gray-700">
+                              Row {t.rowNumber} - {t.field}
+                            </span>
+
+                            {/* Accept/Reject Buttons */}
+                            <div className="flex items-center gap-2">
+                              {!isAccepted && !isRejected && (
+                                <div className="flex gap-1">
+                                  <button
+                                    onClick={() => handleAccept(itemId, 'transformation')}
+                                    className="p-1 text-green-600 hover:bg-green-100 rounded transition-colors"
+                                    title="Accept this transformation"
+                                  >
+                                    <Check className="w-4 h-4" />
+                                  </button>
+                                  <button
+                                    onClick={() => handleReject(itemId, 'transformation')}
+                                    className="p-1 text-red-600 hover:bg-red-100 rounded transition-colors"
+                                    title="Reject this transformation"
+                                  >
+                                    <X className="w-4 h-4" />
+                                  </button>
+                                </div>
+                              )}
+
+                              {isAccepted && (
+                                <span className="flex items-center gap-1 text-xs font-medium text-green-700">
+                                  <Check className="w-3 h-3" /> Accepted
+                                </span>
+                              )}
+
+                              {isRejected && (
+                                <span className="flex items-center gap-1 text-xs font-medium text-red-700">
+                                  <X className="w-3 h-3" /> Rejected
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="font-mono text-sm text-red-600 line-through">
+                              {String(t.original)}
+                            </span>
+                            <span className="text-gray-400">→</span>
+                            <span className="font-mono text-sm text-green-600 font-medium">
+                              {String(t.cleaned)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
@@ -240,6 +419,7 @@ export default function ValidationResults({
                 <InvalidRecordCard
                   key={index}
                   record={invalidRecord}
+                  onCorrectError={onCorrectError}
                 />
               ))}
             </div>
@@ -339,9 +519,57 @@ export default function ValidationResults({
 
 /**
  * Invalid Record Card Component
- * Shows a single invalid record with errors and recommendations
+ * Shows a single invalid record with errors and inline correction options
  */
-function InvalidRecordCard({ record }) {
+function InvalidRecordCard({ record, onCorrectError }) {
+  const [editingError, setEditingError] = useState(null);
+  const [correctionValue, setCorrectionValue] = useState('');
+  const [isValidating, setIsValidating] = useState(false);
+
+  const handleStartEdit = (errorIndex, error) => {
+    setEditingError(errorIndex);
+    setCorrectionValue(error.recommendation?.suggestedFix || error.value || '');
+  };
+
+  const handleCancelEdit = () => {
+    setEditingError(null);
+    setCorrectionValue('');
+  };
+
+  const handleApplyCorrection = async (errorIndex, error) => {
+    if (!correctionValue.trim()) return;
+
+    setIsValidating(true);
+
+    // Call parent to validate and apply correction
+    if (onCorrectError) {
+      await onCorrectError(record.rowNumber, error.field, correctionValue, errorIndex);
+    }
+
+    setIsValidating(false);
+    setEditingError(null);
+    setCorrectionValue('');
+  };
+
+  // Parse diagnosis suggestions from error message
+  const parseDiagnosisSuggestions = (errorMessage) => {
+    if (!errorMessage || !errorMessage.includes('Did you mean')) return [];
+
+    const suggestions = [];
+    const regex = /- ([A-Z0-9.]+) - ([^:]+): \1 - \2 \((\d+)% match\)/g;
+    let match;
+
+    while ((match = regex.exec(errorMessage)) !== null) {
+      suggestions.push({
+        code: match[1],
+        name: match[2],
+        confidence: parseInt(match[3])
+      });
+    }
+
+    return suggestions;
+  };
+
   return (
     <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
       <div className="flex items-start gap-3">
@@ -371,34 +599,100 @@ function InvalidRecordCard({ record }) {
           {/* Errors List */}
           {record.errors && record.errors.length > 0 && (
             <div className="space-y-3">
-              {record.errors.map((error, index) => (
-                <div key={index} className="bg-white border border-red-200 rounded p-3">
-                  <p className="text-sm font-medium text-red-900 mb-1">
-                    {error.field || 'Field'}: {error.message}
-                  </p>
+              {record.errors.map((error, index) => {
+                const isEditing = editingError === index;
+                const diagnosisSuggestions = parseDiagnosisSuggestions(error.message);
+                const isDiagnosisError = error.field === 'principalDiagnosis' || error.field === 'additionalDiagnosis';
 
-                  {error.value && (
-                    <p className="text-xs text-gray-600 mb-2">
-                      Current value: <span className="font-mono">{String(error.value)}</span>
+                return (
+                  <div key={index} className="bg-white border border-red-200 rounded p-3">
+                    <p className="text-sm font-medium text-red-900 mb-1">
+                      {error.field || 'Field'}: {error.message?.split('\n')[0]}
                     </p>
-                  )}
 
-                  {/* Recommendation */}
-                  {error.recommendation && (
-                    <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded">
-                      <p className="text-xs font-medium text-blue-900 mb-1">💡 Recommendation:</p>
+                    {error.value && !isEditing && (
+                      <p className="text-xs text-gray-600 mb-2">
+                        Current value: <span className="font-mono">{String(error.value)}</span>
+                      </p>
+                    )}
 
-                      {error.recommendation.pattern && (
-                        <p className="text-xs text-blue-700 mb-1">
-                          <strong>Format:</strong> {error.recommendation.pattern}
-                        </p>
-                      )}
+                    {/* Inline Correction UI */}
+                    {isEditing ? (
+                      <div className="mt-3 space-y-2">
+                        {/* Dropdown for diagnosis suggestions */}
+                        {isDiagnosisError && diagnosisSuggestions.length > 0 ? (
+                          <div>
+                            <label className="block text-xs font-medium text-gray-700 mb-1">
+                              Select correct code:
+                            </label>
+                            <select
+                              value={correctionValue}
+                              onChange={(e) => setCorrectionValue(e.target.value)}
+                              className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                              disabled={isValidating}
+                            >
+                              <option value="">-- Select a code --</option>
+                              {diagnosisSuggestions.map((sug, i) => (
+                                <option key={i} value={sug.code}>
+                                  {sug.code} - {sug.name} ({sug.confidence}% match)
+                                </option>
+                              ))}
+                            </select>
+                            <p className="text-xs text-gray-500 mt-1">Or enter manually below:</p>
+                          </div>
+                        ) : null}
 
-                      {error.recommendation.suggestedFix && (
-                        <p className="text-xs text-green-700 mb-1">
-                          <strong>Suggested:</strong> <span className="font-mono">{error.recommendation.suggestedFix}</span>
-                        </p>
-                      )}
+                        {/* Manual input */}
+                        <div>
+                          <label className="block text-xs font-medium text-gray-700 mb-1">
+                            {isDiagnosisError ? 'Or enter code manually:' : 'Enter corrected value:'}
+                          </label>
+                          <input
+                            type="text"
+                            value={correctionValue}
+                            onChange={(e) => setCorrectionValue(e.target.value)}
+                            className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder={isDiagnosisError ? "e.g., I64" : "Enter value"}
+                            disabled={isValidating}
+                          />
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => handleApplyCorrection(index, error)}
+                            disabled={!correctionValue.trim() || isValidating}
+                            className="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                          >
+                            {isValidating ? 'Validating...' : 'Apply & Validate'}
+                          </button>
+                          <button
+                            onClick={handleCancelEdit}
+                            disabled={isValidating}
+                            className="px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        {/* Recommendation */}
+                        {error.recommendation && (
+                          <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded">
+                            <p className="text-xs font-medium text-blue-900 mb-1">💡 Recommendation:</p>
+
+                            {error.recommendation.pattern && (
+                              <p className="text-xs text-blue-700 mb-1">
+                                <strong>Format:</strong> {error.recommendation.pattern}
+                              </p>
+                            )}
+
+                            {error.recommendation.suggestedFix && (
+                              <p className="text-xs text-green-700 mb-1">
+                                <strong>Suggested:</strong> <span className="font-mono">{error.recommendation.suggestedFix}</span>
+                              </p>
+                            )}
 
                       {error.recommendation.examples && error.recommendation.examples.length > 0 && (
                         <p className="text-xs text-blue-700 mb-1">
@@ -430,10 +724,21 @@ function InvalidRecordCard({ record }) {
                       )}
                     </div>
                   )}
-                </div>
-              ))}
+
+                  {/* Fix Error Button */}
+                  <button
+                    onClick={() => handleStartEdit(index, error)}
+                    className="mt-2 w-full px-3 py-1.5 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors"
+                  >
+                    Fix Error
+                  </button>
+                </>
+              )}
             </div>
-          )}
+          );
+        })}
+      </div>
+    )}
         </div>
       </div>
     </div>

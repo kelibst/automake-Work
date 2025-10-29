@@ -29,6 +29,12 @@ function Upload() {
   const [uploadStatus, setUploadStatus] = useState(null);
   const [uploadResults, setUploadResults] = useState(null);
 
+  // Suggestion/Transformation acceptance state
+  const [acceptedSuggestions, setAcceptedSuggestions] = useState({});
+  const [rejectedSuggestions, setRejectedSuggestions] = useState({});
+  const [acceptedTransformations, setAcceptedTransformations] = useState({});
+  const [rejectedTransformations, setRejectedTransformations] = useState({});
+
   // Load API config on mount
   useEffect(() => {
     loadApiConfig();
@@ -200,6 +206,161 @@ function Upload() {
       setError(err.message);
     } finally {
       setIsProcessing(false);
+    }
+  };
+
+  /**
+   * Handle accepting a suggestion
+   */
+  const handleAcceptSuggestion = (suggestionId) => {
+    setAcceptedSuggestions(prev => ({ ...prev, [suggestionId]: true }));
+    setRejectedSuggestions(prev => {
+      const newState = { ...prev };
+      delete newState[suggestionId];
+      return newState;
+    });
+
+    // Extract index from ID (format: "suggestion-0")
+    const index = parseInt(suggestionId.split('-')[1]);
+    console.log(`✅ Accepted suggestion ${index + 1}`);
+  };
+
+  /**
+   * Handle rejecting a suggestion
+   */
+  const handleRejectSuggestion = (suggestionId) => {
+    setRejectedSuggestions(prev => ({ ...prev, [suggestionId]: true }));
+    setAcceptedSuggestions(prev => {
+      const newState = { ...prev };
+      delete newState[suggestionId];
+      return newState;
+    });
+
+    // Extract index from ID (format: "suggestion-0")
+    const index = parseInt(suggestionId.split('-')[1]);
+    console.log(`❌ Rejected suggestion ${index + 1}`);
+
+    // Move affected record to invalid list
+    if (validation?.suggestions?.[index]) {
+      const suggestion = validation.suggestions[index];
+      // TODO: Update validation to move this record to invalid list
+    }
+  };
+
+  /**
+   * Handle accepting a transformation
+   */
+  const handleAcceptTransformation = (transformationId) => {
+    setAcceptedTransformations(prev => ({ ...prev, [transformationId]: true }));
+    setRejectedTransformations(prev => {
+      const newState = { ...prev };
+      delete newState[transformationId];
+      return newState;
+    });
+
+    const index = parseInt(transformationId.split('-')[1]);
+    console.log(`✅ Accepted transformation ${index + 1}`);
+  };
+
+  /**
+   * Handle rejecting a transformation
+   */
+  const handleRejectTransformation = (transformationId) => {
+    setRejectedTransformations(prev => ({ ...prev, [transformationId]: true }));
+    setAcceptedTransformations(prev => {
+      const newState = { ...prev };
+      delete newState[transformationId];
+      return newState;
+    });
+
+    const index = parseInt(transformationId.split('-')[1]);
+    console.log(`❌ Rejected transformation ${index + 1}`);
+
+    // Revert transformation in the actual data
+    if (validation?.transformations?.[index]) {
+      const transformation = validation.transformations[index];
+      // TODO: Revert this transformation in validation data
+    }
+  };
+
+  /**
+   * Handle correcting an error in an invalid record
+   */
+  const handleCorrectError = async (rowNumber, fieldName, correctedValue, errorIndex) => {
+    try {
+      console.log(`🔧 Correcting error in row ${rowNumber}, field ${fieldName}:`, correctedValue);
+
+      // Find the invalid record
+      const invalidRecordIndex = validation.invalidRecordsList.findIndex(
+        r => r.rowNumber === rowNumber
+      );
+
+      if (invalidRecordIndex === -1) {
+        console.error('Invalid record not found');
+        return;
+      }
+
+      const invalidRecord = validation.invalidRecordsList[invalidRecordIndex];
+
+      // Get the Excel column name for this field
+      const excelColumn = Object.keys(mapping.mapping).find(
+        col => mapping.mapping[col] === fieldName
+      );
+
+      if (!excelColumn) {
+        console.error('Excel column not found for field:', fieldName);
+        return;
+      }
+
+      // Apply the correction to the record
+      const correctedRecord = {
+        ...invalidRecord.record,
+        [excelColumn]: correctedValue
+      };
+
+      // Re-validate the corrected record
+      const recordValidation = DataValidator.validateRecord(
+        correctedRecord,
+        mapping,
+        rowNumber
+      );
+
+      if (recordValidation.valid) {
+        // Record is now valid - move it from invalid to valid list
+        const updatedValidation = {
+          ...validation,
+          validRecords: validation.validRecords + 1,
+          invalidRecords: validation.invalidRecords - 1,
+          validRecordsList: [
+            ...validation.validRecordsList,
+            { record: correctedRecord, rowNumber, warnings: recordValidation.warnings }
+          ],
+          invalidRecordsList: validation.invalidRecordsList.filter((_, i) => i !== invalidRecordIndex)
+        };
+
+        setValidation(updatedValidation);
+        console.log(`✅ Row ${rowNumber} corrected and moved to valid list`);
+      } else {
+        // Still has errors - update the record with new value but keep in invalid list
+        const updatedInvalidRecord = {
+          ...invalidRecord,
+          record: correctedRecord,
+          errors: recordValidation.errors
+        };
+
+        const updatedInvalidList = [...validation.invalidRecordsList];
+        updatedInvalidList[invalidRecordIndex] = updatedInvalidRecord;
+
+        setValidation({
+          ...validation,
+          invalidRecordsList: updatedInvalidList
+        });
+
+        console.log(`⚠️ Row ${rowNumber} still has ${recordValidation.errors.length} error(s)`);
+      }
+    } catch (err) {
+      console.error('Error correcting record:', err);
+      setError(err.message);
     }
   };
 
@@ -413,6 +574,11 @@ function Upload() {
         onUploadValid={handleStartUpload}
         onDownloadInvalid={handleDownloadInvalid}
         onCancel={handleReset}
+        onAcceptSuggestion={handleAcceptSuggestion}
+        onRejectSuggestion={handleRejectSuggestion}
+        onAcceptTransformation={handleAcceptTransformation}
+        onRejectTransformation={handleRejectTransformation}
+        onCorrectError={handleCorrectError}
       />
     );
   }

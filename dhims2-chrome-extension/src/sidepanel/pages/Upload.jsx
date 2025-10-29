@@ -312,6 +312,9 @@ function Upload() {
         return;
       }
 
+      // Save original value for correction memory (if it's a diagnosis field)
+      const originalValue = invalidRecord.record[excelColumn];
+
       // Apply the correction to the record
       const correctedRecord = {
         ...invalidRecord.record,
@@ -326,6 +329,29 @@ function Upload() {
       );
 
       if (recordValidation.valid) {
+        // Save correction to memory (if it's a diagnosis field)
+        const isDiagnosisField = fieldName === 'principalDiagnosis' || fieldName === 'additionalDiagnosis';
+        if (isDiagnosisField && originalValue && correctedValue && originalValue !== correctedValue) {
+          try {
+            const cleaner = new DataCleaner({}, apiConfig?.system || 'dhims2');
+            await cleaner.correctionMemory.add(
+              originalValue,
+              correctedValue,
+              'manual_correction',
+              1.0,
+              {
+                correctedBy: 'user',
+                field: fieldName,
+                rowNumber
+              }
+            );
+            console.log(`🧠 Correction saved to memory: "${originalValue}" → "${correctedValue}"`);
+          } catch (memErr) {
+            console.error('Failed to save correction to memory:', memErr);
+            // Don't block the correction if memory save fails
+          }
+        }
+
         // Record is now valid - move it from invalid to valid list
         const updatedValidation = {
           ...validation,

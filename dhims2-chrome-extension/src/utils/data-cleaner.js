@@ -3,11 +3,15 @@
  * Transforms raw Excel data into DHIS2-compatible format with fuzzy diagnosis matching
  */
 
+import CorrectionMemory from './correction-memory.js';
+
 class DataCleaner {
-  constructor(optionSets = {}) {
+  constructor(optionSets = {}, system = 'dhims2') {
     this.optionSets = optionSets;
     this.errors = [];
     this.suggestions = [];
+    this.system = system;
+    this.correctionMemory = new CorrectionMemory(system);
   }
 
   /**
@@ -32,7 +36,7 @@ class DataCleaner {
   /**
    * Clean diagnosis field with fuzzy matching
    */
-  cleanDiagnosis(value, type, rowNumber) {
+  async cleanDiagnosis(value, type, rowNumber) {
     // Additional diagnosis is optional
     if (type === 'Additional' && (!value || value.toString().trim() === '' || value.toString().trim().toUpperCase() === 'NA')) {
       return null;
@@ -53,7 +57,7 @@ class DataCleaner {
       const codes = multipleCodesMatch[1].split(/\s*,\s*/).map(c => c.trim().toUpperCase());
 
       if (type === 'Principal') {
-        const principalCode = this.matchSingleDiagnosisCode(codes[0], rowNumber, 'Principal');
+        const principalCode = await this.matchSingleDiagnosisCode(codes[0], rowNumber, 'Principal');
 
         if (principalCode && codes.length > 1) {
           this.addError('principalDiagnosis',
@@ -63,7 +67,7 @@ class DataCleaner {
 
         return principalCode;
       } else {
-        return this.matchSingleDiagnosisCode(codes[0], rowNumber, 'Additional');
+        return await this.matchSingleDiagnosisCode(codes[0], rowNumber, 'Additional');
       }
     }
 
@@ -78,15 +82,28 @@ class DataCleaner {
     }
 
     const rawCode = codeMatch[1].toUpperCase();
-    return this.matchSingleDiagnosisCode(rawCode, rowNumber, type);
+    return await this.matchSingleDiagnosisCode(rawCode, rowNumber, type);
   }
 
   /**
    * Match single diagnosis code with fuzzy logic
    * Implements ICD-10 hierarchy matching: specific → parent codes
+   * Priority: Correction Memory > Exact Match > Hierarchy > Fuzzy Match
    */
-  matchSingleDiagnosisCode(rawCode, rowNumber, type) {
-    // Try exact match first
+  async matchSingleDiagnosisCode(rawCode, rowNumber, type) {
+    // PRIORITY 1: Check correction memory first
+    const rememberedCorrection = await this.correctionMemory.get(rawCode);
+    if (rememberedCorrection) {
+      // Increment usage counter
+      await this.correctionMemory.incrementUsage(rawCode);
+
+      this.addError(type === 'Principal' ? 'principalDiagnosis' : 'additionalDiagnosis',
+                   `🧠 REMEMBERED: "${rawCode}" → "${rememberedCorrection.correctedTo}" (used ${rememberedCorrection.frequency}x previously)`,
+                   rowNumber, 'info');
+      return rememberedCorrection.correctedTo;
+    }
+
+    // PRIORITY 2: Try exact match
     let matchedCode = this.findDiagnosisMatch(rawCode);
 
     if (matchedCode) {
@@ -638,13 +655,13 @@ class DataCleaner {
         const additionalDiagColumn = fieldMapper.fieldMappings.additionalDiagnosis?.excelColumn || 'Additional Diagnosis';
 
         // Clean diagnosis fields using fuzzy matching
-        const principalDiag = this.cleanDiagnosis(
+        const principalDiag = await this.cleanDiagnosis(
           row[principalDiagColumn],
           'Principal',
           rowNumber
         );
 
-        const additionalDiag = this.cleanDiagnosis(
+        const additionalDiag = await this.cleanDiagnosis(
           row[additionalDiagColumn],
           'Additional',
           rowNumber

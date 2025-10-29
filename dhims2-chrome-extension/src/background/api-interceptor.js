@@ -6,6 +6,7 @@
  */
 
 import StorageManager from '../utils/storage-manager.js';
+import { FIELD_MAPPINGS, STATIC_VALUES, validateDiscoveredConfig } from '../utils/field-definitions.js';
 
 class APIInterceptor {
   constructor() {
@@ -409,13 +410,13 @@ class APIInterceptor {
       // Analyze payload structure
       const structure = this.extractStructure(payload);
 
-      // Extract field mappings from dataValues
-      const fieldMappings = {};
+      // Extract discovered data elements for validation
+      const discoveredDataElements = {};
       if (eventData.dataValues && Array.isArray(eventData.dataValues)) {
         console.log('📊 Processing dataValues array:', eventData.dataValues.length, 'items');
         eventData.dataValues.forEach((item, index) => {
           if (item.dataElement && item.value !== undefined) {
-            fieldMappings[item.dataElement] = {
+            discoveredDataElements[item.dataElement] = {
               index: index,
               value: item.value,
               type: this.guessFieldType(item.value)
@@ -424,12 +425,30 @@ class APIInterceptor {
         });
       }
 
-      // Extract static values (same for all records)
+      // Validate discovered config against expected field definitions
+      console.log('🔍 Validating discovered data elements...');
+      const validation = validateDiscoveredConfig(discoveredDataElements);
+
+      if (!validation.isValid) {
+        console.error('❌ API discovery validation failed:', validation.errors);
+        throw new Error(`API validation failed:\n${validation.errors.join('\n')}`);
+      }
+
+      if (validation.warnings.length > 0) {
+        console.warn('⚠️  API discovery warnings:', validation.warnings);
+      }
+
+      // Use predefined field mappings (not discovered ones!)
+      console.log('✅ Using predefined field mappings from field-definitions.js');
+      const fieldMappings = FIELD_MAPPINGS;
+
+      // Extract static values (same for all records) - merge with predefined
       const staticValues = {
-        program: eventData.program || null,
-        orgUnit: eventData.orgUnit || null,
-        programStage: eventData.programStage || null,
-        status: eventData.status || 'COMPLETED',
+        ...STATIC_VALUES,
+        program: eventData.program || STATIC_VALUES.program,
+        orgUnit: eventData.orgUnit || STATIC_VALUES.orgUnit,
+        programStage: eventData.programStage || STATIC_VALUES.programStage,
+        status: eventData.status || STATIC_VALUES.status,
         storedBy: eventData.storedBy || null,
         isWrapped: isWrapped  // Track whether we need to wrap in events array
       };
@@ -440,8 +459,11 @@ class APIInterceptor {
         discoveryDate: new Date().toISOString(),
         endpoint,
         staticValues,
+        payload_structure: staticValues,  // For backward compatibility
         payloadStructure: structure,
-        fieldMappings,
+        fieldMappings,  // Now using predefined mappings!
+        discoveredDataElements,  // Store discovered for reference
+        validationResult: validation,  // Store validation result
         samplePayload: payload,
         totalFields: Object.keys(fieldMappings).length
       };

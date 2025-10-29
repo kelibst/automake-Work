@@ -181,6 +181,7 @@ export default function ValidationResults({
                   const itemId = `suggestion-${index}`;
                   const isAccepted = acceptedItems.has(itemId);
                   const isRejected = rejectedItems.has(itemId);
+                  const isRemembered = sug.type === 'remembered' || (sug.message && sug.message.includes('🧠 REMEMBERED'));
 
                   return (
                     <div
@@ -188,11 +189,19 @@ export default function ValidationResults({
                       className={`p-3 border rounded-lg transition-all ${
                         isAccepted ? 'bg-green-50 border-green-300' :
                         isRejected ? 'bg-red-50 border-red-300 opacity-50' :
+                        isRemembered ? 'bg-purple-50 border-purple-300' :
                         'bg-blue-50 border-blue-200'
                       }`}
                     >
                       <div className="flex justify-between items-start mb-2">
-                        <span className="text-sm font-medium text-gray-700">Row {sug.rowNumber}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-gray-700">Row {sug.rowNumber}</span>
+                          {isRemembered && (
+                            <span className="px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-700 flex items-center gap-1">
+                              🧠 Remembered
+                            </span>
+                          )}
+                        </div>
                         <div className="flex items-center gap-2">
                           <span className={`px-2 py-0.5 rounded text-xs font-medium ${
                             sug.confidence >= 0.9 ? 'bg-green-100 text-green-700' :

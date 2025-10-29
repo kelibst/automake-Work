@@ -30,9 +30,10 @@ class BatchUploader {
    * Start the upload process
    */
   async start() {
+    const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl;
     console.log('🚀 Starting batch upload:', {
       total: this.records.length,
-      endpoint: this.apiConfig.endpoint?.url
+      endpoint: endpointUrl
     });
 
     for (let i = 0; i < this.records.length; i++) {
@@ -91,14 +92,55 @@ class BatchUploader {
 
     for (let attempt = 1; attempt <= this.retryAttempts; attempt++) {
       try {
-        await this.uploadRecord(record);
+        const result = await this.uploadRecord(record);
+
+        // Extract event ID or job ID from response
+        const eventId = result.response?.importSummaries?.[0]?.reference ||
+                       result.response?.uid ||
+                       result.uid ||
+                       null;
+
+        // Check if this is an async tracker job
+        const jobId = result.response?.id || null;
+        const jobLocation = result.response?.location || null;
+
+        if (jobId && jobLocation) {
+          console.log('⏳ Tracker job created:', {
+            jobId,
+            location: jobLocation,
+            message: result.message
+          });
+
+          // For first record, check job status
+          if (index === 0) {
+            console.log('🔍 Checking job status for first record...');
+            try {
+              await this.checkJobStatus(jobId, jobLocation);
+            } catch (jobError) {
+              console.warn('⚠️  Could not check job status:', jobError.message);
+              // Don't fail the upload
+            }
+          }
+        } else if (eventId) {
+          // Direct event creation (non-tracker endpoint)
+          if (index === 0) {
+            console.log('🔍 Performing spot verification for first record...');
+            try {
+              await this.verifyUpload(eventId);
+              console.log('✅ Spot verification passed! Upload is working correctly.');
+            } catch (verifyError) {
+              console.warn('⚠️  Verification failed but upload may still be successful:', verifyError.message);
+            }
+          }
+        }
 
         // Success
         this.results.success++;
         this.results.successRecords.push({
           index,
           rowNumber: record._rowNumber || index + 2,
-          record
+          record,
+          eventId: eventId
         });
 
         return;
@@ -137,8 +179,25 @@ class BatchUploader {
    */
   async uploadRecord(record) {
     const payload = this.buildPayload(record);
+    const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl;
 
-    const response = await fetch(this.apiConfig.endpoint.url, {
+    // Extract dataValues count depending on payload structure
+    let dataValueCount = 0;
+    if (payload.events && payload.events[0]) {
+      dataValueCount = payload.events[0].dataValues?.length || 0;
+    } else if (payload.dataValues) {
+      dataValueCount = payload.dataValues.length;
+    }
+
+    console.log('📤 Uploading record:', {
+      rowNumber: record._rowNumber,
+      endpoint: endpointUrl,
+      payloadSize: JSON.stringify(payload).length,
+      dataValueCount: dataValueCount,
+      payload: payload // Full payload for debugging
+    });
+
+    const response = await fetch(endpointUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -147,16 +206,42 @@ class BatchUploader {
       body: JSON.stringify(payload)
     });
 
+    console.log('📥 Response received:', {
+      status: response.status,
+      statusText: response.statusText,
+      ok: response.ok
+    });
+
     if (!response.ok) {
       const errorText = await response.text();
+      console.error('❌ Upload failed:', {
+        status: response.status,
+        error: errorText
+      });
       throw new Error(`HTTP ${response.status}: ${errorText}`);
     }
 
     const result = await response.json();
 
+    console.log('✅ Upload response:', {
+      rowNumber: record._rowNumber,
+      result: result,
+      eventId: result.response?.importSummaries?.[0]?.reference || result.id || null
+    });
+
     // Check if DHIS2 reported any errors in response
     if (result.status === 'ERROR' || result.httpStatusCode >= 400) {
+      console.error('❌ DHIS2 reported error:', result);
       throw new Error(result.message || 'DHIS2 reported an error');
+    }
+
+    // Check for import summaries with errors
+    if (result.response?.importSummaries) {
+      const summary = result.response.importSummaries[0];
+      if (summary?.status === 'ERROR') {
+        console.error('❌ Import summary error:', summary);
+        throw new Error(summary.description || 'Import failed');
+      }
     }
 
     return result;
@@ -168,9 +253,27 @@ class BatchUploader {
   buildPayload(record) {
     const dataValues = [];
 
+    console.log('🔨 Building payload for record:', {
+      recordFields: Object.keys(record),
+      fieldMappingsAvailable: Object.keys(this.apiConfig.fieldMappings || {}),
+      sampleRecordData: {
+        patientNumber: record.patientNumber,
+        age: record.age,
+        gender: record.gender
+      }
+    });
+
     // Map each field to DHIS2 data element
     Object.entries(this.apiConfig.fieldMappings || {}).forEach(([fieldName, config]) => {
+      // Records are already transformed to use field names (e.g., "patientNumber")
+      // So access the record by fieldName, not excelColumn
       const value = record[fieldName];
+
+      console.log(`  📋 Mapping field: ${fieldName}`, {
+        hasValue: value !== null && value !== undefined && value !== '',
+        value: value,
+        dataElement: config.dataElement
+      });
 
       if (value !== null && value !== undefined && value !== '') {
         dataValues.push({
@@ -178,6 +281,11 @@ class BatchUploader {
           value: String(value)
         });
       }
+    });
+
+    console.log('📊 After field mapping loop:', {
+      dataValuesCount: dataValues.length,
+      dataValues: dataValues
     });
 
     // Use diagnosis codes if cleaned
@@ -212,7 +320,8 @@ class BatchUploader {
     };
 
     // Check if we need to wrap in events array or tracker structure
-    if (this.apiConfig.endpoint.url.includes('/tracker')) {
+    const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl || '';
+    if (endpointUrl.includes('/tracker')) {
       return {
         events: [event]
       };
@@ -293,6 +402,176 @@ class BatchUploader {
       isCancelled: this.isCancelled,
       currentIndex: this.currentIndex
     };
+  }
+
+  /**
+   * Check the status of an async tracker job
+   * @param {String} jobId - The job ID
+   * @param {String} jobLocation - The job status URL
+   * @returns {Promise<Object>} The job status
+   */
+  async checkJobStatus(jobId, jobLocation) {
+    console.log('🔍 Polling job status...', jobLocation);
+
+    // Poll up to 10 times with 1 second delay
+    for (let i = 0; i < 10; i++) {
+      await this.sleep(1000);
+
+      try {
+        const response = await fetch(jobLocation, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            ...this.apiConfig.endpoint.headers
+          }
+        });
+
+        if (response.ok) {
+          const jobStatus = await response.json();
+
+          console.log(`📊 Job status (attempt ${i + 1}/10):`, {
+            id: jobStatus.id || jobId,
+            status: jobStatus.status,
+            completed: jobStatus.completed || false,
+            message: jobStatus.message
+          });
+
+          // Check if job is complete
+          if (jobStatus.completed || jobStatus.status === 'COMPLETED' || jobStatus.status === 'SUCCESS') {
+            // Check if job array format
+            if (Array.isArray(jobStatus)) {
+              const errorEntry = jobStatus.find(entry => entry.level === 'ERROR');
+              if (errorEntry) {
+                console.error('❌ Job completed with errors:', errorEntry);
+
+                // Try to get detailed error report
+                const reportUrl = `${jobLocation}/report?reportMode=ERRORS`;
+                console.log('📋 Fetching detailed error report from:', reportUrl);
+
+                try {
+                  const reportResponse = await fetch(reportUrl, {
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      ...this.apiConfig.endpoint.headers
+                    }
+                  });
+
+                  if (reportResponse.ok) {
+                    const errorReport = await reportResponse.json();
+                    console.error('📋 Detailed validation errors:', errorReport);
+
+                    // Extract specific validation messages
+                    if (errorReport.validationReport) {
+                      console.error('⚠️  VALIDATION ERRORS:', errorReport.validationReport);
+                    }
+                    if (errorReport.bundleReport) {
+                      console.error('⚠️  BUNDLE ERRORS:', errorReport.bundleReport);
+                    }
+                  }
+                } catch (reportErr) {
+                  console.warn('Could not fetch error report:', reportErr.message);
+                }
+
+                throw new Error(`Job completed with errors: ${errorEntry.message}`);
+              }
+
+              const successEntry = jobStatus.find(entry => entry.message?.includes('created'));
+              if (successEntry) {
+                console.log('✅ Job completed successfully!', successEntry);
+                return jobStatus;
+              }
+            }
+
+            console.log('✅ Job completed successfully!', {
+              summary: jobStatus.summary || jobStatus,
+              eventsCreated: jobStatus.summary?.importCount?.created || 'unknown'
+            });
+
+            // Check for errors in job result
+            if (jobStatus.summary?.importCount?.ignored > 0 || jobStatus.summary?.importCount?.deleted > 0) {
+              console.warn('⚠️  Some events were ignored or deleted:', jobStatus.summary);
+            }
+
+            return jobStatus;
+          }
+
+          // If still running, continue polling
+          if (jobStatus.status === 'RUNNING' || jobStatus.status === 'SCHEDULED') {
+            console.log('⏳ Job still processing...');
+            continue;
+          }
+
+          // If failed
+          if (jobStatus.status === 'ERROR' || jobStatus.status === 'FAILED') {
+            console.error('❌ Job failed:', jobStatus);
+            throw new Error(`Job failed: ${jobStatus.message || 'Unknown error'}`);
+          }
+        }
+      } catch (err) {
+        console.warn(`⚠️  Error checking job status (attempt ${i + 1}):`, err.message);
+      }
+    }
+
+    // Timeout after 10 attempts
+    console.warn('⏱️  Job status check timed out after 10 seconds. Job may still be processing.');
+    console.log('💡 You can check job status manually at:', jobLocation);
+    return null;
+  }
+
+  /**
+   * Verify uploaded record by fetching it back from DHIS2
+   * @param {String} eventId - The event ID returned from upload
+   * @returns {Promise<Object>} The fetched event data
+   */
+  async verifyUpload(eventId) {
+    if (!eventId) {
+      throw new Error('No event ID provided for verification');
+    }
+
+    try {
+      const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl || '';
+
+      // Try different possible endpoint patterns
+      const possibleEndpoints = [
+        `${endpointUrl}/${eventId}`,
+        `${endpointUrl.replace('/events', '')}/events/${eventId}`,
+        endpointUrl.includes('/api/')
+          ? `${endpointUrl.split('/api/')[0]}/api/events/${eventId}`
+          : null
+      ].filter(Boolean);
+
+      console.log('🔍 Attempting to verify upload with endpoints:', possibleEndpoints);
+
+      for (const endpoint of possibleEndpoints) {
+        try {
+          const response = await fetch(endpoint, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              ...this.apiConfig.endpoint.headers
+            }
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log('✅ Verification successful! Event found:', {
+              eventId,
+              endpoint,
+              data
+            });
+            return data;
+          }
+        } catch (err) {
+          console.warn(`⚠️  Failed to verify at ${endpoint}:`, err.message);
+        }
+      }
+
+      throw new Error('Could not verify upload - event not found at any endpoint');
+    } catch (error) {
+      console.error('❌ Verification failed:', error);
+      throw error;
+    }
   }
 }
 

@@ -76,10 +76,92 @@
       "dateOfDischarge": "2025-06-18",
       "speciality": "Casualty",
       "outcome": "Transferred",
-      "principalDiagnosis": "I64 - Stroke",
+      "principalDiagnosis": "I64 - Accident Cerebrovascular (CVA)",
       "additionalDiagnosis": null,
       "surgicalProcedure": "false",
       "cost": "461",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 5,
+      "_originalData": {
+        "Sr.No.": "4",
+        "Patient Name": "AUGUSTINE  ATSU MAYEBI",
+        "Patient No.": "VR-A01-AAA9332",
+        "Age": "69 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "GBI ATABU @ WAKE WILLIAM",
+        "Occupation": "PENSIONIER",
+        "Educational Status": "Tertiary",
+        "Date of Admission": "24-06-2025",
+        "Date of Discharge": "26-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
+        "Additional Diagnosis": "Chronic kidney disease, stage 4(N18.4)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "266",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "26295"
+      },
+      "patientNumber": "VR-A01-AAA9332",
+      "address": "GBI ATABU @ WAKE WILLIAM",
+      "ageNumber": "69",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "Pensioner",
+      "education": "Tertiary",
+      "dateOfAdmission": "2025-06-24",
+      "dateOfDischarge": "2025-06-26",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "I10 - Hypertension",
+      "additionalDiagnosis": "N18.9 - Acute-or-chronic renal failure",
+      "surgicalProcedure": "false",
+      "cost": "266",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 14,
+      "_originalData": {
+        "Sr.No.": "13",
+        "Patient Name": "GENEVIVE   ASSAYI",
+        "Patient No.": "VR-A01-AAG2035",
+        "Age": "10 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET ",
+        "Occupation": "Student",
+        "Educational Status": "BASIC",
+        "Date of Admission": "29-05-2025",
+        "Date of Discharge": "03-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Varicella without complication(B01.9)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "80",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "71186"
+      },
+      "patientNumber": "VR-A01-AAG2035",
+      "address": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET",
+      "ageNumber": "10",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "Student",
+      "education": "Primary School",
+      "dateOfAdmission": "2025-05-29",
+      "dateOfDischarge": "2025-06-03",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "B01.9 - Chicken Pox",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "80",
       "nhisStatus": "true"
     },
     {
@@ -124,6 +206,47 @@
       "nhisStatus": "false"
     },
     {
+      "_rowNumber": 16,
+      "_originalData": {
+        "Sr.No.": "15",
+        "Patient Name": "HAMDAN   ZURUKANENI",
+        "Patient No.": "VR-A01-AAG3269",
+        "Age": "13 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "HOHOE",
+        "Occupation": "pupil",
+        "Educational Status": "Primary",
+        "Date of Admission": "24-06-2025",
+        "Date of Discharge": "25-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Plasmodium falciparum malaria, unspecified(B50.9)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "177",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "52593"
+      },
+      "patientNumber": "VR-A01-AAG3269",
+      "address": "HOHOE",
+      "ageNumber": "13",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "pupil",
+      "education": "Primary School",
+      "dateOfAdmission": "2025-06-24",
+      "dateOfDischarge": "2025-06-25",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "B50.0 - Malaria Cerebral",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "177",
+      "nhisStatus": "true"
+    },
+    {
       "_rowNumber": 19,
       "_originalData": {
         "Sr.No.": "18",
@@ -158,10 +281,338 @@
       "dateOfDischarge": "2025-06-18",
       "speciality": "Casualty",
       "outcome": "Transferred",
-      "principalDiagnosis": "S20.2 - Contusion of Thorax",
+      "principalDiagnosis": "S20.2 - Chest contusion",
       "additionalDiagnosis": "T00.9 - Multiple Abrasion",
       "surgicalProcedure": "false",
       "cost": "909.5",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 20,
+      "_originalData": {
+        "Sr.No.": "19",
+        "Patient Name": "JONAS  KWABLA AHIAVE",
+        "Patient No.": "VR-A01-AAF4997",
+        "Age": "75 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "AHADO@ MR AHIAVE'S HSE",
+        "Occupation": "RETIRED",
+        "Educational Status": "Tertiary",
+        "Date of Admission": "26-06-2025",
+        "Date of Discharge": "28-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Acute pulmonary edema(J81.0)",
+        "Additional Diagnosis": "Hypertensive heart disease with (congestive) heart failure(I11.0), Ischaemic cardiomyopathy(I25.5)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "770.5",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "94603"
+      },
+      "patientNumber": "VR-A01-AAF4997",
+      "address": "AHADO@ MR AHIAVE'S HSE",
+      "ageNumber": "75",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "RETIRED",
+      "education": "Tertiary",
+      "dateOfAdmission": "2025-06-26",
+      "dateOfDischarge": "2025-06-28",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "J81 - Congestion Pulmonary",
+      "additionalDiagnosis": "I11.9 - Cardiopathy Hypertensive",
+      "surgicalProcedure": "false",
+      "cost": "770.5",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 21,
+      "_originalData": {
+        "Sr.No.": "20",
+        "Patient Name": "JULIET KWAO",
+        "Patient No.": "VR-A01-AAG3420",
+        "Age": "35 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "DODO AMFROM",
+        "Occupation": "UNDERTAKER",
+        "Educational Status": "jhs",
+        "Date of Admission": "27-06-2025",
+        "Date of Discharge": "30-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
+        "Additional Diagnosis": "Schizophreniform disorder(F20.81)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "483",
+        "NHIS Status": "No",
+        "Provisional Diagnosis": "\tSchizophreniform disorder",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "NA"
+      },
+      "patientNumber": "VR-A01-AAG3420",
+      "address": "DODO AMFROM",
+      "ageNumber": "35",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "UNDERTAKER",
+      "education": "JHS/Middle School",
+      "dateOfAdmission": "2025-06-27",
+      "dateOfDischarge": "2025-06-30",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "I10 - Hypertension",
+      "additionalDiagnosis": "F20.5 - Chronic Schizophrenia",
+      "surgicalProcedure": "false",
+      "cost": "483",
+      "nhisStatus": "false"
+    },
+    {
+      "_rowNumber": 22,
+      "_originalData": {
+        "Sr.No.": "21",
+        "Patient Name": "KELVIN  AMENUVEVE ABLOMETI",
+        "Patient No.": "VR-A01-AAG3221",
+        "Age": "7 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "HOHOE KITITKPA",
+        "Occupation": "Student",
+        "Educational Status": "BASIC",
+        "Date of Admission": "23-06-2025",
+        "Date of Discharge": "27-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Varicella without complication(B01.9)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "215",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "71825"
+      },
+      "patientNumber": "VR-A01-AAG3221",
+      "address": "HOHOE KITITKPA",
+      "ageNumber": "7",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "Student",
+      "education": "Primary School",
+      "dateOfAdmission": "2025-06-23",
+      "dateOfDischarge": "2025-06-27",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "B01.9 - Chicken Pox",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "215",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 25,
+      "_originalData": {
+        "Sr.No.": "24",
+        "Patient Name": "OSCAR AGLOMASA",
+        "Patient No.": "VR-A01-AAG3144",
+        "Age": "48 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "HOHOE PALOMA",
+        "Occupation": "surveyer",
+        "Educational Status": "SHS",
+        "Date of Admission": "20-06-2025",
+        "Date of Discharge": "22-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Absconded",
+        "Principal Diagnosis": "Stroke, not specified as haemorrhage or infarction(I64.00), Cerebral infarction, unspecified(I63.9)",
+        "Additional Diagnosis": "Essential (primary) hypertension(I10.00)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "321",
+        "NHIS Status": "No",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "NA"
+      },
+      "patientNumber": "VR-A01-AAG3144",
+      "address": "HOHOE PALOMA",
+      "ageNumber": "48",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "surveyer",
+      "education": "SHS/Secondary",
+      "dateOfAdmission": "2025-06-20",
+      "dateOfDischarge": "2025-06-22",
+      "speciality": "Casualty",
+      "outcome": "Absconded",
+      "principalDiagnosis": "I64 - Accident Cerebrovascular (CVA)",
+      "additionalDiagnosis": "I10 - Hypertension",
+      "surgicalProcedure": "false",
+      "cost": "321",
+      "nhisStatus": "false"
+    },
+    {
+      "_rowNumber": 27,
+      "_originalData": {
+        "Sr.No.": "26",
+        "Patient Name": "PHILIP  KWAKU AHIABLE",
+        "Patient No.": "VR-A01-AAF2415",
+        "Age": "64 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "LOWCOST DOWN AT HIS OWN HSE",
+        "Occupation": "Trader",
+        "Educational Status": "jhs",
+        "Date of Admission": "03-06-2025",
+        "Date of Discharge": "05-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Urinary tract infection, site not specified(N39.0)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "402.5",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "23847"
+      },
+      "patientNumber": "VR-A01-AAF2415",
+      "address": "LOWCOST DOWN AT HIS OWN HSE",
+      "ageNumber": "64",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "Trader / Shop Assistant",
+      "education": "JHS/Middle School",
+      "dateOfAdmission": "2025-06-03",
+      "dateOfDischarge": "2025-06-05",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "N39.0 - Infection of Urinary Tract (UTI)",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "402.5",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 29,
+      "_originalData": {
+        "Sr.No.": "28",
+        "Patient Name": "REJOYCE   YEBOAH",
+        "Patient No.": "VR-A01-AAA4985",
+        "Age": "69 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
+        "Occupation": "Trader",
+        "Educational Status": "jhs",
+        "Date of Admission": "24-06-2025",
+        "Date of Discharge": "25-06-2025",
+        "Speciality": "General",
+        "Outcome of Discharge": "Referred",
+        "Principal Diagnosis": "ST elevation (STEMI) myocardial infarction involving left main coronary artery(I21.01)",
+        "Additional Diagnosis": "Acute respiratory distress(R06.03)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "765",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "57364"
+      },
+      "patientNumber": "VR-A01-AAA4985",
+      "address": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
+      "ageNumber": "69",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "Trader / Shop Assistant",
+      "education": "JHS/Middle School",
+      "dateOfAdmission": "2025-06-24",
+      "dateOfDischarge": "2025-06-25",
+      "speciality": "Casualty",
+      "outcome": "Transferred",
+      "principalDiagnosis": "I21.9 - Myocardial infarction",
+      "additionalDiagnosis": "R06.0 - Difficulty In Breathing",
+      "surgicalProcedure": "false",
+      "cost": "765",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 31,
+      "_originalData": {
+        "Sr.No.": "30",
+        "Patient Name": "THEODORE  FRANCIS SANI",
+        "Patient No.": "AC-A02-ABL8164",
+        "Age": "29 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "EAST LEGON",
+        "Occupation": "NA",
+        "Educational Status": "NA",
+        "Date of Admission": "02-06-2025",
+        "Date of Discharge": "03-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Gastroenteritis and colitis of unspecified origin(A09.9)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "309",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "59289"
+      },
+      "patientNumber": "AC-A02-ABL8164",
+      "address": "EAST LEGON",
+      "ageNumber": "29",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "NA",
+      "education": "None",
+      "dateOfAdmission": "2025-06-02",
+      "dateOfDischarge": "2025-06-03",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "A09 - Diarrhoea",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "309",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 32,
+      "_originalData": {
+        "Sr.No.": "31",
+        "Patient Name": "VICTORIA   KUDAH",
+        "Patient No.": "HO-A01-AAO2127",
+        "Age": "69 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH ",
+        "Occupation": "NA",
+        "Educational Status": "NA",
+        "Date of Admission": "17-06-2025",
+        "Date of Discharge": "21-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Malignant neoplasm: Central portion of breast(C50.1)",
+        "Additional Diagnosis": "Meralgia paresthetica, bilateral lower limbs(G57.13), Anemia in other chronic diseases classified elsewhere(D63.08)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "540",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "13965"
+      },
+      "patientNumber": "HO-A01-AAO2127",
+      "address": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH",
+      "ageNumber": "69",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "NA",
+      "education": "None",
+      "dateOfAdmission": "2025-06-17",
+      "dateOfDischarge": "2025-06-21",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "C50.9 - Cancer of Breast",
+      "additionalDiagnosis": "G57.5 - Tunnel syndromes",
+      "surgicalProcedure": "false",
+      "cost": "540",
       "nhisStatus": "true"
     }
   ],
@@ -203,7 +654,7 @@
         "dateOfDischarge": "2025-06-19",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "Z86",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "171.5",
@@ -212,61 +663,9 @@
       "errors": [
         {
           "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"Z86.73\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"Z86.73\" not found in DHIS2.\n\nDid you mean one of these?\n  - Z41.2 - Bleeding Circumcision: Z41.2 - Bleeding Circumcision (30% match)\n  - Z56.6 - Injury Repetitive Strain (Work-Related): Z56.6 - Injury Repetitive Strain (Work-Related) (30% match)\n  - Z56.6 - Stress Work-Related: Z56.6 - Stress Work-Related (30% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 4,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 5,
-      "data": {
-        "_rowNumber": 5,
-        "_originalData": {
-          "Sr.No.": "4",
-          "Patient Name": "AUGUSTINE  ATSU MAYEBI",
-          "Patient No.": "VR-A01-AAA9332",
-          "Age": "69 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "GBI ATABU @ WAKE WILLIAM",
-          "Occupation": "PENSIONIER",
-          "Educational Status": "Tertiary",
-          "Date of Admission": "24-06-2025",
-          "Date of Discharge": "26-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
-          "Additional Diagnosis": "Chronic kidney disease, stage 4(N18.4)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "266",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "26295"
-        },
-        "patientNumber": "VR-A01-AAA9332",
-        "address": "GBI ATABU @ WAKE WILLIAM",
-        "ageNumber": "69",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "Pensioner",
-        "education": "Tertiary",
-        "dateOfAdmission": "2025-06-24",
-        "dateOfDischarge": "2025-06-26",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "I10",
-        "additionalDiagnosis": "N18.9 - Chronic Kidney Disease",
-        "surgicalProcedure": "false",
-        "cost": "266",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 5,
-          "severity": "warning"
+          "severity": "error"
         }
       ]
     },
@@ -308,17 +707,23 @@
         "speciality": "Casualty",
         "outcome": "Transferred",
         "principalDiagnosis": "I60.9 - Haemorrhage Subarachnoid",
-        "additionalDiagnosis": "I16",
+        "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "470.5",
         "nhisStatus": "false"
       },
       "errors": [
         {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.01\" to DHIS2 codes. Please verify.",
+          "field": "principalDiagnosis",
+          "message": "✅ SUGGESTED: Code \"I60.9\" not found. Auto-using closest match \"I60.9 - Haemorrhage Subarachnoid\" - I60.9 - Haemorrhage Subarachnoid (90% match)",
           "rowNumber": 6,
-          "severity": "warning"
+          "severity": "suggestion"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"I16.01\" not found in DHIS2.\n\nDid you mean one of these?\n  - I11.9 - Cardiopathy Hypertensive: I11.9 - Cardiopathy Hypertensive (50% match)\n  - I11.9 - Hypertensive Heart Disease: I11.9 - Hypertensive Heart Disease (50% match)\n  - I20.0 - Unstable Angina: I20.0 - Unstable Angina (50% match)\n\nPlease update your Excel file with the correct code.",
+          "rowNumber": 6,
+          "severity": "error"
         }
       ]
     },
@@ -359,8 +764,8 @@
         "dateOfDischarge": "2025-06-26",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "K35",
-        "additionalDiagnosis": "L98.4 - Ulcer",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": "K27.3 - Ulcer Peptic (Acute )",
         "surgicalProcedure": "false",
         "cost": "324.5",
         "nhisStatus": "true"
@@ -368,9 +773,15 @@
       "errors": [
         {
           "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"K35.89\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"K35.89\" not found in DHIS2.\n\nDid you mean one of these?\n  - K36 - Appendicitis (Chronic): K36 - Appendicitis (Chronic) (60% match)\n  - K31.1 - Gastric Outlet Obstruction: K31.1 - Gastric Outlet Obstruction (50% match)\n  - K31.7 - Gastric polyp: K31.7 - Gastric polyp (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 7,
-          "severity": "warning"
+          "severity": "error"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "✅ SUGGESTED: Code \"K27.3\" not found. Auto-using closest match \"K27.3 - Ulcer Peptic (Acute )\" - K27.3 - Ulcer Peptic (Acute ) (90% match)",
+          "rowNumber": 7,
+          "severity": "suggestion"
         }
       ]
     },
@@ -406,29 +817,29 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "CARPENTER",
-        "education": null,
+        "education": "Primary School",
         "dateOfAdmission": "2025-06-24",
         "dateOfDischarge": "2025-06-25",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "T14.9 - Trauma",
-        "additionalDiagnosis": "Z29",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "320.5",
         "nhisStatus": "false"
       },
       "errors": [
         {
-          "field": "education",
-          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"G89.11\" not found in DHIS2.\n\nDid you mean one of these?\n  - G93.2 - Increased Intracranial Pressure: G93.2 - Increased Intracranial Pressure (50% match)\n  - G93.4 - Encephalopathy: G93.4 - Encephalopathy (50% match)\n  - G93.6 - Oedema of Brain: G93.6 - Oedema of Brain (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 8,
           "severity": "error"
         },
         {
           "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"Z29.1\" not found in DHIS2.\n\nDid you mean one of these?\n  - Z41.2 - Bleeding Circumcision: Z41.2 - Bleeding Circumcision (30% match)\n  - Z56.6 - Injury Repetitive Strain (Work-Related): Z56.6 - Injury Repetitive Strain (Work-Related) (30% match)\n  - Z56.6 - Stress Work-Related: Z56.6 - Stress Work-Related (30% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 8,
-          "severity": "warning"
+          "severity": "error"
         }
       ]
     },
@@ -464,12 +875,12 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "FARMER",
-        "education": null,
+        "education": "Primary School",
         "dateOfAdmission": "2025-05-31",
         "dateOfDischarge": "2025-06-01",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "T14.9 - Trauma",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "174",
@@ -477,8 +888,8 @@
       },
       "errors": [
         {
-          "field": "education",
-          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"G89.11\" not found in DHIS2.\n\nDid you mean one of these?\n  - G93.2 - Increased Intracranial Pressure: G93.2 - Increased Intracranial Pressure (50% match)\n  - G93.4 - Encephalopathy: G93.4 - Encephalopathy (50% match)\n  - G93.6 - Oedema of Brain: G93.6 - Oedema of Brain (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 9,
           "severity": "error"
         }
@@ -516,41 +927,35 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "NA",
-        "education": null,
+        "education": "None",
         "dateOfAdmission": "2025-06-14",
         "dateOfDischarge": "2025-06-15",
-        "speciality": "General",
+        "speciality": "Casualty",
         "outcome": "Transferred",
-        "principalDiagnosis": "N28.9 - Renal Disease",
-        "additionalDiagnosis": "Z99",
+        "principalDiagnosis": "N18.9 - Acute-or-chronic renal failure",
+        "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "538",
         "nhisStatus": "true"
       },
       "errors": [
         {
-          "field": "patientNumber",
-          "message": "Invalid format: \"HO-A01-AAQ4118\". Expected: VR-A##-AAA####",
-          "rowNumber": 10,
-          "severity": "error"
-        },
-        {
-          "field": "education",
-          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 10,
-          "severity": "error"
-        },
-        {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 10,
-          "severity": "warning"
+          "severity": "info"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "✅ SUGGESTED: Code \"N18.6\" not found. Auto-using closest match \"N18.9 - Acute-or-chronic renal failure\" - N18.9 - Acute-or-chronic renal failure (90% match)",
+          "rowNumber": 10,
+          "severity": "suggestion"
         },
         {
           "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z99.2\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"Z99.2\" not found in DHIS2.\n\nDid you mean one of these?\n  - Z97.0 - Replacement of Eye Socket: Z97.0 - Replacement of Eye Socket (50% match)\n  - Z41.2 - Bleeding Circumcision: Z41.2 - Bleeding Circumcision (30% match)\n  - Z56.6 - Injury Repetitive Strain (Work-Related): Z56.6 - Injury Repetitive Strain (Work-Related) (30% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 10,
-          "severity": "warning"
+          "severity": "error"
         }
       ]
     },
@@ -589,9 +994,9 @@
         "education": "JHS/Middle School",
         "dateOfAdmission": "2025-06-24",
         "dateOfDischarge": "2025-06-24",
-        "speciality": "General",
+        "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "I16",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "109.5",
@@ -600,15 +1005,15 @@
       "errors": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 11,
-          "severity": "warning"
+          "severity": "info"
         },
         {
           "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"I16.0\" not found in DHIS2.\n\nDid you mean one of these?\n  - I11.9 - Cardiopathy Hypertensive: I11.9 - Cardiopathy Hypertensive (50% match)\n  - I11.9 - Hypertensive Heart Disease: I11.9 - Hypertensive Heart Disease (50% match)\n  - I20.0 - Unstable Angina: I20.0 - Unstable Angina (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 11,
-          "severity": "warning"
+          "severity": "error"
         }
       ]
     },
@@ -647,9 +1052,9 @@
         "education": "JHS/Middle School",
         "dateOfAdmission": "2025-06-22",
         "dateOfDischarge": "2025-06-23",
-        "speciality": "General",
+        "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "I16",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "387.5",
@@ -658,15 +1063,15 @@
       "errors": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 12,
-          "severity": "warning"
+          "severity": "info"
         },
         {
           "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "message": "❌ INVALID DIAGNOSIS: Code \"I16.0\" not found in DHIS2.\n\nDid you mean one of these?\n  - I11.9 - Cardiopathy Hypertensive: I11.9 - Cardiopathy Hypertensive (50% match)\n  - I11.9 - Hypertensive Heart Disease: I11.9 - Hypertensive Heart Disease (50% match)\n  - I20.0 - Unstable Angina: I20.0 - Unstable Angina (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 12,
-          "severity": "warning"
+          "severity": "error"
         }
       ]
     },
@@ -707,121 +1112,23 @@
         "dateOfDischarge": "2025-06-20",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "T14.9 - Trauma",
-        "additionalDiagnosis": "Z29",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "461.5",
         "nhisStatus": "false"
       },
       "errors": [
         {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"G89.11\" not found in DHIS2.\n\nDid you mean one of these?\n  - G93.2 - Increased Intracranial Pressure: G93.2 - Increased Intracranial Pressure (50% match)\n  - G93.4 - Encephalopathy: G93.4 - Encephalopathy (50% match)\n  - G93.6 - Oedema of Brain: G93.6 - Oedema of Brain (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 13,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 14,
-      "data": {
-        "_rowNumber": 14,
-        "_originalData": {
-          "Sr.No.": "13",
-          "Patient Name": "GENEVIVE   ASSAYI",
-          "Patient No.": "VR-A01-AAG2035",
-          "Age": "10 Year(s)",
-          "Gender": "Female",
-          "Locality/Address/Residence": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET ",
-          "Occupation": "Student",
-          "Educational Status": "BASIC",
-          "Date of Admission": "29-05-2025",
-          "Date of Discharge": "03-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Varicella without complication(B01.9)",
-          "Additional Diagnosis": "NA",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "80",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "71186"
-        },
-        "patientNumber": "VR-A01-AAG2035",
-        "address": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET",
-        "ageNumber": "10",
-        "ageUnit": "years",
-        "gender": "Female",
-        "occupation": "Student",
-        "education": null,
-        "dateOfAdmission": "2025-05-29",
-        "dateOfDischarge": "2025-06-03",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "B01.9 - Varicella",
-        "additionalDiagnosis": null,
-        "surgicalProcedure": "false",
-        "cost": "80",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "education",
-          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 14,
           "severity": "error"
-        }
-      ]
-    },
-    {
-      "rowNumber": 16,
-      "data": {
-        "_rowNumber": 16,
-        "_originalData": {
-          "Sr.No.": "15",
-          "Patient Name": "HAMDAN   ZURUKANENI",
-          "Patient No.": "VR-A01-AAG3269",
-          "Age": "13 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "HOHOE",
-          "Occupation": "pupil",
-          "Educational Status": "Primary",
-          "Date of Admission": "24-06-2025",
-          "Date of Discharge": "25-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Plasmodium falciparum malaria, unspecified(B50.9)",
-          "Additional Diagnosis": "NA",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "177",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "52593"
         },
-        "patientNumber": "VR-A01-AAG3269",
-        "address": "HOHOE",
-        "ageNumber": "13",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "pupil",
-        "education": null,
-        "dateOfAdmission": "2025-06-24",
-        "dateOfDischarge": "2025-06-25",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "B54 - Malaria",
-        "additionalDiagnosis": null,
-        "surgicalProcedure": "false",
-        "cost": "177",
-        "nhisStatus": "true"
-      },
-      "errors": [
         {
-          "field": "education",
-          "message": "Unknown education level: \"Primary\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 16,
+          "field": "additionalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"Z29.1\" not found in DHIS2.\n\nDid you mean one of these?\n  - Z41.2 - Bleeding Circumcision: Z41.2 - Bleeding Circumcision (30% match)\n  - Z56.6 - Injury Repetitive Strain (Work-Related): Z56.6 - Injury Repetitive Strain (Work-Related) (30% match)\n  - Z56.6 - Stress Work-Related: Z56.6 - Stress Work-Related (30% match)\n\nPlease update your Excel file with the correct code.",
+          "rowNumber": 13,
           "severity": "error"
         }
       ]
@@ -858,12 +1165,12 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "NA",
-        "education": null,
+        "education": "None",
         "dateOfAdmission": "2025-06-28",
         "dateOfDischarge": "2025-06-30",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "E14 - Diabetes",
+        "principalDiagnosis": null,
         "additionalDiagnosis": "R51 - Headache",
         "surgicalProcedure": "false",
         "cost": "455",
@@ -871,16 +1178,16 @@
       },
       "errors": [
         {
-          "field": "patientNumber",
-          "message": "Invalid format: \"OT-A03-AAA2442\". Expected: VR-A##-AAA####",
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"E08.65\" not found in DHIS2.\n\nDid you mean one of these?\n  - E03.1 - Congenital Hypothyroidism: E03.1 - Congenital Hypothyroidism (50% match)\n  - E03.9 - Acquired Hypothyroidism: E03.9 - Acquired Hypothyroidism (50% match)\n  - E04.9 - Goitre: E04.9 - Goitre (50% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 17,
           "severity": "error"
         },
         {
-          "field": "education",
-          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "field": "additionalDiagnosis",
+          "message": "✅ SUGGESTED: Code \"R51.00\" not found. Auto-using closest match \"R51 - Headache\" - R51 - Headache (90% match)",
           "rowNumber": 17,
-          "severity": "error"
+          "severity": "suggestion"
         }
       ]
     },
@@ -922,7 +1229,7 @@
         "speciality": "Casualty",
         "outcome": "Transferred",
         "principalDiagnosis": null,
-        "additionalDiagnosis": "T02.9 - Multiple Fracture",
+        "additionalDiagnosis": "S82.0 - Fracture of The Knee",
         "surgicalProcedure": "false",
         "cost": "50",
         "nhisStatus": "false"
@@ -933,168 +1240,12 @@
           "message": "Could not extract ICD code from: \"Crushing injury of right lower leg, initial encounter(S87.81XA)\". Expected format: \"Description(Code)\"",
           "rowNumber": 18,
           "severity": "error"
-        }
-      ]
-    },
-    {
-      "rowNumber": 20,
-      "data": {
-        "_rowNumber": 20,
-        "_originalData": {
-          "Sr.No.": "19",
-          "Patient Name": "JONAS  KWABLA AHIAVE",
-          "Patient No.": "VR-A01-AAF4997",
-          "Age": "75 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "AHADO@ MR AHIAVE'S HSE",
-          "Occupation": "RETIRED",
-          "Educational Status": "Tertiary",
-          "Date of Admission": "26-06-2025",
-          "Date of Discharge": "28-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Acute pulmonary edema(J81.0)",
-          "Additional Diagnosis": "Hypertensive heart disease with (congestive) heart failure(I11.0), Ischaemic cardiomyopathy(I25.5)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "770.5",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "94603"
-        },
-        "patientNumber": "VR-A01-AAF4997",
-        "address": "AHADO@ MR AHIAVE'S HSE",
-        "ageNumber": "75",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "RETIRED",
-        "education": "Tertiary",
-        "dateOfAdmission": "2025-06-26",
-        "dateOfDischarge": "2025-06-28",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "J81",
-        "additionalDiagnosis": "I11.9 - Hypertensive Heart Disease",
-        "surgicalProcedure": "false",
-        "cost": "770.5",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"J81.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 20,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 21,
-      "data": {
-        "_rowNumber": 21,
-        "_originalData": {
-          "Sr.No.": "20",
-          "Patient Name": "JULIET KWAO",
-          "Patient No.": "VR-A01-AAG3420",
-          "Age": "35 Year(s)",
-          "Gender": "Female",
-          "Locality/Address/Residence": "DODO AMFROM",
-          "Occupation": "UNDERTAKER",
-          "Educational Status": "jhs",
-          "Date of Admission": "27-06-2025",
-          "Date of Discharge": "30-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
-          "Additional Diagnosis": "Schizophreniform disorder(F20.81)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "483",
-          "NHIS Status": "No",
-          "Provisional Diagnosis": "\tSchizophreniform disorder",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "NA"
-        },
-        "patientNumber": "VR-A01-AAG3420",
-        "address": "DODO AMFROM",
-        "ageNumber": "35",
-        "ageUnit": "years",
-        "gender": "Female",
-        "occupation": "UNDERTAKER",
-        "education": "JHS/Middle School",
-        "dateOfAdmission": "2025-06-27",
-        "dateOfDischarge": "2025-06-30",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "I10",
-        "additionalDiagnosis": "F20",
-        "surgicalProcedure": "false",
-        "cost": "483",
-        "nhisStatus": "false"
-      },
-      "errors": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 21,
-          "severity": "warning"
         },
         {
           "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"F20.81\" to DHIS2 codes. Please verify.",
-          "rowNumber": 21,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 22,
-      "data": {
-        "_rowNumber": 22,
-        "_originalData": {
-          "Sr.No.": "21",
-          "Patient Name": "KELVIN  AMENUVEVE ABLOMETI",
-          "Patient No.": "VR-A01-AAG3221",
-          "Age": "7 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "HOHOE KITITKPA",
-          "Occupation": "Student",
-          "Educational Status": "BASIC",
-          "Date of Admission": "23-06-2025",
-          "Date of Discharge": "27-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Varicella without complication(B01.9)",
-          "Additional Diagnosis": "NA",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "215",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "71825"
-        },
-        "patientNumber": "VR-A01-AAG3221",
-        "address": "HOHOE KITITKPA",
-        "ageNumber": "7",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "Student",
-        "education": null,
-        "dateOfAdmission": "2025-06-23",
-        "dateOfDischarge": "2025-06-27",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "B01.9 - Varicella",
-        "additionalDiagnosis": null,
-        "surgicalProcedure": "false",
-        "cost": "215",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "education",
-          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 22,
-          "severity": "error"
+          "message": "✅ SUGGESTED: Code \"S82.7\" not found. Auto-using closest match \"S82.0 - Fracture of The Knee\" - S82.0 - Fracture of The Knee (90% match)",
+          "rowNumber": 18,
+          "severity": "suggestion"
         }
       ]
     },
@@ -1130,10 +1281,10 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "CHILD",
-        "education": null,
+        "education": "Primary School",
         "dateOfAdmission": "2025-06-18",
         "dateOfDischarge": "2025-06-18",
-        "speciality": "General",
+        "speciality": "Casualty",
         "outcome": "Transferred",
         "principalDiagnosis": null,
         "additionalDiagnosis": null,
@@ -1143,16 +1294,10 @@
       },
       "errors": [
         {
-          "field": "education",
-          "message": "Unknown education level: \"CHILD\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 23,
-          "severity": "error"
-        },
-        {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 23,
-          "severity": "warning"
+          "severity": "info"
         },
         {
           "field": "principalDiagnosis",
@@ -1194,12 +1339,12 @@
         "ageUnit": "years",
         "gender": "Male",
         "occupation": "unemployed",
-        "education": null,
+        "education": "Primary School",
         "dateOfAdmission": "2025-06-20",
         "dateOfDischarge": "2025-06-20",
         "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "V20",
+        "principalDiagnosis": null,
         "additionalDiagnosis": "T00.9 - Multiple Abrasion",
         "surgicalProcedure": "false",
         "cost": "281.5",
@@ -1207,68 +1352,16 @@
       },
       "errors": [
         {
-          "field": "education",
-          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"V20.4\" not found in DHIS2.\n\nDid you mean one of these?\n  - V89.2 - Accident Road Traffic: V89.2 - Accident Road Traffic (30% match)\n  - V89.2 - Road Traffic Accident: V89.2 - Road Traffic Accident (30% match)\n\nPlease update your Excel file with the correct code.",
           "rowNumber": 24,
           "severity": "error"
         },
         {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"V20.4\" to DHIS2 codes. Please verify.",
-          "rowNumber": 24,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 25,
-      "data": {
-        "_rowNumber": 25,
-        "_originalData": {
-          "Sr.No.": "24",
-          "Patient Name": "OSCAR AGLOMASA",
-          "Patient No.": "VR-A01-AAG3144",
-          "Age": "48 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "HOHOE PALOMA",
-          "Occupation": "surveyer",
-          "Educational Status": "SHS",
-          "Date of Admission": "20-06-2025",
-          "Date of Discharge": "22-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Absconded",
-          "Principal Diagnosis": "Stroke, not specified as haemorrhage or infarction(I64.00), Cerebral infarction, unspecified(I63.9)",
-          "Additional Diagnosis": "Essential (primary) hypertension(I10.00)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "321",
-          "NHIS Status": "No",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "NA"
-        },
-        "patientNumber": "VR-A01-AAG3144",
-        "address": "HOHOE PALOMA",
-        "ageNumber": "48",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "surveyer",
-        "education": "SHS/Secondary",
-        "dateOfAdmission": "2025-06-20",
-        "dateOfDischarge": "2025-06-22",
-        "speciality": "Casualty",
-        "outcome": "Absconded",
-        "principalDiagnosis": "I64 - Stroke",
-        "additionalDiagnosis": "I10",
-        "surgicalProcedure": "false",
-        "cost": "321",
-        "nhisStatus": "false"
-      },
-      "errors": [
-        {
           "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 25,
-          "severity": "warning"
+          "message": "✅ SUGGESTED: Code \"T00.9\" not found. Auto-using closest match \"T00.9 - Multiple Abrasion\" - T00.9 - Multiple Abrasion (90% match)",
+          "rowNumber": 24,
+          "severity": "suggestion"
         }
       ]
     },
@@ -1304,12 +1397,12 @@
         "ageUnit": "years",
         "gender": "Female",
         "occupation": "NA",
-        "education": null,
+        "education": "None",
         "dateOfAdmission": "2025-06-18",
         "dateOfDischarge": "2025-06-19",
         "speciality": "Casualty",
         "outcome": "Transferred",
-        "principalDiagnosis": "K65.9 - Peritonitis",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "247",
@@ -1317,68 +1410,10 @@
       },
       "errors": [
         {
-          "field": "patientNumber",
-          "message": "Invalid format: \"OT-A02-AAE2120\". Expected: VR-A##-AAA####",
-          "rowNumber": 26,
-          "severity": "error"
-        },
-        {
-          "field": "education",
-          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 26,
-          "severity": "error"
-        }
-      ]
-    },
-    {
-      "rowNumber": 27,
-      "data": {
-        "_rowNumber": 27,
-        "_originalData": {
-          "Sr.No.": "26",
-          "Patient Name": "PHILIP  KWAKU AHIABLE",
-          "Patient No.": "VR-A01-AAF2415",
-          "Age": "64 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "LOWCOST DOWN AT HIS OWN HSE",
-          "Occupation": "Trader",
-          "Educational Status": "jhs",
-          "Date of Admission": "03-06-2025",
-          "Date of Discharge": "05-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Urinary tract infection, site not specified(N39.0)",
-          "Additional Diagnosis": "NA",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "402.5",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "23847"
-        },
-        "patientNumber": "VR-A01-AAF2415",
-        "address": "LOWCOST DOWN AT HIS OWN HSE",
-        "ageNumber": "64",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "Trader / Shop Assistant",
-        "education": "JHS/Middle School",
-        "dateOfAdmission": "2025-06-03",
-        "dateOfDischarge": "2025-06-05",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "N39",
-        "additionalDiagnosis": null,
-        "surgicalProcedure": "false",
-        "cost": "402.5",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
           "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"N39.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 27,
-          "severity": "warning"
+          "message": "❌ INVALID DIAGNOSIS: Code \"K35.3\" not found in DHIS2.\n\nDid you mean one of these?\n  - K36 - Appendicitis (Chronic): K36 - Appendicitis (Chronic) (60% match)\n  - K31.1 - Gastric Outlet Obstruction: K31.1 - Gastric Outlet Obstruction (50% match)\n  - K31.7 - Gastric polyp: K31.7 - Gastric polyp (50% match)\n\nPlease update your Excel file with the correct code.",
+          "rowNumber": 26,
+          "severity": "error"
         }
       ]
     },
@@ -1417,9 +1452,9 @@
         "education": "JHS/Middle School",
         "dateOfAdmission": "2025-06-19",
         "dateOfDischarge": "2025-06-20",
-        "speciality": "General",
+        "speciality": "Casualty",
         "outcome": "Discharged",
-        "principalDiagnosis": "T14.9 - Trauma",
+        "principalDiagnosis": null,
         "additionalDiagnosis": null,
         "surgicalProcedure": "false",
         "cost": "201.5",
@@ -1428,61 +1463,15 @@
       "errors": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 28,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 29,
-      "data": {
-        "_rowNumber": 29,
-        "_originalData": {
-          "Sr.No.": "28",
-          "Patient Name": "REJOYCE   YEBOAH",
-          "Patient No.": "VR-A01-AAA4985",
-          "Age": "69 Year(s)",
-          "Gender": "Female",
-          "Locality/Address/Residence": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
-          "Occupation": "Trader",
-          "Educational Status": "jhs",
-          "Date of Admission": "24-06-2025",
-          "Date of Discharge": "25-06-2025",
-          "Speciality": "General",
-          "Outcome of Discharge": "Referred",
-          "Principal Diagnosis": "ST elevation (STEMI) myocardial infarction involving left main coronary artery(I21.01)",
-          "Additional Diagnosis": "Acute respiratory distress(R06.03)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "765",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "57364"
+          "severity": "info"
         },
-        "patientNumber": "VR-A01-AAA4985",
-        "address": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
-        "ageNumber": "69",
-        "ageUnit": "years",
-        "gender": "Female",
-        "occupation": "Trader / Shop Assistant",
-        "education": "JHS/Middle School",
-        "dateOfAdmission": "2025-06-24",
-        "dateOfDischarge": "2025-06-25",
-        "speciality": "General",
-        "outcome": "Transferred",
-        "principalDiagnosis": "I21.9 - Myocardial infarction",
-        "additionalDiagnosis": "Z73.3 - Stress",
-        "surgicalProcedure": "false",
-        "cost": "765",
-        "nhisStatus": "true"
-      },
-      "errors": [
         {
-          "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
-          "rowNumber": 29,
-          "severity": "warning"
+          "field": "principalDiagnosis",
+          "message": "❌ INVALID DIAGNOSIS: Code \"G89.11\" not found in DHIS2.\n\nDid you mean one of these?\n  - G93.2 - Increased Intracranial Pressure: G93.2 - Increased Intracranial Pressure (50% match)\n  - G93.4 - Encephalopathy: G93.4 - Encephalopathy (50% match)\n  - G93.6 - Oedema of Brain: G93.6 - Oedema of Brain (50% match)\n\nPlease update your Excel file with the correct code.",
+          "rowNumber": 28,
+          "severity": "error"
         }
       ]
     },
@@ -1537,350 +1526,512 @@
           "severity": "error"
         }
       ]
-    },
-    {
-      "rowNumber": 31,
-      "data": {
-        "_rowNumber": 31,
-        "_originalData": {
-          "Sr.No.": "30",
-          "Patient Name": "THEODORE  FRANCIS SANI",
-          "Patient No.": "AC-A02-ABL8164",
-          "Age": "29 Year(s)",
-          "Gender": "Male",
-          "Locality/Address/Residence": "EAST LEGON",
-          "Occupation": "NA",
-          "Educational Status": "NA",
-          "Date of Admission": "02-06-2025",
-          "Date of Discharge": "03-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Gastroenteritis and colitis of unspecified origin(A09.9)",
-          "Additional Diagnosis": "NA",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "309",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "59289"
-        },
-        "patientNumber": "AC-A02-ABL8164",
-        "address": "EAST LEGON",
-        "ageNumber": "29",
-        "ageUnit": "years",
-        "gender": "Male",
-        "occupation": "NA",
-        "education": null,
-        "dateOfAdmission": "2025-06-02",
-        "dateOfDischarge": "2025-06-03",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "A09 - Enteritis",
-        "additionalDiagnosis": null,
-        "surgicalProcedure": "false",
-        "cost": "309",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "patientNumber",
-          "message": "Invalid format: \"AC-A02-ABL8164\". Expected: VR-A##-AAA####",
-          "rowNumber": 31,
-          "severity": "error"
-        },
-        {
-          "field": "education",
-          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 31,
-          "severity": "error"
-        }
-      ]
-    },
-    {
-      "rowNumber": 32,
-      "data": {
-        "_rowNumber": 32,
-        "_originalData": {
-          "Sr.No.": "31",
-          "Patient Name": "VICTORIA   KUDAH",
-          "Patient No.": "HO-A01-AAO2127",
-          "Age": "69 Year(s)",
-          "Gender": "Female",
-          "Locality/Address/Residence": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH ",
-          "Occupation": "NA",
-          "Educational Status": "NA",
-          "Date of Admission": "17-06-2025",
-          "Date of Discharge": "21-06-2025",
-          "Speciality": "Accident Emergency",
-          "Outcome of Discharge": "Discharge",
-          "Principal Diagnosis": "Malignant neoplasm: Central portion of breast(C50.1)",
-          "Additional Diagnosis": "Meralgia paresthetica, bilateral lower limbs(G57.13), Anemia in other chronic diseases classified elsewhere(D63.08)",
-          "Surgical Procedure": "No",
-          "Cost of Treatment": "540",
-          "NHIS Status": "Yes",
-          "Provisional Diagnosis": "NA",
-          "Main Department": "ACCIDENT AND EMERGENCY",
-          "CC Code": "13965"
-        },
-        "patientNumber": "HO-A01-AAO2127",
-        "address": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH",
-        "ageNumber": "69",
-        "ageUnit": "years",
-        "gender": "Female",
-        "occupation": "NA",
-        "education": null,
-        "dateOfAdmission": "2025-06-17",
-        "dateOfDischarge": "2025-06-21",
-        "speciality": "Casualty",
-        "outcome": "Discharged",
-        "principalDiagnosis": "C50",
-        "additionalDiagnosis": "G57.5 - Tunnel syndromes",
-        "surgicalProcedure": "false",
-        "cost": "540",
-        "nhisStatus": "true"
-      },
-      "errors": [
-        {
-          "field": "patientNumber",
-          "message": "Invalid format: \"HO-A01-AAO2127\". Expected: VR-A##-AAA####",
-          "rowNumber": 32,
-          "severity": "error"
-        },
-        {
-          "field": "education",
-          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
-          "rowNumber": 32,
-          "severity": "error"
-        },
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"C50.1\" to DHIS2 codes. Please verify.",
-          "rowNumber": 32,
-          "severity": "warning"
-        }
-      ]
     }
   ],
-  "warnings": [
-    {
-      "rowNumber": 4,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"Z86.73\" to DHIS2 codes. Please verify.",
-          "rowNumber": 4,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 5,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 5,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 6,
-      "warnings": [
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.01\" to DHIS2 codes. Please verify.",
-          "rowNumber": 6,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 7,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"K35.89\" to DHIS2 codes. Please verify.",
-          "rowNumber": 7,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 8,
-      "warnings": [
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
-          "rowNumber": 8,
-          "severity": "warning"
-        }
-      ]
-    },
+  "warnings": [],
+  "info": [
     {
       "rowNumber": 10,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 10,
-          "severity": "warning"
-        },
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z99.2\" to DHIS2 codes. Please verify.",
-          "rowNumber": 10,
-          "severity": "warning"
+          "severity": "info"
         }
       ]
     },
     {
       "rowNumber": 11,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 11,
-          "severity": "warning"
-        },
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 11,
-          "severity": "warning"
+          "severity": "info"
         }
       ]
     },
     {
       "rowNumber": 12,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 12,
-          "severity": "warning"
-        },
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 12,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 13,
-      "warnings": [
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
-          "rowNumber": 13,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 20,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"J81.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 20,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 21,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 21,
-          "severity": "warning"
-        },
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"F20.81\" to DHIS2 codes. Please verify.",
-          "rowNumber": 21,
-          "severity": "warning"
+          "severity": "info"
         }
       ]
     },
     {
       "rowNumber": 23,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 23,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 24,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"V20.4\" to DHIS2 codes. Please verify.",
-          "rowNumber": 24,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 25,
-      "warnings": [
-        {
-          "field": "additionalDiagnosis",
-          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
-          "rowNumber": 25,
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "rowNumber": 27,
-      "warnings": [
-        {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"N39.0\" to DHIS2 codes. Please verify.",
-          "rowNumber": 27,
-          "severity": "warning"
+          "severity": "info"
         }
       ]
     },
     {
       "rowNumber": 28,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 28,
-          "severity": "warning"
+          "severity": "info"
         }
       ]
     },
     {
       "rowNumber": 29,
-      "warnings": [
+      "messages": [
         {
           "field": "speciality",
-          "message": "Unknown speciality: \"General\". Will use as-is",
+          "message": "ℹ️ INFO: \"General\" has been automatically mapped to \"Casualty\". If this is incorrect, please update your Excel file to use the correct speciality.",
           "rowNumber": 29,
-          "severity": "warning"
+          "severity": "info"
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "rowNumber": 2,
+      "field": "principalDiagnosis",
+      "original": "A35.00",
+      "suggested": "A35 - Tetanus",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "A36.9 - Diphtheria",
+          "name": "A36.9 - Diphtheria",
+          "similarity": 0.6
+        },
+        {
+          "code": "A30.9 - Leprosy",
+          "name": "A30.9 - Leprosy",
+          "similarity": 0.5
+        }
+      ]
+    },
+    {
+      "rowNumber": 3,
+      "field": "principalDiagnosis",
+      "original": "I64.00",
+      "suggested": "I64 - Accident Cerebrovascular (CVA)",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I64 - Apoplexy",
+          "name": "I64 - Apoplexy",
+          "similarity": 0.9
+        },
+        {
+          "code": "I64 - Cerebrovascular Accident",
+          "name": "I64 - Cerebrovascular Accident",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 5,
+      "field": "principalDiagnosis",
+      "original": "I10.00",
+      "suggested": "I10 - Hypertension",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I10 - Malignant hypertension",
+          "name": "I10 - Malignant hypertension",
+          "similarity": 0.9
+        },
+        {
+          "code": "I09.9 - Disease Rheumatic Heart",
+          "name": "I09.9 - Disease Rheumatic Heart",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 5,
+      "field": "additionalDiagnosis",
+      "original": "N18.4",
+      "suggested": "N18.9 - Acute-or-chronic renal failure",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "N18.9 - Chronic Failure Renal (CRF)",
+          "name": "N18.9 - Chronic Failure Renal (CRF)",
+          "similarity": 0.9
+        },
+        {
+          "code": "N18.9 - Chronic Kidney Disease",
+          "name": "N18.9 - Chronic Kidney Disease",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 14,
+      "field": "principalDiagnosis",
+      "original": "B01.9",
+      "suggested": "B01.9 - Chicken Pox",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "B01.9 - Varicella",
+          "name": "B01.9 - Varicella",
+          "similarity": 0.9
+        },
+        {
+          "code": "B02.9 - Herpes Zoster",
+          "name": "B02.9 - Herpes Zoster",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 15,
+      "field": "principalDiagnosis",
+      "original": "R55.00",
+      "suggested": "R55 - Collapse",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "R55 - Syncope",
+          "name": "R55 - Syncope",
+          "similarity": 0.9
+        },
+        {
+          "code": "R55 - Syncope Attack",
+          "name": "R55 - Syncope Attack",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 15,
+      "field": "additionalDiagnosis",
+      "original": "D50.9",
+      "suggested": "D50.9 - Iron Deficiency Anaemia",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "D51.9 - Other deficiencies: Vit B12, folate",
+          "name": "D51.9 - Other deficiencies: Vit B12, folate",
+          "similarity": 0.6
+        },
+        {
+          "code": "D47.9 - Disease Lymphoproliferative",
+          "name": "D47.9 - Disease Lymphoproliferative",
+          "similarity": 0.5
+        }
+      ]
+    },
+    {
+      "rowNumber": 16,
+      "field": "principalDiagnosis",
+      "original": "B50.9",
+      "suggested": "B50.0 - Malaria Cerebral",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "B50.8 - Black Water Fever",
+          "name": "B50.8 - Black Water Fever",
+          "similarity": 0.9
+        },
+        {
+          "code": "B50.9 - Severe Malaria",
+          "name": "B50.9 - Severe Malaria",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 19,
+      "field": "principalDiagnosis",
+      "original": "S20.2",
+      "suggested": "S20.2 - Chest contusion",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "S20.2 - Contusion of Chest",
+          "name": "S20.2 - Contusion of Chest",
+          "similarity": 0.9
+        },
+        {
+          "code": "S20.2 - Contusion of Thorax",
+          "name": "S20.2 - Contusion of Thorax",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 19,
+      "field": "additionalDiagnosis",
+      "original": "T00.9",
+      "suggested": "T00.9 - Multiple Abrasion",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "T01.9 - Multiple Facial Laceration",
+          "name": "T01.9 - Multiple Facial Laceration",
+          "similarity": 0.6
+        },
+        {
+          "code": "T01.9 - Multiple open wounds, unspecified",
+          "name": "T01.9 - Multiple open wounds, unspecified",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 20,
+      "field": "principalDiagnosis",
+      "original": "J81.0",
+      "suggested": "J81 - Congestion Pulmonary",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "J81 - Pulmonary Oedema",
+          "name": "J81 - Pulmonary Oedema",
+          "similarity": 0.9
+        },
+        {
+          "code": "J84.1 - Pleuropneumonia Chronic",
+          "name": "J84.1 - Pleuropneumonia Chronic",
+          "similarity": 0.5
+        }
+      ]
+    },
+    {
+      "rowNumber": 20,
+      "field": "additionalDiagnosis",
+      "original": "I11.0",
+      "suggested": "I11.9 - Cardiopathy Hypertensive",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I11.9 - Hypertensive Heart Disease",
+          "name": "I11.9 - Hypertensive Heart Disease",
+          "similarity": 0.9
+        },
+        {
+          "code": "I10 - Hypertension",
+          "name": "I10 - Hypertension",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 21,
+      "field": "principalDiagnosis",
+      "original": "I10.00",
+      "suggested": "I10 - Hypertension",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I10 - Malignant hypertension",
+          "name": "I10 - Malignant hypertension",
+          "similarity": 0.9
+        },
+        {
+          "code": "I09.9 - Disease Rheumatic Heart",
+          "name": "I09.9 - Disease Rheumatic Heart",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 21,
+      "field": "additionalDiagnosis",
+      "original": "F20.81",
+      "suggested": "F20.5 - Chronic Schizophrenia",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "F20.5 - Schizophrenia Chronic",
+          "name": "F20.5 - Schizophrenia Chronic",
+          "similarity": 0.9
+        },
+        {
+          "code": "F20.9 - Schizophrenia",
+          "name": "F20.9 - Schizophrenia",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 22,
+      "field": "principalDiagnosis",
+      "original": "B01.9",
+      "suggested": "B01.9 - Chicken Pox",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "B01.9 - Varicella",
+          "name": "B01.9 - Varicella",
+          "similarity": 0.9
+        },
+        {
+          "code": "B02.9 - Herpes Zoster",
+          "name": "B02.9 - Herpes Zoster",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 25,
+      "field": "principalDiagnosis",
+      "original": "I64.00",
+      "suggested": "I64 - Accident Cerebrovascular (CVA)",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I64 - Apoplexy",
+          "name": "I64 - Apoplexy",
+          "similarity": 0.9
+        },
+        {
+          "code": "I64 - Cerebrovascular Accident",
+          "name": "I64 - Cerebrovascular Accident",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 25,
+      "field": "additionalDiagnosis",
+      "original": "I10.00",
+      "suggested": "I10 - Hypertension",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I10 - Malignant hypertension",
+          "name": "I10 - Malignant hypertension",
+          "similarity": 0.9
+        },
+        {
+          "code": "I09.9 - Disease Rheumatic Heart",
+          "name": "I09.9 - Disease Rheumatic Heart",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 27,
+      "field": "principalDiagnosis",
+      "original": "N39.0",
+      "suggested": "N39.0 - Infection of Urinary Tract (UTI)",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "N39.9 - Disease of Urinary System (Unspecified)",
+          "name": "N39.9 - Disease of Urinary System (Unspecified)",
+          "similarity": 0.9
+        },
+        {
+          "code": "N40 - Benign Hypertophy Prostate",
+          "name": "N40 - Benign Hypertophy Prostate",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 29,
+      "field": "principalDiagnosis",
+      "original": "I21.01",
+      "suggested": "I21.9 - Myocardial infarction",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "I20.0 - Unstable Angina",
+          "name": "I20.0 - Unstable Angina",
+          "similarity": 0.6
+        },
+        {
+          "code": "I20.9 - Angina Pectoris",
+          "name": "I20.9 - Angina Pectoris",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 29,
+      "field": "additionalDiagnosis",
+      "original": "R06.03",
+      "suggested": "R06.0 - Difficulty In Breathing",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "R06.0 - Dyspnoea",
+          "name": "R06.0 - Dyspnoea",
+          "similarity": 0.9
+        },
+        {
+          "code": "R06.6 - Hi-Cough",
+          "name": "R06.6 - Hi-Cough",
+          "similarity": 0.9
+        }
+      ]
+    },
+    {
+      "rowNumber": 31,
+      "field": "principalDiagnosis",
+      "original": "A09.9",
+      "suggested": "A09 - Diarrhoea",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "A09 - Dysentery",
+          "name": "A09 - Dysentery",
+          "similarity": 0.9
+        },
+        {
+          "code": "A09 - Enema  Colitis",
+          "name": "A09 - Enema  Colitis",
+          "similarity": 0.9
         }
       ]
     },
     {
       "rowNumber": 32,
-      "warnings": [
+      "field": "principalDiagnosis",
+      "original": "C50.1",
+      "suggested": "C50.9 - Cancer of Breast",
+      "confidence": 0.9,
+      "alternatives": [
         {
-          "field": "principalDiagnosis",
-          "message": "Could not match diagnosis code \"C50.1\" to DHIS2 codes. Please verify.",
-          "rowNumber": 32,
-          "severity": "warning"
+          "code": "C50.9 - Malignant breast lesion",
+          "name": "C50.9 - Malignant breast lesion",
+          "similarity": 0.9
+        },
+        {
+          "code": "C49.2 - Liposarcoma of limb",
+          "name": "C49.2 - Liposarcoma of limb",
+          "similarity": 0.6
+        }
+      ]
+    },
+    {
+      "rowNumber": 32,
+      "field": "additionalDiagnosis",
+      "original": "G57.13",
+      "suggested": "G57.5 - Tunnel syndromes",
+      "confidence": 0.9,
+      "alternatives": [
+        {
+          "code": "G52.2 - Lesion in the larynx",
+          "name": "G52.2 - Lesion in the larynx",
+          "similarity": 0.5
+        },
+        {
+          "code": "G61.0 - Gullain Barre Syndrome",
+          "name": "G61.0 - Gullain Barre Syndrome",
+          "similarity": 0.5
         }
       ]
     }

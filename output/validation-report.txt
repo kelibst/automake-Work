@@ -3,11 +3,177 @@ DHIS2 UPLOAD - VALIDATION REPORT
 ============================================================
 
 SUMMARY:
-  Total Records: 4
-  ✅ Valid: 4
+  Total Records: 15
+  ✅ Valid: 15
   ❌ Invalid: 0
   ⚠️  Warnings: 0
   🔄 Duplicates: 0
+
+✅ AUTO-FIXED DIAGNOSIS CODES:
+------------------------------------------------------------
+The following diagnosis codes were automatically matched to similar codes in DHIS2.
+Please review these changes to ensure they are correct.
+
+Row 2: principalDiagnosis
+  Original:  A35.00
+  Using:     A35 - Tetanus (90% match)
+  Other options:
+    - A36.9 - Diphtheria: A36.9 - Diphtheria (60% match)
+    - A30.9 - Leprosy: A30.9 - Leprosy (50% match)
+
+Row 3: principalDiagnosis
+  Original:  I64.00
+  Using:     I64 - Accident Cerebrovascular (CVA) (90% match)
+  Other options:
+    - I64 - Apoplexy: I64 - Apoplexy (90% match)
+    - I64 - Cerebrovascular Accident: I64 - Cerebrovascular Accident (90% match)
+
+Row 5: principalDiagnosis
+  Original:  I10.00
+  Using:     I10 - Hypertension (90% match)
+  Other options:
+    - I10 - Malignant hypertension: I10 - Malignant hypertension (90% match)
+    - I09.9 - Disease Rheumatic Heart: I09.9 - Disease Rheumatic Heart (60% match)
+
+Row 5: additionalDiagnosis
+  Original:  N18.4
+  Using:     N18.9 - Acute-or-chronic renal failure (90% match)
+  Other options:
+    - N18.9 - Chronic Failure Renal (CRF): N18.9 - Chronic Failure Renal (CRF) (90% match)
+    - N18.9 - Chronic Kidney Disease: N18.9 - Chronic Kidney Disease (90% match)
+
+Row 14: principalDiagnosis
+  Original:  B01.9
+  Using:     B01.9 - Chicken Pox (90% match)
+  Other options:
+    - B01.9 - Varicella: B01.9 - Varicella (90% match)
+    - B02.9 - Herpes Zoster: B02.9 - Herpes Zoster (60% match)
+
+Row 15: principalDiagnosis
+  Original:  R55.00
+  Using:     R55 - Collapse (90% match)
+  Other options:
+    - R55 - Syncope: R55 - Syncope (90% match)
+    - R55 - Syncope Attack: R55 - Syncope Attack (90% match)
+
+Row 15: additionalDiagnosis
+  Original:  D50.9
+  Using:     D50.9 - Iron Deficiency Anaemia (90% match)
+  Other options:
+    - D51.9 - Other deficiencies: Vit B12, folate: D51.9 - Other deficiencies: Vit B12, folate (60% match)
+    - D47.9 - Disease Lymphoproliferative: D47.9 - Disease Lymphoproliferative (50% match)
+
+Row 16: principalDiagnosis
+  Original:  B50.9
+  Using:     B50.0 - Malaria Cerebral (90% match)
+  Other options:
+    - B50.8 - Black Water Fever: B50.8 - Black Water Fever (90% match)
+    - B50.9 - Severe Malaria: B50.9 - Severe Malaria (90% match)
+
+Row 19: principalDiagnosis
+  Original:  S20.2
+  Using:     S20.2 - Chest contusion (90% match)
+  Other options:
+    - S20.2 - Contusion of Chest: S20.2 - Contusion of Chest (90% match)
+    - S20.2 - Contusion of Thorax: S20.2 - Contusion of Thorax (90% match)
+
+Row 19: additionalDiagnosis
+  Original:  T00.9
+  Using:     T00.9 - Multiple Abrasion (90% match)
+  Other options:
+    - T01.9 - Multiple Facial Laceration: T01.9 - Multiple Facial Laceration (60% match)
+    - T01.9 - Multiple open wounds, unspecified: T01.9 - Multiple open wounds, unspecified (60% match)
+
+Row 20: principalDiagnosis
+  Original:  J81.0
+  Using:     J81 - Congestion Pulmonary (90% match)
+  Other options:
+    - J81 - Pulmonary Oedema: J81 - Pulmonary Oedema (90% match)
+    - J84.1 - Pleuropneumonia Chronic: J84.1 - Pleuropneumonia Chronic (50% match)
+
+Row 20: additionalDiagnosis
+  Original:  I11.0
+  Using:     I11.9 - Cardiopathy Hypertensive (90% match)
+  Other options:
+    - I11.9 - Hypertensive Heart Disease: I11.9 - Hypertensive Heart Disease (90% match)
+    - I10 - Hypertension: I10 - Hypertension (60% match)
+
+Row 21: principalDiagnosis
+  Original:  I10.00
+  Using:     I10 - Hypertension (90% match)
+  Other options:
+    - I10 - Malignant hypertension: I10 - Malignant hypertension (90% match)
+    - I09.9 - Disease Rheumatic Heart: I09.9 - Disease Rheumatic Heart (60% match)
+
+Row 21: additionalDiagnosis
+  Original:  F20.81
+  Using:     F20.5 - Chronic Schizophrenia (90% match)
+  Other options:
+    - F20.5 - Schizophrenia Chronic: F20.5 - Schizophrenia Chronic (90% match)
+    - F20.9 - Schizophrenia: F20.9 - Schizophrenia (90% match)
+
+Row 22: principalDiagnosis
+  Original:  B01.9
+  Using:     B01.9 - Chicken Pox (90% match)
+  Other options:
+    - B01.9 - Varicella: B01.9 - Varicella (90% match)
+    - B02.9 - Herpes Zoster: B02.9 - Herpes Zoster (60% match)
+
+Row 25: principalDiagnosis
+  Original:  I64.00
+  Using:     I64 - Accident Cerebrovascular (CVA) (90% match)
+  Other options:
+    - I64 - Apoplexy: I64 - Apoplexy (90% match)
+    - I64 - Cerebrovascular Accident: I64 - Cerebrovascular Accident (90% match)
+
+Row 25: additionalDiagnosis
+  Original:  I10.00
+  Using:     I10 - Hypertension (90% match)
+  Other options:
+    - I10 - Malignant hypertension: I10 - Malignant hypertension (90% match)
+    - I09.9 - Disease Rheumatic Heart: I09.9 - Disease Rheumatic Heart (60% match)
+
+Row 27: principalDiagnosis
+  Original:  N39.0
+  Using:     N39.0 - Infection of Urinary Tract (UTI) (90% match)
+  Other options:
+    - N39.9 - Disease of Urinary System (Unspecified): N39.9 - Disease of Urinary System (Unspecified) (90% match)
+    - N40 - Benign Hypertophy Prostate: N40 - Benign Hypertophy Prostate (60% match)
+
+Row 29: principalDiagnosis
+  Original:  I21.01
+  Using:     I21.9 - Myocardial infarction (90% match)
+  Other options:
+    - I20.0 - Unstable Angina: I20.0 - Unstable Angina (60% match)
+    - I20.9 - Angina Pectoris: I20.9 - Angina Pectoris (60% match)
+
+Row 29: additionalDiagnosis
+  Original:  R06.03
+  Using:     R06.0 - Difficulty In Breathing (90% match)
+  Other options:
+    - R06.0 - Dyspnoea: R06.0 - Dyspnoea (90% match)
+    - R06.6 - Hi-Cough: R06.6 - Hi-Cough (90% match)
+
+Row 31: principalDiagnosis
+  Original:  A09.9
+  Using:     A09 - Diarrhoea (90% match)
+  Other options:
+    - A09 - Dysentery: A09 - Dysentery (90% match)
+    - A09 - Enema  Colitis: A09 - Enema  Colitis (90% match)
+
+Row 32: principalDiagnosis
+  Original:  C50.1
+  Using:     C50.9 - Cancer of Breast (90% match)
+  Other options:
+    - C50.9 - Malignant breast lesion: C50.9 - Malignant breast lesion (90% match)
+    - C49.2 - Liposarcoma of limb: C49.2 - Liposarcoma of limb (60% match)
+
+Row 32: additionalDiagnosis
+  Original:  G57.13
+  Using:     G57.5 - Tunnel syndromes (90% match)
+  Other options:
+    - G52.2 - Lesion in the larynx: G52.2 - Lesion in the larynx (50% match)
+    - G61.0 - Gullain Barre Syndrome: G61.0 - Gullain Barre Syndrome (50% match)
 
 ============================================================
 ✅ ALL RECORDS ARE VALID - READY TO UPLOAD

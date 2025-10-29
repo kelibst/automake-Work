@@ -152,6 +152,11 @@ async function main() {
   console.log(`   🔄 Duplicates: ${validationResults.summary.duplicates}`);
   console.log();
 
+  // Add suggestions from cleaning phase to validation results
+  if (cleanResults.suggestions && cleanResults.suggestions.length > 0) {
+    validationResults.results.suggestions = cleanResults.suggestions;
+  }
+
   // Generate validation report
   const validationReport = validator.generateReport(validationResults);
   const validationReportPath = path.join(CONFIG.outputDir, 'validation-report.txt');

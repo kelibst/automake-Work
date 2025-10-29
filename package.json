@@ -1,6 +1,7 @@
 {
   "name": "automake-work",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
   "main": "capture-form-submission.js",
   "scripts": {

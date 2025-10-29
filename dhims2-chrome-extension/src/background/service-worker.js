@@ -72,12 +72,24 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       handleGetConfig(sendResponse);
       break;
 
+    case 'GET_SYSTEM_CONFIG':
+      handleGetSystemConfig(message.system, sendResponse);
+      break;
+
     case 'GET_DISCOVERY_STATUS':
       handleGetStatus(sendResponse);
       break;
 
     case 'CLEAR_API_CONFIG':
       handleClearConfig(sendResponse);
+      break;
+
+    case 'GET_DEBUG_DATA':
+      handleGetDebugData(message.system, sendResponse);
+      break;
+
+    case 'CLEAR_DEBUG_PAYLOADS':
+      handleClearDebugPayloads(message.system, sendResponse);
       break;
 
     case 'PING':
@@ -90,7 +102,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       break;
 
     case 'TOGGLE_DEBUG_MODE':
-      handleToggleDebugMode(message.enabled, sendResponse);
+      handleToggleDebugMode(message.enabled, message.system, sendResponse);
       break;
 
     default:
@@ -178,26 +190,82 @@ async function handleClearConfig(sendResponse) {
 }
 
 /**
- * Handle toggle debug mode request
+ * Handle toggle debug mode request (multi-system)
  */
-async function handleToggleDebugMode(enabled, sendResponse) {
+async function handleToggleDebugMode(enabled, system = 'dhims2', sendResponse) {
   try {
-    await StorageManager.setDebugMode(enabled);
+    const storageKey = `${system}_debug_mode`;
+    await StorageManager.set(storageKey, enabled);
 
     if (enabled) {
-      console.log('🐛 Debug mode enabled - Will capture API payloads');
-      apiInterceptor.startListening(true); // true = debug mode
+      console.log(`🐛 Debug mode enabled for ${system} - Will capture API payloads`);
+      apiInterceptor.startListening(true, system); // true = debug mode
     } else {
-      console.log('🐛 Debug mode disabled');
-      apiInterceptor.stopListening();
+      console.log(`🐛 Debug mode disabled for ${system}`);
+      apiInterceptor.stopListening(system);
     }
 
-    sendResponse({ success: true, enabled });
+    sendResponse({ success: true, enabled, system });
   } catch (error) {
     console.error('Error toggling debug mode:', error);
     sendResponse({ success: false, error: error.message });
   }
 }
 
+/**
+ * Handle get system config request (multi-system)
+ */
+async function handleGetSystemConfig(system = 'dhims2', sendResponse) {
+  try {
+    const configKey = `${system}_config`;
+    const config = await StorageManager.get(configKey);
+    sendResponse({ success: true, config, system });
+  } catch (error) {
+    console.error('Error getting system config:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle get debug data request (multi-system)
+ */
+async function handleGetDebugData(system = 'dhims2', sendResponse) {
+  try {
+    const payloadsKey = `${system}_captured_payloads`;
+    const configKey = `${system}_config`;
+
+    const [payloads, config] = await Promise.all([
+      StorageManager.get(payloadsKey),
+      StorageManager.get(configKey)
+    ]);
+
+    sendResponse({
+      success: true,
+      payloads: payloads || [],
+      config: config || null,
+      system
+    });
+  } catch (error) {
+    console.error('Error getting debug data:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle clear debug payloads request (multi-system)
+ */
+async function handleClearDebugPayloads(system = 'dhims2', sendResponse) {
+  try {
+    const payloadsKey = `${system}_captured_payloads`;
+    await StorageManager.remove(payloadsKey);
+
+    console.log(`🧹 Cleared debug payloads for ${system}`);
+    sendResponse({ success: true, message: `Cleared ${system} payloads`, system });
+  } catch (error) {
+    console.error('Error clearing debug payloads:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
 // Log when service worker is activated
-console.log('✅ Service Worker: Ready and listening');
+console.log('✅ Service Worker: Ready and listening (Multi-System Support)');

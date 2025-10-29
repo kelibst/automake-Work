@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "DHIMS2 Batch Uploader",
-  "version": "1.0.0",
-  "description": "Automate batch upload of patient records to DHIMS2 with intelligent API discovery",
+  "name": "Health Data Uploader - DHIMS2 & LHIMS",
+  "version": "2.0.0",
+  "description": "Automate batch upload of patient records to DHIMS2 and LHIMS with intelligent API discovery",
 
   "permissions": [
     "storage",
@@ -12,7 +12,8 @@
   ],
 
   "host_permissions": [
-    "https://events.chimgh.org/*"
+    "https://events.chimgh.org/*",
+    "http://10.10.0.59/*"
   ],
 
   "background": {
@@ -34,7 +35,10 @@
 
   "content_scripts": [
     {
-      "matches": ["https://events.chimgh.org/*"],
+      "matches": [
+        "https://events.chimgh.org/*",
+        "http://10.10.0.59/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
@@ -49,7 +53,10 @@
   "web_accessible_resources": [
     {
       "resources": ["assets/*"],
-      "matches": ["https://events.chimgh.org/*"]
+      "matches": [
+        "https://events.chimgh.org/*",
+        "http://10.10.0.59/*"
+      ]
     }
   ]
 }

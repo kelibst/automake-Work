@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Bug, Copy, Trash2, Download, RefreshCw, CheckCircle2 } from 'lucide-react';
 import { getApiConfiguration, getCapturedPayloads, clearCapturedPayloads } from '../../utils/storage-manager';
 
-export default function Debug() {
+export default function Debug({ activeSystem = 'dhims2' }) {
   const [payloads, setPayloads] = useState([]);
   const [selectedPayload, setSelectedPayload] = useState(null);
   const [apiConfig, setApiConfig] = useState(null);
@@ -28,18 +28,26 @@ export default function Debug() {
     return () => {
       chrome.runtime.onMessage.removeListener(handleMessage);
     };
-  }, []);
+  }, [activeSystem]); // Reload when system changes
+
+  const systemInfo = {
+    dhims2: { name: 'DHIMS2', color: 'blue', url: 'events.chimgh.org' },
+    lhims: { name: 'LHIMS', color: 'green', url: '10.10.0.59/lhims_182' }
+  };
+
+  const currentSystem = systemInfo[activeSystem] || systemInfo.dhims2;
 
   const enableDebugMode = async () => {
     try {
       const response = await chrome.runtime.sendMessage({
         type: 'TOGGLE_DEBUG_MODE',
-        enabled: true
+        enabled: true,
+        system: activeSystem
       });
 
       if (response.success) {
         setIsListening(true);
-        console.log('🐛 Debug mode auto-enabled');
+        console.log(`🐛 Debug mode auto-enabled for ${currentSystem.name}`);
       }
     } catch (error) {
       console.error('Failed to auto-enable debug mode:', error);
@@ -47,16 +55,38 @@ export default function Debug() {
   };
 
   const loadData = async () => {
-    const [config, capturedPayloads] = await Promise.all([
-      getApiConfiguration(),
-      getCapturedPayloads()
-    ]);
+    try {
+      // Load system-specific configuration and payloads
+      const response = await chrome.runtime.sendMessage({
+        type: 'GET_DEBUG_DATA',
+        system: activeSystem
+      });
 
-    setApiConfig(config);
-    setPayloads(capturedPayloads || []);
+      if (response && response.success) {
+        setApiConfig(response.config || null);
+        setPayloads(response.payloads || []);
 
-    if (capturedPayloads && capturedPayloads.length > 0 && !selectedPayload) {
-      setSelectedPayload(capturedPayloads[0]);
+        if (response.payloads && response.payloads.length > 0 && !selectedPayload) {
+          setSelectedPayload(response.payloads[0]);
+        }
+      } else {
+        // Fallback to storage manager
+        const [config, capturedPayloads] = await Promise.all([
+          getApiConfiguration(),
+          getCapturedPayloads()
+        ]);
+
+        setApiConfig(config);
+        setPayloads(capturedPayloads || []);
+
+        if (capturedPayloads && capturedPayloads.length > 0 && !selectedPayload) {
+          setSelectedPayload(capturedPayloads[0]);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading debug data:', error);
+      setPayloads([]);
+      setApiConfig(null);
     }
   };
 
@@ -71,10 +101,21 @@ export default function Debug() {
   };
 
   const handleClearPayloads = async () => {
-    if (confirm('Are you sure you want to clear all captured payloads?')) {
-      await clearCapturedPayloads();
-      setPayloads([]);
-      setSelectedPayload(null);
+    if (confirm(`Are you sure you want to clear all ${currentSystem.name} captured payloads?`)) {
+      try {
+        await chrome.runtime.sendMessage({
+          type: 'CLEAR_DEBUG_PAYLOADS',
+          system: activeSystem
+        });
+        setPayloads([]);
+        setSelectedPayload(null);
+      } catch (error) {
+        console.error('Error clearing payloads:', error);
+        // Fallback
+        await clearCapturedPayloads();
+        setPayloads([]);
+        setSelectedPayload(null);
+      }
     }
   };
 
@@ -83,7 +124,7 @@ export default function Debug() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `dhims2-payload-${index + 1}-${new Date().toISOString()}.json`;
+    a.download = `${activeSystem}-payload-${index + 1}-${new Date().toISOString()}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -97,7 +138,8 @@ export default function Debug() {
     // Send message to background script to enable/disable payload capture
     chrome.runtime.sendMessage({
       type: 'TOGGLE_DEBUG_MODE',
-      enabled: newState
+      enabled: newState,
+      system: activeSystem
     });
   };
 
@@ -233,22 +275,36 @@ export default function Debug() {
     );
   };
 
+  const headerColor = currentSystem.color === 'blue' ? 'text-blue-600' : 'text-green-600';
+  const badgeColor = currentSystem.color === 'blue'
+    ? 'bg-blue-100 text-blue-700'
+    : 'bg-green-100 text-green-700';
+
   return (
     <div className="p-4 space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bug className="w-6 h-6 text-purple-600" />
+          <Bug className={`w-6 h-6 ${headerColor}`} />
           <div>
-            <h1 className="text-xl font-bold text-gray-900">Debug Mode</h1>
-            <p className="text-sm text-gray-600">Capture and inspect DHIMS2 API payloads</p>
+            <div className="flex items-center gap-2">
+              <h1 className="text-xl font-bold text-gray-900">Debug Mode</h1>
+              <span className={`text-xs font-bold px-2 py-1 rounded ${badgeColor}`}>
+                {currentSystem.name}
+              </span>
+            </div>
+            <p className="text-sm text-gray-600">
+              Capture and inspect {currentSystem.name} API payloads from {currentSystem.url}
+            </p>
           </div>
         </div>
         <button
           onClick={handleToggleListening}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
             isListening
-              ? 'bg-green-600 hover:bg-green-700 text-white'
+              ? currentSystem.color === 'blue'
+                ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                : 'bg-green-600 hover:bg-green-700 text-white'
               : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
           }`}
         >
@@ -277,16 +333,31 @@ export default function Debug() {
         )}
 
         {/* Instructions */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-          <h3 className="font-semibold text-yellow-900 mb-2">How to Use:</h3>
-          <ol className="list-decimal list-inside space-y-1 text-sm text-yellow-800">
+        <div className={`border rounded-lg p-4 ${
+          currentSystem.color === 'blue'
+            ? 'bg-blue-50 border-blue-200'
+            : 'bg-green-50 border-green-200'
+        }`}>
+          <h3 className={`font-semibold mb-2 ${
+            currentSystem.color === 'blue' ? 'text-blue-900' : 'text-green-900'
+          }`}>
+            How to Use ({currentSystem.name}):
+          </h3>
+          <ol className={`list-decimal list-inside space-y-1 text-sm ${
+            currentSystem.color === 'blue' ? 'text-blue-800' : 'text-green-800'
+          }`}>
             <li>Debug mode is automatically listening when you open this tab</li>
-            <li>Navigate to DHIMS2 and <strong>fill out the form completely</strong></li>
+            <li>Navigate to <strong>{currentSystem.url}</strong> and <strong>fill out the form completely</strong></li>
             <li><strong className="text-red-700">IMPORTANT: Click the Save/Submit button</strong> to trigger the POST request</li>
             <li>Look for a <span className="font-semibold bg-purple-100 px-1 rounded">POST</span> request (not GET) - it will contain all field data</li>
             <li>View the captured data to understand field mappings and structure</li>
+            <li>Copy or download the payload to analyze the API structure</li>
           </ol>
-          <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded text-xs text-blue-800">
+          <div className={`mt-2 p-2 border rounded text-xs ${
+            currentSystem.color === 'blue'
+              ? 'bg-blue-100 border-blue-300 text-blue-800'
+              : 'bg-green-100 border-green-300 text-green-800'
+          }`}>
             <strong>💡 Tip:</strong> GET requests fetch existing data. POST requests submit new data with all your field values!
           </div>
         </div>
@@ -346,8 +417,10 @@ export default function Debug() {
           return (
             <div className="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
               <Bug className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-              <p className="text-gray-600 mb-1">No payloads captured yet</p>
-              <p className="text-sm text-gray-500">Enable listening and submit a form in DHIMS2</p>
+              <p className="text-gray-600 mb-1">No payloads captured yet for {currentSystem.name}</p>
+              <p className="text-sm text-gray-500">
+                Enable listening and submit a form in {currentSystem.name} ({currentSystem.url})
+              </p>
             </div>
           );
         }

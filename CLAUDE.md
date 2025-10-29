@@ -1,17 +1,57 @@
 # CLAUDE.md - Project Context & Memory
 
-**Last Updated:** 2025-10-16
-**Project:** DHIMS2 Chrome Extension - Automated Data Upload
-**Status:** Planning & Initial Development
+**Last Updated:** 2025-10-23
+**Project:** Health Data Automation - DHIMS2 & LHIMS Chrome Extension
+**Status:** Development In Progress - Expanding to Multi-System Support
+**Workspace:** automake-Work (Multi-Project Repository)
+
+---
+
+## IMPORTANT: Workspace Structure
+
+This is a **multi-project workspace**. The repository root is `automake-Work/` and contains multiple automation projects:
+
+```
+automake-Work/                    # ROOT FOLDER (workspace)
+├── CLAUDE.md                     # This file - workspace context
+├── .git/                         # Git repository root
+├── .gitignore                    # Global gitignore
+│
+├── dhims2-chrome-extension/      # ⭐ CURRENT PROJECT (active development)
+│   ├── src/                      # Source code
+│   ├── public/                   # Extension assets
+│   ├── package.json              # npm dependencies
+│   ├── deno.json                 # Deno configuration
+│   ├── deno.lock                 # Deno lock file
+│   ├── vite.config.js            # Build configuration
+│   └── ... (other project files)
+│
+└── [future-projects]/            # Future automation projects will go here
+```
+
+### Key Points for Future Sessions:
+1. **Working Directory**: Always navigate to `dhims2-chrome-extension/` for current work
+2. **Multiple Projects**: This workspace may contain other automation projects in the future
+3. **Root CLAUDE.md**: This file documents the entire workspace and all projects
+4. **Project-Specific Docs**: Each project has its own documentation in its folder
 
 ---
 
 ## Project Overview
 
-Building a Chrome Extension to automate batch uploading of In-Patient Morbidity and Mortality data from Excel files to DHIMS2 web system.
+Building a Chrome Extension to automate batch uploading of In-Patient Morbidity and Mortality data from Excel files to **two health information systems**:
+1. **DHIMS2** - National/Regional health data system (https://events.chimgh.org)
+2. **LHIMS** - Local Health Information Management System (http://10.10.0.59/lhims_182/)
 
 ### Key Innovation
-The extension uses **intelligent API discovery** - it learns the API structure by watching one manual form submission, then uses that knowledge to batch upload remaining records.
+The extension uses **intelligent API discovery** - it learns the API structure by watching one manual form submission, then uses that knowledge to batch upload remaining records. This same mechanism works for both DHIMS2 and LHIMS systems.
+
+### Multi-System Architecture
+The extension supports **multiple health information systems** simultaneously:
+- Users can configure and switch between DHIMS2 and LHIMS
+- Each system maintains its own API configuration and field mappings
+- Unified UI with system selector dropdown
+- Independent API discovery for each system
 
 ---
 
@@ -45,9 +85,9 @@ The extension uses **intelligent API discovery** - it learns the API structure b
 
 ### Extension APIs
 - **Chrome Web Request API** - Intercept network requests
-- **Chrome Storage API** - Save configuration
+- **Chrome Storage API** - Save configuration (separate configs for DHIMS2 and LHIMS)
 - **Chrome Notifications API** - User alerts
-- **Chrome Tabs API** - Communication with DHIMS2 page
+- **Chrome Tabs API** - Communication with DHIMS2/LHIMS pages
 
 ### Data Processing
 - **SheetJS (xlsx)** - Excel file parsing
@@ -323,6 +363,55 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 ---
 
+## LHIMS Integration
+
+### System Information
+- **URL**: http://10.10.0.59/lhims_182/
+- **Type**: Local Health Information Management System
+- **Access**: Local network only (requires VPN/network connection)
+- **Login Credentials**:
+  - Username: `sno-411`
+  - Password: `monamourd11`
+
+### LHIMS-Specific Features
+- Same intelligent API discovery mechanism as DHIMS2
+- Separate configuration storage (chrome.storage.local with "lhims_" prefix)
+- System selector in UI to switch between DHIMS2 and LHIMS
+- Field mappings discovered independently for LHIMS
+
+### Multi-System Data Structure
+```javascript
+// Storage structure for multi-system support
+{
+  "activeSystem": "dhims2", // or "lhims"
+  "systems": {
+    "dhims2": {
+      "discovered": true,
+      "timestamp": "2025-10-23T10:00:00Z",
+      "endpoint": { /* DHIMS2 config */ },
+      "field_mappings": { /* DHIMS2 mappings */ }
+    },
+    "lhims": {
+      "discovered": true,
+      "timestamp": "2025-10-23T11:00:00Z",
+      "endpoint": { /* LHIMS config */ },
+      "field_mappings": { /* LHIMS mappings */ }
+    }
+  }
+}
+```
+
+### LHIMS Discovery Plan
+1. User connects to local network (http://10.10.0.59)
+2. Extension detects LHIMS domain in active tab
+3. User switches to "LHIMS" mode in extension popup
+4. User submits one test record manually in LHIMS
+5. Extension intercepts and analyzes LHIMS API structure
+6. Configuration saved separately from DHIMS2
+7. User can now batch upload to LHIMS
+
+---
+
 ## Development Phases
 
 ### Phase 1: Setup & Foundation (Day 1)
@@ -399,19 +488,43 @@ chrome.webRequest.onBeforeRequest.addListener(
 - ✅ Manifest V3 (not V2)
 - ✅ Chrome Web Request API for interception
 - ✅ SheetJS for Excel parsing
+- ✅ **Deno instead of npm** (2025-10-23) - Better security, built-in TypeScript
+
+### Package Manager: Deno (Migration Complete)
+**Why Deno?**
+- Built-in TypeScript support
+- Enhanced security with explicit permissions
+- Modern JavaScript runtime
+- Excellent npm compatibility via `npm:` specifier
+
+**Configuration:**
+- `deno.json` - Main configuration file
+- `deno.lock` - Dependency lock file
+- `nodeModulesDir: "auto"` - Keeps npm packages compatible
+- All npm dependencies work via Deno's npm compatibility layer
 
 ### Files to Reference
+- `CLAUDE.md` (root) - Workspace context & project overview
 - `plan/DHIMS2_AUTOMATION_PLAN.md` - Original analysis
 - `plan/ACTIVITIES.md` - Activity log
-- This file (`plan/CLAUDE.md`) - Project context
+- `dhims2-chrome-extension/deno.json` - Deno configuration
+- `dhims2-chrome-extension/package.json` - Dependencies list
 
-### Commands to Run (Later)
+### Commands to Run
 ```bash
+# Navigate to project folder first
 cd dhims2-chrome-extension
+
+# Deno commands (CURRENT)
+deno install        # Install dependencies
+deno task dev       # Development mode
+deno task build     # Production build
+deno task preview   # Preview production build
+
+# Legacy npm commands (still work but not recommended)
 npm install
-npm run dev         # Development mode
-npm run build       # Production build
-npm run test        # Run tests
+npm run dev
+npm run build
 ```
 
 ---
@@ -427,6 +540,9 @@ npm run test        # Run tests
 **Q:** Which approach to use?
 **A:** Chrome Extension with API Discovery (user's preference)
 
+**Q:** Should we use Deno or npm? (2025-10-23)
+**A:** Deno - User prefers Deno for better security and modern features. Migration completed successfully.
+
 ---
 
 ## References
@@ -435,7 +551,43 @@ npm run test        # Run tests
 - [Chrome Web Request API](https://developer.chrome.com/docs/extensions/reference/webRequest/)
 - [DHIS2 API Documentation](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html)
 - [SheetJS Documentation](https://docs.sheetjs.com/)
+- [Deno Documentation](https://docs.deno.com/)
+- [Deno npm Compatibility](https://docs.deno.com/runtime/manual/node/npm_specifiers/)
 
 ---
 
-**For Next Session:** Start with reading this file, then proceed to IMPLEMENTATION_PLAN.md for step-by-step development guide.
+## Session History
+
+### 2025-10-23 (Evening): LHIMS Integration Expansion
+- **MAJOR SCOPE UPDATE**: Extended project to support LHIMS (Local Health Information Management System)
+- Updated CLAUDE.md to reflect multi-system architecture
+- Added LHIMS system information and credentials
+- Documented multi-system data storage structure
+- Prepared for LHIMS API discovery implementation
+- Next: Create LHIMS-specific configuration files and update extension architecture
+
+### 2025-10-23: Deno Migration
+- Created `deno.json` configuration file
+- Updated CLAUDE.md with workspace structure
+- Documented multi-project repository setup
+- Completed Deno migration from npm
+- Added Deno commands and configuration details
+
+### 2025-10-16: Initial Setup
+- Created project structure
+- Wrote initial CLAUDE.md
+- Set up planning documents
+- Configured npm dependencies
+
+---
+
+**For Next Session:**
+1. **READ THIS FILE FIRST** - Understand workspace structure
+2. Navigate to `dhims2-chrome-extension/` folder for work
+3. Use `deno task dev` to start development server
+4. Reference project-specific docs in `dhims2-chrome-extension/plan/`
+
+---
+
+## Remember
+1. update ACTIVITIES.md with a small summary of each session.

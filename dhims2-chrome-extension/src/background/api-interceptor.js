@@ -11,6 +11,7 @@ class APIInterceptor {
   constructor() {
     this.isListening = false;
     this.debugMode = false;
+    this.activeSystem = 'dhims2'; // Track which system we're capturing for
     this.capturedRequests = new Map(); // requestId -> request data
     this.listeners = {
       onBeforeRequest: null,
@@ -24,16 +25,20 @@ class APIInterceptor {
   /**
    * Start listening for API calls
    * @param {boolean} debugMode - If true, captures all payloads without auto-stopping
+   * @param {string} system - Which system to capture for ('dhims2' or 'lhims')
    */
-  startListening(debugMode = false) {
+  startListening(debugMode = false, system = 'dhims2') {
     if (this.isListening) {
       console.log('⚠️  Already listening');
       return;
     }
 
     this.debugMode = debugMode;
+    this.activeSystem = system;
 
     console.log('🔍 API Interceptor: Started listening...');
+    console.log(`🎯 Active System: ${system.toUpperCase()}`);
+    console.log(`🐛 Debug Mode: ${debugMode ? 'ENABLED ✅' : 'DISABLED ❌'}`);
     this.isListening = true;
     this.debugMode = debugMode;
     this.capturedRequests.clear();
@@ -60,26 +65,26 @@ class APIInterceptor {
    * Handle outgoing request
    */
   handleRequest(details) {
-    console.log('🌐 ALL REQUEST DETECTED:', details.method, details.url);
+    console.log('🌐 REQUEST DETECTED:', details.method, details.url);
 
     if (!this.isListening) {
       console.log('❌ Not listening, ignoring request');
       return;
     }
 
-    // Log ALL requests to debug
-    console.log('🔍 CHECKING REQUEST:', {
-      method: details.method,
-      url: details.url,
-      hasBody: !!details.requestBody
-    });
-
-    // In debug mode, capture ALL requests (GET, POST, PUT, etc.)
-    // In normal mode, only capture POST requests
-    if (!this.debugMode) {
-      // Only capture POST requests (form submissions)
+    // LHIMS: Capture ALL requests (GET, POST, PUT, DELETE, etc.)
+    // DHIMS2 Debug Mode: Capture ALL requests
+    // DHIMS2 Normal Mode: Only POST requests
+    if (this.activeSystem === 'lhims') {
+      console.log('🎯 LHIMS: Capturing ALL request types');
+      // Capture everything for LHIMS - no filtering
+    } else if (this.debugMode) {
+      console.log('🐛 DHIMS2 DEBUG MODE: Capturing ALL requests');
+      // In debug mode, capture everything - no filtering
+    } else {
+      // Normal discovery mode for DHIMS2 - only POST requests
       if (details.method !== 'POST') {
-        console.log('⏭️  Skipping non-POST request');
+        console.log('⏭️  DHIMS2 Normal mode: Skipping non-POST request');
         return;
       }
 
@@ -141,6 +146,7 @@ class APIInterceptor {
     const request = this.capturedRequests.get(details.requestId);
     if (!request) {
       console.log('⚠️  Request not found in cache:', details.requestId);
+      console.log('💡 This means onBeforeRequest did not capture it (likely filtered out)');
       return;
     }
 
@@ -288,7 +294,7 @@ class APIInterceptor {
    */
   async saveDebugPayload(request) {
     try {
-      console.log('🐛 Saving debug payload...');
+      console.log(`🐛 Saving debug payload for ${this.activeSystem}...`);
 
       // Parse URL to extract query parameters for GET requests
       const urlObj = new URL(request.url);
@@ -316,7 +322,17 @@ class APIInterceptor {
         }
       };
 
-      await StorageManager.saveCapturedPayload(debugPayload);
+      // Save to system-specific storage key
+      const storageKey = `${this.activeSystem}_captured_payloads`;
+      const existingPayloads = await StorageManager.get(storageKey) || [];
+
+      // Prepend new payload (newest first)
+      existingPayloads.unshift(debugPayload);
+
+      // Keep only last 50 payloads
+      const trimmedPayloads = existingPayloads.slice(0, 50);
+
+      await StorageManager.set(storageKey, trimmedPayloads);
 
       console.log('💾 Debug payload saved');
 
@@ -541,11 +557,16 @@ class APIInterceptor {
    */
   registerListeners() {
     try {
-      // Listen to outgoing requests - BROAD pattern to catch everything
+      // Listen to outgoing requests - Support both DHIMS2 and LHIMS
+      const urlPatterns = [
+        "https://events.chimgh.org/*",  // DHIMS2
+        "http://10.10.0.59/*"            // LHIMS (local network)
+      ];
+
       chrome.webRequest.onBeforeRequest.addListener(
         this.listeners.onBeforeRequest,
         {
-          urls: ["https://events.chimgh.org/*"],
+          urls: urlPatterns,
           types: ["xmlhttprequest"]
         },
         ["requestBody"]
@@ -555,7 +576,7 @@ class APIInterceptor {
       chrome.webRequest.onCompleted.addListener(
         this.listeners.onCompleted,
         {
-          urls: ["https://events.chimgh.org/*"],
+          urls: urlPatterns,
           types: ["xmlhttprequest"]
         },
         ["responseHeaders"]
@@ -565,12 +586,14 @@ class APIInterceptor {
       chrome.webRequest.onErrorOccurred.addListener(
         this.listeners.onErrorOccurred,
         {
-          urls: ["https://events.chimgh.org/*"],
+          urls: urlPatterns,
           types: ["xmlhttprequest"]
         }
       );
 
-      console.log('✅ WebRequest listeners registered');
+      console.log('✅ WebRequest listeners registered for DHIMS2 and LHIMS');
+      console.log('📡 Listening to URLs:', urlPatterns);
+      console.log('🎯 Will capture ALL XHR requests from these domains');
     } catch (error) {
       console.error('❌ Failed to register listeners:', error);
     }

@@ -1,0 +1,1888 @@
+{
+  "success": [
+    {
+      "_rowNumber": 2,
+      "_originalData": {
+        "Sr.No.": "1",
+        "Patient Name": "AGBONTOR COLLINS",
+        "Patient No.": "VR-A01-AAG3356",
+        "Age": "20 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "NEW BAIKA",
+        "Occupation": "Student",
+        "Educational Status": "SHS",
+        "Date of Admission": "26-06-2025",
+        "Date of Discharge": "27-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Referred",
+        "Principal Diagnosis": "Other tetanus(A35.00)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "679",
+        "NHIS Status": "No",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "NA"
+      },
+      "patientNumber": "VR-A01-AAG3356",
+      "address": "NEW BAIKA",
+      "ageNumber": "20",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "Student",
+      "education": "SHS/Secondary",
+      "dateOfAdmission": "2025-06-26",
+      "dateOfDischarge": "2025-06-27",
+      "speciality": "Casualty",
+      "outcome": "Transferred",
+      "principalDiagnosis": "A35 - Tetanus",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "679",
+      "nhisStatus": "false"
+    },
+    {
+      "_rowNumber": 3,
+      "_originalData": {
+        "Sr.No.": "2",
+        "Patient Name": "ANNA   AKORLI",
+        "Patient No.": "VR-A01-AAA8071",
+        "Age": "59 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "LIKPE ABRANI",
+        "Occupation": "Teacher",
+        "Educational Status": "Tertiary",
+        "Date of Admission": "17-06-2025",
+        "Date of Discharge": "18-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Referred",
+        "Principal Diagnosis": "Stroke, not specified as haemorrhage or infarction(I64.00)",
+        "Additional Diagnosis": "NA",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "461",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "93452"
+      },
+      "patientNumber": "VR-A01-AAA8071",
+      "address": "LIKPE ABRANI",
+      "ageNumber": "59",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "Teacher",
+      "education": "Tertiary",
+      "dateOfAdmission": "2025-06-17",
+      "dateOfDischarge": "2025-06-18",
+      "speciality": "Casualty",
+      "outcome": "Transferred",
+      "principalDiagnosis": "I64 - Stroke",
+      "additionalDiagnosis": null,
+      "surgicalProcedure": "false",
+      "cost": "461",
+      "nhisStatus": "true"
+    },
+    {
+      "_rowNumber": 15,
+      "_originalData": {
+        "Sr.No.": "14",
+        "Patient Name": "GRACE ATOKLO",
+        "Patient No.": "VR-A01-AAG3418",
+        "Age": "25 Year(s)",
+        "Gender": "Female",
+        "Locality/Address/Residence": "HOHOE BY PLAN",
+        "Occupation": "Trader",
+        "Educational Status": "jhs",
+        "Date of Admission": "27-06-2025",
+        "Date of Discharge": "28-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Discharge",
+        "Principal Diagnosis": "Syncope and collapse(R55.00)",
+        "Additional Diagnosis": "Iron deficiency anaemia, unspecified(D50.9), Other hypoglycaemia(E16.1), Urinary tract infection, site not specified(N39.0)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "218.5",
+        "NHIS Status": "No",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "NA"
+      },
+      "patientNumber": "VR-A01-AAG3418",
+      "address": "HOHOE BY PLAN",
+      "ageNumber": "25",
+      "ageUnit": "years",
+      "gender": "Female",
+      "occupation": "Trader / Shop Assistant",
+      "education": "JHS/Middle School",
+      "dateOfAdmission": "2025-06-27",
+      "dateOfDischarge": "2025-06-28",
+      "speciality": "Casualty",
+      "outcome": "Discharged",
+      "principalDiagnosis": "R55 - Collapse",
+      "additionalDiagnosis": "D50.9 - Iron Deficiency Anaemia",
+      "surgicalProcedure": "false",
+      "cost": "218.5",
+      "nhisStatus": "false"
+    },
+    {
+      "_rowNumber": 19,
+      "_originalData": {
+        "Sr.No.": "18",
+        "Patient Name": "JAMES   KOOMSON",
+        "Patient No.": "VR-A01-AAC5603",
+        "Age": "55 Year(s)",
+        "Gender": "Male",
+        "Locality/Address/Residence": "BY PLANE AT HIS OWN HSE",
+        "Occupation": "Trader",
+        "Educational Status": "SHS",
+        "Date of Admission": "16-06-2025",
+        "Date of Discharge": "18-06-2025",
+        "Speciality": "Accident Emergency",
+        "Outcome of Discharge": "Referred",
+        "Principal Diagnosis": "Contusion of thorax(S20.2)",
+        "Additional Diagnosis": "Fracture of one rib, left side, initial encounter for closed fracture(S22.32XA), Displaced fracture of shaft of left clavicle, initial encounter for closed fracture(S42.022A), Multiple superficial injuries, unspecified(T00.9)",
+        "Surgical Procedure": "No",
+        "Cost of Treatment": "909.5",
+        "NHIS Status": "Yes",
+        "Provisional Diagnosis": "NA",
+        "Main Department": "ACCIDENT AND EMERGENCY",
+        "CC Code": "42946"
+      },
+      "patientNumber": "VR-A01-AAC5603",
+      "address": "BY PLANE AT HIS OWN HSE",
+      "ageNumber": "55",
+      "ageUnit": "years",
+      "gender": "Male",
+      "occupation": "Trader / Shop Assistant",
+      "education": "SHS/Secondary",
+      "dateOfAdmission": "2025-06-16",
+      "dateOfDischarge": "2025-06-18",
+      "speciality": "Casualty",
+      "outcome": "Transferred",
+      "principalDiagnosis": "S20.2 - Contusion of Thorax",
+      "additionalDiagnosis": "T00.9 - Multiple Abrasion",
+      "surgicalProcedure": "false",
+      "cost": "909.5",
+      "nhisStatus": "true"
+    }
+  ],
+  "failed": [
+    {
+      "rowNumber": 4,
+      "data": {
+        "_rowNumber": 4,
+        "_originalData": {
+          "Sr.No.": "3",
+          "Patient Name": "ANNA  EDZENUNYE KLU",
+          "Patient No.": "VR-A01-AAG2927",
+          "Age": "79 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "VE KOLLENU @ SIMON KLUS HSE",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "18-06-2025",
+          "Date of Discharge": "19-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits(Z86.73)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "171.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "78746"
+        },
+        "patientNumber": "VR-A01-AAG2927",
+        "address": "VE KOLLENU @ SIMON KLUS HSE",
+        "ageNumber": "79",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-18",
+        "dateOfDischarge": "2025-06-19",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "Z86",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "171.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"Z86.73\" to DHIS2 codes. Please verify.",
+          "rowNumber": 4,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 5,
+      "data": {
+        "_rowNumber": 5,
+        "_originalData": {
+          "Sr.No.": "4",
+          "Patient Name": "AUGUSTINE  ATSU MAYEBI",
+          "Patient No.": "VR-A01-AAA9332",
+          "Age": "69 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "GBI ATABU @ WAKE WILLIAM",
+          "Occupation": "PENSIONIER",
+          "Educational Status": "Tertiary",
+          "Date of Admission": "24-06-2025",
+          "Date of Discharge": "26-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
+          "Additional Diagnosis": "Chronic kidney disease, stage 4(N18.4)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "266",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "26295"
+        },
+        "patientNumber": "VR-A01-AAA9332",
+        "address": "GBI ATABU @ WAKE WILLIAM",
+        "ageNumber": "69",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "Pensioner",
+        "education": "Tertiary",
+        "dateOfAdmission": "2025-06-24",
+        "dateOfDischarge": "2025-06-26",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "I10",
+        "additionalDiagnosis": "N18.9 - Chronic Kidney Disease",
+        "surgicalProcedure": "false",
+        "cost": "266",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 5,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 6,
+      "data": {
+        "_rowNumber": 6,
+        "_originalData": {
+          "Sr.No.": "5",
+          "Patient Name": "BRIDGET   BINGA",
+          "Patient No.": "VR-A01-AAG2882",
+          "Age": "61 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "LIKPE ABRANI @ THIER OWN HSE",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "14-06-2025",
+          "Date of Discharge": "15-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "Subarachnoid haemorrhage, unspecified(I60.9)",
+          "Additional Diagnosis": "Hypertensive emergency(I16.01)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "470.5",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG2882",
+        "address": "LIKPE ABRANI @ THIER OWN HSE",
+        "ageNumber": "61",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-14",
+        "dateOfDischarge": "2025-06-15",
+        "speciality": "Casualty",
+        "outcome": "Transferred",
+        "principalDiagnosis": "I60.9 - Haemorrhage Subarachnoid",
+        "additionalDiagnosis": "I16",
+        "surgicalProcedure": "false",
+        "cost": "470.5",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.01\" to DHIS2 codes. Please verify.",
+          "rowNumber": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 7,
+      "data": {
+        "_rowNumber": 7,
+        "_originalData": {
+          "Sr.No.": "6",
+          "Patient Name": "DANIEL   OFORI",
+          "Patient No.": "VR-A01-AAE6811",
+          "Age": "25 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "SCHOOLING @ FRANCO ",
+          "Occupation": "Student",
+          "Educational Status": "Tertiary",
+          "Date of Admission": "25-06-2025",
+          "Date of Discharge": "26-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Other acute appendicitis(K35.89)",
+          "Additional Diagnosis": "Peptic ulcer, site unspecified: Acute without haemorrhage or perforation(K27.3)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "324.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "98538"
+        },
+        "patientNumber": "VR-A01-AAE6811",
+        "address": "SCHOOLING @ FRANCO",
+        "ageNumber": "25",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "Student",
+        "education": "Tertiary",
+        "dateOfAdmission": "2025-06-25",
+        "dateOfDischarge": "2025-06-26",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "K35",
+        "additionalDiagnosis": "L98.4 - Ulcer",
+        "surgicalProcedure": "false",
+        "cost": "324.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"K35.89\" to DHIS2 codes. Please verify.",
+          "rowNumber": 7,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 8,
+      "data": {
+        "_rowNumber": 8,
+        "_originalData": {
+          "Sr.No.": "7",
+          "Patient Name": "DAVID KPOKU-TETTEY",
+          "Patient No.": "VR-A01-AAG3292",
+          "Age": "74 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE STAR OIL",
+          "Occupation": "CARPENTER",
+          "Educational Status": "BASIC",
+          "Date of Admission": "24-06-2025",
+          "Date of Discharge": "25-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Acute pain due to trauma(G89.11)",
+          "Additional Diagnosis": "Prophylactic immunotherapy(Z29.1)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "320.5",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3292",
+        "address": "HOHOE STAR OIL",
+        "ageNumber": "74",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "CARPENTER",
+        "education": null,
+        "dateOfAdmission": "2025-06-24",
+        "dateOfDischarge": "2025-06-25",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "T14.9 - Trauma",
+        "additionalDiagnosis": "Z29",
+        "surgicalProcedure": "false",
+        "cost": "320.5",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 8,
+          "severity": "error"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 8,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 9,
+      "data": {
+        "_rowNumber": 9,
+        "_originalData": {
+          "Sr.No.": "8",
+          "Patient Name": "EMMANUEL  KORBLA BASSAH",
+          "Patient No.": "VR-A01-AAG2565",
+          "Age": "52 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE",
+          "Occupation": "FARMER",
+          "Educational Status": "BASIC",
+          "Date of Admission": "31-05-2025",
+          "Date of Discharge": "01-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Acute pain due to trauma(G89.11)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "174",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "56261"
+        },
+        "patientNumber": "VR-A01-AAG2565",
+        "address": "HOHOE",
+        "ageNumber": "52",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "FARMER",
+        "education": null,
+        "dateOfAdmission": "2025-05-31",
+        "dateOfDischarge": "2025-06-01",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "T14.9 - Trauma",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "174",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 9,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 10,
+      "data": {
+        "_rowNumber": 10,
+        "_originalData": {
+          "Sr.No.": "9",
+          "Patient Name": "EMMANUEL  SENU VIGOROE",
+          "Patient No.": "HO-A01-AAQ4118",
+          "Age": "41 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "VOLTA| HOHOE| GBIKLEDZO| MR VIGOROE EMMANUEL HSE NERA EP CHURCH ",
+          "Occupation": "NA",
+          "Educational Status": "NA",
+          "Date of Admission": "14-06-2025",
+          "Date of Discharge": "15-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "End stage renal disease(N18.6)",
+          "Additional Diagnosis": "Dependence on renal dialysis(Z99.2), Chronic pulmonary edema(J81.01), Sepsis, unspecified(A41.9)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "538",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "93203"
+        },
+        "patientNumber": "HO-A01-AAQ4118",
+        "address": "VOLTA| HOHOE| GBIKLEDZO| MR VIGOROE EMMANUEL HSE NERA EP CHURCH",
+        "ageNumber": "41",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "NA",
+        "education": null,
+        "dateOfAdmission": "2025-06-14",
+        "dateOfDischarge": "2025-06-15",
+        "speciality": "General",
+        "outcome": "Transferred",
+        "principalDiagnosis": "N28.9 - Renal Disease",
+        "additionalDiagnosis": "Z99",
+        "surgicalProcedure": "false",
+        "cost": "538",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "patientNumber",
+          "message": "Invalid format: \"HO-A01-AAQ4118\". Expected: VR-A##-AAA####",
+          "rowNumber": 10,
+          "severity": "error"
+        },
+        {
+          "field": "education",
+          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 10,
+          "severity": "error"
+        },
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 10,
+          "severity": "warning"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z99.2\" to DHIS2 codes. Please verify.",
+          "rowNumber": 10,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 11,
+      "data": {
+        "_rowNumber": 11,
+        "_originalData": {
+          "Sr.No.": "10",
+          "Patient Name": "ERICA KAMASA",
+          "Patient No.": "VR-A01-AAB7881",
+          "Age": "52 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "GBORXOME @ YOHANES HOLA'S HSE",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "24-06-2025",
+          "Date of Discharge": "24-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Hypertensive urgency(I16.0)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "109.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "71475"
+        },
+        "patientNumber": "VR-A01-AAB7881",
+        "address": "GBORXOME @ YOHANES HOLA'S HSE",
+        "ageNumber": "52",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-24",
+        "dateOfDischarge": "2025-06-24",
+        "speciality": "General",
+        "outcome": "Discharged",
+        "principalDiagnosis": "I16",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "109.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 11,
+          "severity": "warning"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 11,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 12,
+      "data": {
+        "_rowNumber": 12,
+        "_originalData": {
+          "Sr.No.": "11",
+          "Patient Name": "EUGENIA  ADZO SOGLO",
+          "Patient No.": "VR-A01-AAG3177",
+          "Age": "69 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "HOHOE ATABU NEW TOWN",
+          "Occupation": "pensioner",
+          "Educational Status": "jhs",
+          "Date of Admission": "22-06-2025",
+          "Date of Discharge": "23-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Hypertensive urgency(I16.0)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "387.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "81357"
+        },
+        "patientNumber": "VR-A01-AAG3177",
+        "address": "HOHOE ATABU NEW TOWN",
+        "ageNumber": "69",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "pensioner",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-22",
+        "dateOfDischarge": "2025-06-23",
+        "speciality": "General",
+        "outcome": "Discharged",
+        "principalDiagnosis": "I16",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "387.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 12,
+          "severity": "warning"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 12,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 13,
+      "data": {
+        "_rowNumber": 13,
+        "_originalData": {
+          "Sr.No.": "12",
+          "Patient Name": "FESTOUS  MENSAH",
+          "Patient No.": "VR-A01-AAG3065",
+          "Age": "34 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE GODEWU",
+          "Occupation": "STIL BENDER",
+          "Educational Status": "SHS",
+          "Date of Admission": "19-06-2025",
+          "Date of Discharge": "20-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Acute pain due to trauma(G89.11)",
+          "Additional Diagnosis": "Prophylactic immunotherapy(Z29.1)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "461.5",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3065",
+        "address": "HOHOE GODEWU",
+        "ageNumber": "34",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "STIL BENDER",
+        "education": "SHS/Secondary",
+        "dateOfAdmission": "2025-06-19",
+        "dateOfDischarge": "2025-06-20",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "T14.9 - Trauma",
+        "additionalDiagnosis": "Z29",
+        "surgicalProcedure": "false",
+        "cost": "461.5",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 13,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 14,
+      "data": {
+        "_rowNumber": 14,
+        "_originalData": {
+          "Sr.No.": "13",
+          "Patient Name": "GENEVIVE   ASSAYI",
+          "Patient No.": "VR-A01-AAG2035",
+          "Age": "10 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET ",
+          "Occupation": "Student",
+          "Educational Status": "BASIC",
+          "Date of Admission": "29-05-2025",
+          "Date of Discharge": "03-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Varicella without complication(B01.9)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "80",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "71186"
+        },
+        "patientNumber": "VR-A01-AAG2035",
+        "address": "KONTOBREY ANTHONY'S HSE @ GBI KPEME NEAR THE MARKET",
+        "ageNumber": "10",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Student",
+        "education": null,
+        "dateOfAdmission": "2025-05-29",
+        "dateOfDischarge": "2025-06-03",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "B01.9 - Varicella",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "80",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 14,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 16,
+      "data": {
+        "_rowNumber": 16,
+        "_originalData": {
+          "Sr.No.": "15",
+          "Patient Name": "HAMDAN   ZURUKANENI",
+          "Patient No.": "VR-A01-AAG3269",
+          "Age": "13 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE",
+          "Occupation": "pupil",
+          "Educational Status": "Primary",
+          "Date of Admission": "24-06-2025",
+          "Date of Discharge": "25-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Plasmodium falciparum malaria, unspecified(B50.9)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "177",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "52593"
+        },
+        "patientNumber": "VR-A01-AAG3269",
+        "address": "HOHOE",
+        "ageNumber": "13",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "pupil",
+        "education": null,
+        "dateOfAdmission": "2025-06-24",
+        "dateOfDischarge": "2025-06-25",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "B54 - Malaria",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "177",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"Primary\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 16,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 17,
+      "data": {
+        "_rowNumber": 17,
+        "_originalData": {
+          "Sr.No.": "16",
+          "Patient Name": "IGNATIUS   AYEKPA",
+          "Patient No.": "OT-A03-AAA2442",
+          "Age": "61 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "DZIMPAPA IN HIS WN HSE NEAR THE MORGUE",
+          "Occupation": "NA",
+          "Educational Status": "NA",
+          "Date of Admission": "28-06-2025",
+          "Date of Discharge": "30-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Diabetes mellitus due to underlying condition with hyperglycemia(E08.65)",
+          "Additional Diagnosis": "Headache(R51.00)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "455",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "OT-A03-AAA2442",
+        "address": "DZIMPAPA IN HIS WN HSE NEAR THE MORGUE",
+        "ageNumber": "61",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "NA",
+        "education": null,
+        "dateOfAdmission": "2025-06-28",
+        "dateOfDischarge": "2025-06-30",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "E14 - Diabetes",
+        "additionalDiagnosis": "R51 - Headache",
+        "surgicalProcedure": "false",
+        "cost": "455",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "patientNumber",
+          "message": "Invalid format: \"OT-A03-AAA2442\". Expected: VR-A##-AAA####",
+          "rowNumber": 17,
+          "severity": "error"
+        },
+        {
+          "field": "education",
+          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 17,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 18,
+      "data": {
+        "_rowNumber": 18,
+        "_originalData": {
+          "Sr.No.": "17",
+          "Patient Name": "ISAAC   NORVINYEKU",
+          "Patient No.": "VR-A01-AAG2574",
+          "Age": "36 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "FROM JASIKAN ATONKOR@",
+          "Occupation": "SELF EMPLOYED",
+          "Educational Status": "SHS",
+          "Date of Admission": "01-06-2025",
+          "Date of Discharge": "01-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "Crushing injury of right lower leg, initial encounter(S87.81XA)",
+          "Additional Diagnosis": "Multiple fractures of lower leg(S82.7)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "50",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG2574",
+        "address": "FROM JASIKAN ATONKOR@",
+        "ageNumber": "36",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "SELF EMPLOYED",
+        "education": "SHS/Secondary",
+        "dateOfAdmission": "2025-06-01",
+        "dateOfDischarge": "2025-06-01",
+        "speciality": "Casualty",
+        "outcome": "Transferred",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": "T02.9 - Multiple Fracture",
+        "surgicalProcedure": "false",
+        "cost": "50",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not extract ICD code from: \"Crushing injury of right lower leg, initial encounter(S87.81XA)\". Expected format: \"Description(Code)\"",
+          "rowNumber": 18,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 20,
+      "data": {
+        "_rowNumber": 20,
+        "_originalData": {
+          "Sr.No.": "19",
+          "Patient Name": "JONAS  KWABLA AHIAVE",
+          "Patient No.": "VR-A01-AAF4997",
+          "Age": "75 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "AHADO@ MR AHIAVE'S HSE",
+          "Occupation": "RETIRED",
+          "Educational Status": "Tertiary",
+          "Date of Admission": "26-06-2025",
+          "Date of Discharge": "28-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Acute pulmonary edema(J81.0)",
+          "Additional Diagnosis": "Hypertensive heart disease with (congestive) heart failure(I11.0), Ischaemic cardiomyopathy(I25.5)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "770.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "94603"
+        },
+        "patientNumber": "VR-A01-AAF4997",
+        "address": "AHADO@ MR AHIAVE'S HSE",
+        "ageNumber": "75",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "RETIRED",
+        "education": "Tertiary",
+        "dateOfAdmission": "2025-06-26",
+        "dateOfDischarge": "2025-06-28",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "J81",
+        "additionalDiagnosis": "I11.9 - Hypertensive Heart Disease",
+        "surgicalProcedure": "false",
+        "cost": "770.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"J81.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 20,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 21,
+      "data": {
+        "_rowNumber": 21,
+        "_originalData": {
+          "Sr.No.": "20",
+          "Patient Name": "JULIET KWAO",
+          "Patient No.": "VR-A01-AAG3420",
+          "Age": "35 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "DODO AMFROM",
+          "Occupation": "UNDERTAKER",
+          "Educational Status": "jhs",
+          "Date of Admission": "27-06-2025",
+          "Date of Discharge": "30-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Essential (primary) hypertension(I10.00)",
+          "Additional Diagnosis": "Schizophreniform disorder(F20.81)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "483",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "\tSchizophreniform disorder",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3420",
+        "address": "DODO AMFROM",
+        "ageNumber": "35",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "UNDERTAKER",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-27",
+        "dateOfDischarge": "2025-06-30",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "I10",
+        "additionalDiagnosis": "F20",
+        "surgicalProcedure": "false",
+        "cost": "483",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 21,
+          "severity": "warning"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"F20.81\" to DHIS2 codes. Please verify.",
+          "rowNumber": 21,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 22,
+      "data": {
+        "_rowNumber": 22,
+        "_originalData": {
+          "Sr.No.": "21",
+          "Patient Name": "KELVIN  AMENUVEVE ABLOMETI",
+          "Patient No.": "VR-A01-AAG3221",
+          "Age": "7 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE KITITKPA",
+          "Occupation": "Student",
+          "Educational Status": "BASIC",
+          "Date of Admission": "23-06-2025",
+          "Date of Discharge": "27-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Varicella without complication(B01.9)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "215",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "71825"
+        },
+        "patientNumber": "VR-A01-AAG3221",
+        "address": "HOHOE KITITKPA",
+        "ageNumber": "7",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "Student",
+        "education": null,
+        "dateOfAdmission": "2025-06-23",
+        "dateOfDischarge": "2025-06-27",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "B01.9 - Varicella",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "215",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 22,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 23,
+      "data": {
+        "_rowNumber": 23,
+        "_originalData": {
+          "Sr.No.": "22",
+          "Patient Name": "NURAIN   ANAS",
+          "Patient No.": "VR-A01-AAF9606",
+          "Age": "7 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "ADABRAKA @ FUSEINI YAKUBU HOUSE",
+          "Occupation": "CHILD",
+          "Educational Status": "CHILD",
+          "Date of Admission": "18-06-2025",
+          "Date of Discharge": "18-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "Ocular laceration without prolapse or loss of intraocular tissue, right eye, initial encounter(S05.31XA)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "103.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "62786"
+        },
+        "patientNumber": "VR-A01-AAF9606",
+        "address": "ADABRAKA @ FUSEINI YAKUBU HOUSE",
+        "ageNumber": "7",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "CHILD",
+        "education": null,
+        "dateOfAdmission": "2025-06-18",
+        "dateOfDischarge": "2025-06-18",
+        "speciality": "General",
+        "outcome": "Transferred",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "103.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"CHILD\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 23,
+          "severity": "error"
+        },
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 23,
+          "severity": "warning"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not extract ICD code from: \"Ocular laceration without prolapse or loss of intraocular tissue, right eye, initial encounter(S05.31XA)\". Expected format: \"Description(Code)\"",
+          "rowNumber": 23,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 24,
+      "data": {
+        "_rowNumber": 24,
+        "_originalData": {
+          "Sr.No.": "23",
+          "Patient Name": "NYANYOAFE EVANS",
+          "Patient No.": "VR-A01-AAG3109",
+          "Age": "19 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "LOGBA ALAKPETI",
+          "Occupation": "unemployed",
+          "Educational Status": "BASIC",
+          "Date of Admission": "20-06-2025",
+          "Date of Discharge": "20-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Motorcycle rider injured in collision with pedestrian or animal: Driver injured in traffic accident(V20.4)",
+          "Additional Diagnosis": "Multiple superficial injuries, unspecified(T00.9), Laceration without foreign body of left eyelid and periocular area, initial encounter(S01.112A)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "281.5",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3109",
+        "address": "LOGBA ALAKPETI",
+        "ageNumber": "19",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "unemployed",
+        "education": null,
+        "dateOfAdmission": "2025-06-20",
+        "dateOfDischarge": "2025-06-20",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "V20",
+        "additionalDiagnosis": "T00.9 - Multiple Abrasion",
+        "surgicalProcedure": "false",
+        "cost": "281.5",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "education",
+          "message": "Unknown education level: \"BASIC\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 24,
+          "severity": "error"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"V20.4\" to DHIS2 codes. Please verify.",
+          "rowNumber": 24,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 25,
+      "data": {
+        "_rowNumber": 25,
+        "_originalData": {
+          "Sr.No.": "24",
+          "Patient Name": "OSCAR AGLOMASA",
+          "Patient No.": "VR-A01-AAG3144",
+          "Age": "48 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "HOHOE PALOMA",
+          "Occupation": "surveyer",
+          "Educational Status": "SHS",
+          "Date of Admission": "20-06-2025",
+          "Date of Discharge": "22-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Absconded",
+          "Principal Diagnosis": "Stroke, not specified as haemorrhage or infarction(I64.00), Cerebral infarction, unspecified(I63.9)",
+          "Additional Diagnosis": "Essential (primary) hypertension(I10.00)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "321",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3144",
+        "address": "HOHOE PALOMA",
+        "ageNumber": "48",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "surveyer",
+        "education": "SHS/Secondary",
+        "dateOfAdmission": "2025-06-20",
+        "dateOfDischarge": "2025-06-22",
+        "speciality": "Casualty",
+        "outcome": "Absconded",
+        "principalDiagnosis": "I64 - Stroke",
+        "additionalDiagnosis": "I10",
+        "surgicalProcedure": "false",
+        "cost": "321",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 25,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 26,
+      "data": {
+        "_rowNumber": 26,
+        "_originalData": {
+          "Sr.No.": "25",
+          "Patient Name": "PATIENCE ADJORNTEH",
+          "Patient No.": "OT-A02-AAE2120",
+          "Age": "27 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "NA",
+          "Occupation": "NA",
+          "Educational Status": "NA",
+          "Date of Admission": "18-06-2025",
+          "Date of Discharge": "19-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "Acute appendicitis with localized peritonitis(K35.3)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "247",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "59256"
+        },
+        "patientNumber": "OT-A02-AAE2120",
+        "address": "NA",
+        "ageNumber": "27",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "NA",
+        "education": null,
+        "dateOfAdmission": "2025-06-18",
+        "dateOfDischarge": "2025-06-19",
+        "speciality": "Casualty",
+        "outcome": "Transferred",
+        "principalDiagnosis": "K65.9 - Peritonitis",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "247",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "patientNumber",
+          "message": "Invalid format: \"OT-A02-AAE2120\". Expected: VR-A##-AAA####",
+          "rowNumber": 26,
+          "severity": "error"
+        },
+        {
+          "field": "education",
+          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 26,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 27,
+      "data": {
+        "_rowNumber": 27,
+        "_originalData": {
+          "Sr.No.": "26",
+          "Patient Name": "PHILIP  KWAKU AHIABLE",
+          "Patient No.": "VR-A01-AAF2415",
+          "Age": "64 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "LOWCOST DOWN AT HIS OWN HSE",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "03-06-2025",
+          "Date of Discharge": "05-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Urinary tract infection, site not specified(N39.0)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "402.5",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "23847"
+        },
+        "patientNumber": "VR-A01-AAF2415",
+        "address": "LOWCOST DOWN AT HIS OWN HSE",
+        "ageNumber": "64",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-03",
+        "dateOfDischarge": "2025-06-05",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "N39",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "402.5",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"N39.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 27,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 28,
+      "data": {
+        "_rowNumber": 28,
+        "_originalData": {
+          "Sr.No.": "27",
+          "Patient Name": "RAPHAEL   GBORTOR",
+          "Patient No.": "VR-A01-AAG3087",
+          "Age": "56 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "FODOME-AMLE@OWN HSE ",
+          "Occupation": "FARMER",
+          "Educational Status": "jhs",
+          "Date of Admission": "19-06-2025",
+          "Date of Discharge": "20-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Acute pain due to trauma(G89.11)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "201.5",
+          "NHIS Status": "No",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "NA"
+        },
+        "patientNumber": "VR-A01-AAG3087",
+        "address": "FODOME-AMLE@OWN HSE",
+        "ageNumber": "56",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "FARMER",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-19",
+        "dateOfDischarge": "2025-06-20",
+        "speciality": "General",
+        "outcome": "Discharged",
+        "principalDiagnosis": "T14.9 - Trauma",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "201.5",
+        "nhisStatus": "false"
+      },
+      "errors": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 28,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 29,
+      "data": {
+        "_rowNumber": 29,
+        "_originalData": {
+          "Sr.No.": "28",
+          "Patient Name": "REJOYCE   YEBOAH",
+          "Patient No.": "VR-A01-AAA4985",
+          "Age": "69 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "24-06-2025",
+          "Date of Discharge": "25-06-2025",
+          "Speciality": "General",
+          "Outcome of Discharge": "Referred",
+          "Principal Diagnosis": "ST elevation (STEMI) myocardial infarction involving left main coronary artery(I21.01)",
+          "Additional Diagnosis": "Acute respiratory distress(R06.03)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "765",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "57364"
+        },
+        "patientNumber": "VR-A01-AAA4985",
+        "address": "MR AMPOFO AMMENUEL'S HSE @ TREVI",
+        "ageNumber": "69",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-24",
+        "dateOfDischarge": "2025-06-25",
+        "speciality": "General",
+        "outcome": "Transferred",
+        "principalDiagnosis": "I21.9 - Myocardial infarction",
+        "additionalDiagnosis": "Z73.3 - Stress",
+        "surgicalProcedure": "false",
+        "cost": "765",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 29,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 30,
+      "data": {
+        "_rowNumber": 30,
+        "_originalData": {
+          "Sr.No.": "29",
+          "Patient Name": "RUKEYATU   ABU",
+          "Patient No.": "VR-A01-AAB5783",
+          "Age": "32 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "HOHOE BUNDOCK",
+          "Occupation": "Trader",
+          "Educational Status": "jhs",
+          "Date of Admission": "26-06-2025",
+          "Date of Discharge": "27-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Poisoning by unspecified drugs, medicaments and biological substances, intentional self-harm, initial encounter(T50.902A)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "46",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "91697"
+        },
+        "patientNumber": "VR-A01-AAB5783",
+        "address": "HOHOE BUNDOCK",
+        "ageNumber": "32",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "Trader / Shop Assistant",
+        "education": "JHS/Middle School",
+        "dateOfAdmission": "2025-06-26",
+        "dateOfDischarge": "2025-06-27",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": null,
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "46",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not extract ICD code from: \"Poisoning by unspecified drugs, medicaments and biological substances, intentional self-harm, initial encounter(T50.902A)\". Expected format: \"Description(Code)\"",
+          "rowNumber": 30,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 31,
+      "data": {
+        "_rowNumber": 31,
+        "_originalData": {
+          "Sr.No.": "30",
+          "Patient Name": "THEODORE  FRANCIS SANI",
+          "Patient No.": "AC-A02-ABL8164",
+          "Age": "29 Year(s)",
+          "Gender": "Male",
+          "Locality/Address/Residence": "EAST LEGON",
+          "Occupation": "NA",
+          "Educational Status": "NA",
+          "Date of Admission": "02-06-2025",
+          "Date of Discharge": "03-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Gastroenteritis and colitis of unspecified origin(A09.9)",
+          "Additional Diagnosis": "NA",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "309",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "59289"
+        },
+        "patientNumber": "AC-A02-ABL8164",
+        "address": "EAST LEGON",
+        "ageNumber": "29",
+        "ageUnit": "years",
+        "gender": "Male",
+        "occupation": "NA",
+        "education": null,
+        "dateOfAdmission": "2025-06-02",
+        "dateOfDischarge": "2025-06-03",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "A09 - Enteritis",
+        "additionalDiagnosis": null,
+        "surgicalProcedure": "false",
+        "cost": "309",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "patientNumber",
+          "message": "Invalid format: \"AC-A02-ABL8164\". Expected: VR-A##-AAA####",
+          "rowNumber": 31,
+          "severity": "error"
+        },
+        {
+          "field": "education",
+          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 31,
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "rowNumber": 32,
+      "data": {
+        "_rowNumber": 32,
+        "_originalData": {
+          "Sr.No.": "31",
+          "Patient Name": "VICTORIA   KUDAH",
+          "Patient No.": "HO-A01-AAO2127",
+          "Age": "69 Year(s)",
+          "Gender": "Female",
+          "Locality/Address/Residence": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH ",
+          "Occupation": "NA",
+          "Educational Status": "NA",
+          "Date of Admission": "17-06-2025",
+          "Date of Discharge": "21-06-2025",
+          "Speciality": "Accident Emergency",
+          "Outcome of Discharge": "Discharge",
+          "Principal Diagnosis": "Malignant neoplasm: Central portion of breast(C50.1)",
+          "Additional Diagnosis": "Meralgia paresthetica, bilateral lower limbs(G57.13), Anemia in other chronic diseases classified elsewhere(D63.08)",
+          "Surgical Procedure": "No",
+          "Cost of Treatment": "540",
+          "NHIS Status": "Yes",
+          "Provisional Diagnosis": "NA",
+          "Main Department": "ACCIDENT AND EMERGENCY",
+          "CC Code": "13965"
+        },
+        "patientNumber": "HO-A01-AAO2127",
+        "address": "ANLOGA -EWE ,KUDAH NORVIKAWOR HSE  CLOSED TO THE EWE MIDDLE SCH",
+        "ageNumber": "69",
+        "ageUnit": "years",
+        "gender": "Female",
+        "occupation": "NA",
+        "education": null,
+        "dateOfAdmission": "2025-06-17",
+        "dateOfDischarge": "2025-06-21",
+        "speciality": "Casualty",
+        "outcome": "Discharged",
+        "principalDiagnosis": "C50",
+        "additionalDiagnosis": "G57.5 - Tunnel syndromes",
+        "surgicalProcedure": "false",
+        "cost": "540",
+        "nhisStatus": "true"
+      },
+      "errors": [
+        {
+          "field": "patientNumber",
+          "message": "Invalid format: \"HO-A01-AAO2127\". Expected: VR-A##-AAA####",
+          "rowNumber": 32,
+          "severity": "error"
+        },
+        {
+          "field": "education",
+          "message": "Unknown education level: \"NA\". Expected: SHS, JHS, or Tertiary",
+          "rowNumber": 32,
+          "severity": "error"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"C50.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 32,
+          "severity": "warning"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "rowNumber": 4,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"Z86.73\" to DHIS2 codes. Please verify.",
+          "rowNumber": 4,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 5,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 5,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 6,
+      "warnings": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.01\" to DHIS2 codes. Please verify.",
+          "rowNumber": 6,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 7,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"K35.89\" to DHIS2 codes. Please verify.",
+          "rowNumber": 7,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 8,
+      "warnings": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 8,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 10,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 10,
+          "severity": "warning"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z99.2\" to DHIS2 codes. Please verify.",
+          "rowNumber": 10,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 11,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 11,
+          "severity": "warning"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 11,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 12,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 12,
+          "severity": "warning"
+        },
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I16.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 12,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 13,
+      "warnings": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"Z29.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 13,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 20,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"J81.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 20,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 21,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 21,
+          "severity": "warning"
+        },
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"F20.81\" to DHIS2 codes. Please verify.",
+          "rowNumber": 21,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 23,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 23,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 24,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"V20.4\" to DHIS2 codes. Please verify.",
+          "rowNumber": 24,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 25,
+      "warnings": [
+        {
+          "field": "additionalDiagnosis",
+          "message": "Could not match diagnosis code \"I10.00\" to DHIS2 codes. Please verify.",
+          "rowNumber": 25,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 27,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"N39.0\" to DHIS2 codes. Please verify.",
+          "rowNumber": 27,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 28,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 28,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 29,
+      "warnings": [
+        {
+          "field": "speciality",
+          "message": "Unknown speciality: \"General\". Will use as-is",
+          "rowNumber": 29,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "rowNumber": 32,
+      "warnings": [
+        {
+          "field": "principalDiagnosis",
+          "message": "Could not match diagnosis code \"C50.1\" to DHIS2 codes. Please verify.",
+          "rowNumber": 32,
+          "severity": "warning"
+        }
+      ]
+    }
+  ]
+}

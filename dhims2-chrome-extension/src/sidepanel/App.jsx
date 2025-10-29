@@ -134,8 +134,7 @@ function App() {
                 activeTab === 'upload'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-600 hover:text-gray-800'
-              } ${!apiDiscovered && 'opacity-50 cursor-not-allowed'}`}
-              disabled={!apiDiscovered}
+              }`}
             >
               <div className="flex items-center justify-center gap-1.5">
                 <UploadIcon className="w-3.5 h-3.5" />

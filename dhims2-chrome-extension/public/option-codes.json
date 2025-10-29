@@ -1,0 +1,6876 @@
+{
+  "Education": [
+    {
+      "code": "None",
+      "name": "None"
+    },
+    {
+      "code": "Primary",
+      "name": "Primary"
+    },
+    {
+      "code": "JHS/Middle School",
+      "name": "JHS/Middle School"
+    },
+    {
+      "code": "SHS/Secondary",
+      "name": "SHS/Secondary"
+    },
+    {
+      "code": "Tertiary",
+      "name": "Tertiary"
+    },
+    {
+      "code": "Technical/Vocational",
+      "name": "Technical/Vocational"
+    }
+  ],
+  "Outcome": [
+    {
+      "code": "Absconded",
+      "name": "Absconded"
+    },
+    {
+      "code": "Discharged",
+      "name": "Discharged"
+    },
+    {
+      "code": "Transferred",
+      "name": "Transferred"
+    },
+    {
+      "code": "Unspecified",
+      "name": "Unspecified"
+    },
+    {
+      "code": "Died",
+      "name": "Died"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "code": "A00 - Cholera",
+      "name": "A00 - Cholera"
+    },
+    {
+      "code": "A01.0 - Enteric Fever",
+      "name": "A01.0 - Enteric Fever"
+    },
+    {
+      "code": "A01.0 - Typhoid fever",
+      "name": "A01.0 - Typhoid fever"
+    },
+    {
+      "code": "A01.0 - Typhoid Perforation",
+      "name": "A01.0 - Typhoid Perforation"
+    },
+    {
+      "code": "A02.1 - Salmonella Sepsis",
+      "name": "A02.1 - Salmonella Sepsis"
+    },
+    {
+      "code": "A03.9 - Bacillary Dysentery",
+      "name": "A03.9 - Bacillary Dysentery"
+    },
+    {
+      "code": "A03.9 - Dysentery Bacillary",
+      "name": "A03.9 - Dysentery Bacillary"
+    },
+    {
+      "code": "A03.9 - Shigellosis",
+      "name": "A03.9 - Shigellosis"
+    },
+    {
+      "code": "A04.7 - Necrotising enterocolitis",
+      "name": "A04.7 - Necrotising enterocolitis"
+    },
+    {
+      "code": "A06.0 - Amoebiasis Intestinal (Acute)",
+      "name": "A06.0 - Amoebiasis Intestinal (Acute)"
+    },
+    {
+      "code": "A06.0 - Dysentery Amoebic (Acute )",
+      "name": "A06.0 - Dysentery Amoebic (Acute )"
+    },
+    {
+      "code": "A06.1 - Amoebiasis Intestinal (Chronic)",
+      "name": "A06.1 - Amoebiasis Intestinal (Chronic)"
+    },
+    {
+      "code": "A06.4 - Amoebic Liver Abscess",
+      "name": "A06.4 - Amoebic Liver Abscess"
+    },
+    {
+      "code": "A06.9 - Amoebiasis",
+      "name": "A06.9 - Amoebiasis"
+    },
+    {
+      "code": "A09 - Diarrhoea",
+      "name": "A09 - Diarrhoea"
+    },
+    {
+      "code": "A09 - Dysentery",
+      "name": "A09 - Dysentery"
+    },
+    {
+      "code": "A09 - Enema  Colitis",
+      "name": "A09 - Enema  Colitis"
+    },
+    {
+      "code": "A09 - Enteritis",
+      "name": "A09 - Enteritis"
+    },
+    {
+      "code": "A09 - Enterocolitis",
+      "name": "A09 - Enterocolitis"
+    },
+    {
+      "code": "A09 - Frequent Watery Stools",
+      "name": "A09 - Frequent Watery Stools"
+    },
+    {
+      "code": "A09 - Gastroenteritis",
+      "name": "A09 - Gastroenteritis"
+    },
+    {
+      "code": "A16.2 - Tuberculosis Pulmonary",
+      "name": "A16.2 - Tuberculosis Pulmonary"
+    },
+    {
+      "code": "A16.9 - Kochs",
+      "name": "A16.9 - Kochs"
+    },
+    {
+      "code": "A16.9 - Phthisis",
+      "name": "A16.9 - Phthisis"
+    },
+    {
+      "code": "A16.9 - Tuberculosis",
+      "name": "A16.9 - Tuberculosis"
+    },
+    {
+      "code": "A16.9 - Tuberculosis (Unspecified)",
+      "name": "A16.9 - Tuberculosis (Unspecified)"
+    },
+    {
+      "code": "A17.0 - Tuberculosis Meningitis",
+      "name": "A17.0 - Tuberculosis Meningitis"
+    },
+    {
+      "code": "A18.0 - Tuberculosis arthirtis",
+      "name": "A18.0 - Tuberculosis arthirtis"
+    },
+    {
+      "code": "A18.0 - Tuberculous osteitis",
+      "name": "A18.0 - Tuberculous osteitis"
+    },
+    {
+      "code": "A18.3 - Tuberculosis Abdominal",
+      "name": "A18.3 - Tuberculosis Abdominal"
+    },
+    {
+      "code": "A19.9 - Miliary Tuberculosis",
+      "name": "A19.9 - Miliary Tuberculosis"
+    },
+    {
+      "code": "A22.9 - Anthrax",
+      "name": "A22.9 - Anthrax"
+    },
+    {
+      "code": "A30.9 - Leprosy",
+      "name": "A30.9 - Leprosy"
+    },
+    {
+      "code": "A31.1 - Buruli Ulcer",
+      "name": "A31.1 - Buruli Ulcer"
+    },
+    {
+      "code": "A33 - Neonatal Tetanus",
+      "name": "A33 - Neonatal Tetanus"
+    },
+    {
+      "code": "A33 - Tetanus Neonatorum",
+      "name": "A33 - Tetanus Neonatorum"
+    },
+    {
+      "code": "A35 - Tetanus",
+      "name": "A35 - Tetanus"
+    },
+    {
+      "code": "A36.9 - Diphtheria",
+      "name": "A36.9 - Diphtheria"
+    },
+    {
+      "code": "A37.9 - Pertussis",
+      "name": "A37.9 - Pertussis"
+    },
+    {
+      "code": "A37.9 - Whooping Cough",
+      "name": "A37.9 - Whooping Cough"
+    },
+    {
+      "code": "A39.0 - Cerebrospinal Meningitis (CSM)",
+      "name": "A39.0 - Cerebrospinal Meningitis (CSM)"
+    },
+    {
+      "code": "A39.0 - Meningitis Cerebrospinal (CSM)",
+      "name": "A39.0 - Meningitis Cerebrospinal (CSM)"
+    },
+    {
+      "code": "A39.0 - Meningococcal Meningitis",
+      "name": "A39.0 - Meningococcal Meningitis"
+    },
+    {
+      "code": "A41.9 - Septicaemia",
+      "name": "A41.9 - Septicaemia"
+    },
+    {
+      "code": "A41.9 - Septicaemic Shock",
+      "name": "A41.9 - Septicaemic Shock"
+    },
+    {
+      "code": "A48.0 - Infection Gas-Forming",
+      "name": "A48.0 - Infection Gas-Forming"
+    },
+    {
+      "code": "A53.9 - Syphilis",
+      "name": "A53.9 - Syphilis"
+    },
+    {
+      "code": "A54.4 - Gonococcal Osteomyelitis",
+      "name": "A54.4 - Gonococcal Osteomyelitis"
+    },
+    {
+      "code": "A54.4 - Osteomyelitis Gonococcal",
+      "name": "A54.4 - Osteomyelitis Gonococcal"
+    },
+    {
+      "code": "A71.9 - Trachoma",
+      "name": "A71.9 - Trachoma"
+    },
+    {
+      "code": "A75.9 - Typhus",
+      "name": "A75.9 - Typhus"
+    },
+    {
+      "code": "A80.9 - Poliomyelitis (Acute)",
+      "name": "A80.9 - Poliomyelitis (Acute)"
+    },
+    {
+      "code": "A82.9 - Rabies",
+      "name": "A82.9 - Rabies"
+    },
+    {
+      "code": "A86 - Viral Encephalitis",
+      "name": "A86 - Viral Encephalitis"
+    },
+    {
+      "code": "A95.9 - Yellow Fever",
+      "name": "A95.9 - Yellow Fever"
+    },
+    {
+      "code": "B01.9 - Chicken Pox",
+      "name": "B01.9 - Chicken Pox"
+    },
+    {
+      "code": "B01.9 - Varicella",
+      "name": "B01.9 - Varicella"
+    },
+    {
+      "code": "B02.9 - Herpes Zoster",
+      "name": "B02.9 - Herpes Zoster"
+    },
+    {
+      "code": "B02.9 - Varicella Zoster",
+      "name": "B02.9 - Varicella Zoster"
+    },
+    {
+      "code": "B02.9 - Zoster",
+      "name": "B02.9 - Zoster"
+    },
+    {
+      "code": "B05.2 - Post Measles Pneumonia",
+      "name": "B05.2 - Post Measles Pneumonia"
+    },
+    {
+      "code": "B05.9 - Measles",
+      "name": "B05.9 - Measles"
+    },
+    {
+      "code": "B05.9 - Rubeolla",
+      "name": "B05.9 - Rubeolla"
+    },
+    {
+      "code": "B06.9 - German Measles",
+      "name": "B06.9 - German Measles"
+    },
+    {
+      "code": "B06.9 - Measles German",
+      "name": "B06.9 - Measles German"
+    },
+    {
+      "code": "B08.4 - Hand and Foot Syndrome",
+      "name": "B08.4 - Hand and Foot Syndrome"
+    },
+    {
+      "code": "B15.9 - Hepatitis A",
+      "name": "B15.9 - Hepatitis A"
+    },
+    {
+      "code": "B15.9 - Infective Hepatitis",
+      "name": "B15.9 - Infective Hepatitis"
+    },
+    {
+      "code": "B15.9 - Viral Hepatitis",
+      "name": "B15.9 - Viral Hepatitis"
+    },
+    {
+      "code": "B16.9 - Hepatitis B (Acute)",
+      "name": "B16.9 - Hepatitis B (Acute)"
+    },
+    {
+      "code": "B18.1 - Hepatitis B (Chronic)",
+      "name": "B18.1 - Hepatitis B (Chronic)"
+    },
+    {
+      "code": "B19.9 - Acute viral hepatitis",
+      "name": "B19.9 - Acute viral hepatitis"
+    },
+    {
+      "code": "B19.9 - Hepatitis Viral (Unspecified)",
+      "name": "B19.9 - Hepatitis Viral (Unspecified)"
+    },
+    {
+      "code": "B23 - HIV Infection",
+      "name": "B23 - HIV Infection"
+    },
+    {
+      "code": "B24 - HIV/AIDS",
+      "name": "B24 - HIV/AIDS"
+    },
+    {
+      "code": "B34.9 - Infection Viral (Unspecified)",
+      "name": "B34.9 - Infection Viral (Unspecified)"
+    },
+    {
+      "code": "B37.9 - Candidiasis",
+      "name": "B37.9 - Candidiasis"
+    },
+    {
+      "code": "B45.1 - Cryptococal Meningitis",
+      "name": "B45.1 - Cryptococal Meningitis"
+    },
+    {
+      "code": "B45.1 - Meningitis Cryptococal",
+      "name": "B45.1 - Meningitis Cryptococal"
+    },
+    {
+      "code": "B50.0 - Malaria Cerebral",
+      "name": "B50.0 - Malaria Cerebral"
+    },
+    {
+      "code": "B50.8 - Black Water Fever",
+      "name": "B50.8 - Black Water Fever"
+    },
+    {
+      "code": "B50.9 - Severe Malaria",
+      "name": "B50.9 - Severe Malaria"
+    },
+    {
+      "code": "B54 - Malaria",
+      "name": "B54 - Malaria"
+    },
+    {
+      "code": "B54 - Resistant Malaria",
+      "name": "B54 - Resistant Malaria"
+    },
+    {
+      "code": "B54 - Simple malaria",
+      "name": "B54 - Simple malaria"
+    },
+    {
+      "code": "B54 - Uncomplicated Malaria",
+      "name": "B54 - Uncomplicated Malaria"
+    },
+    {
+      "code": "B56.9 - Trypanosomiasis",
+      "name": "B56.9 - Trypanosomiasis"
+    },
+    {
+      "code": "B65.0 - Bilhazia",
+      "name": "B65.0 - Bilhazia"
+    },
+    {
+      "code": "B65.0 - Schistosomiasis (Urinary)",
+      "name": "B65.0 - Schistosomiasis (Urinary)"
+    },
+    {
+      "code": "B65.0 - Urinary Schistosomiasis",
+      "name": "B65.0 - Urinary Schistosomiasis"
+    },
+    {
+      "code": "B65.1 - Intestinal Schistosomiasis",
+      "name": "B65.1 - Intestinal Schistosomiasis"
+    },
+    {
+      "code": "B65.1 - Schistosomiasis (Intestinal)",
+      "name": "B65.1 - Schistosomiasis (Intestinal)"
+    },
+    {
+      "code": "B65.9 - Schistosoma Granuloma",
+      "name": "B65.9 - Schistosoma Granuloma"
+    },
+    {
+      "code": "B65.9 - Schistosomiasis (Unspecified)",
+      "name": "B65.9 - Schistosomiasis (Unspecified)"
+    },
+    {
+      "code": "B73 - Onchocerciasis",
+      "name": "B73 - Onchocerciasis"
+    },
+    {
+      "code": "B73 - River Blindness",
+      "name": "B73 - River Blindness"
+    },
+    {
+      "code": "B74.9 - Elephantiasis",
+      "name": "B74.9 - Elephantiasis"
+    },
+    {
+      "code": "B74.9 - Filariasis",
+      "name": "B74.9 - Filariasis"
+    },
+    {
+      "code": "B76.0 - Ancylostomiasis",
+      "name": "B76.0 - Ancylostomiasis"
+    },
+    {
+      "code": "B76.0 - Guinea worm infestation",
+      "name": "B76.0 - Guinea worm infestation"
+    },
+    {
+      "code": "B77.9 - Ascariasis",
+      "name": "B77.9 - Ascariasis"
+    },
+    {
+      "code": "B77.9 - Ascariasis Infection",
+      "name": "B77.9 - Ascariasis Infection"
+    },
+    {
+      "code": "B82.0 - Helminthiasis Intestinal",
+      "name": "B82.0 - Helminthiasis Intestinal"
+    },
+    {
+      "code": "B82.0 - Intestinal helminthiasis",
+      "name": "B82.0 - Intestinal helminthiasis"
+    },
+    {
+      "code": "B83.9 - Helminthiasis",
+      "name": "B83.9 - Helminthiasis"
+    },
+    {
+      "code": "B83.9 - Helminthiasis, unspecified",
+      "name": "B83.9 - Helminthiasis, unspecified"
+    },
+    {
+      "code": "B83.9 - Worms Infestation (unspecified)",
+      "name": "B83.9 - Worms Infestation (unspecified)"
+    },
+    {
+      "code": "B99 - Disease Infectious",
+      "name": "B99 - Disease Infectious"
+    },
+    {
+      "code": "B99 - Infected implant",
+      "name": "B99 - Infected implant"
+    },
+    {
+      "code": "C07 - Malignant mass of parotid",
+      "name": "C07 - Malignant mass of parotid"
+    },
+    {
+      "code": "C07 - Malignant neoplasm of parotid gland",
+      "name": "C07 - Malignant neoplasm of parotid gland"
+    },
+    {
+      "code": "C09.9 - Neoplasm of tonsil",
+      "name": "C09.9 - Neoplasm of tonsil"
+    },
+    {
+      "code": "C10.9 - Cancer of oropharynx",
+      "name": "C10.9 - Cancer of oropharynx"
+    },
+    {
+      "code": "C10.9 - Oropharyngeal Carcinoma",
+      "name": "C10.9 - Oropharyngeal Carcinoma"
+    },
+    {
+      "code": "C10.9 - Oropharyngeal malignancy",
+      "name": "C10.9 - Oropharyngeal malignancy"
+    },
+    {
+      "code": "C16.9 - Cancer of Stomach",
+      "name": "C16.9 - Cancer of Stomach"
+    },
+    {
+      "code": "C18.9 - Cancer of Colon",
+      "name": "C18.9 - Cancer of Colon"
+    },
+    {
+      "code": "C20 - Cancer of Rectum",
+      "name": "C20 - Cancer of Rectum"
+    },
+    {
+      "code": "C20 - Malignant Neoplasm of Rectum",
+      "name": "C20 - Malignant Neoplasm of Rectum"
+    },
+    {
+      "code": "C22.0 - Hepatocellular Carcinoma",
+      "name": "C22.0 - Hepatocellular Carcinoma"
+    },
+    {
+      "code": "C22.0 - Hepatoma",
+      "name": "C22.0 - Hepatoma"
+    },
+    {
+      "code": "C22.0 - Liver Cell Carcinoma",
+      "name": "C22.0 - Liver Cell Carcinoma"
+    },
+    {
+      "code": "C22.0 - Malignant neoplasm: Liver cell carcinoma",
+      "name": "C22.0 - Malignant neoplasm: Liver cell carcinoma"
+    },
+    {
+      "code": "C22.9 - Cancer of Liver",
+      "name": "C22.9 - Cancer of Liver"
+    },
+    {
+      "code": "C25.9 - Cancer of Pancreas",
+      "name": "C25.9 - Cancer of Pancreas"
+    },
+    {
+      "code": "C30.0 - Cancer of Nasal Cavity",
+      "name": "C30.0 - Cancer of Nasal Cavity"
+    },
+    {
+      "code": "C31.9 - Cancer of Accessory Sinus",
+      "name": "C31.9 - Cancer of Accessory Sinus"
+    },
+    {
+      "code": "C32.9 - Cancer of Larynx",
+      "name": "C32.9 - Cancer of Larynx"
+    },
+    {
+      "code": "C32.9 - Malignant mass of larynx",
+      "name": "C32.9 - Malignant mass of larynx"
+    },
+    {
+      "code": "C34.9 - Bronchial Carcinoma",
+      "name": "C34.9 - Bronchial Carcinoma"
+    },
+    {
+      "code": "C34.9 - Bronchogenic Carcinoma",
+      "name": "C34.9 - Bronchogenic Carcinoma"
+    },
+    {
+      "code": "C34.9 - Cancer of Lung",
+      "name": "C34.9 - Cancer of Lung"
+    },
+    {
+      "code": "C38.3 - Cancer Mediastinal",
+      "name": "C38.3 - Cancer Mediastinal"
+    },
+    {
+      "code": "C41.2 - Cancer Spine",
+      "name": "C41.2 - Cancer Spine"
+    },
+    {
+      "code": "C41.9 - Malignancy of limb - osteosarcoma",
+      "name": "C41.9 - Malignancy of limb - osteosarcoma"
+    },
+    {
+      "code": "C41.9 - Osteosarcoma",
+      "name": "C41.9 - Osteosarcoma"
+    },
+    {
+      "code": "C41.9 - Segmental bone loss (trauma, infection, tumour of bone)",
+      "name": "C41.9 - Segmental bone loss (trauma, infection, tumour of bone)"
+    },
+    {
+      "code": "C43.9 - Melanoma",
+      "name": "C43.9 - Melanoma"
+    },
+    {
+      "code": "C44.9 - Cancer of Skin",
+      "name": "C44.9 - Cancer of Skin"
+    },
+    {
+      "code": "C45.9 - Mesothelioma",
+      "name": "C45.9 - Mesothelioma"
+    },
+    {
+      "code": "C46.9 - Kaposi Sarcoma",
+      "name": "C46.9 - Kaposi Sarcoma"
+    },
+    {
+      "code": "C49.2 - Liposarcoma of limb",
+      "name": "C49.2 - Liposarcoma of limb"
+    },
+    {
+      "code": "C49.9 - Fibrosacoma",
+      "name": "C49.9 - Fibrosacoma"
+    },
+    {
+      "code": "C50.9 - Cancer of Breast",
+      "name": "C50.9 - Cancer of Breast"
+    },
+    {
+      "code": "C50.9 - Malignant breast lesion",
+      "name": "C50.9 - Malignant breast lesion"
+    },
+    {
+      "code": "C53.9 - Cancer of Cervix Uteri",
+      "name": "C53.9 - Cancer of Cervix Uteri"
+    },
+    {
+      "code": "C53.9 - Malignant neoplasm of cervix uteri",
+      "name": "C53.9 - Malignant neoplasm of cervix uteri"
+    },
+    {
+      "code": "C54.9 - Cancer of Corpus Uteri",
+      "name": "C54.9 - Cancer of Corpus Uteri"
+    },
+    {
+      "code": "C55 - Cancer of Uterus (Part Unspecified)",
+      "name": "C55 - Cancer of Uterus (Part Unspecified)"
+    },
+    {
+      "code": "C56 - Cancer of Ovary",
+      "name": "C56 - Cancer of Ovary"
+    },
+    {
+      "code": "C56 - Ovarian Tumour",
+      "name": "C56 - Ovarian Tumour"
+    },
+    {
+      "code": "C58 - Choriocarcinoma",
+      "name": "C58 - Choriocarcinoma"
+    },
+    {
+      "code": "C61 - Cancer of Prostate",
+      "name": "C61 - Cancer of Prostate"
+    },
+    {
+      "code": "C63.2 - Cancer Scrotum",
+      "name": "C63.2 - Cancer Scrotum"
+    },
+    {
+      "code": "C64 - Cancer of Kidney",
+      "name": "C64 - Cancer of Kidney"
+    },
+    {
+      "code": "C67.9 - Cancer of Bladder",
+      "name": "C67.9 - Cancer of Bladder"
+    },
+    {
+      "code": "C69.2 - Retinoblastoma",
+      "name": "C69.2 - Retinoblastoma"
+    },
+    {
+      "code": "C69.9 - Carcinoma of Eye",
+      "name": "C69.9 - Carcinoma of Eye"
+    },
+    {
+      "code": "C69.9 - orbital Tumour",
+      "name": "C69.9 - orbital Tumour"
+    },
+    {
+      "code": "C71.9 - Cancer of Brain",
+      "name": "C71.9 - Cancer of Brain"
+    },
+    {
+      "code": "C73 - Cancer of Thyroid",
+      "name": "C73 - Cancer of Thyroid"
+    },
+    {
+      "code": "C76.2 - Abdominal Malignancy",
+      "name": "C76.2 - Abdominal Malignancy"
+    },
+    {
+      "code": "C76.2 - Cancer Abdomen",
+      "name": "C76.2 - Cancer Abdomen"
+    },
+    {
+      "code": "C80 - Cancer (Unspecified)",
+      "name": "C80 - Cancer (Unspecified)"
+    },
+    {
+      "code": "C80 - Carcinoma",
+      "name": "C80 - Carcinoma"
+    },
+    {
+      "code": "C80 - Carcinomatosis",
+      "name": "C80 - Carcinomatosis"
+    },
+    {
+      "code": "C80 - Rhabdomyosarcoma",
+      "name": "C80 - Rhabdomyosarcoma"
+    },
+    {
+      "code": "C81.9 - Hodgkin",
+      "name": "C81.9 - Hodgkin"
+    },
+    {
+      "code": "C83.7 - Burkitt lymphoma",
+      "name": "C83.7 - Burkitt lymphoma"
+    },
+    {
+      "code": "C83.7 - Burkitts Tumour",
+      "name": "C83.7 - Burkitts Tumour"
+    },
+    {
+      "code": "C83.9 - Lymphoma Non-Hodgkin",
+      "name": "C83.9 - Lymphoma Non-Hodgkin"
+    },
+    {
+      "code": "C91.0 - Lymphoblastic Leukaemia",
+      "name": "C91.0 - Lymphoblastic Leukaemia"
+    },
+    {
+      "code": "C91.9 - Leukaemia Lymphoid",
+      "name": "C91.9 - Leukaemia Lymphoid"
+    },
+    {
+      "code": "C91.9 - Lymphatic Leukaemia",
+      "name": "C91.9 - Lymphatic Leukaemia"
+    },
+    {
+      "code": "C92.9 - Leukaemia Myeloid",
+      "name": "C92.9 - Leukaemia Myeloid"
+    },
+    {
+      "code": "C95.9 - Leukaemia (Unspecified Cell Type)",
+      "name": "C95.9 - Leukaemia (Unspecified Cell Type)"
+    },
+    {
+      "code": "D10.5 - oropharyngeal mass",
+      "name": "D10.5 - oropharyngeal mass"
+    },
+    {
+      "code": "D10.6 - Nasopharyngeal mass",
+      "name": "D10.6 - Nasopharyngeal mass"
+    },
+    {
+      "code": "D11.9 - Benign Tumor of Salivary glands",
+      "name": "D11.9 - Benign Tumor of Salivary glands"
+    },
+    {
+      "code": "D11.9 - Tumor of Salivary glands",
+      "name": "D11.9 - Tumor of Salivary glands"
+    },
+    {
+      "code": "D16.9 - Bone tumour",
+      "name": "D16.9 - Bone tumour"
+    },
+    {
+      "code": "D16.9 - Osteochondroma",
+      "name": "D16.9 - Osteochondroma"
+    },
+    {
+      "code": "D16.9 - Osteoma",
+      "name": "D16.9 - Osteoma"
+    },
+    {
+      "code": "D17.9 - Lipoma",
+      "name": "D17.9 - Lipoma"
+    },
+    {
+      "code": "D18.0 - Haemangioma",
+      "name": "D18.0 - Haemangioma"
+    },
+    {
+      "code": "D18.1 - Cystic hygroma",
+      "name": "D18.1 - Cystic hygroma"
+    },
+    {
+      "code": "D21.0 - Tumour of facial bones and soft tissues",
+      "name": "D21.0 - Tumour of facial bones and soft tissues"
+    },
+    {
+      "code": "D23.9 - External angulardermoid",
+      "name": "D23.9 - External angulardermoid"
+    },
+    {
+      "code": "D25.9 - Bleeding Fibroid",
+      "name": "D25.9 - Bleeding Fibroid"
+    },
+    {
+      "code": "D25.9 - Fibroid",
+      "name": "D25.9 - Fibroid"
+    },
+    {
+      "code": "D25.9 - Fibroid Uterus",
+      "name": "D25.9 - Fibroid Uterus"
+    },
+    {
+      "code": "D25.9 - Leiomyoma of Uterus",
+      "name": "D25.9 - Leiomyoma of Uterus"
+    },
+    {
+      "code": "D25.9 - Leiomyoma Uteri",
+      "name": "D25.9 - Leiomyoma Uteri"
+    },
+    {
+      "code": "D25.9 - Multiple Fibroid",
+      "name": "D25.9 - Multiple Fibroid"
+    },
+    {
+      "code": "D25.9 - Myoma Uteri",
+      "name": "D25.9 - Myoma Uteri"
+    },
+    {
+      "code": "D25.9 - Uterine Fibroid",
+      "name": "D25.9 - Uterine Fibroid"
+    },
+    {
+      "code": "D26.0 - Benign lesions of the cervix",
+      "name": "D26.0 - Benign lesions of the cervix"
+    },
+    {
+      "code": "D26.9 - Other benign neoplasms of uterus",
+      "name": "D26.9 - Other benign neoplasms of uterus"
+    },
+    {
+      "code": "D27 - Benign neoplasm of ovary",
+      "name": "D27 - Benign neoplasm of ovary"
+    },
+    {
+      "code": "D30.0 - Benign neoplasm of Kidney",
+      "name": "D30.0 - Benign neoplasm of Kidney"
+    },
+    {
+      "code": "D30.0 - Kidney masses",
+      "name": "D30.0 - Kidney masses"
+    },
+    {
+      "code": "D36.1 - Neuroma",
+      "name": "D36.1 - Neuroma"
+    },
+    {
+      "code": "D36.9 - Benign Neoplasm",
+      "name": "D36.9 - Benign Neoplasm"
+    },
+    {
+      "code": "D37.0 - Mass in the oropharynx",
+      "name": "D37.0 - Mass in the oropharynx"
+    },
+    {
+      "code": "D37.1 - Gastric tumour",
+      "name": "D37.1 - Gastric tumour"
+    },
+    {
+      "code": "D37.5 - Rectal tumour",
+      "name": "D37.5 - Rectal tumour"
+    },
+    {
+      "code": "D37.7 - Intestinal tumour",
+      "name": "D37.7 - Intestinal tumour"
+    },
+    {
+      "code": "D37.7 - Splenic tumour",
+      "name": "D37.7 - Splenic tumour"
+    },
+    {
+      "code": "D38.0 - Laryngeal tumour",
+      "name": "D38.0 - Laryngeal tumour"
+    },
+    {
+      "code": "D41.0 - Kidney tumour",
+      "name": "D41.0 - Kidney tumour"
+    },
+    {
+      "code": "D43.2 - Cerebral Neoplasm",
+      "name": "D43.2 - Cerebral Neoplasm"
+    },
+    {
+      "code": "D43.2 - Excision biopsy of brain tumour",
+      "name": "D43.2 - Excision biopsy of brain tumour"
+    },
+    {
+      "code": "D44.0 - Thyroid Neoplasm",
+      "name": "D44.0 - Thyroid Neoplasm"
+    },
+    {
+      "code": "D44.0 - Thyroid tumours",
+      "name": "D44.0 - Thyroid tumours"
+    },
+    {
+      "code": "D44.1 - Adrenal tumour",
+      "name": "D44.1 - Adrenal tumour"
+    },
+    {
+      "code": "D47.9 - Disease Lymphoproliferative",
+      "name": "D47.9 - Disease Lymphoproliferative"
+    },
+    {
+      "code": "D48.7 - Tumour Axillary",
+      "name": "D48.7 - Tumour Axillary"
+    },
+    {
+      "code": "D48.9 - Neoplasm of Uncertain or Unknown Behaviour, Unspecified",
+      "name": "D48.9 - Neoplasm of Uncertain or Unknown Behaviour, Unspecified"
+    },
+    {
+      "code": "D48.9 - Sacroccygeal teratoma",
+      "name": "D48.9 - Sacroccygeal teratoma"
+    },
+    {
+      "code": "D48.9 - Tumor",
+      "name": "D48.9 - Tumor"
+    },
+    {
+      "code": "D50.9 - Iron Deficiency Anaemia",
+      "name": "D50.9 - Iron Deficiency Anaemia"
+    },
+    {
+      "code": "D51.9 - Other deficiencies: Vit B12, folate",
+      "name": "D51.9 - Other deficiencies: Vit B12, folate"
+    },
+    {
+      "code": "D55.0 - Anaemia (G6PD)",
+      "name": "D55.0 - Anaemia (G6PD)"
+    },
+    {
+      "code": "D57 - Sickle-cell disorders",
+      "name": "D57 - Sickle-cell disorders"
+    },
+    {
+      "code": "D57.0 - Sickle Cell Crises",
+      "name": "D57.0 - Sickle Cell Crises"
+    },
+    {
+      "code": "D57.0 - Sickle Cell Crisis",
+      "name": "D57.0 - Sickle Cell Crisis"
+    },
+    {
+      "code": "D57.1 - Haemoglobinopathy with crisis",
+      "name": "D57.1 - Haemoglobinopathy with crisis"
+    },
+    {
+      "code": "D57.1 - Sickle Cell",
+      "name": "D57.1 - Sickle Cell"
+    },
+    {
+      "code": "D57.1 - Sickle Cell Anaemia",
+      "name": "D57.1 - Sickle Cell Anaemia"
+    },
+    {
+      "code": "D57.1 - Sickle Cell Disease",
+      "name": "D57.1 - Sickle Cell Disease"
+    },
+    {
+      "code": "D58.9 - Anaemia Haemolytic Hereditary",
+      "name": "D58.9 - Anaemia Haemolytic Hereditary"
+    },
+    {
+      "code": "D58.9 - Hereditary haemolytic anaemia, unspecified",
+      "name": "D58.9 - Hereditary haemolytic anaemia, unspecified"
+    },
+    {
+      "code": "D59.9 - Acquired haemolytic anaemia, unspecified",
+      "name": "D59.9 - Acquired haemolytic anaemia, unspecified"
+    },
+    {
+      "code": "D59.9 - Anaemia Haemolytic Acquired",
+      "name": "D59.9 - Anaemia Haemolytic Acquired"
+    },
+    {
+      "code": "D59.9 - Haemolytic Jaundice",
+      "name": "D59.9 - Haemolytic Jaundice"
+    },
+    {
+      "code": "D61.9 - Anaemia Aplastic",
+      "name": "D61.9 - Anaemia Aplastic"
+    },
+    {
+      "code": "D61.9 - Bone marrow hypoplasia",
+      "name": "D61.9 - Bone marrow hypoplasia"
+    },
+    {
+      "code": "D64.9 - Anaemia",
+      "name": "D64.9 - Anaemia"
+    },
+    {
+      "code": "D65 - Disseminated Intravascular coagulopathy (DIC)",
+      "name": "D65 - Disseminated Intravascular coagulopathy (DIC)"
+    },
+    {
+      "code": "D66 - Haemophilia",
+      "name": "D66 - Haemophilia"
+    },
+    {
+      "code": "D68.9 - Other Clotting disorders",
+      "name": "D68.9 - Other Clotting disorders"
+    },
+    {
+      "code": "D69.9 - Bleeding Disorder",
+      "name": "D69.9 - Bleeding Disorder"
+    },
+    {
+      "code": "D69.9 - Diathesis Bleeding (Familial)",
+      "name": "D69.9 - Diathesis Bleeding (Familial)"
+    },
+    {
+      "code": "D69.9 - Disease Haemorrhagic (Unspecified)",
+      "name": "D69.9 - Disease Haemorrhagic (Unspecified)"
+    },
+    {
+      "code": "D69.9 - Haemorrhagic Diathesis",
+      "name": "D69.9 - Haemorrhagic Diathesis"
+    },
+    {
+      "code": "D73.1 - Hypersplenism",
+      "name": "D73.1 - Hypersplenism"
+    },
+    {
+      "code": "D73.3 - Abscess Splenic",
+      "name": "D73.3 - Abscess Splenic"
+    },
+    {
+      "code": "D73.4 - Splenic cyst",
+      "name": "D73.4 - Splenic cyst"
+    },
+    {
+      "code": "D73.5 - Splenic infarct",
+      "name": "D73.5 - Splenic infarct"
+    },
+    {
+      "code": "D73.8 - Infection of Spleen",
+      "name": "D73.8 - Infection of Spleen"
+    },
+    {
+      "code": "D82.3 - Lymphoproliferative Disorder",
+      "name": "D82.3 - Lymphoproliferative Disorder"
+    },
+    {
+      "code": "E01.2 - Goitre Iodine-Deficiency-Related (Endemic)",
+      "name": "E01.2 - Goitre Iodine-Deficiency-Related (Endemic)"
+    },
+    {
+      "code": "E03.1 - Congenital Hypothyroidism",
+      "name": "E03.1 - Congenital Hypothyroidism"
+    },
+    {
+      "code": "E03.9 - Acquired Hypothyroidism",
+      "name": "E03.9 - Acquired Hypothyroidism"
+    },
+    {
+      "code": "E04.9 - Goitre",
+      "name": "E04.9 - Goitre"
+    },
+    {
+      "code": "E05.0 - Toxic Goitre",
+      "name": "E05.0 - Toxic Goitre"
+    },
+    {
+      "code": "E05.9 - Hyperthyroidism",
+      "name": "E05.9 - Hyperthyroidism"
+    },
+    {
+      "code": "E05.9 - Thyrotoxicosis",
+      "name": "E05.9 - Thyrotoxicosis"
+    },
+    {
+      "code": "E06.9 - Thyroiditis",
+      "name": "E06.9 - Thyroiditis"
+    },
+    {
+      "code": "E10 - Uncontrolled blood glucose",
+      "name": "E10 - Uncontrolled blood glucose"
+    },
+    {
+      "code": "E14 - Diabetes",
+      "name": "E14 - Diabetes"
+    },
+    {
+      "code": "E14 - Diabetes Mellitus",
+      "name": "E14 - Diabetes Mellitus"
+    },
+    {
+      "code": "E14.0 - Diabetic Coma (With Ketoacidosis)",
+      "name": "E14.0 - Diabetic Coma (With Ketoacidosis)"
+    },
+    {
+      "code": "E14.0 - Diabetic Ketoacidosis",
+      "name": "E14.0 - Diabetic Ketoacidosis"
+    },
+    {
+      "code": "E14.0 - Hypoglycaemic coma",
+      "name": "E14.0 - Hypoglycaemic coma"
+    },
+    {
+      "code": "E14.2 - Diabetic Nephropathy",
+      "name": "E14.2 - Diabetic Nephropathy"
+    },
+    {
+      "code": "E14.5 - Diabetic foot",
+      "name": "E14.5 - Diabetic foot"
+    },
+    {
+      "code": "E15 - Coma Hypoglycaemic",
+      "name": "E15 - Coma Hypoglycaemic"
+    },
+    {
+      "code": "E15 - Drug Coma",
+      "name": "E15 - Drug Coma"
+    },
+    {
+      "code": "E15 - Nondiabetic hypoglycaemic coma",
+      "name": "E15 - Nondiabetic hypoglycaemic coma"
+    },
+    {
+      "code": "E16.1 - Hypoglycaemia Infantile",
+      "name": "E16.1 - Hypoglycaemia Infantile"
+    },
+    {
+      "code": "E16.1 - Infantile Hypoglycaemia",
+      "name": "E16.1 - Infantile Hypoglycaemia"
+    },
+    {
+      "code": "E16.2 - Hypoglycaemia",
+      "name": "E16.2 - Hypoglycaemia"
+    },
+    {
+      "code": "E21.3 - Hyperparathyroidism",
+      "name": "E21.3 - Hyperparathyroidism"
+    },
+    {
+      "code": "E23.2 - Diabetes insipidus",
+      "name": "E23.2 - Diabetes insipidus"
+    },
+    {
+      "code": "E25.0 - Congenital Adrenal hyperplasia",
+      "name": "E25.0 - Congenital Adrenal hyperplasia"
+    },
+    {
+      "code": "E27.4 - Adrenocortical insufficiency",
+      "name": "E27.4 - Adrenocortical insufficiency"
+    },
+    {
+      "code": "E27.9 - Adrenal mass",
+      "name": "E27.9 - Adrenal mass"
+    },
+    {
+      "code": "E40 - Kwashiorkor",
+      "name": "E40 - Kwashiorkor"
+    },
+    {
+      "code": "E41 - Marasmus",
+      "name": "E41 - Marasmus"
+    },
+    {
+      "code": "E42 - Kwashiorkor Marasmic",
+      "name": "E42 - Kwashiorkor Marasmic"
+    },
+    {
+      "code": "E42 - Marasmic kwashiorkor",
+      "name": "E42 - Marasmic kwashiorkor"
+    },
+    {
+      "code": "E43 - Malnutrition Protein-Energy (Severe)",
+      "name": "E43 - Malnutrition Protein-Energy (Severe)"
+    },
+    {
+      "code": "E46 - Malnutrition (Unspecified)",
+      "name": "E46 - Malnutrition (Unspecified)"
+    },
+    {
+      "code": "E46 - Malnutrition Protein Caloric (PCM)",
+      "name": "E46 - Malnutrition Protein Caloric (PCM)"
+    },
+    {
+      "code": "E46 - Protein Caloric Malnutrition (PCM)",
+      "name": "E46 - Protein Caloric Malnutrition (PCM)"
+    },
+    {
+      "code": "E46 - Protein Energy Malnutrition (PEM)",
+      "name": "E46 - Protein Energy Malnutrition (PEM)"
+    },
+    {
+      "code": "E54 - Ascorbic acid deficiency (Scurvy)",
+      "name": "E54 - Ascorbic acid deficiency (Scurvy)"
+    },
+    {
+      "code": "E55.0 - Rickets",
+      "name": "E55.0 - Rickets"
+    },
+    {
+      "code": "E55.0 - Rickets  Bone",
+      "name": "E55.0 - Rickets  Bone"
+    },
+    {
+      "code": "E55.9 - Vitamin D deficiency",
+      "name": "E55.9 - Vitamin D deficiency"
+    },
+    {
+      "code": "E61.8 - Iodine Deficiency Disorder",
+      "name": "E61.8 - Iodine Deficiency Disorder"
+    },
+    {
+      "code": "E74.2 - Galactosaemia",
+      "name": "E74.2 - Galactosaemia"
+    },
+    {
+      "code": "E77.8 - Hypoproteinemia",
+      "name": "E77.8 - Hypoproteinemia"
+    },
+    {
+      "code": "E86 - Dehydration",
+      "name": "E86 - Dehydration"
+    },
+    {
+      "code": "E86 - Hypovolaemia",
+      "name": "E86 - Hypovolaemia"
+    },
+    {
+      "code": "E87.0 - Hyper Osmolar non ketotic hyperglycaemia (HONK)",
+      "name": "E87.0 - Hyper Osmolar non ketotic hyperglycaemia (HONK)"
+    },
+    {
+      "code": "E87.0 - Sodium Overload",
+      "name": "E87.0 - Sodium Overload"
+    },
+    {
+      "code": "E87.5 - Potassium Overload",
+      "name": "E87.5 - Potassium Overload"
+    },
+    {
+      "code": "E87.6 - Hypokalaemia",
+      "name": "E87.6 - Hypokalaemia"
+    },
+    {
+      "code": "E87.6 - Hypokalaemia Infantile",
+      "name": "E87.6 - Hypokalaemia Infantile"
+    },
+    {
+      "code": "E87.6 - Infantile Hypokalaemia",
+      "name": "E87.6 - Infantile Hypokalaemia"
+    },
+    {
+      "code": "E87.7 - Fluid Overload",
+      "name": "E87.7 - Fluid Overload"
+    },
+    {
+      "code": "E87.8 - Electrolyte Imbalance",
+      "name": "E87.8 - Electrolyte Imbalance"
+    },
+    {
+      "code": "E87.8 - Imbalance Electrolyte",
+      "name": "E87.8 - Imbalance Electrolyte"
+    },
+    {
+      "code": "E88.9 - Disease Metabolic (Unspecified)",
+      "name": "E88.9 - Disease Metabolic (Unspecified)"
+    },
+    {
+      "code": "E88.9 - Metabolic Disease (Unspecified)",
+      "name": "E88.9 - Metabolic Disease (Unspecified)"
+    },
+    {
+      "code": "E88.9 - Metabolic Disorder (Unspecified)",
+      "name": "E88.9 - Metabolic Disorder (Unspecified)"
+    },
+    {
+      "code": "F03 - Dementia Senile",
+      "name": "F03 - Dementia Senile"
+    },
+    {
+      "code": "F03 - Senile Dementia",
+      "name": "F03 - Senile Dementia"
+    },
+    {
+      "code": "F10.0 - Intoxication Alcoholic (Acute)",
+      "name": "F10.0 - Intoxication Alcoholic (Acute)"
+    },
+    {
+      "code": "F10.2 - Alcoholism",
+      "name": "F10.2 - Alcoholism"
+    },
+    {
+      "code": "F10.5 - Alcoholic psychosi",
+      "name": "F10.5 - Alcoholic psychosi"
+    },
+    {
+      "code": "F10.5 - Psychosis Alcoholic",
+      "name": "F10.5 - Psychosis Alcoholic"
+    },
+    {
+      "code": "F10.7 - Alcoholism Brain",
+      "name": "F10.7 - Alcoholism Brain"
+    },
+    {
+      "code": "F10.7 - Alocholic dementia",
+      "name": "F10.7 - Alocholic dementia"
+    },
+    {
+      "code": "F10.7 - Dementia Alcoholic",
+      "name": "F10.7 - Dementia Alcoholic"
+    },
+    {
+      "code": "F20.5 - Chronic Schizophrenia",
+      "name": "F20.5 - Chronic Schizophrenia"
+    },
+    {
+      "code": "F20.5 - Schizophrenia Chronic",
+      "name": "F20.5 - Schizophrenia Chronic"
+    },
+    {
+      "code": "F20.9 - Schizophrenia",
+      "name": "F20.9 - Schizophrenia"
+    },
+    {
+      "code": "F20.9 - Schizophrenia (Unspecified)",
+      "name": "F20.9 - Schizophrenia (Unspecified)"
+    },
+    {
+      "code": "F23.2 - Acute Schizophrenia",
+      "name": "F23.2 - Acute Schizophrenia"
+    },
+    {
+      "code": "F23.2 - Schizophrenia Acute",
+      "name": "F23.2 - Schizophrenia Acute"
+    },
+    {
+      "code": "F29 - Psychosis",
+      "name": "F29 - Psychosis"
+    },
+    {
+      "code": "F32.9 - Depression (Unspecified)",
+      "name": "F32.9 - Depression (Unspecified)"
+    },
+    {
+      "code": "F41.9 - Anxiety",
+      "name": "F41.9 - Anxiety"
+    },
+    {
+      "code": "F44.9 - Hysteria",
+      "name": "F44.9 - Hysteria"
+    },
+    {
+      "code": "F79 - Mental Retardation",
+      "name": "F79 - Mental Retardation"
+    },
+    {
+      "code": "F99 - Disease Mental (Unspecified)",
+      "name": "F99 - Disease Mental (Unspecified)"
+    },
+    {
+      "code": "G00.1 - Meningitis Pneumococcal",
+      "name": "G00.1 - Meningitis Pneumococcal"
+    },
+    {
+      "code": "G00.1 - Pneumococcal meningitis",
+      "name": "G00.1 - Pneumococcal meningitis"
+    },
+    {
+      "code": "G00.9 - Bacterial meningitis",
+      "name": "G00.9 - Bacterial meningitis"
+    },
+    {
+      "code": "G00.9 - Meningitis Purulent",
+      "name": "G00.9 - Meningitis Purulent"
+    },
+    {
+      "code": "G00.9 - Meningitis Pyogenic",
+      "name": "G00.9 - Meningitis Pyogenic"
+    },
+    {
+      "code": "G00.9 - Purulent Meningitis",
+      "name": "G00.9 - Purulent Meningitis"
+    },
+    {
+      "code": "G00.9 - Pyogenic Meningitis",
+      "name": "G00.9 - Pyogenic Meningitis"
+    },
+    {
+      "code": "G03.9 - Meningitis",
+      "name": "G03.9 - Meningitis"
+    },
+    {
+      "code": "G03.9 - Meningitis/Encephalitis with Coma",
+      "name": "G03.9 - Meningitis/Encephalitis with Coma"
+    },
+    {
+      "code": "G04.0 - Acute disseminated encephalitis",
+      "name": "G04.0 - Acute disseminated encephalitis"
+    },
+    {
+      "code": "G04.9 - Encephalitis",
+      "name": "G04.9 - Encephalitis"
+    },
+    {
+      "code": "G04.9 - Encephalitis (Chronic)",
+      "name": "G04.9 - Encephalitis (Chronic)"
+    },
+    {
+      "code": "G04.9 - Encephalitis (unspecified)",
+      "name": "G04.9 - Encephalitis (unspecified)"
+    },
+    {
+      "code": "G04.9 - encephalomyelitis (unspecified)",
+      "name": "G04.9 - encephalomyelitis (unspecified)"
+    },
+    {
+      "code": "G04.9 - Meningoencephalitis",
+      "name": "G04.9 - Meningoencephalitis"
+    },
+    {
+      "code": "G04.9 - Myelitis (unspecified)",
+      "name": "G04.9 - Myelitis (unspecified)"
+    },
+    {
+      "code": "G06.0 - Cerebral Abscess",
+      "name": "G06.0 - Cerebral Abscess"
+    },
+    {
+      "code": "G06.0 - Cerebral Infection",
+      "name": "G06.0 - Cerebral Infection"
+    },
+    {
+      "code": "G06.0 - Intracranial abscess",
+      "name": "G06.0 - Intracranial abscess"
+    },
+    {
+      "code": "G08 - Intra Cranial Venous Sinus",
+      "name": "G08 - Intra Cranial Venous Sinus"
+    },
+    {
+      "code": "G20 - Parkinsonism",
+      "name": "G20 - Parkinsonism"
+    },
+    {
+      "code": "G20 - Parkinson",
+      "name": "G20 - Parkinson"
+    },
+    {
+      "code": "G31.2 - Alcoholic Encephalopathy",
+      "name": "G31.2 - Alcoholic Encephalopathy"
+    },
+    {
+      "code": "G36.9 - Acute Disseminated Demyelination (Unspecified)",
+      "name": "G36.9 - Acute Disseminated Demyelination (Unspecified)"
+    },
+    {
+      "code": "G37.3 - Acute Ascending Myelitis",
+      "name": "G37.3 - Acute Ascending Myelitis"
+    },
+    {
+      "code": "G37.3 - Transverse myelitis",
+      "name": "G37.3 - Transverse myelitis"
+    },
+    {
+      "code": "G40.8 - Epileptic Coma",
+      "name": "G40.8 - Epileptic Coma"
+    },
+    {
+      "code": "G40.9 - Epilepsy",
+      "name": "G40.9 - Epilepsy"
+    },
+    {
+      "code": "G41.9 - Status Epilepticus",
+      "name": "G41.9 - Status Epilepticus"
+    },
+    {
+      "code": "G41.9 - Uncontrolled/Status epilepticus",
+      "name": "G41.9 - Uncontrolled/Status epilepticus"
+    },
+    {
+      "code": "G43.9 - Migraine",
+      "name": "G43.9 - Migraine"
+    },
+    {
+      "code": "G45.9 - Attack Ischaemic Transient (TIA)",
+      "name": "G45.9 - Attack Ischaemic Transient (TIA)"
+    },
+    {
+      "code": "G45.9 - Transient Cerebral Ischaemic Attack",
+      "name": "G45.9 - Transient Cerebral Ischaemic Attack"
+    },
+    {
+      "code": "G45.9 - Transient ischaemic attack",
+      "name": "G45.9 - Transient ischaemic attack"
+    },
+    {
+      "code": "G45.9 - Transient ischaemic attack (TIA)",
+      "name": "G45.9 - Transient ischaemic attack (TIA)"
+    },
+    {
+      "code": "G47.0 - Insomnia",
+      "name": "G47.0 - Insomnia"
+    },
+    {
+      "code": "G47.3 - Obstructive sleep apnoea",
+      "name": "G47.3 - Obstructive sleep apnoea"
+    },
+    {
+      "code": "G52.2 - Lesion in the larynx",
+      "name": "G52.2 - Lesion in the larynx"
+    },
+    {
+      "code": "G57.5 - Tunnel syndromes",
+      "name": "G57.5 - Tunnel syndromes"
+    },
+    {
+      "code": "G61.0 - Gullain Barre Syndrome",
+      "name": "G61.0 - Gullain Barre Syndrome"
+    },
+    {
+      "code": "G62.9 - Polyneuritis",
+      "name": "G62.9 - Polyneuritis"
+    },
+    {
+      "code": "G62.9 - Polyneuropathy",
+      "name": "G62.9 - Polyneuropathy"
+    },
+    {
+      "code": "G80.9 - Cerebral Palsy",
+      "name": "G80.9 - Cerebral Palsy"
+    },
+    {
+      "code": "G81.9 - Hemiparesis",
+      "name": "G81.9 - Hemiparesis"
+    },
+    {
+      "code": "G81.9 - Hemiplegia",
+      "name": "G81.9 - Hemiplegia"
+    },
+    {
+      "code": "G81.9 - Hemiplegia, unspecified",
+      "name": "G81.9 - Hemiplegia, unspecified"
+    },
+    {
+      "code": "G81.9 - Right Hemiplegia",
+      "name": "G81.9 - Right Hemiplegia"
+    },
+    {
+      "code": "G82.2 - Paraplegia",
+      "name": "G82.2 - Paraplegia"
+    },
+    {
+      "code": "G82.2 - Paraplegia, unspecified",
+      "name": "G82.2 - Paraplegia, unspecified"
+    },
+    {
+      "code": "G82.5 - Tetraplegia",
+      "name": "G82.5 - Tetraplegia"
+    },
+    {
+      "code": "G82.5 - Tetraplegia, unspecified",
+      "name": "G82.5 - Tetraplegia, unspecified"
+    },
+    {
+      "code": "G83.8 - Paralysis Spinal",
+      "name": "G83.8 - Paralysis Spinal"
+    },
+    {
+      "code": "G83.9 - Hemiparesis",
+      "name": "G83.9 - Hemiparesis"
+    },
+    {
+      "code": "G83.9 - Monoparesis",
+      "name": "G83.9 - Monoparesis"
+    },
+    {
+      "code": "G83.9 - Paralysis",
+      "name": "G83.9 - Paralysis"
+    },
+    {
+      "code": "G83.9 - Paraparesis",
+      "name": "G83.9 - Paraparesis"
+    },
+    {
+      "code": "G83.9 - Tetraparesis",
+      "name": "G83.9 - Tetraparesis"
+    },
+    {
+      "code": "G91.9 - Hydrocephalus",
+      "name": "G91.9 - Hydrocephalus"
+    },
+    {
+      "code": "G93.2 - Increased Intracranial Pressure",
+      "name": "G93.2 - Increased Intracranial Pressure"
+    },
+    {
+      "code": "G93.4 - Encephalopathy",
+      "name": "G93.4 - Encephalopathy"
+    },
+    {
+      "code": "G93.6 - Oedema of Brain",
+      "name": "G93.6 - Oedema of Brain"
+    },
+    {
+      "code": "G93.9 - Disease Cerebral",
+      "name": "G93.9 - Disease Cerebral"
+    },
+    {
+      "code": "G97.8 - Hypoxia Cerebral",
+      "name": "G97.8 - Hypoxia Cerebral"
+    },
+    {
+      "code": "G98 - Disease of Nervous System (Unspecified)",
+      "name": "G98 - Disease of Nervous System (Unspecified)"
+    },
+    {
+      "code": "H00.0 - Abscess Eyelid",
+      "name": "H00.0 - Abscess Eyelid"
+    },
+    {
+      "code": "H02.0 - Entropion and trichiasis of eyelid",
+      "name": "H02.0 - Entropion and trichiasis of eyelid"
+    },
+    {
+      "code": "H02.1 - Ectropion of eyelid",
+      "name": "H02.1 - Ectropion of eyelid"
+    },
+    {
+      "code": "H04.5 - Nasolacrimal drainage blockage",
+      "name": "H04.5 - Nasolacrimal drainage blockage"
+    },
+    {
+      "code": "H04.5 - Nasolacrimal duct Obstruction",
+      "name": "H04.5 - Nasolacrimal duct Obstruction"
+    },
+    {
+      "code": "H04.5 - Nasolacrimal duct stenosis",
+      "name": "H04.5 - Nasolacrimal duct stenosis"
+    },
+    {
+      "code": "H05.0 - Acute Inflamation of orbit",
+      "name": "H05.0 - Acute Inflamation of orbit"
+    },
+    {
+      "code": "H05.0 - orbital abscess",
+      "name": "H05.0 - orbital abscess"
+    },
+    {
+      "code": "H05.0 - Orbital cellulitis",
+      "name": "H05.0 - Orbital cellulitis"
+    },
+    {
+      "code": "H05.2 - Disorganised eye",
+      "name": "H05.2 - Disorganised eye"
+    },
+    {
+      "code": "H05.2 - Exophthalmic conditions",
+      "name": "H05.2 - Exophthalmic conditions"
+    },
+    {
+      "code": "H05.2 - Proptosis Eye",
+      "name": "H05.2 - Proptosis Eye"
+    },
+    {
+      "code": "H05.2 - Protosis",
+      "name": "H05.2 - Protosis"
+    },
+    {
+      "code": "H10.9 - Ophthalmia",
+      "name": "H10.9 - Ophthalmia"
+    },
+    {
+      "code": "H15.8 - Staphyloma",
+      "name": "H15.8 - Staphyloma"
+    },
+    {
+      "code": "H16.0 - Perforation of Cornea",
+      "name": "H16.0 - Perforation of Cornea"
+    },
+    {
+      "code": "H16.2 - Keratoconjunctivitis",
+      "name": "H16.2 - Keratoconjunctivitis"
+    },
+    {
+      "code": "H16.9 - Keratitis",
+      "name": "H16.9 - Keratitis"
+    },
+    {
+      "code": "H18.7 - Staphyloma Cornea",
+      "name": "H18.7 - Staphyloma Cornea"
+    },
+    {
+      "code": "H20.9 - Uveitis",
+      "name": "H20.9 - Uveitis"
+    },
+    {
+      "code": "H21.0 - Hyphaema",
+      "name": "H21.0 - Hyphaema"
+    },
+    {
+      "code": "H21.8 - Excission Iris Prolapsed",
+      "name": "H21.8 - Excission Iris Prolapsed"
+    },
+    {
+      "code": "H21.8 - Iris Prolapse",
+      "name": "H21.8 - Iris Prolapse"
+    },
+    {
+      "code": "H26.9 - Cataract",
+      "name": "H26.9 - Cataract"
+    },
+    {
+      "code": "H27.1 - Lens luxation",
+      "name": "H27.1 - Lens luxation"
+    },
+    {
+      "code": "H27.1 - Luxated Lens",
+      "name": "H27.1 - Luxated Lens"
+    },
+    {
+      "code": "H27.9 - Other Unspecified Disorders of Lens",
+      "name": "H27.9 - Other Unspecified Disorders of Lens"
+    },
+    {
+      "code": "H35.9 - Retina",
+      "name": "H35.9 - Retina"
+    },
+    {
+      "code": "H40.9 - Glaucoma",
+      "name": "H40.9 - Glaucoma"
+    },
+    {
+      "code": "H44.0 - Endophthalmitis",
+      "name": "H44.0 - Endophthalmitis"
+    },
+    {
+      "code": "H44.0 - Panophthalmitis Eye",
+      "name": "H44.0 - Panophthalmitis Eye"
+    },
+    {
+      "code": "H44.7 - Intra ocular foreign body",
+      "name": "H44.7 - Intra ocular foreign body"
+    },
+    {
+      "code": "H50.9 - All strabismus",
+      "name": "H50.9 - All strabismus"
+    },
+    {
+      "code": "H55 - Nistagmus",
+      "name": "H55 - Nistagmus"
+    },
+    {
+      "code": "H55 - Nistagmus Miner",
+      "name": "H55 - Nistagmus Miner"
+    },
+    {
+      "code": "H57.1 - Painful Eye",
+      "name": "H57.1 - Painful Eye"
+    },
+    {
+      "code": "H57.9 - Disease of Eye",
+      "name": "H57.9 - Disease of Eye"
+    },
+    {
+      "code": "H57.9 - Disease of Eye and Adnexa (Unspecified)",
+      "name": "H57.9 - Disease of Eye and Adnexa (Unspecified)"
+    },
+    {
+      "code": "H59.8 - Disorder of Eye and Adnexa, Unspecified",
+      "name": "H59.8 - Disorder of Eye and Adnexa, Unspecified"
+    },
+    {
+      "code": "H61.3 - Acquired stenosis of ext canal",
+      "name": "H61.3 - Acquired stenosis of ext canal"
+    },
+    {
+      "code": "H66.9 - Otitis Media",
+      "name": "H66.9 - Otitis Media"
+    },
+    {
+      "code": "H70.9 - Infected mastoid cavity",
+      "name": "H70.9 - Infected mastoid cavity"
+    },
+    {
+      "code": "H70.9 - Mastoiditis",
+      "name": "H70.9 - Mastoiditis"
+    },
+    {
+      "code": "H71 - Cholesteatoma Tympani",
+      "name": "H71 - Cholesteatoma Tympani"
+    },
+    {
+      "code": "H80.9 - Otosclerosis",
+      "name": "H80.9 - Otosclerosis"
+    },
+    {
+      "code": "H81.0 - Menieres disease",
+      "name": "H81.0 - Menieres disease"
+    },
+    {
+      "code": "H83.3 - Hearing Loss Noise-Induced",
+      "name": "H83.3 - Hearing Loss Noise-Induced"
+    },
+    {
+      "code": "H83.3 - Trauma Acoustic",
+      "name": "H83.3 - Trauma Acoustic"
+    },
+    {
+      "code": "H91.9 - Conduction Deafness",
+      "name": "H91.9 - Conduction Deafness"
+    },
+    {
+      "code": "H91.9 - Deafness",
+      "name": "H91.9 - Deafness"
+    },
+    {
+      "code": "H91.9 - Hearing Loss",
+      "name": "H91.9 - Hearing Loss"
+    },
+    {
+      "code": "H91.9 - Sensorineural Deafness",
+      "name": "H91.9 - Sensorineural Deafness"
+    },
+    {
+      "code": "H93.3 - Lesion external ear",
+      "name": "H93.3 - Lesion external ear"
+    },
+    {
+      "code": "H93.9 - Disease of Ear (Unspecified)",
+      "name": "H93.9 - Disease of Ear (Unspecified)"
+    },
+    {
+      "code": "I00 - Fever Rheumatic",
+      "name": "I00 - Fever Rheumatic"
+    },
+    {
+      "code": "I09.9 - Disease Rheumatic Heart",
+      "name": "I09.9 - Disease Rheumatic Heart"
+    },
+    {
+      "code": "I10 - Hypertension",
+      "name": "I10 - Hypertension"
+    },
+    {
+      "code": "I10 - Malignant hypertension",
+      "name": "I10 - Malignant hypertension"
+    },
+    {
+      "code": "I11.9 - Cardiopathy Hypertensive",
+      "name": "I11.9 - Cardiopathy Hypertensive"
+    },
+    {
+      "code": "I11.9 - Hypertensive Heart Disease",
+      "name": "I11.9 - Hypertensive Heart Disease"
+    },
+    {
+      "code": "I20.0 - Unstable Angina",
+      "name": "I20.0 - Unstable Angina"
+    },
+    {
+      "code": "I20.9 - Angina Pectoris",
+      "name": "I20.9 - Angina Pectoris"
+    },
+    {
+      "code": "I21.9 - Myocardial infarction",
+      "name": "I21.9 - Myocardial infarction"
+    },
+    {
+      "code": "I25.1 - Coronary Disease",
+      "name": "I25.1 - Coronary Disease"
+    },
+    {
+      "code": "I26.9 - Embolism Pulmonary",
+      "name": "I26.9 - Embolism Pulmonary"
+    },
+    {
+      "code": "I27.0 - Pulmonary Hypertension",
+      "name": "I27.0 - Pulmonary Hypertension"
+    },
+    {
+      "code": "I31.2 - Haemopericardium",
+      "name": "I31.2 - Haemopericardium"
+    },
+    {
+      "code": "I31.3 - Pericardial Effusion",
+      "name": "I31.3 - Pericardial Effusion"
+    },
+    {
+      "code": "I33.0 - Acute Infective endocarditis",
+      "name": "I33.0 - Acute Infective endocarditis"
+    },
+    {
+      "code": "I33.0 - Bacterial Endocarditis",
+      "name": "I33.0 - Bacterial Endocarditis"
+    },
+    {
+      "code": "I34.0 - Mitral Valve Incompetence",
+      "name": "I34.0 - Mitral Valve Incompetence"
+    },
+    {
+      "code": "I38 - Valvular heart disease",
+      "name": "I38 - Valvular heart disease"
+    },
+    {
+      "code": "I42.9 - Cardiomyopathy",
+      "name": "I42.9 - Cardiomyopathy"
+    },
+    {
+      "code": "I46.9 - Arrest Cardiac",
+      "name": "I46.9 - Arrest Cardiac"
+    },
+    {
+      "code": "I46.9 - Arrest Cardiopulmonary",
+      "name": "I46.9 - Arrest Cardiopulmonary"
+    },
+    {
+      "code": "I46.9 - Cadio Respiratory Arrest",
+      "name": "I46.9 - Cadio Respiratory Arrest"
+    },
+    {
+      "code": "I46.9 - Cardiac arrest",
+      "name": "I46.9 - Cardiac arrest"
+    },
+    {
+      "code": "I46.9 - Cardiopulmonary Arrest",
+      "name": "I46.9 - Cardiopulmonary Arrest"
+    },
+    {
+      "code": "I47.2 - Ventricular Tachycardia",
+      "name": "I47.2 - Ventricular Tachycardia"
+    },
+    {
+      "code": "I48 - Atrial Fibrillation",
+      "name": "I48 - Atrial Fibrillation"
+    },
+    {
+      "code": "I49.0 - Fibrillation Ventricular",
+      "name": "I49.0 - Fibrillation Ventricular"
+    },
+    {
+      "code": "I49.9 - Arrhythmia Cardiac",
+      "name": "I49.9 - Arrhythmia Cardiac"
+    },
+    {
+      "code": "I50.0 - Biventricular Failure",
+      "name": "I50.0 - Biventricular Failure"
+    },
+    {
+      "code": "I50.0 - Congestive Cardiac Failure",
+      "name": "I50.0 - Congestive Cardiac Failure"
+    },
+    {
+      "code": "I50.0 - Failure Cardiac Congestive (CCF)",
+      "name": "I50.0 - Failure Cardiac Congestive (CCF)"
+    },
+    {
+      "code": "I50.1 - Asthma Cardiac",
+      "name": "I50.1 - Asthma Cardiac"
+    },
+    {
+      "code": "I50.1 - Cardiac Asthma",
+      "name": "I50.1 - Cardiac Asthma"
+    },
+    {
+      "code": "I50.1 - Left Ventricular Failure",
+      "name": "I50.1 - Left Ventricular Failure"
+    },
+    {
+      "code": "I50.9 - Cardiac Shock",
+      "name": "I50.9 - Cardiac Shock"
+    },
+    {
+      "code": "I50.9 - Cardiogenic Shock",
+      "name": "I50.9 - Cardiogenic Shock"
+    },
+    {
+      "code": "I50.9 - Failure Cardiac",
+      "name": "I50.9 - Failure Cardiac"
+    },
+    {
+      "code": "I50.9 - Heart Failure",
+      "name": "I50.9 - Heart Failure"
+    },
+    {
+      "code": "I50.9 - Ventricular Failure",
+      "name": "I50.9 - Ventricular Failure"
+    },
+    {
+      "code": "I51.4 - Myocarditis",
+      "name": "I51.4 - Myocarditis"
+    },
+    {
+      "code": "I51.6 - Cardiovascular Accident",
+      "name": "I51.6 - Cardiovascular Accident"
+    },
+    {
+      "code": "I51.6 - Disease Cardiovascular",
+      "name": "I51.6 - Disease Cardiovascular"
+    },
+    {
+      "code": "I51.7 - Cardiomegaly",
+      "name": "I51.7 - Cardiomegaly"
+    },
+    {
+      "code": "I51.9 - Cardiopathy Ischemic",
+      "name": "I51.9 - Cardiopathy Ischemic"
+    },
+    {
+      "code": "I51.9 - Disease of Heart (Unspecified)",
+      "name": "I51.9 - Disease of Heart (Unspecified)"
+    },
+    {
+      "code": "I51.9 - Ischemic Cardiopathy",
+      "name": "I51.9 - Ischemic Cardiopathy"
+    },
+    {
+      "code": "I60.9 - Haemorrhage Subarachnoid",
+      "name": "I60.9 - Haemorrhage Subarachnoid"
+    },
+    {
+      "code": "I61.9 - Haemorrhage Cerebral",
+      "name": "I61.9 - Haemorrhage Cerebral"
+    },
+    {
+      "code": "I61.9 - Intracranial haematoma",
+      "name": "I61.9 - Intracranial haematoma"
+    },
+    {
+      "code": "I62.9 - Haemorrhage Intracranial",
+      "name": "I62.9 - Haemorrhage Intracranial"
+    },
+    {
+      "code": "I64 - Accident Cerebrovascular (CVA)",
+      "name": "I64 - Accident Cerebrovascular (CVA)"
+    },
+    {
+      "code": "I64 - Apoplexy",
+      "name": "I64 - Apoplexy"
+    },
+    {
+      "code": "I64 - Cerebrovascular Accident",
+      "name": "I64 - Cerebrovascular Accident"
+    },
+    {
+      "code": "I64 - Cerebrovascular Accident  (CVA)",
+      "name": "I64 - Cerebrovascular Accident  (CVA)"
+    },
+    {
+      "code": "I64 - Stroke",
+      "name": "I64 - Stroke"
+    },
+    {
+      "code": "I66.9 - Cerebral Embolism",
+      "name": "I66.9 - Cerebral Embolism"
+    },
+    {
+      "code": "I66.9 - Embolism Cerebral",
+      "name": "I66.9 - Embolism Cerebral"
+    },
+    {
+      "code": "I67.4 - Encephalopathy Hypertensive",
+      "name": "I67.4 - Encephalopathy Hypertensive"
+    },
+    {
+      "code": "I67.4 - Hypertensive encephalopathy",
+      "name": "I67.4 - Hypertensive encephalopathy"
+    },
+    {
+      "code": "I67.9 - Cerebrovascular disease, unspecified",
+      "name": "I67.9 - Cerebrovascular disease, unspecified"
+    },
+    {
+      "code": "I67.9 - Disease Cerebrovascular (Unspecified)",
+      "name": "I67.9 - Disease Cerebrovascular (Unspecified)"
+    },
+    {
+      "code": "I70.9 - Atherosclerosis",
+      "name": "I70.9 - Atherosclerosis"
+    },
+    {
+      "code": "I71.0 - Aneurysm Dissecting of Aorta",
+      "name": "I71.0 - Aneurysm Dissecting of Aorta"
+    },
+    {
+      "code": "I71.0 - Dissecting of Aortic Aneurism",
+      "name": "I71.0 - Dissecting of Aortic Aneurism"
+    },
+    {
+      "code": "I72.4 - Femoral aneurysm",
+      "name": "I72.4 - Femoral aneurysm"
+    },
+    {
+      "code": "I73.9 - Claudication",
+      "name": "I73.9 - Claudication"
+    },
+    {
+      "code": "I74.9 - Embolism",
+      "name": "I74.9 - Embolism"
+    },
+    {
+      "code": "I74.9 - Embolism Septic",
+      "name": "I74.9 - Embolism Septic"
+    },
+    {
+      "code": "I74.9 - Septic embolus",
+      "name": "I74.9 - Septic embolus"
+    },
+    {
+      "code": "I74.9 - Thromboembolism",
+      "name": "I74.9 - Thromboembolism"
+    },
+    {
+      "code": "I80.9 - Thrombophlebitis",
+      "name": "I80.9 - Thrombophlebitis"
+    },
+    {
+      "code": "I82.9 - Embolism of Vein",
+      "name": "I82.9 - Embolism of Vein"
+    },
+    {
+      "code": "I82.9 - Thrombosis of Vein",
+      "name": "I82.9 - Thrombosis of Vein"
+    },
+    {
+      "code": "I82.9 - Venous embolism",
+      "name": "I82.9 - Venous embolism"
+    },
+    {
+      "code": "I82.9 - Venous thrombosis",
+      "name": "I82.9 - Venous thrombosis"
+    },
+    {
+      "code": "I83.0 - Venous ulcer",
+      "name": "I83.0 - Venous ulcer"
+    },
+    {
+      "code": "I83.9 - Varicose Veins",
+      "name": "I83.9 - Varicose Veins"
+    },
+    {
+      "code": "I84.7 - Thrombosed Haemorrhoids",
+      "name": "I84.7 - Thrombosed Haemorrhoids"
+    },
+    {
+      "code": "I84.8 - Haemorrhoids (Bleeding)",
+      "name": "I84.8 - Haemorrhoids (Bleeding)"
+    },
+    {
+      "code": "I84.9 - Haemorrhoids",
+      "name": "I84.9 - Haemorrhoids"
+    },
+    {
+      "code": "I84.9 - Piles",
+      "name": "I84.9 - Piles"
+    },
+    {
+      "code": "I84.9 - Unspecified Haemorrhoids Without Complications",
+      "name": "I84.9 - Unspecified Haemorrhoids Without Complications"
+    },
+    {
+      "code": "I85.0 - Bleeding Oesophangeal Varices",
+      "name": "I85.0 - Bleeding Oesophangeal Varices"
+    },
+    {
+      "code": "I85.0 - Raptured Oesophangeal Varices",
+      "name": "I85.0 - Raptured Oesophangeal Varices"
+    },
+    {
+      "code": "I85.9 - Oesophageal varices",
+      "name": "I85.9 - Oesophageal varices"
+    },
+    {
+      "code": "I86.1 - Varicocele",
+      "name": "I86.1 - Varicocele"
+    },
+    {
+      "code": "I87.9 - Diseases Vein",
+      "name": "I87.9 - Diseases Vein"
+    },
+    {
+      "code": "I88.9 - Adenitis Groin",
+      "name": "I88.9 - Adenitis Groin"
+    },
+    {
+      "code": "I88.9 - Lymphadenitis",
+      "name": "I88.9 - Lymphadenitis"
+    },
+    {
+      "code": "I95.9 - Hypotension",
+      "name": "I95.9 - Hypotension"
+    },
+    {
+      "code": "J02.9 - Pharyngitis (Acute)",
+      "name": "J02.9 - Pharyngitis (Acute)"
+    },
+    {
+      "code": "J03.9 - Acute Tonsillitis (Unspecified)",
+      "name": "J03.9 - Acute Tonsillitis (Unspecified)"
+    },
+    {
+      "code": "J03.9 - Recurrent tonsillitis",
+      "name": "J03.9 - Recurrent tonsillitis"
+    },
+    {
+      "code": "J03.9 - Tonsillitis (Acute)",
+      "name": "J03.9 - Tonsillitis (Acute)"
+    },
+    {
+      "code": "J04.0 - Acute Laringitis",
+      "name": "J04.0 - Acute Laringitis"
+    },
+    {
+      "code": "J06.9 - Infection of Upper Respiratory Tract",
+      "name": "J06.9 - Infection of Upper Respiratory Tract"
+    },
+    {
+      "code": "J06.9 - Infection of Upper Respiratory Tract (Acute)",
+      "name": "J06.9 - Infection of Upper Respiratory Tract (Acute)"
+    },
+    {
+      "code": "J06.9 - Upper Respiratory Tract Infection",
+      "name": "J06.9 - Upper Respiratory Tract Infection"
+    },
+    {
+      "code": "J11.1 - Influenza",
+      "name": "J11.1 - Influenza"
+    },
+    {
+      "code": "J15.7 - Atypical Pneumonia",
+      "name": "J15.7 - Atypical Pneumonia"
+    },
+    {
+      "code": "J18.0 - Bronchopneumonia",
+      "name": "J18.0 - Bronchopneumonia"
+    },
+    {
+      "code": "J18.1 - Pneumonia Lobar",
+      "name": "J18.1 - Pneumonia Lobar"
+    },
+    {
+      "code": "J18.2 - Hypostatic Pneumonia",
+      "name": "J18.2 - Hypostatic Pneumonia"
+    },
+    {
+      "code": "J18.8 - Pleuropneumonia (Acute/Bilateral/Septic)",
+      "name": "J18.8 - Pleuropneumonia (Acute/Bilateral/Septic)"
+    },
+    {
+      "code": "J18.9 - Mild-Moderate Pneumonia",
+      "name": "J18.9 - Mild-Moderate Pneumonia"
+    },
+    {
+      "code": "J18.9 - Pneumonia",
+      "name": "J18.9 - Pneumonia"
+    },
+    {
+      "code": "J18.9 - Severe pneumonia",
+      "name": "J18.9 - Severe pneumonia"
+    },
+    {
+      "code": "J20.9 - Bronchitis (Acute)",
+      "name": "J20.9 - Bronchitis (Acute)"
+    },
+    {
+      "code": "J21.9 - Bronchiolitis",
+      "name": "J21.9 - Bronchiolitis"
+    },
+    {
+      "code": "J22 - Infection Lower Respiratory Tract Acute",
+      "name": "J22 - Infection Lower Respiratory Tract Acute"
+    },
+    {
+      "code": "J32.0 - Maxillary Sinusitis",
+      "name": "J32.0 - Maxillary Sinusitis"
+    },
+    {
+      "code": "J32.2 - Ethmoid sinusitis",
+      "name": "J32.2 - Ethmoid sinusitis"
+    },
+    {
+      "code": "J32.9 - Chronic Sinusitis Unspecified",
+      "name": "J32.9 - Chronic Sinusitis Unspecified"
+    },
+    {
+      "code": "J32.9 - Rhinosinusitis",
+      "name": "J32.9 - Rhinosinusitis"
+    },
+    {
+      "code": "J32.9 - Sinusitis",
+      "name": "J32.9 - Sinusitis"
+    },
+    {
+      "code": "J33.9 - Nasal polyposis",
+      "name": "J33.9 - Nasal polyposis"
+    },
+    {
+      "code": "J34.8 - Disease of The Nose",
+      "name": "J34.8 - Disease of The Nose"
+    },
+    {
+      "code": "J34.8 - Diseases of nose and paranasal sinuses",
+      "name": "J34.8 - Diseases of nose and paranasal sinuses"
+    },
+    {
+      "code": "J34.8 - Nasal obstruction",
+      "name": "J34.8 - Nasal obstruction"
+    },
+    {
+      "code": "J34.8 - Nasal obstruction due to turbinate hypertrophy",
+      "name": "J34.8 - Nasal obstruction due to turbinate hypertrophy"
+    },
+    {
+      "code": "J36 - Peritonsillar Abscess",
+      "name": "J36 - Peritonsillar Abscess"
+    },
+    {
+      "code": "J36 - Quinsy",
+      "name": "J36 - Quinsy"
+    },
+    {
+      "code": "J38.7 - Diseases of larynx",
+      "name": "J38.7 - Diseases of larynx"
+    },
+    {
+      "code": "J39.2 - Diseases of pharynx",
+      "name": "J39.2 - Diseases of pharynx"
+    },
+    {
+      "code": "J39.8 - Infection of Upper Respiratory Tract (Chronic)",
+      "name": "J39.8 - Infection of Upper Respiratory Tract (Chronic)"
+    },
+    {
+      "code": "J40 - Bronchitis",
+      "name": "J40 - Bronchitis"
+    },
+    {
+      "code": "J40 - Bronchitis (Unspecified)",
+      "name": "J40 - Bronchitis (Unspecified)"
+    },
+    {
+      "code": "J40 - Bronchitis Wheezing",
+      "name": "J40 - Bronchitis Wheezing"
+    },
+    {
+      "code": "J40 - Laryngotracheobronchitis",
+      "name": "J40 - Laryngotracheobronchitis"
+    },
+    {
+      "code": "J40 - Wheezing Bronchitis",
+      "name": "J40 - Wheezing Bronchitis"
+    },
+    {
+      "code": "J42 - Bronchitis (Chronic)",
+      "name": "J42 - Bronchitis (Chronic)"
+    },
+    {
+      "code": "J42 - Infection of Lower Respiratory Tract (Chronic)",
+      "name": "J42 - Infection of Lower Respiratory Tract (Chronic)"
+    },
+    {
+      "code": "J43.9 - Emphysema Pulmonary",
+      "name": "J43.9 - Emphysema Pulmonary"
+    },
+    {
+      "code": "J44 - Obstruction Respiratory (Chronic)",
+      "name": "J44 - Obstruction Respiratory (Chronic)"
+    },
+    {
+      "code": "J45.9 - Asthma",
+      "name": "J45.9 - Asthma"
+    },
+    {
+      "code": "J45.9 - Bronchial Asthma",
+      "name": "J45.9 - Bronchial Asthma"
+    },
+    {
+      "code": "J46 - Status Asthmaticus",
+      "name": "J46 - Status Asthmaticus"
+    },
+    {
+      "code": "J47 - Bronchiectasis",
+      "name": "J47 - Bronchiectasis"
+    },
+    {
+      "code": "J60 - Coalworker",
+      "name": "J60 - Coalworker"
+    },
+    {
+      "code": "J61 - Asbestosis",
+      "name": "J61 - Asbestosis"
+    },
+    {
+      "code": "J62.8 - Silicosis",
+      "name": "J62.8 - Silicosis"
+    },
+    {
+      "code": "J63.4 - Siderosis",
+      "name": "J63.4 - Siderosis"
+    },
+    {
+      "code": "J64 - Pneumoconiosis",
+      "name": "J64 - Pneumoconiosis"
+    },
+    {
+      "code": "J65 - Silicotuberculosis",
+      "name": "J65 - Silicotuberculosis"
+    },
+    {
+      "code": "J66.0 - Byssinosis",
+      "name": "J66.0 - Byssinosis"
+    },
+    {
+      "code": "J67.0 - Lung Farmer",
+      "name": "J67.0 - Lung Farmer"
+    },
+    {
+      "code": "J68.0 - Pneumonitis Chemical",
+      "name": "J68.0 - Pneumonitis Chemical"
+    },
+    {
+      "code": "J69.0 - Aspiration Pneumonia",
+      "name": "J69.0 - Aspiration Pneumonia"
+    },
+    {
+      "code": "J69.0 - Aspiration Pneumonitis",
+      "name": "J69.0 - Aspiration Pneumonitis"
+    },
+    {
+      "code": "J81 - Congestion Pulmonary",
+      "name": "J81 - Congestion Pulmonary"
+    },
+    {
+      "code": "J81 - Pulmonary Oedema",
+      "name": "J81 - Pulmonary Oedema"
+    },
+    {
+      "code": "J84.1 - Pleuropneumonia Chronic",
+      "name": "J84.1 - Pleuropneumonia Chronic"
+    },
+    {
+      "code": "J86.9 - Empyema",
+      "name": "J86.9 - Empyema"
+    },
+    {
+      "code": "J90 - Pleural Effusion",
+      "name": "J90 - Pleural Effusion"
+    },
+    {
+      "code": "J90 - Recurent Pleural effusion",
+      "name": "J90 - Recurent Pleural effusion"
+    },
+    {
+      "code": "J93.8 - Acute Pneumothorax",
+      "name": "J93.8 - Acute Pneumothorax"
+    },
+    {
+      "code": "J93.8 - Chronic Pneumothorax",
+      "name": "J93.8 - Chronic Pneumothorax"
+    },
+    {
+      "code": "J93.8 - Pneumothorax Acute",
+      "name": "J93.8 - Pneumothorax Acute"
+    },
+    {
+      "code": "J93.8 - Pneumothorax Chronic",
+      "name": "J93.8 - Pneumothorax Chronic"
+    },
+    {
+      "code": "J93.9 - Pneumothorax, unspecified",
+      "name": "J93.9 - Pneumothorax, unspecified"
+    },
+    {
+      "code": "J94.2 - Haemopneumothorax",
+      "name": "J94.2 - Haemopneumothorax"
+    },
+    {
+      "code": "J94.2 - Haemothorax",
+      "name": "J94.2 - Haemothorax"
+    },
+    {
+      "code": "J96.9 - Failure Respiratory",
+      "name": "J96.9 - Failure Respiratory"
+    },
+    {
+      "code": "J96.9 - Respiratory failure",
+      "name": "J96.9 - Respiratory failure"
+    },
+    {
+      "code": "J98.0 - Bronchospasm",
+      "name": "J98.0 - Bronchospasm"
+    },
+    {
+      "code": "J98.1 - Collapsed Lung",
+      "name": "J98.1 - Collapsed Lung"
+    },
+    {
+      "code": "J98.4 - Pneumatocele",
+      "name": "J98.4 - Pneumatocele"
+    },
+    {
+      "code": "J98.8 - Acute Chest Infection",
+      "name": "J98.8 - Acute Chest Infection"
+    },
+    {
+      "code": "J98.8 - Chronic Chest Infection",
+      "name": "J98.8 - Chronic Chest Infection"
+    },
+    {
+      "code": "J98.8 - Infection of Respiratory Tract (RTI)",
+      "name": "J98.8 - Infection of Respiratory Tract (RTI)"
+    },
+    {
+      "code": "J98.8 - Obstruction of Airway",
+      "name": "J98.8 - Obstruction of Airway"
+    },
+    {
+      "code": "J98.8 - Obstructive Airway disease",
+      "name": "J98.8 - Obstructive Airway disease"
+    },
+    {
+      "code": "J98.8 - Upper airway obstruction",
+      "name": "J98.8 - Upper airway obstruction"
+    },
+    {
+      "code": "J98.9 - Disease Respiratory (Unspecified)",
+      "name": "J98.9 - Disease Respiratory (Unspecified)"
+    },
+    {
+      "code": "J98.9 - Respiratory disorder, unspecified",
+      "name": "J98.9 - Respiratory disorder, unspecified"
+    },
+    {
+      "code": "J99.0 - Disease Rheumatoid Lung",
+      "name": "J99.0 - Disease Rheumatoid Lung"
+    },
+    {
+      "code": "J99.0 - Rheumatoid lung disease",
+      "name": "J99.0 - Rheumatoid lung disease"
+    },
+    {
+      "code": "K00.1 - Supernumerary Teeth",
+      "name": "K00.1 - Supernumerary Teeth"
+    },
+    {
+      "code": "K00.3 - Dental fluorosis",
+      "name": "K00.3 - Dental fluorosis"
+    },
+    {
+      "code": "K00.3 - Fluorosis Dental",
+      "name": "K00.3 - Fluorosis Dental"
+    },
+    {
+      "code": "K00.3 - Mottled teeth",
+      "name": "K00.3 - Mottled teeth"
+    },
+    {
+      "code": "K00.6 - Retained Primary Teeth",
+      "name": "K00.6 - Retained Primary Teeth"
+    },
+    {
+      "code": "K01.0 - Embedded/Impaced Teeth (with symptoms)",
+      "name": "K01.0 - Embedded/Impaced Teeth (with symptoms)"
+    },
+    {
+      "code": "K01.0 - Embedded/Impacted Tooth",
+      "name": "K01.0 - Embedded/Impacted Tooth"
+    },
+    {
+      "code": "K01.0 - Tooth Embedded",
+      "name": "K01.0 - Tooth Embedded"
+    },
+    {
+      "code": "K02.9 - Dental caries",
+      "name": "K02.9 - Dental caries"
+    },
+    {
+      "code": "K03.1 - Abrasion of Teeth",
+      "name": "K03.1 - Abrasion of Teeth"
+    },
+    {
+      "code": "K03.1 - Dental Abrasion",
+      "name": "K03.1 - Dental Abrasion"
+    },
+    {
+      "code": "K05.1 - Gingivitis",
+      "name": "K05.1 - Gingivitis"
+    },
+    {
+      "code": "K05.1 - Periodontal Diseases",
+      "name": "K05.1 - Periodontal Diseases"
+    },
+    {
+      "code": "K06.1 - Gingival enlargement",
+      "name": "K06.1 - Gingival enlargement"
+    },
+    {
+      "code": "K06.1 - Gingival hyperplasia",
+      "name": "K06.1 - Gingival hyperplasia"
+    },
+    {
+      "code": "K07.3 - Anomalies of tooth position",
+      "name": "K07.3 - Anomalies of tooth position"
+    },
+    {
+      "code": "K08.3 - Retained dental root",
+      "name": "K08.3 - Retained dental root"
+    },
+    {
+      "code": "K10.2 - Osteitis/osteomyelitis",
+      "name": "K10.2 - Osteitis/osteomyelitis"
+    },
+    {
+      "code": "K10.3 - Alveolitis",
+      "name": "K10.3 - Alveolitis"
+    },
+    {
+      "code": "K10.3 - Dry Socket",
+      "name": "K10.3 - Dry Socket"
+    },
+    {
+      "code": "K10.3 - Fibrous Dysplasia",
+      "name": "K10.3 - Fibrous Dysplasia"
+    },
+    {
+      "code": "K11.1 - Enlarged submandiblar gland",
+      "name": "K11.1 - Enlarged submandiblar gland"
+    },
+    {
+      "code": "K11.2 - Sialoadenitis",
+      "name": "K11.2 - Sialoadenitis"
+    },
+    {
+      "code": "K11.5 - Parotid Sialolithiasis",
+      "name": "K11.5 - Parotid Sialolithiasis"
+    },
+    {
+      "code": "K11.5 - Sialolithiasis",
+      "name": "K11.5 - Sialolithiasis"
+    },
+    {
+      "code": "K11.5 - Sialolithiasis of submandibular gland",
+      "name": "K11.5 - Sialolithiasis of submandibular gland"
+    },
+    {
+      "code": "K11.5 - Submandibual Sialolithiasis",
+      "name": "K11.5 - Submandibual Sialolithiasis"
+    },
+    {
+      "code": "K11.6 - Mucocoele",
+      "name": "K11.6 - Mucocoele"
+    },
+    {
+      "code": "K12.1 - Stomatitis and Related Lesions",
+      "name": "K12.1 - Stomatitis and Related Lesions"
+    },
+    {
+      "code": "K12.2 - Abscess Submandibular",
+      "name": "K12.2 - Abscess Submandibular"
+    },
+    {
+      "code": "K12.2 - Ludwig",
+      "name": "K12.2 - Ludwig"
+    },
+    {
+      "code": "K12.2 - Submandibular Abcess",
+      "name": "K12.2 - Submandibular Abcess"
+    },
+    {
+      "code": "K14.0 - Glossitis",
+      "name": "K14.0 - Glossitis"
+    },
+    {
+      "code": "K20 - Septal abscess of ear, nose, throat",
+      "name": "K20 - Septal abscess of ear, nose, throat"
+    },
+    {
+      "code": "K21.9 - Gastrooesophageal reflux",
+      "name": "K21.9 - Gastrooesophageal reflux"
+    },
+    {
+      "code": "K22.0 - Achalasia",
+      "name": "K22.0 - Achalasia"
+    },
+    {
+      "code": "K22.2 - Esophageal stenosis",
+      "name": "K22.2 - Esophageal stenosis"
+    },
+    {
+      "code": "K22.2 - Oesophageal replacement",
+      "name": "K22.2 - Oesophageal replacement"
+    },
+    {
+      "code": "K22.2 - Oesophageal stricture for replacement",
+      "name": "K22.2 - Oesophageal stricture for replacement"
+    },
+    {
+      "code": "K22.3 - Esophageal rupture",
+      "name": "K22.3 - Esophageal rupture"
+    },
+    {
+      "code": "K22.5 - Esophageal diverticulum",
+      "name": "K22.5 - Esophageal diverticulum"
+    },
+    {
+      "code": "K25.9 - Gastric ulcer",
+      "name": "K25.9 - Gastric ulcer"
+    },
+    {
+      "code": "K25.9 - Ulcer of Stomach",
+      "name": "K25.9 - Ulcer of Stomach"
+    },
+    {
+      "code": "K26.9 - Duodenal ulcer",
+      "name": "K26.9 - Duodenal ulcer"
+    },
+    {
+      "code": "K26.9 - Ulcer of Duodenum",
+      "name": "K26.9 - Ulcer of Duodenum"
+    },
+    {
+      "code": "K27.3 - Ulcer Peptic (Acute )",
+      "name": "K27.3 - Ulcer Peptic (Acute )"
+    },
+    {
+      "code": "K27.4 - Ulcer Peptic (Bleeding)",
+      "name": "K27.4 - Ulcer Peptic (Bleeding)"
+    },
+    {
+      "code": "K27.7 - Ulcer Peptic (Chronic)",
+      "name": "K27.7 - Ulcer Peptic (Chronic)"
+    },
+    {
+      "code": "K27.9 - Ulcer Peptic",
+      "name": "K27.9 - Ulcer Peptic"
+    },
+    {
+      "code": "K28.9 - Ulcer Gastrojejunal",
+      "name": "K28.9 - Ulcer Gastrojejunal"
+    },
+    {
+      "code": "K29.0 - Haemorrhagic Gastritis",
+      "name": "K29.0 - Haemorrhagic Gastritis"
+    },
+    {
+      "code": "K29.7 - Gastritis",
+      "name": "K29.7 - Gastritis"
+    },
+    {
+      "code": "K29.9 - Gastroduodenitis",
+      "name": "K29.9 - Gastroduodenitis"
+    },
+    {
+      "code": "K31.1 - Gastric Outlet Obstruction",
+      "name": "K31.1 - Gastric Outlet Obstruction"
+    },
+    {
+      "code": "K31.7 - Gastric polyp",
+      "name": "K31.7 - Gastric polyp"
+    },
+    {
+      "code": "K31.9 - Disease of Stomach and Duodenum (Unspecified)",
+      "name": "K31.9 - Disease of Stomach and Duodenum (Unspecified)"
+    },
+    {
+      "code": "K36 - Appendicitis (Chronic)",
+      "name": "K36 - Appendicitis (Chronic)"
+    },
+    {
+      "code": "K37 - Appendicitis (Unspecified)",
+      "name": "K37 - Appendicitis (Unspecified)"
+    },
+    {
+      "code": "K37 - Interval appendicectomy",
+      "name": "K37 - Interval appendicectomy"
+    },
+    {
+      "code": "K37 - Simple appendicitis",
+      "name": "K37 - Simple appendicitis"
+    },
+    {
+      "code": "K38.8 - Appendix mass",
+      "name": "K38.8 - Appendix mass"
+    },
+    {
+      "code": "K40.9 - Hernia Inguinal",
+      "name": "K40.9 - Hernia Inguinal"
+    },
+    {
+      "code": "K40.9 - Inguinal Hernia",
+      "name": "K40.9 - Inguinal Hernia"
+    },
+    {
+      "code": "K41.9 - Femoral Hernia",
+      "name": "K41.9 - Femoral Hernia"
+    },
+    {
+      "code": "K41.9 - Hernia Femoral",
+      "name": "K41.9 - Hernia Femoral"
+    },
+    {
+      "code": "K42.9 - Hernia Umbilical",
+      "name": "K42.9 - Hernia Umbilical"
+    },
+    {
+      "code": "K42.9 - Umbilical hernia",
+      "name": "K42.9 - Umbilical hernia"
+    },
+    {
+      "code": "K43.9 - Epigastric Hernia",
+      "name": "K43.9 - Epigastric Hernia"
+    },
+    {
+      "code": "K43.9 - Hernia Epigastric",
+      "name": "K43.9 - Hernia Epigastric"
+    },
+    {
+      "code": "K43.9 - Hernia Ventral",
+      "name": "K43.9 - Hernia Ventral"
+    },
+    {
+      "code": "K43.9 - Incisional hernia",
+      "name": "K43.9 - Incisional hernia"
+    },
+    {
+      "code": "K43.9 - Spigelian hernia",
+      "name": "K43.9 - Spigelian hernia"
+    },
+    {
+      "code": "K43.9 - Supraumbilical Hernia",
+      "name": "K43.9 - Supraumbilical Hernia"
+    },
+    {
+      "code": "K44.9 - Hernia Diaphragmatic",
+      "name": "K44.9 - Hernia Diaphragmatic"
+    },
+    {
+      "code": "K44.9 - Hiatus hernia",
+      "name": "K44.9 - Hiatus hernia"
+    },
+    {
+      "code": "K46.0 - Hernia Abdominal (Strangulated)",
+      "name": "K46.0 - Hernia Abdominal (Strangulated)"
+    },
+    {
+      "code": "K46.0 - Incarcerated Hernia",
+      "name": "K46.0 - Incarcerated Hernia"
+    },
+    {
+      "code": "K46.0 - Strangulated hernia",
+      "name": "K46.0 - Strangulated hernia"
+    },
+    {
+      "code": "K46.9 - Hernia Abdominal",
+      "name": "K46.9 - Hernia Abdominal"
+    },
+    {
+      "code": "K46.9 - Hernia Abdominal (Unspecified)",
+      "name": "K46.9 - Hernia Abdominal (Unspecified)"
+    },
+    {
+      "code": "K46.9 - Hernia Scrotal",
+      "name": "K46.9 - Hernia Scrotal"
+    },
+    {
+      "code": "K46.9 - Mesenteric hernia",
+      "name": "K46.9 - Mesenteric hernia"
+    },
+    {
+      "code": "K46.9 - Omental hernia",
+      "name": "K46.9 - Omental hernia"
+    },
+    {
+      "code": "K46.9 - Scrotal Hernia",
+      "name": "K46.9 - Scrotal Hernia"
+    },
+    {
+      "code": "K46.9 - Strangulated Hernia",
+      "name": "K46.9 - Strangulated Hernia"
+    },
+    {
+      "code": "K46.9 - Strangulated Scrotum",
+      "name": "K46.9 - Strangulated Scrotum"
+    },
+    {
+      "code": "K46.9 - Supraumbilical Hernia",
+      "name": "K46.9 - Supraumbilical Hernia"
+    },
+    {
+      "code": "K52.2 - Gastroenteritis and Colitis (Allergic)",
+      "name": "K52.2 - Gastroenteritis and Colitis (Allergic)"
+    },
+    {
+      "code": "K52.9 - Chronic Diarrhoea",
+      "name": "K52.9 - Chronic Diarrhoea"
+    },
+    {
+      "code": "K55.0 - Gangrenous Bowel",
+      "name": "K55.0 - Gangrenous Bowel"
+    },
+    {
+      "code": "K55.0 - Necrosis of Bowel",
+      "name": "K55.0 - Necrosis of Bowel"
+    },
+    {
+      "code": "K56.0 - Ileus Paralytic",
+      "name": "K56.0 - Ileus Paralytic"
+    },
+    {
+      "code": "K56.0 - Paralysis of Ileus",
+      "name": "K56.0 - Paralysis of Ileus"
+    },
+    {
+      "code": "K56.0 - Paralytic ileus",
+      "name": "K56.0 - Paralytic ileus"
+    },
+    {
+      "code": "K56.1 - Intussusception of Intestine",
+      "name": "K56.1 - Intussusception of Intestine"
+    },
+    {
+      "code": "K56.2 - Volvulus of Intestine",
+      "name": "K56.2 - Volvulus of Intestine"
+    },
+    {
+      "code": "K56.6 - Gastrointestinal Obstruction",
+      "name": "K56.6 - Gastrointestinal Obstruction"
+    },
+    {
+      "code": "K56.6 - Ileus Obstructive",
+      "name": "K56.6 - Ileus Obstructive"
+    },
+    {
+      "code": "K56.6 - Intestinal Obstruction",
+      "name": "K56.6 - Intestinal Obstruction"
+    },
+    {
+      "code": "K56.6 - Obstruction Intestinal",
+      "name": "K56.6 - Obstruction Intestinal"
+    },
+    {
+      "code": "K56.7 - Ileus",
+      "name": "K56.7 - Ileus"
+    },
+    {
+      "code": "K60.2 - Anal fissure",
+      "name": "K60.2 - Anal fissure"
+    },
+    {
+      "code": "K60.3 - Fistula Anal",
+      "name": "K60.3 - Fistula Anal"
+    },
+    {
+      "code": "K61.0 - Abscess Anal",
+      "name": "K61.0 - Abscess Anal"
+    },
+    {
+      "code": "K61.0 - Anal fistula",
+      "name": "K61.0 - Anal fistula"
+    },
+    {
+      "code": "K61.1 - Abscess Rectal",
+      "name": "K61.1 - Abscess Rectal"
+    },
+    {
+      "code": "K61.1 - Rectal abscess",
+      "name": "K61.1 - Rectal abscess"
+    },
+    {
+      "code": "K61.3 - Abscess Ischiorectal",
+      "name": "K61.3 - Abscess Ischiorectal"
+    },
+    {
+      "code": "K61.3 - Ischiorectal abscess",
+      "name": "K61.3 - Ischiorectal abscess"
+    },
+    {
+      "code": "K62.1 - Rectal polyp",
+      "name": "K62.1 - Rectal polyp"
+    },
+    {
+      "code": "K62.3 - Prolapse Rectum",
+      "name": "K62.3 - Prolapse Rectum"
+    },
+    {
+      "code": "K62.3 - Rectal Proplase",
+      "name": "K62.3 - Rectal Proplase"
+    },
+    {
+      "code": "K62.6 - Ulcer of Anus",
+      "name": "K62.6 - Ulcer of Anus"
+    },
+    {
+      "code": "K62.8 - Proctitis",
+      "name": "K62.8 - Proctitis"
+    },
+    {
+      "code": "K63.0 - Abscess Intestinal",
+      "name": "K63.0 - Abscess Intestinal"
+    },
+    {
+      "code": "K63.1 - Perforation of Bowel",
+      "name": "K63.1 - Perforation of Bowel"
+    },
+    {
+      "code": "K63.1 - Perforation of Intestine",
+      "name": "K63.1 - Perforation of Intestine"
+    },
+    {
+      "code": "K63.3 - Ulcer of Intestine",
+      "name": "K63.3 - Ulcer of Intestine"
+    },
+    {
+      "code": "K63.9 - Colon lesion",
+      "name": "K63.9 - Colon lesion"
+    },
+    {
+      "code": "K63.9 - Disease of Intestine (Unspecified)",
+      "name": "K63.9 - Disease of Intestine (Unspecified)"
+    },
+    {
+      "code": "K63.9 - Inflammatory bowel disease",
+      "name": "K63.9 - Inflammatory bowel disease"
+    },
+    {
+      "code": "K63.9 - Small bowel lesion",
+      "name": "K63.9 - Small bowel lesion"
+    },
+    {
+      "code": "K65.0 - Peritonitis (Acute)",
+      "name": "K65.0 - Peritonitis (Acute)"
+    },
+    {
+      "code": "K65.9 - Peritonitis",
+      "name": "K65.9 - Peritonitis"
+    },
+    {
+      "code": "K66.0 - Adhesion of Bowel",
+      "name": "K66.0 - Adhesion of Bowel"
+    },
+    {
+      "code": "K66.0 - Adhesion Syndrome",
+      "name": "K66.0 - Adhesion Syndrome"
+    },
+    {
+      "code": "K66.0 - Post Operative adhession",
+      "name": "K66.0 - Post Operative adhession"
+    },
+    {
+      "code": "K66.1 - Haemoperitoneum",
+      "name": "K66.1 - Haemoperitoneum"
+    },
+    {
+      "code": "K66.1 - Intraperitoneal Haemorrage",
+      "name": "K66.1 - Intraperitoneal Haemorrage"
+    },
+    {
+      "code": "K66.8 - Mesenteric cysts",
+      "name": "K66.8 - Mesenteric cysts"
+    },
+    {
+      "code": "K70.1 - Alcoholic Hepatitis",
+      "name": "K70.1 - Alcoholic Hepatitis"
+    },
+    {
+      "code": "K70.3 - Alcoholic Liver Cirrhosis",
+      "name": "K70.3 - Alcoholic Liver Cirrhosis"
+    },
+    {
+      "code": "K70.3 - Cirrhosis of Liver (Alcoholic)",
+      "name": "K70.3 - Cirrhosis of Liver (Alcoholic)"
+    },
+    {
+      "code": "K70.9 - Disease of Liver",
+      "name": "K70.9 - Disease of Liver"
+    },
+    {
+      "code": "K70.9 - Disease of Liver (Alcoholic)",
+      "name": "K70.9 - Disease of Liver (Alcoholic)"
+    },
+    {
+      "code": "K72.0 - Acute Hepatitis",
+      "name": "K72.0 - Acute Hepatitis"
+    },
+    {
+      "code": "K72.9 - Coma Hepatic",
+      "name": "K72.9 - Coma Hepatic"
+    },
+    {
+      "code": "K72.9 - Failure Hepatic",
+      "name": "K72.9 - Failure Hepatic"
+    },
+    {
+      "code": "K73.9 - Chronic Hepatitis",
+      "name": "K73.9 - Chronic Hepatitis"
+    },
+    {
+      "code": "K74.6 - Cirrhosis of Liver",
+      "name": "K74.6 - Cirrhosis of Liver"
+    },
+    {
+      "code": "K74.6 - Hepatic Cirrhosis",
+      "name": "K74.6 - Hepatic Cirrhosis"
+    },
+    {
+      "code": "K75.0 - Abscess Hepatic",
+      "name": "K75.0 - Abscess Hepatic"
+    },
+    {
+      "code": "K75.0 - Abscess Liver",
+      "name": "K75.0 - Abscess Liver"
+    },
+    {
+      "code": "K75.0 - Hepatic Abscess",
+      "name": "K75.0 - Hepatic Abscess"
+    },
+    {
+      "code": "K75.9 - Hepatitis (Unspecified)",
+      "name": "K75.9 - Hepatitis (Unspecified)"
+    },
+    {
+      "code": "K75.9 - Infective Hepatitis",
+      "name": "K75.9 - Infective Hepatitis"
+    },
+    {
+      "code": "K76.7 - Hepatorenal Failure",
+      "name": "K76.7 - Hepatorenal Failure"
+    },
+    {
+      "code": "K76.9 - Liver Disease",
+      "name": "K76.9 - Liver Disease"
+    },
+    {
+      "code": "K80.5 - Calculus",
+      "name": "K80.5 - Calculus"
+    },
+    {
+      "code": "K80.5 - Colic Hepatic",
+      "name": "K80.5 - Colic Hepatic"
+    },
+    {
+      "code": "K80.5 - Gall Calculus",
+      "name": "K80.5 - Gall Calculus"
+    },
+    {
+      "code": "K80.5 - Gall stones",
+      "name": "K80.5 - Gall stones"
+    },
+    {
+      "code": "K80.8 - Cholelithiasis",
+      "name": "K80.8 - Cholelithiasis"
+    },
+    {
+      "code": "K81.0 - Empyema of gallbladder",
+      "name": "K81.0 - Empyema of gallbladder"
+    },
+    {
+      "code": "K81.9 - Cholecystitis",
+      "name": "K81.9 - Cholecystitis"
+    },
+    {
+      "code": "K83.1 - Cholestatic Jaundice",
+      "name": "K83.1 - Cholestatic Jaundice"
+    },
+    {
+      "code": "K83.1 - Obstruction of bile duct",
+      "name": "K83.1 - Obstruction of bile duct"
+    },
+    {
+      "code": "K83.1 - Obstructive Jaundice",
+      "name": "K83.1 - Obstructive Jaundice"
+    },
+    {
+      "code": "K85 - Pancreatitis",
+      "name": "K85 - Pancreatitis"
+    },
+    {
+      "code": "K91.4 - Conditions with enterostomy",
+      "name": "K91.4 - Conditions with enterostomy"
+    },
+    {
+      "code": "K92.0 - Haematemesis",
+      "name": "K92.0 - Haematemesis"
+    },
+    {
+      "code": "K92.0 - Vomiting Blood",
+      "name": "K92.0 - Vomiting Blood"
+    },
+    {
+      "code": "K92.2 - All cause of GI bleeding - upper GI",
+      "name": "K92.2 - All cause of GI bleeding - upper GI"
+    },
+    {
+      "code": "K92.2 - Bleeding Gastro Intestinal",
+      "name": "K92.2 - Bleeding Gastro Intestinal"
+    },
+    {
+      "code": "K92.2 - Gastrointestinal Bleeding (Haemorrhage)",
+      "name": "K92.2 - Gastrointestinal Bleeding (Haemorrhage)"
+    },
+    {
+      "code": "K92.2 - Intestinal bleeding",
+      "name": "K92.2 - Intestinal bleeding"
+    },
+    {
+      "code": "K92.2 - Large bowel bleeding",
+      "name": "K92.2 - Large bowel bleeding"
+    },
+    {
+      "code": "K92.2 - Large Bowel haemorrhage",
+      "name": "K92.2 - Large Bowel haemorrhage"
+    },
+    {
+      "code": "K92.2 - Upper gastrointestinal bleeding",
+      "name": "K92.2 - Upper gastrointestinal bleeding"
+    },
+    {
+      "code": "K92.9 - Disease of Digestive System (Unspecified)",
+      "name": "K92.9 - Disease of Digestive System (Unspecified)"
+    },
+    {
+      "code": "L01.0 - Impetigo",
+      "name": "L01.0 - Impetigo"
+    },
+    {
+      "code": "L02.0 - Abscess Fore Head",
+      "name": "L02.0 - Abscess Fore Head"
+    },
+    {
+      "code": "L02.1 - Abscess Cervical",
+      "name": "L02.1 - Abscess Cervical"
+    },
+    {
+      "code": "L02.3 - Abscess Buttock",
+      "name": "L02.3 - Abscess Buttock"
+    },
+    {
+      "code": "L02.3 - Abscess Gluteal",
+      "name": "L02.3 - Abscess Gluteal"
+    },
+    {
+      "code": "L02.4 - Abscess Arm",
+      "name": "L02.4 - Abscess Arm"
+    },
+    {
+      "code": "L02.4 - Auxillary Abscess",
+      "name": "L02.4 - Auxillary Abscess"
+    },
+    {
+      "code": "L02.4 - Axillary Abscess",
+      "name": "L02.4 - Axillary Abscess"
+    },
+    {
+      "code": "L02.4 - Septic L. Palmer  Region  of Little  Finger",
+      "name": "L02.4 - Septic L. Palmer  Region  of Little  Finger"
+    },
+    {
+      "code": "L02.8 - Abscess Scalp",
+      "name": "L02.8 - Abscess Scalp"
+    },
+    {
+      "code": "L02.9 - Abscess",
+      "name": "L02.9 - Abscess"
+    },
+    {
+      "code": "L02.9 - Abscess Cutaneous (Unspecified)",
+      "name": "L02.9 - Abscess Cutaneous (Unspecified)"
+    },
+    {
+      "code": "L02.9 - Boils",
+      "name": "L02.9 - Boils"
+    },
+    {
+      "code": "L02.9 - Cutaneous Abscess Furuncle",
+      "name": "L02.9 - Cutaneous Abscess Furuncle"
+    },
+    {
+      "code": "L02.9 - Furunculosis",
+      "name": "L02.9 - Furunculosis"
+    },
+    {
+      "code": "L02.9 - Septic Sore",
+      "name": "L02.9 - Septic Sore"
+    },
+    {
+      "code": "L02.9 - Soft tissue abscess",
+      "name": "L02.9 - Soft tissue abscess"
+    },
+    {
+      "code": "L03.0 - Cellulitis of finger and toe",
+      "name": "L03.0 - Cellulitis of finger and toe"
+    },
+    {
+      "code": "L03.0 - Infected nails (paronychia)",
+      "name": "L03.0 - Infected nails (paronychia)"
+    },
+    {
+      "code": "L03.1 - Cellulitis of Arm",
+      "name": "L03.1 - Cellulitis of Arm"
+    },
+    {
+      "code": "L03.1 - Cellulitis of Foot",
+      "name": "L03.1 - Cellulitis of Foot"
+    },
+    {
+      "code": "L03.1 - Cellulitis of forearm",
+      "name": "L03.1 - Cellulitis of forearm"
+    },
+    {
+      "code": "L03.1 - Cellulitis of Hand",
+      "name": "L03.1 - Cellulitis of Hand"
+    },
+    {
+      "code": "L03.1 - Cellulitis of Leg",
+      "name": "L03.1 - Cellulitis of Leg"
+    },
+    {
+      "code": "L03.1 - Septic Foot",
+      "name": "L03.1 - Septic Foot"
+    },
+    {
+      "code": "L03.2 - Cellulitis of Face",
+      "name": "L03.2 - Cellulitis of Face"
+    },
+    {
+      "code": "L03.8 - Cellulitis of Neck",
+      "name": "L03.8 - Cellulitis of Neck"
+    },
+    {
+      "code": "L03.8 - Cellulitis of Penis",
+      "name": "L03.8 - Cellulitis of Penis"
+    },
+    {
+      "code": "L03.9 - Cellulitis",
+      "name": "L03.9 - Cellulitis"
+    },
+    {
+      "code": "L04.9 - Lymphadenitis (Acute)",
+      "name": "L04.9 - Lymphadenitis (Acute)"
+    },
+    {
+      "code": "L08.9 - Hand infections",
+      "name": "L08.9 - Hand infections"
+    },
+    {
+      "code": "L08.9 - Infected Scalp",
+      "name": "L08.9 - Infected Scalp"
+    },
+    {
+      "code": "L08.9 - Infected Skin",
+      "name": "L08.9 - Infected Skin"
+    },
+    {
+      "code": "L23.9 - Dermatitis Allergic (Contact)",
+      "name": "L23.9 - Dermatitis Allergic (Contact)"
+    },
+    {
+      "code": "L23.9 - Other allergic skin conditions",
+      "name": "L23.9 - Other allergic skin conditions"
+    },
+    {
+      "code": "L30.9 - Dermatitis",
+      "name": "L30.9 - Dermatitis"
+    },
+    {
+      "code": "L30.9 - Severe Eczema",
+      "name": "L30.9 - Severe Eczema"
+    },
+    {
+      "code": "L41.0 - Mucha-Habermann Disease",
+      "name": "L41.0 - Mucha-Habermann Disease"
+    },
+    {
+      "code": "L43.3 - Colostomy and ileostomy",
+      "name": "L43.3 - Colostomy and ileostomy"
+    },
+    {
+      "code": "L51.1 - Steven Johnson Syndrome",
+      "name": "L51.1 - Steven Johnson Syndrome"
+    },
+    {
+      "code": "L60.0 - Ingrowing toe nails",
+      "name": "L60.0 - Ingrowing toe nails"
+    },
+    {
+      "code": "L70.8 - Acne Occupational",
+      "name": "L70.8 - Acne Occupational"
+    },
+    {
+      "code": "L70.9 - Acne",
+      "name": "L70.9 - Acne"
+    },
+    {
+      "code": "L72.1 - Sebaceous cyst",
+      "name": "L72.1 - Sebaceous cyst"
+    },
+    {
+      "code": "L89 - Bed Sores",
+      "name": "L89 - Bed Sores"
+    },
+    {
+      "code": "L89 - Decubitus Ulcer",
+      "name": "L89 - Decubitus Ulcer"
+    },
+    {
+      "code": "L89 - Hypertrophic scar",
+      "name": "L89 - Hypertrophic scar"
+    },
+    {
+      "code": "L89 - Pressure sores",
+      "name": "L89 - Pressure sores"
+    },
+    {
+      "code": "L91.0 - Keloid",
+      "name": "L91.0 - Keloid"
+    },
+    {
+      "code": "L97 - Ulcer of Foot",
+      "name": "L97 - Ulcer of Foot"
+    },
+    {
+      "code": "L98.4 - Tropical Ulcer",
+      "name": "L98.4 - Tropical Ulcer"
+    },
+    {
+      "code": "L98.4 - Ulcer",
+      "name": "L98.4 - Ulcer"
+    },
+    {
+      "code": "L98.4 - Ulcer of Skin",
+      "name": "L98.4 - Ulcer of Skin"
+    },
+    {
+      "code": "L98.8 - Fistula",
+      "name": "L98.8 - Fistula"
+    },
+    {
+      "code": "L98.8 - Sinus",
+      "name": "L98.8 - Sinus"
+    },
+    {
+      "code": "L98.9 - Disease of Skin (Unspecified)",
+      "name": "L98.9 - Disease of Skin (Unspecified)"
+    },
+    {
+      "code": "M00.9 - Acute Septic Arthritis",
+      "name": "M00.9 - Acute Septic Arthritis"
+    },
+    {
+      "code": "M00.9 - Septic Arthritis",
+      "name": "M00.9 - Septic Arthritis"
+    },
+    {
+      "code": "M00.9 - Septic Bursitis",
+      "name": "M00.9 - Septic Bursitis"
+    },
+    {
+      "code": "M01.1 - Tuberculosis arthropathy",
+      "name": "M01.1 - Tuberculosis arthropathy"
+    },
+    {
+      "code": "M06.9 - Arthritis Rheumatoid",
+      "name": "M06.9 - Arthritis Rheumatoid"
+    },
+    {
+      "code": "M06.9 - Tuberculous arthritis",
+      "name": "M06.9 - Tuberculous arthritis"
+    },
+    {
+      "code": "M08.9 - Arthritis Juvenile",
+      "name": "M08.9 - Arthritis Juvenile"
+    },
+    {
+      "code": "M08.9 - Juvenile arthritis",
+      "name": "M08.9 - Juvenile arthritis"
+    },
+    {
+      "code": "M12.5 - Traumatic Arthropathy",
+      "name": "M12.5 - Traumatic Arthropathy"
+    },
+    {
+      "code": "M13.9 - Arthritis",
+      "name": "M13.9 - Arthritis"
+    },
+    {
+      "code": "M13.9 - Inflammatory arthropathy",
+      "name": "M13.9 - Inflammatory arthropathy"
+    },
+    {
+      "code": "M13.9 - Inflammed Arthropathy",
+      "name": "M13.9 - Inflammed Arthropathy"
+    },
+    {
+      "code": "M19.9 - Arthrosis",
+      "name": "M19.9 - Arthrosis"
+    },
+    {
+      "code": "M19.9 - Osteoarthritis",
+      "name": "M19.9 - Osteoarthritis"
+    },
+    {
+      "code": "M19.9 - Osteoarthrosis",
+      "name": "M19.9 - Osteoarthrosis"
+    },
+    {
+      "code": "M20.4 - Hammertoes",
+      "name": "M20.4 - Hammertoes"
+    },
+    {
+      "code": "M21.7 - Leg length inequality",
+      "name": "M21.7 - Leg length inequality"
+    },
+    {
+      "code": "M23.9 - Internal derangement of knee",
+      "name": "M23.9 - Internal derangement of knee"
+    },
+    {
+      "code": "M24.5 - Contracture of joints eg. Hammertoes",
+      "name": "M24.5 - Contracture of joints eg. Hammertoes"
+    },
+    {
+      "code": "M24.5 - Contracture of tendons eg. Club foot",
+      "name": "M24.5 - Contracture of tendons eg. Club foot"
+    },
+    {
+      "code": "M24.8 - Adhesion of Knee",
+      "name": "M24.8 - Adhesion of Knee"
+    },
+    {
+      "code": "M25.4 - Swelling of Knee",
+      "name": "M25.4 - Swelling of Knee"
+    },
+    {
+      "code": "M25.5 - Arthralgia",
+      "name": "M25.5 - Arthralgia"
+    },
+    {
+      "code": "M25.5 - Joint Pains",
+      "name": "M25.5 - Joint Pains"
+    },
+    {
+      "code": "M25.5 - Painful Knee",
+      "name": "M25.5 - Painful Knee"
+    },
+    {
+      "code": "M25.5 - Painful Wrist",
+      "name": "M25.5 - Painful Wrist"
+    },
+    {
+      "code": "M25.5 - Polyarthaigic Cause",
+      "name": "M25.5 - Polyarthaigic Cause"
+    },
+    {
+      "code": "M54.3 - Sciatica",
+      "name": "M54.3 - Sciatica"
+    },
+    {
+      "code": "M54.5 - Low  back pain",
+      "name": "M54.5 - Low  back pain"
+    },
+    {
+      "code": "M54.5 - Lower  back pain",
+      "name": "M54.5 - Lower  back pain"
+    },
+    {
+      "code": "M54.5 - Lumbago",
+      "name": "M54.5 - Lumbago"
+    },
+    {
+      "code": "M54.5 - Pain Low Back",
+      "name": "M54.5 - Pain Low Back"
+    },
+    {
+      "code": "M60.0 - Pyomyositis",
+      "name": "M60.0 - Pyomyositis"
+    },
+    {
+      "code": "M61.5 - Myositis Ossificans",
+      "name": "M61.5 - Myositis Ossificans"
+    },
+    {
+      "code": "M62.4 - Contracture of muscle",
+      "name": "M62.4 - Contracture of muscle"
+    },
+    {
+      "code": "M62.9 - Disease of Muscle (Unspecified)",
+      "name": "M62.9 - Disease of Muscle (Unspecified)"
+    },
+    {
+      "code": "M65.3 - Trigger digits",
+      "name": "M65.3 - Trigger digits"
+    },
+    {
+      "code": "M65.9 - Synovitis",
+      "name": "M65.9 - Synovitis"
+    },
+    {
+      "code": "M65.9 - Tenosynovitis",
+      "name": "M65.9 - Tenosynovitis"
+    },
+    {
+      "code": "M67.4 - Ganglion",
+      "name": "M67.4 - Ganglion"
+    },
+    {
+      "code": "M70.9 - Bursitis Occupational",
+      "name": "M70.9 - Bursitis Occupational"
+    },
+    {
+      "code": "M70.9 - Occupational Bursitis",
+      "name": "M70.9 - Occupational Bursitis"
+    },
+    {
+      "code": "M71.9 - Bursitis",
+      "name": "M71.9 - Bursitis"
+    },
+    {
+      "code": "M71.9 - Bursopathy",
+      "name": "M71.9 - Bursopathy"
+    },
+    {
+      "code": "M79.1 - Myalgia",
+      "name": "M79.1 - Myalgia"
+    },
+    {
+      "code": "M79.8 - Swelling",
+      "name": "M79.8 - Swelling"
+    },
+    {
+      "code": "M79.8 - Swelling (Any Parts Eccept The Knee)",
+      "name": "M79.8 - Swelling (Any Parts Eccept The Knee)"
+    },
+    {
+      "code": "M81.9 - Osteoporosis",
+      "name": "M81.9 - Osteoporosis"
+    },
+    {
+      "code": "M84.0 - Malunion",
+      "name": "M84.0 - Malunion"
+    },
+    {
+      "code": "M84.1 - Non-union diaphyseal fracture",
+      "name": "M84.1 - Non-union diaphyseal fracture"
+    },
+    {
+      "code": "M84.1 - Non-union of fractures",
+      "name": "M84.1 - Non-union of fractures"
+    },
+    {
+      "code": "M85.1 - Fluorosis Skeletal",
+      "name": "M85.1 - Fluorosis Skeletal"
+    },
+    {
+      "code": "M85.1 - Skeletal fluorosis",
+      "name": "M85.1 - Skeletal fluorosis"
+    },
+    {
+      "code": "M86.1 - Acute Osteomyelitis",
+      "name": "M86.1 - Acute Osteomyelitis"
+    },
+    {
+      "code": "M86.6 - Osteomyelitis (Chronic)",
+      "name": "M86.6 - Osteomyelitis (Chronic)"
+    },
+    {
+      "code": "M86.9 - Osteomyelitis",
+      "name": "M86.9 - Osteomyelitis"
+    },
+    {
+      "code": "M89.9 - Disease of Bone (Unspecified)",
+      "name": "M89.9 - Disease of Bone (Unspecified)"
+    },
+    {
+      "code": "M93.9 - Slipped epiphysis",
+      "name": "M93.9 - Slipped epiphysis"
+    },
+    {
+      "code": "M95.0 - Acquired deformity of nose",
+      "name": "M95.0 - Acquired deformity of nose"
+    },
+    {
+      "code": "M95.0 - Deformed external nose",
+      "name": "M95.0 - Deformed external nose"
+    },
+    {
+      "code": "M95.9 - Acquired deformity of long bone",
+      "name": "M95.9 - Acquired deformity of long bone"
+    },
+    {
+      "code": "M95.9 - Congenital deformity of long bone",
+      "name": "M95.9 - Congenital deformity of long bone"
+    },
+    {
+      "code": "N00 - Nephritis (Acute )",
+      "name": "N00 - Nephritis (Acute )"
+    },
+    {
+      "code": "N03 - Nephritis (Chronic)",
+      "name": "N03 - Nephritis (Chronic)"
+    },
+    {
+      "code": "N04 - Nephrosis",
+      "name": "N04 - Nephrosis"
+    },
+    {
+      "code": "N04 - Nephrotic syndrome",
+      "name": "N04 - Nephrotic syndrome"
+    },
+    {
+      "code": "N04 - Syndrome Nephrotic",
+      "name": "N04 - Syndrome Nephrotic"
+    },
+    {
+      "code": "N05 - Nephritic syndrome",
+      "name": "N05 - Nephritic syndrome"
+    },
+    {
+      "code": "N05 - Nephritis",
+      "name": "N05 - Nephritis"
+    },
+    {
+      "code": "N05 - Nephritis (Unspecified)",
+      "name": "N05 - Nephritis (Unspecified)"
+    },
+    {
+      "code": "N05 - Nephrotic Syndrome",
+      "name": "N05 - Nephrotic Syndrome"
+    },
+    {
+      "code": "N10 - Acute tubulo-interstitial nephritis",
+      "name": "N10 - Acute tubulo-interstitial nephritis"
+    },
+    {
+      "code": "N10 - Pyelonephritis (Acute)",
+      "name": "N10 - Pyelonephritis (Acute)"
+    },
+    {
+      "code": "N11.9 - Chronic tubulo-interstitial nephritis, unspecified",
+      "name": "N11.9 - Chronic tubulo-interstitial nephritis, unspecified"
+    },
+    {
+      "code": "N11.9 - Pyelonephritis (Chronic)",
+      "name": "N11.9 - Pyelonephritis (Chronic)"
+    },
+    {
+      "code": "N12 - Pyelonephritis",
+      "name": "N12 - Pyelonephritis"
+    },
+    {
+      "code": "N12 - Pyelonephritis (Unspecified)",
+      "name": "N12 - Pyelonephritis (Unspecified)"
+    },
+    {
+      "code": "N12 - Tubulo-Intestinal Nephritis",
+      "name": "N12 - Tubulo-Intestinal Nephritis"
+    },
+    {
+      "code": "N13.0 - Hydronephrosis with pelvi-ureteric junction obstruction",
+      "name": "N13.0 - Hydronephrosis with pelvi-ureteric junction obstruction"
+    },
+    {
+      "code": "N13.0 - Hydronephrosis with ureteropelvic junction obstruction",
+      "name": "N13.0 - Hydronephrosis with ureteropelvic junction obstruction"
+    },
+    {
+      "code": "N13.1 - Hydronephrosis with ureteral stricture",
+      "name": "N13.1 - Hydronephrosis with ureteral stricture"
+    },
+    {
+      "code": "N13.3 - Hydronephrosis or obstructed kidney",
+      "name": "N13.3 - Hydronephrosis or obstructed kidney"
+    },
+    {
+      "code": "N13.9 - Obstruction Urinary",
+      "name": "N13.9 - Obstruction Urinary"
+    },
+    {
+      "code": "N13.9 - Obstructive Uropathy",
+      "name": "N13.9 - Obstructive Uropathy"
+    },
+    {
+      "code": "N13.9 - Urinary Obstruction",
+      "name": "N13.9 - Urinary Obstruction"
+    },
+    {
+      "code": "N15.1 - Abscess Renal and Perinephric",
+      "name": "N15.1 - Abscess Renal and Perinephric"
+    },
+    {
+      "code": "N15.1 - Nephric Abscess",
+      "name": "N15.1 - Nephric Abscess"
+    },
+    {
+      "code": "N15.1 - Renal Abscess",
+      "name": "N15.1 - Renal Abscess"
+    },
+    {
+      "code": "N15.1 - Renal and Perinephric Abscess",
+      "name": "N15.1 - Renal and Perinephric Abscess"
+    },
+    {
+      "code": "N17.9 - Acute renal failure (ARF)",
+      "name": "N17.9 - Acute renal failure (ARF)"
+    },
+    {
+      "code": "N17.9 - Acute renal failure complicating any condition",
+      "name": "N17.9 - Acute renal failure complicating any condition"
+    },
+    {
+      "code": "N18.9 - Acute-or-chronic renal failure",
+      "name": "N18.9 - Acute-or-chronic renal failure"
+    },
+    {
+      "code": "N18.9 - Chronic Failure Renal (CRF)",
+      "name": "N18.9 - Chronic Failure Renal (CRF)"
+    },
+    {
+      "code": "N18.9 - Chronic Kidney Disease",
+      "name": "N18.9 - Chronic Kidney Disease"
+    },
+    {
+      "code": "N18.9 - Chronic Uraemia",
+      "name": "N18.9 - Chronic Uraemia"
+    },
+    {
+      "code": "N19 - End Stage Renal Failure",
+      "name": "N19 - End Stage Renal Failure"
+    },
+    {
+      "code": "N19 - Kidney Failure",
+      "name": "N19 - Kidney Failure"
+    },
+    {
+      "code": "N19 - Renal Failure",
+      "name": "N19 - Renal Failure"
+    },
+    {
+      "code": "N19 - Unspecified kidney failure",
+      "name": "N19 - Unspecified kidney failure"
+    },
+    {
+      "code": "N19 - Uraemia",
+      "name": "N19 - Uraemia"
+    },
+    {
+      "code": "N19 - Uraemic coma",
+      "name": "N19 - Uraemic coma"
+    },
+    {
+      "code": "N23 - Colic Renal",
+      "name": "N23 - Colic Renal"
+    },
+    {
+      "code": "N23 - Renal colic",
+      "name": "N23 - Renal colic"
+    },
+    {
+      "code": "N28.8 - Renal  Prolapse",
+      "name": "N28.8 - Renal  Prolapse"
+    },
+    {
+      "code": "N28.9 - Disease of Kidney (Unspecified)",
+      "name": "N28.9 - Disease of Kidney (Unspecified)"
+    },
+    {
+      "code": "N28.9 - Disease Renal",
+      "name": "N28.9 - Disease Renal"
+    },
+    {
+      "code": "N28.9 - Renal Disease",
+      "name": "N28.9 - Renal Disease"
+    },
+    {
+      "code": "N28.9 - Renal mass",
+      "name": "N28.9 - Renal mass"
+    },
+    {
+      "code": "N32.8 - Cystocele Male",
+      "name": "N32.8 - Cystocele Male"
+    },
+    {
+      "code": "N32.9 - Bladder mass",
+      "name": "N32.9 - Bladder mass"
+    },
+    {
+      "code": "N32.9 - Disease of Bladder (Unspecified)",
+      "name": "N32.9 - Disease of Bladder (Unspecified)"
+    },
+    {
+      "code": "N34.0 - Urethral abscess",
+      "name": "N34.0 - Urethral abscess"
+    },
+    {
+      "code": "N35.9 - Urethral Stricture",
+      "name": "N35.9 - Urethral Stricture"
+    },
+    {
+      "code": "N36.0 - Urethral fistula",
+      "name": "N36.0 - Urethral fistula"
+    },
+    {
+      "code": "N36.1 - Urethral diverticulum",
+      "name": "N36.1 - Urethral diverticulum"
+    },
+    {
+      "code": "N39.0 - Infection of Urinary Tract (UTI)",
+      "name": "N39.0 - Infection of Urinary Tract (UTI)"
+    },
+    {
+      "code": "N39.9 - Disease of Urinary System (Unspecified)",
+      "name": "N39.9 - Disease of Urinary System (Unspecified)"
+    },
+    {
+      "code": "N40 - Benign Hypertophy Prostate",
+      "name": "N40 - Benign Hypertophy Prostate"
+    },
+    {
+      "code": "N40 - Benign Prostate Hypertophy",
+      "name": "N40 - Benign Prostate Hypertophy"
+    },
+    {
+      "code": "N42.9 - Disorders of Prostate, Unspecified",
+      "name": "N42.9 - Disorders of Prostate, Unspecified"
+    },
+    {
+      "code": "N43.3 - Hydrocele",
+      "name": "N43.3 - Hydrocele"
+    },
+    {
+      "code": "N43.4 - Right Spermatocele",
+      "name": "N43.4 - Right Spermatocele"
+    },
+    {
+      "code": "N44 - Testicular torsion",
+      "name": "N44 - Testicular torsion"
+    },
+    {
+      "code": "N44 - Torsion of testis",
+      "name": "N44 - Torsion of testis"
+    },
+    {
+      "code": "N45.9 - Epididymitis",
+      "name": "N45.9 - Epididymitis"
+    },
+    {
+      "code": "N45.9 - Epididymo-orchitis",
+      "name": "N45.9 - Epididymo-orchitis"
+    },
+    {
+      "code": "N45.9 - orchitis",
+      "name": "N45.9 - orchitis"
+    },
+    {
+      "code": "N47 - Paraphimosis",
+      "name": "N47 - Paraphimosis"
+    },
+    {
+      "code": "N47 - Phimosis",
+      "name": "N47 - Phimosis"
+    },
+    {
+      "code": "N49.8 - Gangrene Fournier",
+      "name": "N49.8 - Gangrene Fournier"
+    },
+    {
+      "code": "N50.8 - Oedema of Scrotum",
+      "name": "N50.8 - Oedema of Scrotum"
+    },
+    {
+      "code": "N50.9 - Disease of Male Genital organs (Unspecified)",
+      "name": "N50.9 - Disease of Male Genital organs (Unspecified)"
+    },
+    {
+      "code": "N61 - Abscess Breast",
+      "name": "N61 - Abscess Breast"
+    },
+    {
+      "code": "N61 - Mastitis",
+      "name": "N61 - Mastitis"
+    },
+    {
+      "code": "N61 - Ulcer of Breast",
+      "name": "N61 - Ulcer of Breast"
+    },
+    {
+      "code": "N62 - Gynaecomastia",
+      "name": "N62 - Gynaecomastia"
+    },
+    {
+      "code": "N63 - Benign breast lumps",
+      "name": "N63 - Benign breast lumps"
+    },
+    {
+      "code": "N63 - Breast Lump",
+      "name": "N63 - Breast Lump"
+    },
+    {
+      "code": "N63 - Lump of The Breast",
+      "name": "N63 - Lump of The Breast"
+    },
+    {
+      "code": "N64.9 - Disease of Breast (Unspecified)",
+      "name": "N64.9 - Disease of Breast (Unspecified)"
+    },
+    {
+      "code": "N70.9 - Salpingitis",
+      "name": "N70.9 - Salpingitis"
+    },
+    {
+      "code": "N72 - Inflammatory disease of cervix uteri/vulva",
+      "name": "N72 - Inflammatory disease of cervix uteri/vulva"
+    },
+    {
+      "code": "N73.0 - Disease Female Pelvic Inflammatory (Acute )",
+      "name": "N73.0 - Disease Female Pelvic Inflammatory (Acute )"
+    },
+    {
+      "code": "N73.1 - Disease Female Pelvic Inflammatory (Chronic )",
+      "name": "N73.1 - Disease Female Pelvic Inflammatory (Chronic )"
+    },
+    {
+      "code": "N73.5 - Pelvic Peritonitis",
+      "name": "N73.5 - Pelvic Peritonitis"
+    },
+    {
+      "code": "N73.9 - Disease Female Pelvic Inflammatory",
+      "name": "N73.9 - Disease Female Pelvic Inflammatory"
+    },
+    {
+      "code": "N73.9 - Female Pelvic Inflammatory Disease",
+      "name": "N73.9 - Female Pelvic Inflammatory Disease"
+    },
+    {
+      "code": "N73.9 - Female pelvic inflammatory disease, unspecified",
+      "name": "N73.9 - Female pelvic inflammatory disease, unspecified"
+    },
+    {
+      "code": "N73.9 - Pelvic Infection",
+      "name": "N73.9 - Pelvic Infection"
+    },
+    {
+      "code": "N73.9 - Pelvic Inflammatory Disease",
+      "name": "N73.9 - Pelvic Inflammatory Disease"
+    },
+    {
+      "code": "N75.0 - Bartholin",
+      "name": "N75.0 - Bartholin"
+    },
+    {
+      "code": "N75.0 - Cyst of Bartholin",
+      "name": "N75.0 - Cyst of Bartholin"
+    },
+    {
+      "code": "N75.9 - Bartholin",
+      "name": "N75.9 - Bartholin"
+    },
+    {
+      "code": "N75.9 - Diseases of Bartholin",
+      "name": "N75.9 - Diseases of Bartholin"
+    },
+    {
+      "code": "N75.9 - Infected Bartholin",
+      "name": "N75.9 - Infected Bartholin"
+    },
+    {
+      "code": "N76.0 - Vaginitis",
+      "name": "N76.0 - Vaginitis"
+    },
+    {
+      "code": "N80.9 - Endometriosis",
+      "name": "N80.9 - Endometriosis"
+    },
+    {
+      "code": "N81.1 - Cystocele",
+      "name": "N81.1 - Cystocele"
+    },
+    {
+      "code": "N81.1 - Cystocele Female",
+      "name": "N81.1 - Cystocele Female"
+    },
+    {
+      "code": "N81.4 - Pelvic Relaxation",
+      "name": "N81.4 - Pelvic Relaxation"
+    },
+    {
+      "code": "N81.4 - Procidentia",
+      "name": "N81.4 - Procidentia"
+    },
+    {
+      "code": "N81.4 - Prolapse of Uterus",
+      "name": "N81.4 - Prolapse of Uterus"
+    },
+    {
+      "code": "N81.5 - Enterocele",
+      "name": "N81.5 - Enterocele"
+    },
+    {
+      "code": "N81.6 - Rectocele",
+      "name": "N81.6 - Rectocele"
+    },
+    {
+      "code": "N81.9 - Female genital prolapse, unspecified",
+      "name": "N81.9 - Female genital prolapse, unspecified"
+    },
+    {
+      "code": "N81.9 - Prolapse Genital (Female)",
+      "name": "N81.9 - Prolapse Genital (Female)"
+    },
+    {
+      "code": "N82.0 - Vesicovaginal fistula",
+      "name": "N82.0 - Vesicovaginal fistula"
+    },
+    {
+      "code": "N82.0 - Vesico-vaginal Fistulae",
+      "name": "N82.0 - Vesico-vaginal Fistulae"
+    },
+    {
+      "code": "N82.3 - Recto-vaginal Fistulae",
+      "name": "N82.3 - Recto-vaginal Fistulae"
+    },
+    {
+      "code": "N82.9 - Fistula of Female Genital Tract",
+      "name": "N82.9 - Fistula of Female Genital Tract"
+    },
+    {
+      "code": "N83.2 - Ovarian Cyst",
+      "name": "N83.2 - Ovarian Cyst"
+    },
+    {
+      "code": "N83.5 - Kinked Fallopian Tube",
+      "name": "N83.5 - Kinked Fallopian Tube"
+    },
+    {
+      "code": "N83.5 - Torsion of Ovarian Cyst",
+      "name": "N83.5 - Torsion of Ovarian Cyst"
+    },
+    {
+      "code": "N83.5 - Twisted Ovarian cyst",
+      "name": "N83.5 - Twisted Ovarian cyst"
+    },
+    {
+      "code": "N83.5 - Volvulus of Fallopian Tube",
+      "name": "N83.5 - Volvulus of Fallopian Tube"
+    },
+    {
+      "code": "N83.9 - Ovarian mass",
+      "name": "N83.9 - Ovarian mass"
+    },
+    {
+      "code": "N84.0 - Polyp Endometrial",
+      "name": "N84.0 - Polyp Endometrial"
+    },
+    {
+      "code": "N84.0 - Polyp of Uterus",
+      "name": "N84.0 - Polyp of Uterus"
+    },
+    {
+      "code": "N84.0 - Uterine Polyp",
+      "name": "N84.0 - Uterine Polyp"
+    },
+    {
+      "code": "N85.8 - Fibrosis of Uterus",
+      "name": "N85.8 - Fibrosis of Uterus"
+    },
+    {
+      "code": "N85.9 - Other disorders of the uterus",
+      "name": "N85.9 - Other disorders of the uterus"
+    },
+    {
+      "code": "N88.3 - Cervical incompetence",
+      "name": "N88.3 - Cervical incompetence"
+    },
+    {
+      "code": "N89.9 - Other disorders of the vagina",
+      "name": "N89.9 - Other disorders of the vagina"
+    },
+    {
+      "code": "N90.9 - Other disorders of the vulva",
+      "name": "N90.9 - Other disorders of the vulva"
+    },
+    {
+      "code": "N92.0 - Hypermenorrhagia",
+      "name": "N92.0 - Hypermenorrhagia"
+    },
+    {
+      "code": "N92.0 - Menorrhagia",
+      "name": "N92.0 - Menorrhagia"
+    },
+    {
+      "code": "N93.8 - Dysfunctional Uterine Bleeding",
+      "name": "N93.8 - Dysfunctional Uterine Bleeding"
+    },
+    {
+      "code": "N93.9 - Bleeding Vaginal",
+      "name": "N93.9 - Bleeding Vaginal"
+    },
+    {
+      "code": "N93.9 - Uterine Bleeding",
+      "name": "N93.9 - Uterine Bleeding"
+    },
+    {
+      "code": "N94.6 - Dysmenorrhoea",
+      "name": "N94.6 - Dysmenorrhoea"
+    },
+    {
+      "code": "N94.8 - Colic Uterine",
+      "name": "N94.8 - Colic Uterine"
+    },
+    {
+      "code": "N94.9 - Disease of Female Genital organs (Unspecified)",
+      "name": "N94.9 - Disease of Female Genital organs (Unspecified)"
+    },
+    {
+      "code": "N95.1 - Menopausal disorders",
+      "name": "N95.1 - Menopausal disorders"
+    },
+    {
+      "code": "O00.2 - Ovarian Pregnancy",
+      "name": "O00.2 - Ovarian Pregnancy"
+    },
+    {
+      "code": "O00.9 - Ampullary gestation",
+      "name": "O00.9 - Ampullary gestation"
+    },
+    {
+      "code": "O00.9 - Ampullary pregnancy",
+      "name": "O00.9 - Ampullary pregnancy"
+    },
+    {
+      "code": "O00.9 - Ectopic gestation",
+      "name": "O00.9 - Ectopic gestation"
+    },
+    {
+      "code": "O00.9 - Ectopic pregnancy",
+      "name": "O00.9 - Ectopic pregnancy"
+    },
+    {
+      "code": "O00.9 - Extrauterine gestation",
+      "name": "O00.9 - Extrauterine gestation"
+    },
+    {
+      "code": "O00.9 - Extrauterine pregnancy",
+      "name": "O00.9 - Extrauterine pregnancy"
+    },
+    {
+      "code": "O00.9 - Isthmic gestation",
+      "name": "O00.9 - Isthmic gestation"
+    },
+    {
+      "code": "O00.9 - Isthmic Pregnancy",
+      "name": "O00.9 - Isthmic Pregnancy"
+    },
+    {
+      "code": "O00.9 - Ovarian gestation",
+      "name": "O00.9 - Ovarian gestation"
+    },
+    {
+      "code": "O00.9 - Ovarian pregnancy",
+      "name": "O00.9 - Ovarian pregnancy"
+    },
+    {
+      "code": "O00.9 - Pregnancy Ectopic",
+      "name": "O00.9 - Pregnancy Ectopic"
+    },
+    {
+      "code": "O01.9 - Hydatidiform mole",
+      "name": "O01.9 - Hydatidiform mole"
+    },
+    {
+      "code": "O01.9 - Molar pregnancies",
+      "name": "O01.9 - Molar pregnancies"
+    },
+    {
+      "code": "O01.9 - Mole Hydatidiform",
+      "name": "O01.9 - Mole Hydatidiform"
+    },
+    {
+      "code": "O02.0 - Blighted Ovum",
+      "name": "O02.0 - Blighted Ovum"
+    },
+    {
+      "code": "O06 - Abortion",
+      "name": "O06 - Abortion"
+    },
+    {
+      "code": "O06 - Abortion Complete",
+      "name": "O06 - Abortion Complete"
+    },
+    {
+      "code": "O06 - Abortion Unspecified",
+      "name": "O06 - Abortion Unspecified"
+    },
+    {
+      "code": "O06 - Complete Abortion",
+      "name": "O06 - Complete Abortion"
+    },
+    {
+      "code": "O06 - Incomplete Abortion",
+      "name": "O06 - Incomplete Abortion"
+    },
+    {
+      "code": "O06 - Inevitable Abortion",
+      "name": "O06 - Inevitable Abortion"
+    },
+    {
+      "code": "O07.5 - Abortion Septic",
+      "name": "O07.5 - Abortion Septic"
+    },
+    {
+      "code": "O07.5 - Septic Abortion",
+      "name": "O07.5 - Septic Abortion"
+    },
+    {
+      "code": "O13 - Gestational Hypertension",
+      "name": "O13 - Gestational Hypertension"
+    },
+    {
+      "code": "O13 - Hypertension Gestational",
+      "name": "O13 - Hypertension Gestational"
+    },
+    {
+      "code": "O13 - Pregnancy-Induced Hypertension (PIH)",
+      "name": "O13 - Pregnancy-Induced Hypertension (PIH)"
+    },
+    {
+      "code": "O15.0 - Eclampsia In Pregnancy",
+      "name": "O15.0 - Eclampsia In Pregnancy"
+    },
+    {
+      "code": "O15.9 - Eclampsia",
+      "name": "O15.9 - Eclampsia"
+    },
+    {
+      "code": "O16 - Chronic Hypertension with Cyesis",
+      "name": "O16 - Chronic Hypertension with Cyesis"
+    },
+    {
+      "code": "O16 - Chronic Hypertension with Pregnancy",
+      "name": "O16 - Chronic Hypertension with Pregnancy"
+    },
+    {
+      "code": "O16 - Hypertension In Pregnancy",
+      "name": "O16 - Hypertension In Pregnancy"
+    },
+    {
+      "code": "O20.0 - Threatened Abortion",
+      "name": "O20.0 - Threatened Abortion"
+    },
+    {
+      "code": "O21.0 - Hyperemesis gravidarum",
+      "name": "O21.0 - Hyperemesis gravidarum"
+    },
+    {
+      "code": "O21.9 - Vomiting of pregnancy, unspecified",
+      "name": "O21.9 - Vomiting of pregnancy, unspecified"
+    },
+    {
+      "code": "O22.8 - Venous complications in pregnancy",
+      "name": "O22.8 - Venous complications in pregnancy"
+    },
+    {
+      "code": "O24.9 - Diabetes In Pregnancy",
+      "name": "O24.9 - Diabetes In Pregnancy"
+    },
+    {
+      "code": "O25 - Malnutrition in Pregnancy",
+      "name": "O25 - Malnutrition in Pregnancy"
+    },
+    {
+      "code": "O26.6 - Hepatic Failure In Pregnancy",
+      "name": "O26.6 - Hepatic Failure In Pregnancy"
+    },
+    {
+      "code": "O26.9 - Disease Pregnancy-Related (Unspecified)",
+      "name": "O26.9 - Disease Pregnancy-Related (Unspecified)"
+    },
+    {
+      "code": "O26.9 - Medical disorders in Pregnancy",
+      "name": "O26.9 - Medical disorders in Pregnancy"
+    },
+    {
+      "code": "O26.9 - Other disorders related to pregnancy",
+      "name": "O26.9 - Other disorders related to pregnancy"
+    },
+    {
+      "code": "O30.9 - Multiple gestation",
+      "name": "O30.9 - Multiple gestation"
+    },
+    {
+      "code": "O32.9 - Foetal Malpresentation",
+      "name": "O32.9 - Foetal Malpresentation"
+    },
+    {
+      "code": "O32.9 - Malpresentation of fetus",
+      "name": "O32.9 - Malpresentation of fetus"
+    },
+    {
+      "code": "O33.9 - Disproportion",
+      "name": "O33.9 - Disproportion"
+    },
+    {
+      "code": "O33.9 - Fetopelvic Disproportion",
+      "name": "O33.9 - Fetopelvic Disproportion"
+    },
+    {
+      "code": "O35.9 - Other abnormal products of conception",
+      "name": "O35.9 - Other abnormal products of conception"
+    },
+    {
+      "code": "O41.1 - Amnionitis",
+      "name": "O41.1 - Amnionitis"
+    },
+    {
+      "code": "O41.1 - Amnionitis (Complicating Pregnancy)",
+      "name": "O41.1 - Amnionitis (Complicating Pregnancy)"
+    },
+    {
+      "code": "O41.1 - Chorioamnionitis",
+      "name": "O41.1 - Chorioamnionitis"
+    },
+    {
+      "code": "O42.9 - Premature Rapture of Membranes",
+      "name": "O42.9 - Premature Rapture of Membranes"
+    },
+    {
+      "code": "O44.1 - Placenta Praevia",
+      "name": "O44.1 - Placenta Praevia"
+    },
+    {
+      "code": "O45.9 - Abruptio Placentae",
+      "name": "O45.9 - Abruptio Placentae"
+    },
+    {
+      "code": "O45.9 - Placental abruption",
+      "name": "O45.9 - Placental abruption"
+    },
+    {
+      "code": "O46.9 - Antepartum haemorrhage",
+      "name": "O46.9 - Antepartum haemorrhage"
+    },
+    {
+      "code": "O46.9 - Haemorrhage Ante-Partum: APH",
+      "name": "O46.9 - Haemorrhage Ante-Partum: APH"
+    },
+    {
+      "code": "O47.9 - False Labour",
+      "name": "O47.9 - False Labour"
+    },
+    {
+      "code": "O47.9 - Premature Contraction",
+      "name": "O47.9 - Premature Contraction"
+    },
+    {
+      "code": "O47.9 - Unestablished Labour",
+      "name": "O47.9 - Unestablished Labour"
+    },
+    {
+      "code": "O61.9 - Failed Induction",
+      "name": "O61.9 - Failed Induction"
+    },
+    {
+      "code": "O61.9 - Failed induction of labour",
+      "name": "O61.9 - Failed induction of labour"
+    },
+    {
+      "code": "O62.9 - Dysfunctional Labour",
+      "name": "O62.9 - Dysfunctional Labour"
+    },
+    {
+      "code": "O66.9 - Cephalopelvic disproportion",
+      "name": "O66.9 - Cephalopelvic disproportion"
+    },
+    {
+      "code": "O66.9 - Cervical Dystocia",
+      "name": "O66.9 - Cervical Dystocia"
+    },
+    {
+      "code": "O66.9 - Faetopelvic disproportion",
+      "name": "O66.9 - Faetopelvic disproportion"
+    },
+    {
+      "code": "O66.9 - Obstructed labour",
+      "name": "O66.9 - Obstructed labour"
+    },
+    {
+      "code": "O67.9 - Genital tract bleeding after delivery",
+      "name": "O67.9 - Genital tract bleeding after delivery"
+    },
+    {
+      "code": "O67.9 - Haemorrhage Partum-Related",
+      "name": "O67.9 - Haemorrhage Partum-Related"
+    },
+    {
+      "code": "O67.9 - Intrapartum haemorrhage",
+      "name": "O67.9 - Intrapartum haemorrhage"
+    },
+    {
+      "code": "O71.1 - Rupture of Uterus",
+      "name": "O71.1 - Rupture of Uterus"
+    },
+    {
+      "code": "O71.9 - Cervical Laceration",
+      "name": "O71.9 - Cervical Laceration"
+    },
+    {
+      "code": "O71.9 - Cervical Tear",
+      "name": "O71.9 - Cervical Tear"
+    },
+    {
+      "code": "O71.9 - Perineal Tear",
+      "name": "O71.9 - Perineal Tear"
+    },
+    {
+      "code": "O71.9 - Vaginal Leceration",
+      "name": "O71.9 - Vaginal Leceration"
+    },
+    {
+      "code": "O71.9 - Vaginal Tear",
+      "name": "O71.9 - Vaginal Tear"
+    },
+    {
+      "code": "O72.0 - Placenta Retained",
+      "name": "O72.0 - Placenta Retained"
+    },
+    {
+      "code": "O72.0 - Retained membranes",
+      "name": "O72.0 - Retained membranes"
+    },
+    {
+      "code": "O72.0 - Retained Placenta",
+      "name": "O72.0 - Retained Placenta"
+    },
+    {
+      "code": "O72.0 - Uterine atony",
+      "name": "O72.0 - Uterine atony"
+    },
+    {
+      "code": "O72.1 - Post Partum Haemorrage",
+      "name": "O72.1 - Post Partum Haemorrage"
+    },
+    {
+      "code": "O73.0 - Retention of Placenta (Without Haemorrhage)",
+      "name": "O73.0 - Retention of Placenta (Without Haemorrhage)"
+    },
+    {
+      "code": "O74.3 - Complications of anaesthesia during labour and delivery",
+      "name": "O74.3 - Complications of anaesthesia during labour and delivery"
+    },
+    {
+      "code": "O75.6 - Normal pregnancy with delayed 2nd stage",
+      "name": "O75.6 - Normal pregnancy with delayed 2nd stage"
+    },
+    {
+      "code": "O75.9 - Complications of Labour and Delivery",
+      "name": "O75.9 - Complications of Labour and Delivery"
+    },
+    {
+      "code": "O80.9 - Delivery Single (Spontaneous)",
+      "name": "O80.9 - Delivery Single (Spontaneous)"
+    },
+    {
+      "code": "O80.9 - Spontaneous delivery",
+      "name": "O80.9 - Spontaneous delivery"
+    },
+    {
+      "code": "O82.2 - Abdominal Hysterectomy",
+      "name": "O82.2 - Abdominal Hysterectomy"
+    },
+    {
+      "code": "O82.2 - Caesarean hysterectomy",
+      "name": "O82.2 - Caesarean hysterectomy"
+    },
+    {
+      "code": "O82.9 - Caesarean Section",
+      "name": "O82.9 - Caesarean Section"
+    },
+    {
+      "code": "O82.9 - Section Caesarean",
+      "name": "O82.9 - Section Caesarean"
+    },
+    {
+      "code": "O84.0 - Delivery Multiple (Spontaneous)",
+      "name": "O84.0 - Delivery Multiple (Spontaneous)"
+    },
+    {
+      "code": "O84.0 - Twin Delivery (Spontaneous)",
+      "name": "O84.0 - Twin Delivery (Spontaneous)"
+    },
+    {
+      "code": "O84.2 - Delivery Multiple (By Caesarean Section)",
+      "name": "O84.2 - Delivery Multiple (By Caesarean Section)"
+    },
+    {
+      "code": "O84.2 - Multiple delivery, all by caesarean section",
+      "name": "O84.2 - Multiple delivery, all by caesarean section"
+    },
+    {
+      "code": "O84.2 - Twin Delivery by caesarean section",
+      "name": "O84.2 - Twin Delivery by caesarean section"
+    },
+    {
+      "code": "O85 - Child Birth Sepsis",
+      "name": "O85 - Child Birth Sepsis"
+    },
+    {
+      "code": "O85 - Post Partum Sepsis",
+      "name": "O85 - Post Partum Sepsis"
+    },
+    {
+      "code": "O85 - Pueperal Sepsis",
+      "name": "O85 - Pueperal Sepsis"
+    },
+    {
+      "code": "O86.2 - Genitourinary tract infection in pregnancy",
+      "name": "O86.2 - Genitourinary tract infection in pregnancy"
+    },
+    {
+      "code": "O88.1 - Amniotic Fluid Embolism",
+      "name": "O88.1 - Amniotic Fluid Embolism"
+    },
+    {
+      "code": "O89.2 - CNS Complication of Anaaesthesia in Puerperium",
+      "name": "O89.2 - CNS Complication of Anaaesthesia in Puerperium"
+    },
+    {
+      "code": "O89.2 - Complications of anaesthesia during the puerperium",
+      "name": "O89.2 - Complications of anaesthesia during the puerperium"
+    },
+    {
+      "code": "O90.9 - Complications of Puerperium",
+      "name": "O90.9 - Complications of Puerperium"
+    },
+    {
+      "code": "O90.9 - Other Complications of the puerperium",
+      "name": "O90.9 - Other Complications of the puerperium"
+    },
+    {
+      "code": "O92.7 - Disorders of the breast and lactation associated with delivery",
+      "name": "O92.7 - Disorders of the breast and lactation associated with delivery"
+    },
+    {
+      "code": "O98.6 - Malaria In Pregnancy",
+      "name": "O98.6 - Malaria In Pregnancy"
+    },
+    {
+      "code": "O99.0 - Anaemia In Pregnancy",
+      "name": "O99.0 - Anaemia In Pregnancy"
+    },
+    {
+      "code": "O99.0 - Pregnancy With Sickle Cell Anaemia",
+      "name": "O99.0 - Pregnancy With Sickle Cell Anaemia"
+    },
+    {
+      "code": "O99.0 - Sickle Cell Anaemia in Cyesis",
+      "name": "O99.0 - Sickle Cell Anaemia in Cyesis"
+    },
+    {
+      "code": "O99.0 - Sickle Cell Disease (SCD) with Cyesis",
+      "name": "O99.0 - Sickle Cell Disease (SCD) with Cyesis"
+    },
+    {
+      "code": "O99.0 - Sickle Cell Disease In Pregnancy",
+      "name": "O99.0 - Sickle Cell Disease In Pregnancy"
+    },
+    {
+      "code": "O99.3 - Alcoholism In Pregnancy",
+      "name": "O99.3 - Alcoholism In Pregnancy"
+    },
+    {
+      "code": "O99.5 - Bronchial Asthma in Cyeisis",
+      "name": "O99.5 - Bronchial Asthma in Cyeisis"
+    },
+    {
+      "code": "O99.5 - Bronchial Asthma in Pregnancy",
+      "name": "O99.5 - Bronchial Asthma in Pregnancy"
+    },
+    {
+      "code": "O99.5 - Bronchopneumonia In Pregnancy",
+      "name": "O99.5 - Bronchopneumonia In Pregnancy"
+    },
+    {
+      "code": "O99.5 - Chest Infection In Pregnancy",
+      "name": "O99.5 - Chest Infection In Pregnancy"
+    },
+    {
+      "code": "O99.5 - Cyesis With Asthmatic Attack",
+      "name": "O99.5 - Cyesis With Asthmatic Attack"
+    },
+    {
+      "code": "O99.5 - Labour and Puerprium",
+      "name": "O99.5 - Labour and Puerprium"
+    },
+    {
+      "code": "O99.5 - Pregnancy With Asthma",
+      "name": "O99.5 - Pregnancy With Asthma"
+    },
+    {
+      "code": "O99.5 - Puerperium",
+      "name": "O99.5 - Puerperium"
+    },
+    {
+      "code": "O99.5 - Respiratory Tract infection in Cyesis",
+      "name": "O99.5 - Respiratory Tract infection in Cyesis"
+    },
+    {
+      "code": "O99.5 - Respiratory Tract infection in Labour",
+      "name": "O99.5 - Respiratory Tract infection in Labour"
+    },
+    {
+      "code": "O99.5 - Respiratory Tract infection in Pregnancy",
+      "name": "O99.5 - Respiratory Tract infection in Pregnancy"
+    },
+    {
+      "code": "O99.6 - Acute Gastritis In Pregnancy",
+      "name": "O99.6 - Acute Gastritis In Pregnancy"
+    },
+    {
+      "code": "O99.6 - Cyesis With Gastritis",
+      "name": "O99.6 - Cyesis With Gastritis"
+    },
+    {
+      "code": "O99.6 - Hepatitis In Pregnancy",
+      "name": "O99.6 - Hepatitis In Pregnancy"
+    },
+    {
+      "code": "O99.6 - Peptic Ulcer Disease in cyesis",
+      "name": "O99.6 - Peptic Ulcer Disease in cyesis"
+    },
+    {
+      "code": "O99.6 - Peptic Ulcer Disease in Labour",
+      "name": "O99.6 - Peptic Ulcer Disease in Labour"
+    },
+    {
+      "code": "O99.6 - Peptic Ulcer Disease in pregnancy",
+      "name": "O99.6 - Peptic Ulcer Disease in pregnancy"
+    },
+    {
+      "code": "O99.6 - Peptic Ulcer Disease in Puerperium",
+      "name": "O99.6 - Peptic Ulcer Disease in Puerperium"
+    },
+    {
+      "code": "O99.8 - Ascites In Pregnancy",
+      "name": "O99.8 - Ascites In Pregnancy"
+    },
+    {
+      "code": "P00.4 - Disorders Nutritional of Mother Affecting Fetus or Newborn",
+      "name": "P00.4 - Disorders Nutritional of Mother Affecting Fetus or Newborn"
+    },
+    {
+      "code": "P00.4 - Nutritional Disprder in Cyeisis",
+      "name": "P00.4 - Nutritional Disprder in Cyeisis"
+    },
+    {
+      "code": "P02.7 - Amnionitis (Affecting Fetus or Newborn)",
+      "name": "P02.7 - Amnionitis (Affecting Fetus or Newborn)"
+    },
+    {
+      "code": "P05.0 - Light-For-Dates",
+      "name": "P05.0 - Light-For-Dates"
+    },
+    {
+      "code": "P05.1 - Small For Gestational Age",
+      "name": "P05.1 - Small For Gestational Age"
+    },
+    {
+      "code": "P05.1 - Small-For-Dates",
+      "name": "P05.1 - Small-For-Dates"
+    },
+    {
+      "code": "P07.0 - Extreme Low Weight",
+      "name": "P07.0 - Extreme Low Weight"
+    },
+    {
+      "code": "P07.2 - Extreme immaturity",
+      "name": "P07.2 - Extreme immaturity"
+    },
+    {
+      "code": "P07.3 - Other Preterm infants",
+      "name": "P07.3 - Other Preterm infants"
+    },
+    {
+      "code": "P07.3 - Pre-Maturity",
+      "name": "P07.3 - Pre-Maturity"
+    },
+    {
+      "code": "P08.0 - Extremely Large Baby",
+      "name": "P08.0 - Extremely Large Baby"
+    },
+    {
+      "code": "P08.0 - Macrosomic Baby",
+      "name": "P08.0 - Macrosomic Baby"
+    },
+    {
+      "code": "P08.2 - Post-Maturity",
+      "name": "P08.2 - Post-Maturity"
+    },
+    {
+      "code": "P08.2 - Post-term infant",
+      "name": "P08.2 - Post-term infant"
+    },
+    {
+      "code": "P10.1 - Haemorrhage Cerebral Due to Birth Injury",
+      "name": "P10.1 - Haemorrhage Cerebral Due to Birth Injury"
+    },
+    {
+      "code": "P10.9 - Intracrania Haemorrage",
+      "name": "P10.9 - Intracrania Haemorrage"
+    },
+    {
+      "code": "P13.9 - Bone fractures",
+      "name": "P13.9 - Bone fractures"
+    },
+    {
+      "code": "P13.9 - Intrapartum fracture",
+      "name": "P13.9 - Intrapartum fracture"
+    },
+    {
+      "code": "P15.9 - Birth injury",
+      "name": "P15.9 - Birth injury"
+    },
+    {
+      "code": "P15.9 - Injury Birth",
+      "name": "P15.9 - Injury Birth"
+    },
+    {
+      "code": "P20 - Fetal stress",
+      "name": "P20 - Fetal stress"
+    },
+    {
+      "code": "P20 - Fetal stress, delayed 2nd stage",
+      "name": "P20 - Fetal stress, delayed 2nd stage"
+    },
+    {
+      "code": "P21.9 - Birth Asphyxia",
+      "name": "P21.9 - Birth Asphyxia"
+    },
+    {
+      "code": "P21.9 - Neonatal Asphyxia",
+      "name": "P21.9 - Neonatal Asphyxia"
+    },
+    {
+      "code": "P22.0 - Distress Respiratory Syndrome  In Newborn",
+      "name": "P22.0 - Distress Respiratory Syndrome  In Newborn"
+    },
+    {
+      "code": "P22.0 - Respiratory Distress syndrome",
+      "name": "P22.0 - Respiratory Distress syndrome"
+    },
+    {
+      "code": "P22.0 - Respiratory distress syndrome (RDS) of newborn",
+      "name": "P22.0 - Respiratory distress syndrome (RDS) of newborn"
+    },
+    {
+      "code": "P22.9 - Respiratory distress of newborn, unspecified",
+      "name": "P22.9 - Respiratory distress of newborn, unspecified"
+    },
+    {
+      "code": "P22.9 - Respiratory distress of newborn",
+      "name": "P22.9 - Respiratory distress of newborn"
+    },
+    {
+      "code": "P23.9 - Congenital pneumonia",
+      "name": "P23.9 - Congenital pneumonia"
+    },
+    {
+      "code": "P23.9 - Pneumonia Congenital (Unspecified)",
+      "name": "P23.9 - Pneumonia Congenital (Unspecified)"
+    },
+    {
+      "code": "P24.9 - Aspiration Pneumonia In Newborn",
+      "name": "P24.9 - Aspiration Pneumonia In Newborn"
+    },
+    {
+      "code": "P28.5 - Respiratory failure of newborn",
+      "name": "P28.5 - Respiratory failure of newborn"
+    },
+    {
+      "code": "P29.0 - Cardiac Failure in Newborn",
+      "name": "P29.0 - Cardiac Failure in Newborn"
+    },
+    {
+      "code": "P29.0 - Failure Cardiac Neonatal",
+      "name": "P29.0 - Failure Cardiac Neonatal"
+    },
+    {
+      "code": "P29.8 - Cardiovascular collapse In Newborn",
+      "name": "P29.8 - Cardiovascular collapse In Newborn"
+    },
+    {
+      "code": "P29.8 - Collapse Cardiovascular In Newborn",
+      "name": "P29.8 - Collapse Cardiovascular In Newborn"
+    },
+    {
+      "code": "P36.9 - Cord Sepsis in neonate",
+      "name": "P36.9 - Cord Sepsis in neonate"
+    },
+    {
+      "code": "P36.9 - Neonatal Sepsis",
+      "name": "P36.9 - Neonatal Sepsis"
+    },
+    {
+      "code": "P36.9 - Sepsis of Cord In Newborn",
+      "name": "P36.9 - Sepsis of Cord In Newborn"
+    },
+    {
+      "code": "P36.9 - Septicaemia In Newborn",
+      "name": "P36.9 - Septicaemia In Newborn"
+    },
+    {
+      "code": "P37.4 - Congenital Malaria",
+      "name": "P37.4 - Congenital Malaria"
+    },
+    {
+      "code": "P37.9 - Neonatal Malaria",
+      "name": "P37.9 - Neonatal Malaria"
+    },
+    {
+      "code": "P51.9 - Bleeding Cord",
+      "name": "P51.9 - Bleeding Cord"
+    },
+    {
+      "code": "P52.4 - Cerebral Haemorrhage of Newborn (Non-traumatic)",
+      "name": "P52.4 - Cerebral Haemorrhage of Newborn (Non-traumatic)"
+    },
+    {
+      "code": "P52.4 - Haemorrhage Cerebral of Newborn",
+      "name": "P52.4 - Haemorrhage Cerebral of Newborn"
+    },
+    {
+      "code": "P53 - Haemorrhagic disease of the new born",
+      "name": "P53 - Haemorrhagic disease of the new born"
+    },
+    {
+      "code": "P54.3 - gastrointestinal haemorrhage in neonate",
+      "name": "P54.3 - gastrointestinal haemorrhage in neonate"
+    },
+    {
+      "code": "P55.9 - Haemolytic Diasease of Newborn",
+      "name": "P55.9 - Haemolytic Diasease of Newborn"
+    },
+    {
+      "code": "P57.9 - Kernicterus",
+      "name": "P57.9 - Kernicterus"
+    },
+    {
+      "code": "P57.9 - Kernicterus In Newborn",
+      "name": "P57.9 - Kernicterus In Newborn"
+    },
+    {
+      "code": "P58.9 - Severe haemolytic Neonatal Jaundice/Kernicterus",
+      "name": "P58.9 - Severe haemolytic Neonatal Jaundice/Kernicterus"
+    },
+    {
+      "code": "P59.9 - Neonatal jaundice",
+      "name": "P59.9 - Neonatal jaundice"
+    },
+    {
+      "code": "P61.4 - Anaemia Congenital In Newborn",
+      "name": "P61.4 - Anaemia Congenital In Newborn"
+    },
+    {
+      "code": "P70.4 - Neonatal hypoglycaemia",
+      "name": "P70.4 - Neonatal hypoglycaemia"
+    },
+    {
+      "code": "P74.1 - Dehydration In Newborn",
+      "name": "P74.1 - Dehydration In Newborn"
+    },
+    {
+      "code": "P74.1 - Dehydration of newborn",
+      "name": "P74.1 - Dehydration of newborn"
+    },
+    {
+      "code": "P76.9 - Intestinal obstruction of newborn",
+      "name": "P76.9 - Intestinal obstruction of newborn"
+    },
+    {
+      "code": "P76.9 - Obstruction Intestinal of Newborn",
+      "name": "P76.9 - Obstruction Intestinal of Newborn"
+    },
+    {
+      "code": "P78.8 - Ulcer Peptic of Newborn",
+      "name": "P78.8 - Ulcer Peptic of Newborn"
+    },
+    {
+      "code": "P95 - Intra Uterine Fetal Death",
+      "name": "P95 - Intra Uterine Fetal Death"
+    },
+    {
+      "code": "P95 - Intrauterine Fetal Death (IUFD)",
+      "name": "P95 - Intrauterine Fetal Death (IUFD)"
+    },
+    {
+      "code": "P96.8 - Fresh Still Birth",
+      "name": "P96.8 - Fresh Still Birth"
+    },
+    {
+      "code": "P96.8 - Macerated Still Birth",
+      "name": "P96.8 - Macerated Still Birth"
+    },
+    {
+      "code": "P96.8 - Neonatal Death",
+      "name": "P96.8 - Neonatal Death"
+    },
+    {
+      "code": "P96.8 - Still Birth",
+      "name": "P96.8 - Still Birth"
+    },
+    {
+      "code": "Q01.0 - Encephalocele Frontal",
+      "name": "Q01.0 - Encephalocele Frontal"
+    },
+    {
+      "code": "Q01.0 - Nasal encephalocoele",
+      "name": "Q01.0 - Nasal encephalocoele"
+    },
+    {
+      "code": "Q01.1 - Encephalocele Nasofrontal",
+      "name": "Q01.1 - Encephalocele Nasofrontal"
+    },
+    {
+      "code": "Q01.2 - Encephalocele Occipital",
+      "name": "Q01.2 - Encephalocele Occipital"
+    },
+    {
+      "code": "Q01.9 - Encephalocele",
+      "name": "Q01.9 - Encephalocele"
+    },
+    {
+      "code": "Q05.9 - Spina bifida",
+      "name": "Q05.9 - Spina bifida"
+    },
+    {
+      "code": "Q10.0 - Congenital blepharoptosis",
+      "name": "Q10.0 - Congenital blepharoptosis"
+    },
+    {
+      "code": "Q17.3 - Congenital malformation of ear",
+      "name": "Q17.3 - Congenital malformation of ear"
+    },
+    {
+      "code": "Q18.0 - Branchial cyst",
+      "name": "Q18.0 - Branchial cyst"
+    },
+    {
+      "code": "Q18.0 - Branchial fistula",
+      "name": "Q18.0 - Branchial fistula"
+    },
+    {
+      "code": "Q18.1 - Infected Preauricular cyst",
+      "name": "Q18.1 - Infected Preauricular cyst"
+    },
+    {
+      "code": "Q18.1 - Infected Preauricular sinus",
+      "name": "Q18.1 - Infected Preauricular sinus"
+    },
+    {
+      "code": "Q21.9 - Ventricular Septal Defect",
+      "name": "Q21.9 - Ventricular Septal Defect"
+    },
+    {
+      "code": "Q24.9 - Acyanotic Congenital Heart Disease",
+      "name": "Q24.9 - Acyanotic Congenital Heart Disease"
+    },
+    {
+      "code": "Q30.0 - Choanal atresia",
+      "name": "Q30.0 - Choanal atresia"
+    },
+    {
+      "code": "Q35.9 - Cleft palate",
+      "name": "Q35.9 - Cleft palate"
+    },
+    {
+      "code": "Q36.9 - Cleft Lip",
+      "name": "Q36.9 - Cleft Lip"
+    },
+    {
+      "code": "Q38.1 - Ankyloglossia",
+      "name": "Q38.1 - Ankyloglossia"
+    },
+    {
+      "code": "Q38.1 - Tongue tie",
+      "name": "Q38.1 - Tongue tie"
+    },
+    {
+      "code": "Q39.0 - Oesophageal atresia",
+      "name": "Q39.0 - Oesophageal atresia"
+    },
+    {
+      "code": "Q41.9 - Intestinal atresia",
+      "name": "Q41.9 - Intestinal atresia"
+    },
+    {
+      "code": "Q43.0 - Meckel",
+      "name": "Q43.0 - Meckel"
+    },
+    {
+      "code": "Q43.1 - Hirschsprung",
+      "name": "Q43.1 - Hirschsprung"
+    },
+    {
+      "code": "Q43.3 - Malrotation",
+      "name": "Q43.3 - Malrotation"
+    },
+    {
+      "code": "Q43.8 - Congenital Volvulus",
+      "name": "Q43.8 - Congenital Volvulus"
+    },
+    {
+      "code": "Q43.8 - Volvulus Congenital",
+      "name": "Q43.8 - Volvulus Congenital"
+    },
+    {
+      "code": "Q43.9 - Anorectal anomaly",
+      "name": "Q43.9 - Anorectal anomaly"
+    },
+    {
+      "code": "Q43.9 - Anorectal malformations",
+      "name": "Q43.9 - Anorectal malformations"
+    },
+    {
+      "code": "Q44.2 - Biliary atresia",
+      "name": "Q44.2 - Biliary atresia"
+    },
+    {
+      "code": "Q44.4 - Choledochal cyst",
+      "name": "Q44.4 - Choledochal cyst"
+    },
+    {
+      "code": "Q53.0 - Ectopic testis",
+      "name": "Q53.0 - Ectopic testis"
+    },
+    {
+      "code": "Q53.9 - Cryptorchidism",
+      "name": "Q53.9 - Cryptorchidism"
+    },
+    {
+      "code": "Q53.9 - Undescended Testicle, Unspecified",
+      "name": "Q53.9 - Undescended Testicle, Unspecified"
+    },
+    {
+      "code": "Q53.9 - Undescended testis",
+      "name": "Q53.9 - Undescended testis"
+    },
+    {
+      "code": "Q54.9 - Hypospadias, PUV",
+      "name": "Q54.9 - Hypospadias, PUV"
+    },
+    {
+      "code": "Q61.0 - Congenital single renal cyst",
+      "name": "Q61.0 - Congenital single renal cyst"
+    },
+    {
+      "code": "Q61.4 - Dysplastic kidney",
+      "name": "Q61.4 - Dysplastic kidney"
+    },
+    {
+      "code": "Q61.4 - Renal dysplasia",
+      "name": "Q61.4 - Renal dysplasia"
+    },
+    {
+      "code": "Q63.9 - Congenital abnormalities (unspecified)",
+      "name": "Q63.9 - Congenital abnormalities (unspecified)"
+    },
+    {
+      "code": "Q64.0 - Female epispadias",
+      "name": "Q64.0 - Female epispadias"
+    },
+    {
+      "code": "Q64.0 - Simple epispadias",
+      "name": "Q64.0 - Simple epispadias"
+    },
+    {
+      "code": "Q64.1 - Bladder extrophy with epispadias",
+      "name": "Q64.1 - Bladder extrophy with epispadias"
+    },
+    {
+      "code": "Q64.1 - Cloacal extrophy",
+      "name": "Q64.1 - Cloacal extrophy"
+    },
+    {
+      "code": "Q68.8 - Congenital deformity of joint",
+      "name": "Q68.8 - Congenital deformity of joint"
+    },
+    {
+      "code": "Q68.8 - Congenital dislocations",
+      "name": "Q68.8 - Congenital dislocations"
+    },
+    {
+      "code": "Q68.8 - Genu valgum",
+      "name": "Q68.8 - Genu valgum"
+    },
+    {
+      "code": "Q74.9 - Congenital anomaly of limb",
+      "name": "Q74.9 - Congenital anomaly of limb"
+    },
+    {
+      "code": "Q79.2 - Omphalocoele",
+      "name": "Q79.2 - Omphalocoele"
+    },
+    {
+      "code": "Q79.3 - Gastroschisis",
+      "name": "Q79.3 - Gastroschisis"
+    },
+    {
+      "code": "Q89.2 - Thyroglossal Cyst",
+      "name": "Q89.2 - Thyroglossal Cyst"
+    },
+    {
+      "code": "Q89.2 - Thyroglossal fistula",
+      "name": "Q89.2 - Thyroglossal fistula"
+    },
+    {
+      "code": "Q89.4 - Conjoint twins",
+      "name": "Q89.4 - Conjoint twins"
+    },
+    {
+      "code": "Q89.4 - Siamese twins",
+      "name": "Q89.4 - Siamese twins"
+    },
+    {
+      "code": "Q89.9 - Abnormality Congenital (Unspecified)",
+      "name": "Q89.9 - Abnormality Congenital (Unspecified)"
+    },
+    {
+      "code": "Q89.9 - Cloacal anomaly",
+      "name": "Q89.9 - Cloacal anomaly"
+    },
+    {
+      "code": "Q89.9 - Malformation Congenital (Unspecified)",
+      "name": "Q89.9 - Malformation Congenital (Unspecified)"
+    },
+    {
+      "code": "R00.0 - Tachycardia",
+      "name": "R00.0 - Tachycardia"
+    },
+    {
+      "code": "R02 - Gangrene",
+      "name": "R02 - Gangrene"
+    },
+    {
+      "code": "R02 - Gangrenous limb",
+      "name": "R02 - Gangrenous limb"
+    },
+    {
+      "code": "R02 - Gas gangrene of limb",
+      "name": "R02 - Gas gangrene of limb"
+    },
+    {
+      "code": "R04.0 - Epistaxis",
+      "name": "R04.0 - Epistaxis"
+    },
+    {
+      "code": "R04.2 - Haemoptysis",
+      "name": "R04.2 - Haemoptysis"
+    },
+    {
+      "code": "R05 - Cough",
+      "name": "R05 - Cough"
+    },
+    {
+      "code": "R06.0 - Difficulty In Breathing",
+      "name": "R06.0 - Difficulty In Breathing"
+    },
+    {
+      "code": "R06.0 - Dyspnoea",
+      "name": "R06.0 - Dyspnoea"
+    },
+    {
+      "code": "R06.6 - Hi-Cough",
+      "name": "R06.6 - Hi-Cough"
+    },
+    {
+      "code": "R06.8 - Respiratory Insufficiency",
+      "name": "R06.8 - Respiratory Insufficiency"
+    },
+    {
+      "code": "R07.0 - Painful Throat",
+      "name": "R07.0 - Painful Throat"
+    },
+    {
+      "code": "R07.3 - Painful Ribs Due to A Fall",
+      "name": "R07.3 - Painful Ribs Due to A Fall"
+    },
+    {
+      "code": "R09.0 - Asphyxia",
+      "name": "R09.0 - Asphyxia"
+    },
+    {
+      "code": "R09.2 - Failure Cardiorespiratory",
+      "name": "R09.2 - Failure Cardiorespiratory"
+    },
+    {
+      "code": "R09.2 - Respiratory Arrest",
+      "name": "R09.2 - Respiratory Arrest"
+    },
+    {
+      "code": "R10.0 - Abdomen (Acute)",
+      "name": "R10.0 - Abdomen (Acute)"
+    },
+    {
+      "code": "R10.1 - Epigastric Pains",
+      "name": "R10.1 - Epigastric Pains"
+    },
+    {
+      "code": "R10.2 - Other causes of pelvic pain",
+      "name": "R10.2 - Other causes of pelvic pain"
+    },
+    {
+      "code": "R10.4 - Abdominal Pains",
+      "name": "R10.4 - Abdominal Pains"
+    },
+    {
+      "code": "R10.4 - Colic",
+      "name": "R10.4 - Colic"
+    },
+    {
+      "code": "R10.4 - Colic Abdominal",
+      "name": "R10.4 - Colic Abdominal"
+    },
+    {
+      "code": "R11 - Vomiting",
+      "name": "R11 - Vomiting"
+    },
+    {
+      "code": "R14 - Distension  of Abdomen",
+      "name": "R14 - Distension  of Abdomen"
+    },
+    {
+      "code": "R16.0 - Hepatomegaly",
+      "name": "R16.0 - Hepatomegaly"
+    },
+    {
+      "code": "R16.1 - Splenomegaly",
+      "name": "R16.1 - Splenomegaly"
+    },
+    {
+      "code": "R16.2 - Hepatosplenomegaly",
+      "name": "R16.2 - Hepatosplenomegaly"
+    },
+    {
+      "code": "R17 - Jaundice",
+      "name": "R17 - Jaundice"
+    },
+    {
+      "code": "R18 - Ascites",
+      "name": "R18 - Ascites"
+    },
+    {
+      "code": "R19.0 - Abdomen Mass",
+      "name": "R19.0 - Abdomen Mass"
+    },
+    {
+      "code": "R19.8 - Viscus Rupture",
+      "name": "R19.8 - Viscus Rupture"
+    },
+    {
+      "code": "R20.8 - Burning Sensation",
+      "name": "R20.8 - Burning Sensation"
+    },
+    {
+      "code": "R21 - Septic Rashes",
+      "name": "R21 - Septic Rashes"
+    },
+    {
+      "code": "R22.1 - Metastatic neck lump",
+      "name": "R22.1 - Metastatic neck lump"
+    },
+    {
+      "code": "R22.1 - Neck lumps",
+      "name": "R22.1 - Neck lumps"
+    },
+    {
+      "code": "R22.1 - Neck swellings excluding thyroid gland",
+      "name": "R22.1 - Neck swellings excluding thyroid gland"
+    },
+    {
+      "code": "R22.9 - Nodules",
+      "name": "R22.9 - Nodules"
+    },
+    {
+      "code": "R22.9 - Other superficial  swellings",
+      "name": "R22.9 - Other superficial  swellings"
+    },
+    {
+      "code": "R25.2 - Spasms",
+      "name": "R25.2 - Spasms"
+    },
+    {
+      "code": "R30.9 - Dysuria",
+      "name": "R30.9 - Dysuria"
+    },
+    {
+      "code": "R30.9 - Painful Mictriction With Scanty Urine",
+      "name": "R30.9 - Painful Mictriction With Scanty Urine"
+    },
+    {
+      "code": "R31 - Haematuria",
+      "name": "R31 - Haematuria"
+    },
+    {
+      "code": "R33 - Difficulty In Urination",
+      "name": "R33 - Difficulty In Urination"
+    },
+    {
+      "code": "R33 - Lower Urinary Tract Obstruction",
+      "name": "R33 - Lower Urinary Tract Obstruction"
+    },
+    {
+      "code": "R33 - Retention of Urine",
+      "name": "R33 - Retention of Urine"
+    },
+    {
+      "code": "R33 - Urethral strictures",
+      "name": "R33 - Urethral strictures"
+    },
+    {
+      "code": "R40.0 - Somnolence, Stupor and Coma",
+      "name": "R40.0 - Somnolence, Stupor and Coma"
+    },
+    {
+      "code": "R40.2 - Coma",
+      "name": "R40.2 - Coma"
+    },
+    {
+      "code": "R40.2 - Coma (Unspecified)",
+      "name": "R40.2 - Coma (Unspecified)"
+    },
+    {
+      "code": "R40.2 - Other causes of loss of Consciousness",
+      "name": "R40.2 - Other causes of loss of Consciousness"
+    },
+    {
+      "code": "R42 - Dizziness",
+      "name": "R42 - Dizziness"
+    },
+    {
+      "code": "R42 - Recurrent vertigo",
+      "name": "R42 - Recurrent vertigo"
+    },
+    {
+      "code": "R42 - Vertigo",
+      "name": "R42 - Vertigo"
+    },
+    {
+      "code": "R46.2 - Abnormal Behaviour",
+      "name": "R46.2 - Abnormal Behaviour"
+    },
+    {
+      "code": "R49.0 - Dysphonia",
+      "name": "R49.0 - Dysphonia"
+    },
+    {
+      "code": "R49.0 - Hoarsenes of voice",
+      "name": "R49.0 - Hoarsenes of voice"
+    },
+    {
+      "code": "R50.9 - Fever (Unspecified)",
+      "name": "R50.9 - Fever (Unspecified)"
+    },
+    {
+      "code": "R50.9 - Fever of Unknown origin",
+      "name": "R50.9 - Fever of Unknown origin"
+    },
+    {
+      "code": "R50.9 - Pyrexia of Unknown origin (PUO)",
+      "name": "R50.9 - Pyrexia of Unknown origin (PUO)"
+    },
+    {
+      "code": "R51 - Headache",
+      "name": "R51 - Headache"
+    },
+    {
+      "code": "R52.9 - Bodily Pain",
+      "name": "R52.9 - Bodily Pain"
+    },
+    {
+      "code": "R53 - Debility (Chronic)",
+      "name": "R53 - Debility (Chronic)"
+    },
+    {
+      "code": "R53 - Fatigue",
+      "name": "R53 - Fatigue"
+    },
+    {
+      "code": "R54 - Old Age / Age Old",
+      "name": "R54 - Old Age / Age Old"
+    },
+    {
+      "code": "R54 - Senility",
+      "name": "R54 - Senility"
+    },
+    {
+      "code": "R55 - Collapse",
+      "name": "R55 - Collapse"
+    },
+    {
+      "code": "R55 - Syncope",
+      "name": "R55 - Syncope"
+    },
+    {
+      "code": "R55 - Syncope Attack",
+      "name": "R55 - Syncope Attack"
+    },
+    {
+      "code": "R56.0 - Febrile Convulsion",
+      "name": "R56.0 - Febrile Convulsion"
+    },
+    {
+      "code": "R56.0 - Febrile Seizures",
+      "name": "R56.0 - Febrile Seizures"
+    },
+    {
+      "code": "R56.8 - Convulsion",
+      "name": "R56.8 - Convulsion"
+    },
+    {
+      "code": "R56.8 - Eclamptic Coma",
+      "name": "R56.8 - Eclamptic Coma"
+    },
+    {
+      "code": "R56.8 - Other causes of convulsions",
+      "name": "R56.8 - Other causes of convulsions"
+    },
+    {
+      "code": "R56.8 - Seizure Attack",
+      "name": "R56.8 - Seizure Attack"
+    },
+    {
+      "code": "R57.0 - Cardiogenic Shock",
+      "name": "R57.0 - Cardiogenic Shock"
+    },
+    {
+      "code": "R57.0 - Collapse Cardiovascular",
+      "name": "R57.0 - Collapse Cardiovascular"
+    },
+    {
+      "code": "R57.1 - Shock Hypovolemic",
+      "name": "R57.1 - Shock Hypovolemic"
+    },
+    {
+      "code": "R57.8 - Septic Shock",
+      "name": "R57.8 - Septic Shock"
+    },
+    {
+      "code": "R57.8 - Shock Endotoxic",
+      "name": "R57.8 - Shock Endotoxic"
+    },
+    {
+      "code": "R57.9 - Circulatory Collapse",
+      "name": "R57.9 - Circulatory Collapse"
+    },
+    {
+      "code": "R57.9 - Failure Circulatory",
+      "name": "R57.9 - Failure Circulatory"
+    },
+    {
+      "code": "R57.9 - Heamorrhagic Shock",
+      "name": "R57.9 - Heamorrhagic Shock"
+    },
+    {
+      "code": "R57.9 - Shock",
+      "name": "R57.9 - Shock"
+    },
+    {
+      "code": "R58 - Bleeding",
+      "name": "R58 - Bleeding"
+    },
+    {
+      "code": "R58 - Bleeding (Not Elsewhere Classified)",
+      "name": "R58 - Bleeding (Not Elsewhere Classified)"
+    },
+    {
+      "code": "R58 - Haemorrhage",
+      "name": "R58 - Haemorrhage"
+    },
+    {
+      "code": "R58 - Haemorrhage (Not Elsewhere Classified)",
+      "name": "R58 - Haemorrhage (Not Elsewhere Classified)"
+    },
+    {
+      "code": "R58 - Haemorrhagic shock",
+      "name": "R58 - Haemorrhagic shock"
+    },
+    {
+      "code": "R58 - Internal Haemorrhage",
+      "name": "R58 - Internal Haemorrhage"
+    },
+    {
+      "code": "R60.9 - Oedema (Unspecified)",
+      "name": "R60.9 - Oedema (Unspecified)"
+    },
+    {
+      "code": "R62.8 - Failure to Thrive",
+      "name": "R62.8 - Failure to Thrive"
+    },
+    {
+      "code": "R63.3 - Feeding Problem",
+      "name": "R63.3 - Feeding Problem"
+    },
+    {
+      "code": "R63.3 - Poor Feeding",
+      "name": "R63.3 - Poor Feeding"
+    },
+    {
+      "code": "R63.4 - Weight Loss",
+      "name": "R63.4 - Weight Loss"
+    },
+    {
+      "code": "R64 - Cachexia",
+      "name": "R64 - Cachexia"
+    },
+    {
+      "code": "R68.0 - Hypothermia",
+      "name": "R68.0 - Hypothermia"
+    },
+    {
+      "code": "R68.8 - Toxaemia",
+      "name": "R68.8 - Toxaemia"
+    },
+    {
+      "code": "R69 - Causes of Morbidity Unknown and Unspecified",
+      "name": "R69 - Causes of Morbidity Unknown and Unspecified"
+    },
+    {
+      "code": "R69 - Morbidity Ill Defined",
+      "name": "R69 - Morbidity Ill Defined"
+    },
+    {
+      "code": "R69 - Not Yet Diagnosed",
+      "name": "R69 - Not Yet Diagnosed"
+    },
+    {
+      "code": "R73.9 - Hyperglyceamia",
+      "name": "R73.9 - Hyperglyceamia"
+    },
+    {
+      "code": "R95 - Sudden infant death syndrome",
+      "name": "R95 - Sudden infant death syndrome"
+    },
+    {
+      "code": "R95 - Syndrome of Sudden Infant Death",
+      "name": "R95 - Syndrome of Sudden Infant Death"
+    },
+    {
+      "code": "R96 - Death Sudden",
+      "name": "R96 - Death Sudden"
+    },
+    {
+      "code": "R98 - Dead Found / Found Dead",
+      "name": "R98 - Dead Found / Found Dead"
+    },
+    {
+      "code": "R99 - Causes of Mortality Ill-Defined",
+      "name": "R99 - Causes of Mortality Ill-Defined"
+    },
+    {
+      "code": "R99 - Mortality Ill Defined",
+      "name": "R99 - Mortality Ill Defined"
+    },
+    {
+      "code": "R99 - Unknown Death",
+      "name": "R99 - Unknown Death"
+    },
+    {
+      "code": "R99 - Unspecified Death",
+      "name": "R99 - Unspecified Death"
+    },
+    {
+      "code": "S00.1 - Contusion of Eyelid",
+      "name": "S00.1 - Contusion of Eyelid"
+    },
+    {
+      "code": "S00.1 - Periorbital contusion",
+      "name": "S00.1 - Periorbital contusion"
+    },
+    {
+      "code": "S00.1 - Supraorbital contusion",
+      "name": "S00.1 - Supraorbital contusion"
+    },
+    {
+      "code": "S00.9 - Haematoma of Scalp",
+      "name": "S00.9 - Haematoma of Scalp"
+    },
+    {
+      "code": "S01.0 - Laceration of scalp",
+      "name": "S01.0 - Laceration of scalp"
+    },
+    {
+      "code": "S01.1 - Eyelid laceration",
+      "name": "S01.1 - Eyelid laceration"
+    },
+    {
+      "code": "S01.3 - Laceration of ear",
+      "name": "S01.3 - Laceration of ear"
+    },
+    {
+      "code": "S01.5 - Laceration of lips",
+      "name": "S01.5 - Laceration of lips"
+    },
+    {
+      "code": "S01.5 - Laceration of tongue",
+      "name": "S01.5 - Laceration of tongue"
+    },
+    {
+      "code": "S01.5 - Wound Open of Gum",
+      "name": "S01.5 - Wound Open of Gum"
+    },
+    {
+      "code": "S01.8 - Laceration of face",
+      "name": "S01.8 - Laceration of face"
+    },
+    {
+      "code": "S01.8 - Wound Forehead",
+      "name": "S01.8 - Wound Forehead"
+    },
+    {
+      "code": "S01.9 - Wound Open of Head",
+      "name": "S01.9 - Wound Open of Head"
+    },
+    {
+      "code": "S02.1 - Fracture Base of Skull",
+      "name": "S02.1 - Fracture Base of Skull"
+    },
+    {
+      "code": "S02.2 - Fractured Nasal bone",
+      "name": "S02.2 - Fractured Nasal bone"
+    },
+    {
+      "code": "S02.7 - Fracture of facial bones (displacement)",
+      "name": "S02.7 - Fracture of facial bones (displacement)"
+    },
+    {
+      "code": "S02.7 - Fracture of Skull and Facial Bones (Multiple)",
+      "name": "S02.7 - Fracture of Skull and Facial Bones (Multiple)"
+    },
+    {
+      "code": "S02.8 - Frntal",
+      "name": "S02.8 - Frntal"
+    },
+    {
+      "code": "S02.8 - Mandibular",
+      "name": "S02.8 - Mandibular"
+    },
+    {
+      "code": "S02.8 - Maxillary",
+      "name": "S02.8 - Maxillary"
+    },
+    {
+      "code": "S02.8 - Nasal bone fracture",
+      "name": "S02.8 - Nasal bone fracture"
+    },
+    {
+      "code": "S02.8 - Occipital",
+      "name": "S02.8 - Occipital"
+    },
+    {
+      "code": "S02.8 - Parietal",
+      "name": "S02.8 - Parietal"
+    },
+    {
+      "code": "S02.8 - Temporal skull fracture",
+      "name": "S02.8 - Temporal skull fracture"
+    },
+    {
+      "code": "S02.8 - Zygomatic",
+      "name": "S02.8 - Zygomatic"
+    },
+    {
+      "code": "S02.9 - Fracture of facial bones",
+      "name": "S02.9 - Fracture of facial bones"
+    },
+    {
+      "code": "S02.9 - Fracture of Skull",
+      "name": "S02.9 - Fracture of Skull"
+    },
+    {
+      "code": "S03.0 - Dislocation of Jaw",
+      "name": "S03.0 - Dislocation of Jaw"
+    },
+    {
+      "code": "S03.0 - Dislocation of Temporomandibular joint",
+      "name": "S03.0 - Dislocation of Temporomandibular joint"
+    },
+    {
+      "code": "S03.0 - TMJ",
+      "name": "S03.0 - TMJ"
+    },
+    {
+      "code": "S03.2 - Avulsion of teeth",
+      "name": "S03.2 - Avulsion of teeth"
+    },
+    {
+      "code": "S05.1 - Contusion of Eye and orbit",
+      "name": "S05.1 - Contusion of Eye and orbit"
+    },
+    {
+      "code": "S05.1 - Traumatic Hyphaema",
+      "name": "S05.1 - Traumatic Hyphaema"
+    },
+    {
+      "code": "S05.3 - Raptured Globe",
+      "name": "S05.3 - Raptured Globe"
+    },
+    {
+      "code": "S05.3 - Ruptured globe",
+      "name": "S05.3 - Ruptured globe"
+    },
+    {
+      "code": "S05.3 - Ruptured Lens Cornea",
+      "name": "S05.3 - Ruptured Lens Cornea"
+    },
+    {
+      "code": "S05.4 - Intraorbital foreign body",
+      "name": "S05.4 - Intraorbital foreign body"
+    },
+    {
+      "code": "S05.4 - Penetrating wound of orbit",
+      "name": "S05.4 - Penetrating wound of orbit"
+    },
+    {
+      "code": "S05.7 - Avulsion of Eye",
+      "name": "S05.7 - Avulsion of Eye"
+    },
+    {
+      "code": "S05.8 - Corneal Aberation",
+      "name": "S05.8 - Corneal Aberation"
+    },
+    {
+      "code": "S05.8 - Corneal Laceration",
+      "name": "S05.8 - Corneal Laceration"
+    },
+    {
+      "code": "S05.8 - Injury of Eye and orbit",
+      "name": "S05.8 - Injury of Eye and orbit"
+    },
+    {
+      "code": "S06.0 - Cerebral concussion",
+      "name": "S06.0 - Cerebral concussion"
+    },
+    {
+      "code": "S06.0 - Concussion Cerebral",
+      "name": "S06.0 - Concussion Cerebral"
+    },
+    {
+      "code": "S06.2 - Cerebral contusion",
+      "name": "S06.2 - Cerebral contusion"
+    },
+    {
+      "code": "S06.2 - Contusion Cerebral",
+      "name": "S06.2 - Contusion Cerebral"
+    },
+    {
+      "code": "S06.2 - Contusion of Head",
+      "name": "S06.2 - Contusion of Head"
+    },
+    {
+      "code": "S06.9 - Brain Injury",
+      "name": "S06.9 - Brain Injury"
+    },
+    {
+      "code": "S06.9 - Cerebellar Injury",
+      "name": "S06.9 - Cerebellar Injury"
+    },
+    {
+      "code": "S06.9 - Cerebral Injury",
+      "name": "S06.9 - Cerebral Injury"
+    },
+    {
+      "code": "S06.9 - Pontine Injury",
+      "name": "S06.9 - Pontine Injury"
+    },
+    {
+      "code": "S09.8 - Cephalhematoma",
+      "name": "S09.8 - Cephalhematoma"
+    },
+    {
+      "code": "S09.9 - Injury of Eyelid",
+      "name": "S09.9 - Injury of Eyelid"
+    },
+    {
+      "code": "S09.9 - Injury of Head",
+      "name": "S09.9 - Injury of Head"
+    },
+    {
+      "code": "S09.9 - Laceration of Head",
+      "name": "S09.9 - Laceration of Head"
+    },
+    {
+      "code": "S09.9 - Trauma to auricle,",
+      "name": "S09.9 - Trauma to auricle,"
+    },
+    {
+      "code": "S09.9 - Trauma to ext canal,",
+      "name": "S09.9 - Trauma to ext canal,"
+    },
+    {
+      "code": "S09.9 - Traumatic injury to pharynx",
+      "name": "S09.9 - Traumatic injury to pharynx"
+    },
+    {
+      "code": "S09.9 - Unspecified injury of head",
+      "name": "S09.9 - Unspecified injury of head"
+    },
+    {
+      "code": "S10.9 - Cervical contusion",
+      "name": "S10.9 - Cervical contusion"
+    },
+    {
+      "code": "S10.9 - Contusion of Neck",
+      "name": "S10.9 - Contusion of Neck"
+    },
+    {
+      "code": "S10.9 - Neck contusion",
+      "name": "S10.9 - Neck contusion"
+    },
+    {
+      "code": "S12.9 - Cervical fracture",
+      "name": "S12.9 - Cervical fracture"
+    },
+    {
+      "code": "S12.9 - Fracture of Cervical vertebra",
+      "name": "S12.9 - Fracture of Cervical vertebra"
+    },
+    {
+      "code": "S12.9 - Fracture of Neck",
+      "name": "S12.9 - Fracture of Neck"
+    },
+    {
+      "code": "S14.1 - Cervical cord injury",
+      "name": "S14.1 - Cervical cord injury"
+    },
+    {
+      "code": "S14.1 - Injury Cervical",
+      "name": "S14.1 - Injury Cervical"
+    },
+    {
+      "code": "S14.2 - Cervical Vertebrae Trauma",
+      "name": "S14.2 - Cervical Vertebrae Trauma"
+    },
+    {
+      "code": "S19.9 - Injury of Neck",
+      "name": "S19.9 - Injury of Neck"
+    },
+    {
+      "code": "S19.9 - Neck Broken",
+      "name": "S19.9 - Neck Broken"
+    },
+    {
+      "code": "S20.2 - Chest contusion",
+      "name": "S20.2 - Chest contusion"
+    },
+    {
+      "code": "S20.2 - Contusion of Chest",
+      "name": "S20.2 - Contusion of Chest"
+    },
+    {
+      "code": "S20.2 - Contusion of Thorax",
+      "name": "S20.2 - Contusion of Thorax"
+    },
+    {
+      "code": "S21.2 - Cut Back",
+      "name": "S21.2 - Cut Back"
+    },
+    {
+      "code": "S21.9 - Wound Open of Thorax",
+      "name": "S21.9 - Wound Open of Thorax"
+    },
+    {
+      "code": "S22.3 - Fracture of Rib",
+      "name": "S22.3 - Fracture of Rib"
+    },
+    {
+      "code": "S29.9 - Injury of Thorax",
+      "name": "S29.9 - Injury of Thorax"
+    },
+    {
+      "code": "S30.1 - Contusion of Abdominal Wall",
+      "name": "S30.1 - Contusion of Abdominal Wall"
+    },
+    {
+      "code": "S31.1 - Wound Groin",
+      "name": "S31.1 - Wound Groin"
+    },
+    {
+      "code": "S31.4 - Laceration of Vagina",
+      "name": "S31.4 - Laceration of Vagina"
+    },
+    {
+      "code": "S31.4 - Laceration of Vulva",
+      "name": "S31.4 - Laceration of Vulva"
+    },
+    {
+      "code": "S31.4 - Wound Vulval",
+      "name": "S31.4 - Wound Vulval"
+    },
+    {
+      "code": "S31.8 - Stab wound to abdomen",
+      "name": "S31.8 - Stab wound to abdomen"
+    },
+    {
+      "code": "S31.8 - Wound Open of Abdomen",
+      "name": "S31.8 - Wound Open of Abdomen"
+    },
+    {
+      "code": "S31.8 - Wound Open of Anus",
+      "name": "S31.8 - Wound Open of Anus"
+    },
+    {
+      "code": "S32.8 - Fracture of Pelvis",
+      "name": "S32.8 - Fracture of Pelvis"
+    },
+    {
+      "code": "S36.0 - Rupture Traumatic of Spleen",
+      "name": "S36.0 - Rupture Traumatic of Spleen"
+    },
+    {
+      "code": "S36.0 - Ruptured Spleen",
+      "name": "S36.0 - Ruptured Spleen"
+    },
+    {
+      "code": "S36.0 - Traumatic rapture of Spleen",
+      "name": "S36.0 - Traumatic rapture of Spleen"
+    },
+    {
+      "code": "S36.0 - Traumatic spleen",
+      "name": "S36.0 - Traumatic spleen"
+    },
+    {
+      "code": "S36.0 - Traumatic Splenic rapture",
+      "name": "S36.0 - Traumatic Splenic rapture"
+    },
+    {
+      "code": "S36.1 - Bile duct trauma",
+      "name": "S36.1 - Bile duct trauma"
+    },
+    {
+      "code": "S36.1 - Gall Bladder rapture",
+      "name": "S36.1 - Gall Bladder rapture"
+    },
+    {
+      "code": "S36.1 - Hepatic rapture",
+      "name": "S36.1 - Hepatic rapture"
+    },
+    {
+      "code": "S36.1 - Ruptured liver",
+      "name": "S36.1 - Ruptured liver"
+    },
+    {
+      "code": "S36.5 - Large bowel trauma",
+      "name": "S36.5 - Large bowel trauma"
+    },
+    {
+      "code": "S36.5 - Rupture Traumatic of Large Intestine",
+      "name": "S36.5 - Rupture Traumatic of Large Intestine"
+    },
+    {
+      "code": "S37.2 - Bladder  Tear",
+      "name": "S37.2 - Bladder  Tear"
+    },
+    {
+      "code": "S37.2 - Bladder laceration",
+      "name": "S37.2 - Bladder laceration"
+    },
+    {
+      "code": "S37.6 - Laceration of Uterus",
+      "name": "S37.6 - Laceration of Uterus"
+    },
+    {
+      "code": "S37.6 - Uterine rapture",
+      "name": "S37.6 - Uterine rapture"
+    },
+    {
+      "code": "S39.9 - Injury of Abdomen",
+      "name": "S39.9 - Injury of Abdomen"
+    },
+    {
+      "code": "S41.1 - Open wound of upper arm",
+      "name": "S41.1 - Open wound of upper arm"
+    },
+    {
+      "code": "S41.1 - Wound Open of Upper Arm",
+      "name": "S41.1 - Wound Open of Upper Arm"
+    },
+    {
+      "code": "S42.0 - Fracture of Clavicle",
+      "name": "S42.0 - Fracture of Clavicle"
+    },
+    {
+      "code": "S42.3 - Fracture Arm",
+      "name": "S42.3 - Fracture Arm"
+    },
+    {
+      "code": "S42.3 - Fracture of Humerus",
+      "name": "S42.3 - Fracture of Humerus"
+    },
+    {
+      "code": "S42.3 - Humeral shaft fracture",
+      "name": "S42.3 - Humeral shaft fracture"
+    },
+    {
+      "code": "S42.4 - Supracondylar humeral fractures",
+      "name": "S42.4 - Supracondylar humeral fractures"
+    },
+    {
+      "code": "S43.0 - Dislocated joints (shoulder, elbow, wrist,",
+      "name": "S43.0 - Dislocated joints (shoulder, elbow, wrist,"
+    },
+    {
+      "code": "S43.0 - Dislocation of Shoulder",
+      "name": "S43.0 - Dislocation of Shoulder"
+    },
+    {
+      "code": "S43.0 - Dislocation of shoulder joint",
+      "name": "S43.0 - Dislocation of shoulder joint"
+    },
+    {
+      "code": "S43.1 - Dislocation of Clavicle",
+      "name": "S43.1 - Dislocation of Clavicle"
+    },
+    {
+      "code": "S52.0 - Fracture olecranon",
+      "name": "S52.0 - Fracture olecranon"
+    },
+    {
+      "code": "S52.0 - Olecranon Fracture",
+      "name": "S52.0 - Olecranon Fracture"
+    },
+    {
+      "code": "S52.2 - Fracture of Shaft of Ulna",
+      "name": "S52.2 - Fracture of Shaft of Ulna"
+    },
+    {
+      "code": "S52.2 - Shaft Fractures",
+      "name": "S52.2 - Shaft Fractures"
+    },
+    {
+      "code": "S52.7 - Fracture of Other Parts of Forearm",
+      "name": "S52.7 - Fracture of Other Parts of Forearm"
+    },
+    {
+      "code": "S52.8 - Fracture of Radius",
+      "name": "S52.8 - Fracture of Radius"
+    },
+    {
+      "code": "S53.1 - Dislocation of Elbow",
+      "name": "S53.1 - Dislocation of Elbow"
+    },
+    {
+      "code": "S60.9 - Contusion of Hand",
+      "name": "S60.9 - Contusion of Hand"
+    },
+    {
+      "code": "S60.9 - Traumatic nail injuries",
+      "name": "S60.9 - Traumatic nail injuries"
+    },
+    {
+      "code": "S61.8 - Laceration of Palm",
+      "name": "S61.8 - Laceration of Palm"
+    },
+    {
+      "code": "S62.6 - Digital fractures",
+      "name": "S62.6 - Digital fractures"
+    },
+    {
+      "code": "S62.6 - Fractures of Phalanges",
+      "name": "S62.6 - Fractures of Phalanges"
+    },
+    {
+      "code": "S62.6 - Fractures of Phalanx",
+      "name": "S62.6 - Fractures of Phalanx"
+    },
+    {
+      "code": "S62.6 - Phalangeal bone fracture",
+      "name": "S62.6 - Phalangeal bone fracture"
+    },
+    {
+      "code": "S62.8 - Fracture of Hand",
+      "name": "S62.8 - Fracture of Hand"
+    },
+    {
+      "code": "S66.9 - Injury of Hand",
+      "name": "S66.9 - Injury of Hand"
+    },
+    {
+      "code": "S71.0 - Open wound of hip",
+      "name": "S71.0 - Open wound of hip"
+    },
+    {
+      "code": "S71.0 - Wound Open of Hip",
+      "name": "S71.0 - Wound Open of Hip"
+    },
+    {
+      "code": "S72.0 - Femoral Neck Fracture",
+      "name": "S72.0 - Femoral Neck Fracture"
+    },
+    {
+      "code": "S72.0 - Fracture Femoral Neck",
+      "name": "S72.0 - Fracture Femoral Neck"
+    },
+    {
+      "code": "S72.0 - Fracture of Hip",
+      "name": "S72.0 - Fracture of Hip"
+    },
+    {
+      "code": "S72.0 - Intra capsular fracture neck of femur",
+      "name": "S72.0 - Intra capsular fracture neck of femur"
+    },
+    {
+      "code": "S72.1 - Pertrochanteric Fracture",
+      "name": "S72.1 - Pertrochanteric Fracture"
+    },
+    {
+      "code": "S72.9 - Fracture of Femur",
+      "name": "S72.9 - Fracture of Femur"
+    },
+    {
+      "code": "S73.0 - Dislocated hip",
+      "name": "S73.0 - Dislocated hip"
+    },
+    {
+      "code": "S80.9 - Abrasions of Knee",
+      "name": "S80.9 - Abrasions of Knee"
+    },
+    {
+      "code": "S80.9 - Abrasions Rt Knee",
+      "name": "S80.9 - Abrasions Rt Knee"
+    },
+    {
+      "code": "S81.0 - Open Wound of Knee",
+      "name": "S81.0 - Open Wound of Knee"
+    },
+    {
+      "code": "S81.0 - Wound Open of Knee",
+      "name": "S81.0 - Wound Open of Knee"
+    },
+    {
+      "code": "S81.9 - Wound Open of Lower Leg",
+      "name": "S81.9 - Wound Open of Lower Leg"
+    },
+    {
+      "code": "S82.0 - Fracture of The Knee",
+      "name": "S82.0 - Fracture of The Knee"
+    },
+    {
+      "code": "S82.0 - Fracture of The Knee cap",
+      "name": "S82.0 - Fracture of The Knee cap"
+    },
+    {
+      "code": "S82.1 - Condyles - screws ???",
+      "name": "S82.1 - Condyles - screws ???"
+    },
+    {
+      "code": "S82.2 - Fracture of Tibia (Shaft)",
+      "name": "S82.2 - Fracture of Tibia (Shaft)"
+    },
+    {
+      "code": "S82.4 - Fracture of Fibula",
+      "name": "S82.4 - Fracture of Fibula"
+    },
+    {
+      "code": "S82.8 - Fracture of Ankle",
+      "name": "S82.8 - Fracture of Ankle"
+    },
+    {
+      "code": "S88.9 - Amputation Both Legs",
+      "name": "S88.9 - Amputation Both Legs"
+    },
+    {
+      "code": "S88.9 - Traumatic amputation of lower limb, level unspecified",
+      "name": "S88.9 - Traumatic amputation of lower limb, level unspecified"
+    },
+    {
+      "code": "S91.1 - Open Wound of Toes",
+      "name": "S91.1 - Open Wound of Toes"
+    },
+    {
+      "code": "S91.3 - Open wound of other parts of foot",
+      "name": "S91.3 - Open wound of other parts of foot"
+    },
+    {
+      "code": "S91.3 - Wound Open of Foot",
+      "name": "S91.3 - Wound Open of Foot"
+    },
+    {
+      "code": "S92.3 - Fracture of Metatarsal Bone",
+      "name": "S92.3 - Fracture of Metatarsal Bone"
+    },
+    {
+      "code": "S93.0 - Dislocation of Ankle",
+      "name": "S93.0 - Dislocation of Ankle"
+    },
+    {
+      "code": "S93.0 - Tibio-talal dislocation",
+      "name": "S93.0 - Tibio-talal dislocation"
+    },
+    {
+      "code": "T00.9 - Multiple Abrasion",
+      "name": "T00.9 - Multiple Abrasion"
+    },
+    {
+      "code": "T01.9 - Multiple Facial Laceration",
+      "name": "T01.9 - Multiple Facial Laceration"
+    },
+    {
+      "code": "T01.9 - Multiple open wounds, unspecified",
+      "name": "T01.9 - Multiple open wounds, unspecified"
+    },
+    {
+      "code": "T01.9 - Wound Open (Multiple)",
+      "name": "T01.9 - Wound Open (Multiple)"
+    },
+    {
+      "code": "T02.9 - Multiple Fracture",
+      "name": "T02.9 - Multiple Fracture"
+    },
+    {
+      "code": "T07 - Injury (Multiple)",
+      "name": "T07 - Injury (Multiple)"
+    },
+    {
+      "code": "T07 - Unspecified multiple injuries",
+      "name": "T07 - Unspecified multiple injuries"
+    },
+    {
+      "code": "T08 - Fracture Spinal",
+      "name": "T08 - Fracture Spinal"
+    },
+    {
+      "code": "T09.3 - Injury of Spinal Cord",
+      "name": "T09.3 - Injury of Spinal Cord"
+    },
+    {
+      "code": "T09.3 - Paraplegia Traumatic",
+      "name": "T09.3 - Paraplegia Traumatic"
+    },
+    {
+      "code": "T09.3 - Spinal Injury",
+      "name": "T09.3 - Spinal Injury"
+    },
+    {
+      "code": "T09.3 - Spinal Shock",
+      "name": "T09.3 - Spinal Shock"
+    },
+    {
+      "code": "T09.3 - Traumatic Paraplegia",
+      "name": "T09.3 - Traumatic Paraplegia"
+    },
+    {
+      "code": "T10 - Fracture of Upper Limb",
+      "name": "T10 - Fracture of Upper Limb"
+    },
+    {
+      "code": "T11.0 - Abrasions Upper Limbs",
+      "name": "T11.0 - Abrasions Upper Limbs"
+    },
+    {
+      "code": "T11.0 - Contusion of Upper Limb",
+      "name": "T11.0 - Contusion of Upper Limb"
+    },
+    {
+      "code": "T11.9 - Injury of Upper Limb",
+      "name": "T11.9 - Injury of Upper Limb"
+    },
+    {
+      "code": "T12 - Fracture of Lower Limb",
+      "name": "T12 - Fracture of Lower Limb"
+    },
+    {
+      "code": "T13.0 - Abrasion of Lower Limb",
+      "name": "T13.0 - Abrasion of Lower Limb"
+    },
+    {
+      "code": "T13.0 - Abrasion of Upper Limb",
+      "name": "T13.0 - Abrasion of Upper Limb"
+    },
+    {
+      "code": "T13.0 - Contusion of Lower Limb",
+      "name": "T13.0 - Contusion of Lower Limb"
+    },
+    {
+      "code": "T13.9 - Injury of Lower Limb",
+      "name": "T13.9 - Injury of Lower Limb"
+    },
+    {
+      "code": "T14.0 - Abrasions Unspecified",
+      "name": "T14.0 - Abrasions Unspecified"
+    },
+    {
+      "code": "T14.0 - Contusion (Unspecified)",
+      "name": "T14.0 - Contusion (Unspecified)"
+    },
+    {
+      "code": "T14.0 - Haematoma",
+      "name": "T14.0 - Haematoma"
+    },
+    {
+      "code": "T14.0 - Traumatic perforation",
+      "name": "T14.0 - Traumatic perforation"
+    },
+    {
+      "code": "T14.1 - Gun Shot",
+      "name": "T14.1 - Gun Shot"
+    },
+    {
+      "code": "T14.1 - Gun Shot wound",
+      "name": "T14.1 - Gun Shot wound"
+    },
+    {
+      "code": "T14.1 - Incised Abscess",
+      "name": "T14.1 - Incised Abscess"
+    },
+    {
+      "code": "T14.1 - Laceration",
+      "name": "T14.1 - Laceration"
+    },
+    {
+      "code": "T14.1 - Minor lacerations",
+      "name": "T14.1 - Minor lacerations"
+    },
+    {
+      "code": "T14.1 - Open fractures",
+      "name": "T14.1 - Open fractures"
+    },
+    {
+      "code": "T14.1 - Stab Wound",
+      "name": "T14.1 - Stab Wound"
+    },
+    {
+      "code": "T14.1 - Tendon rupture (Traumatic or inflammatory)",
+      "name": "T14.1 - Tendon rupture (Traumatic or inflammatory)"
+    },
+    {
+      "code": "T14.1 - Wound Open (Unspecified Body Region)",
+      "name": "T14.1 - Wound Open (Unspecified Body Region)"
+    },
+    {
+      "code": "T14.1 - Wound Stab",
+      "name": "T14.1 - Wound Stab"
+    },
+    {
+      "code": "T14.2 - Fracture",
+      "name": "T14.2 - Fracture"
+    },
+    {
+      "code": "T14.2 - Fracture - dislocation of joint",
+      "name": "T14.2 - Fracture - dislocation of joint"
+    },
+    {
+      "code": "T14.2 - Fracture (Unspecified)",
+      "name": "T14.2 - Fracture (Unspecified)"
+    },
+    {
+      "code": "T14.2 - Open fractures",
+      "name": "T14.2 - Open fractures"
+    },
+    {
+      "code": "T14.3 - Ligamental strain",
+      "name": "T14.3 - Ligamental strain"
+    },
+    {
+      "code": "T14.3 - Open Dislocations",
+      "name": "T14.3 - Open Dislocations"
+    },
+    {
+      "code": "T14.3 - Sprains of muscle",
+      "name": "T14.3 - Sprains of muscle"
+    },
+    {
+      "code": "T14.3 - Strains of muscle, ligaments and tendons",
+      "name": "T14.3 - Strains of muscle, ligaments and tendons"
+    },
+    {
+      "code": "T14.7 - Amputation Traumatic (Total, Unspecified Body Region)",
+      "name": "T14.7 - Amputation Traumatic (Total, Unspecified Body Region)"
+    },
+    {
+      "code": "T14.7 - Amputation Traumatic (Unspecified Body Region)",
+      "name": "T14.7 - Amputation Traumatic (Unspecified Body Region)"
+    },
+    {
+      "code": "T14.7 - Crushing Injury",
+      "name": "T14.7 - Crushing Injury"
+    },
+    {
+      "code": "T14.7 - Traumatic Amputation",
+      "name": "T14.7 - Traumatic Amputation"
+    },
+    {
+      "code": "T14.9 - Domestic Accident",
+      "name": "T14.9 - Domestic Accident"
+    },
+    {
+      "code": "T14.9 - Haematoma (Unspecified)",
+      "name": "T14.9 - Haematoma (Unspecified)"
+    },
+    {
+      "code": "T14.9 - Hit By Fallen Tree",
+      "name": "T14.9 - Hit By Fallen Tree"
+    },
+    {
+      "code": "T14.9 - Home Accident",
+      "name": "T14.9 - Home Accident"
+    },
+    {
+      "code": "T14.9 - Injury",
+      "name": "T14.9 - Injury"
+    },
+    {
+      "code": "T14.9 - Injury (Unspecified)",
+      "name": "T14.9 - Injury (Unspecified)"
+    },
+    {
+      "code": "T14.9 - Trauma",
+      "name": "T14.9 - Trauma"
+    },
+    {
+      "code": "T15.0 - Deep corneal foreign body",
+      "name": "T15.0 - Deep corneal foreign body"
+    },
+    {
+      "code": "T15.0 - Superficial Corneal foreign body",
+      "name": "T15.0 - Superficial Corneal foreign body"
+    },
+    {
+      "code": "T16 - Foreign Body In Ear",
+      "name": "T16 - Foreign Body In Ear"
+    },
+    {
+      "code": "T16 - Foreign body in the ear, nose, throat",
+      "name": "T16 - Foreign body in the ear, nose, throat"
+    },
+    {
+      "code": "T16 - Impacted foreign body in the ear",
+      "name": "T16 - Impacted foreign body in the ear"
+    },
+    {
+      "code": "T17.2 - Foreign Body In Throat",
+      "name": "T17.2 - Foreign Body In Throat"
+    },
+    {
+      "code": "T21 - Burns Abdomen",
+      "name": "T21 - Burns Abdomen"
+    },
+    {
+      "code": "T30.0 - Burn",
+      "name": "T30.0 - Burn"
+    },
+    {
+      "code": "T30.0 - Burns",
+      "name": "T30.0 - Burns"
+    },
+    {
+      "code": "T50.9 - Drug poisoning",
+      "name": "T50.9 - Drug poisoning"
+    },
+    {
+      "code": "T51.9 - Alcohol Poisoning",
+      "name": "T51.9 - Alcohol Poisoning"
+    },
+    {
+      "code": "T51.9 - Poisoning Alcoholic",
+      "name": "T51.9 - Poisoning Alcoholic"
+    },
+    {
+      "code": "T52.0 - Hydrocarbon ingestion",
+      "name": "T52.0 - Hydrocarbon ingestion"
+    },
+    {
+      "code": "T52.0 - Kerosene ingestion",
+      "name": "T52.0 - Kerosene ingestion"
+    },
+    {
+      "code": "T52.0 - Kerosine (Toxic Effect of)",
+      "name": "T52.0 - Kerosine (Toxic Effect of)"
+    },
+    {
+      "code": "T52.0 - Petrol ingestion",
+      "name": "T52.0 - Petrol ingestion"
+    },
+    {
+      "code": "T52.8 - Terpentine Ingestion",
+      "name": "T52.8 - Terpentine Ingestion"
+    },
+    {
+      "code": "T54.3 - Casutic soda ingestion",
+      "name": "T54.3 - Casutic soda ingestion"
+    },
+    {
+      "code": "T56.0 - Lead Poisoning",
+      "name": "T56.0 - Lead Poisoning"
+    },
+    {
+      "code": "T56.0 - Poisoning Lead",
+      "name": "T56.0 - Poisoning Lead"
+    },
+    {
+      "code": "T56.9 - Metal Poisoning",
+      "name": "T56.9 - Metal Poisoning"
+    },
+    {
+      "code": "T56.9 - Poisoning Metals",
+      "name": "T56.9 - Poisoning Metals"
+    },
+    {
+      "code": "T57.2 - Manganese Poisoning",
+      "name": "T57.2 - Manganese Poisoning"
+    },
+    {
+      "code": "T57.2 - Poisoning Manganese",
+      "name": "T57.2 - Poisoning Manganese"
+    },
+    {
+      "code": "T58 - Carbon Monoxide Poisoning",
+      "name": "T58 - Carbon Monoxide Poisoning"
+    },
+    {
+      "code": "T58 - Poisoning Carbon Monoxide",
+      "name": "T58 - Poisoning Carbon Monoxide"
+    },
+    {
+      "code": "T60.1 - DDT Poisoning",
+      "name": "T60.1 - DDT Poisoning"
+    },
+    {
+      "code": "T60.1 - Poisoning D.D.T.",
+      "name": "T60.1 - Poisoning D.D.T."
+    },
+    {
+      "code": "T60.3 - Herbicide Poisoning",
+      "name": "T60.3 - Herbicide Poisoning"
+    },
+    {
+      "code": "T60.3 - Poisoning Herbicide",
+      "name": "T60.3 - Poisoning Herbicide"
+    },
+    {
+      "code": "T60.9 - Pesticide Poisoning",
+      "name": "T60.9 - Pesticide Poisoning"
+    },
+    {
+      "code": "T60.9 - Poisoning Pesticide",
+      "name": "T60.9 - Poisoning Pesticide"
+    },
+    {
+      "code": "T61.2 - Fish Poisoning",
+      "name": "T61.2 - Fish Poisoning"
+    },
+    {
+      "code": "T61.2 - Poisoning Fish",
+      "name": "T61.2 - Poisoning Fish"
+    },
+    {
+      "code": "T62.0 - Mushroom Poisoning",
+      "name": "T62.0 - Mushroom Poisoning"
+    },
+    {
+      "code": "T62.0 - Poisoning Mushroom",
+      "name": "T62.0 - Poisoning Mushroom"
+    },
+    {
+      "code": "T62.9 - Food poisoning",
+      "name": "T62.9 - Food poisoning"
+    },
+    {
+      "code": "T63.0 - Snake Bite",
+      "name": "T63.0 - Snake Bite"
+    },
+    {
+      "code": "T63.9 - Envenomisation",
+      "name": "T63.9 - Envenomisation"
+    },
+    {
+      "code": "T63.9 - Venom Poisoning",
+      "name": "T63.9 - Venom Poisoning"
+    },
+    {
+      "code": "T65.9 - Chemical Poisoning",
+      "name": "T65.9 - Chemical Poisoning"
+    },
+    {
+      "code": "T65.9 - Poisoning Chemical",
+      "name": "T65.9 - Poisoning Chemical"
+    },
+    {
+      "code": "T73.1 - Lack of Fluid",
+      "name": "T73.1 - Lack of Fluid"
+    },
+    {
+      "code": "T74.2 - defilement",
+      "name": "T74.2 - defilement"
+    },
+    {
+      "code": "T74.2 - Rape",
+      "name": "T74.2 - Rape"
+    },
+    {
+      "code": "T74.2 - Sexual Abuse",
+      "name": "T74.2 - Sexual Abuse"
+    },
+    {
+      "code": "T74.2 - Sexual Assault",
+      "name": "T74.2 - Sexual Assault"
+    },
+    {
+      "code": "T75.1 - Drowning",
+      "name": "T75.1 - Drowning"
+    },
+    {
+      "code": "T75.4 - Electric Shock",
+      "name": "T75.4 - Electric Shock"
+    },
+    {
+      "code": "T75.4 - Shock Electric",
+      "name": "T75.4 - Shock Electric"
+    },
+    {
+      "code": "T78.2 - Analphylactic Shock",
+      "name": "T78.2 - Analphylactic Shock"
+    },
+    {
+      "code": "T78.3 - Reinkes",
+      "name": "T78.3 - Reinkes"
+    },
+    {
+      "code": "T79.1 - Fat Embolism",
+      "name": "T79.1 - Fat Embolism"
+    },
+    {
+      "code": "T79.3 - Wound infection",
+      "name": "T79.3 - Wound infection"
+    },
+    {
+      "code": "T79.4 - Shock Traumatic",
+      "name": "T79.4 - Shock Traumatic"
+    },
+    {
+      "code": "T79.4 - Traumatic shock",
+      "name": "T79.4 - Traumatic shock"
+    },
+    {
+      "code": "T81.0 - Post Operation Haemorrhage/Bleeding",
+      "name": "T81.0 - Post Operation Haemorrhage/Bleeding"
+    },
+    {
+      "code": "T81.1 - Intra Operative Shock",
+      "name": "T81.1 - Intra Operative Shock"
+    },
+    {
+      "code": "T81.1 - Post Operative Shock",
+      "name": "T81.1 - Post Operative Shock"
+    },
+    {
+      "code": "T81.1 - Shock Post Operative",
+      "name": "T81.1 - Shock Post Operative"
+    },
+    {
+      "code": "T85.3 - Prolapse Implant of Eye",
+      "name": "T85.3 - Prolapse Implant of Eye"
+    },
+    {
+      "code": "T88.7 - Drug Reaction",
+      "name": "T88.7 - Drug Reaction"
+    },
+    {
+      "code": "T91.3 - Quadriplegia",
+      "name": "T91.3 - Quadriplegia"
+    },
+    {
+      "code": "V89.2 - Accident Road Traffic",
+      "name": "V89.2 - Accident Road Traffic"
+    },
+    {
+      "code": "V89.2 - Road Traffic Accident",
+      "name": "V89.2 - Road Traffic Accident"
+    },
+    {
+      "code": "W11 - Fall From Ladder",
+      "name": "W11 - Fall From Ladder"
+    },
+    {
+      "code": "W13 - Fall From Out or Through Building or Structure",
+      "name": "W13 - Fall From Out or Through Building or Structure"
+    },
+    {
+      "code": "W14 - Fall From Tree",
+      "name": "W14 - Fall From Tree"
+    },
+    {
+      "code": "W15 - Fall From Cliff",
+      "name": "W15 - Fall From Cliff"
+    },
+    {
+      "code": "W19 - Fall (Unspecified )",
+      "name": "W19 - Fall (Unspecified )"
+    },
+    {
+      "code": "W34 - Gun Shot Wound",
+      "name": "W34 - Gun Shot Wound"
+    },
+    {
+      "code": "W34 - Wound Gun Shot",
+      "name": "W34 - Wound Gun Shot"
+    },
+    {
+      "code": "W43 - Vibration Causing Injury",
+      "name": "W43 - Vibration Causing Injury"
+    },
+    {
+      "code": "W53 - Rat bite",
+      "name": "W53 - Rat bite"
+    },
+    {
+      "code": "W54 - Dog bite",
+      "name": "W54 - Dog bite"
+    },
+    {
+      "code": "Y05 - Assault Sexual",
+      "name": "Y05 - Assault Sexual"
+    },
+    {
+      "code": "Y09 - Assault Injury",
+      "name": "Y09 - Assault Injury"
+    },
+    {
+      "code": "Z41.2 - Bleeding Circumcision",
+      "name": "Z41.2 - Bleeding Circumcision"
+    },
+    {
+      "code": "Z56.6 - Injury Repetitive Strain (Work-Related)",
+      "name": "Z56.6 - Injury Repetitive Strain (Work-Related)"
+    },
+    {
+      "code": "Z56.6 - Stress Work-Related",
+      "name": "Z56.6 - Stress Work-Related"
+    },
+    {
+      "code": "Z56.6 - Work-Related Stress",
+      "name": "Z56.6 - Work-Related Stress"
+    },
+    {
+      "code": "Z73.3 - Stress",
+      "name": "Z73.3 - Stress"
+    },
+    {
+      "code": "Z93.5 - Suprapubic Cystostomy",
+      "name": "Z93.5 - Suprapubic Cystostomy"
+    },
+    {
+      "code": "Z97.0 - Replacement of Eye Socket",
+      "name": "Z97.0 - Replacement of Eye Socket"
+    },
+    {
+      "code": "M79.9 - Soft tissue disorder, unspecified",
+      "name": "M79.9 - Soft tissue disorder, unspecified"
+    },
+    {
+      "code": "014 - Pre-Eclampsia",
+      "name": "014 - Pre-Eclampsia"
+    },
+    {
+      "code": "A41.9 - Sepsis unspecified",
+      "name": "A41.9 - Sepsis unspecified"
+    },
+    {
+      "code": "P24.1 - Meconium aspiration syndrome",
+      "name": "P24.1 - Meconium aspiration syndrome"
+    }
+  ]
+}

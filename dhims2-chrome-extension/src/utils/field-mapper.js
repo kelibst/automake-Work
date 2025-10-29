@@ -360,6 +360,48 @@ class FieldMapper {
   }
 
   /**
+   * Automatically detect and map Excel columns to DHIMS fields
+   * Uses the excelColumn field in fieldMappings to match columns
+   * @param {Array} excelHeaders - Excel column headers
+   * @returns {Object} Mapping configuration { mapping, unmapped }
+   */
+  autoDetectMapping(excelHeaders) {
+    const mapping = {};
+    const unmapped = [];
+
+    excelHeaders.forEach(excelHeader => {
+      let matched = false;
+
+      // Try to find a matching field in fieldMappings
+      Object.entries(this.fieldMappings).forEach(([dhimsFieldName, fieldConfig]) => {
+        if (fieldConfig.excelColumn === excelHeader) {
+          // Direct match - use the dhimsFieldName as key
+          mapping[excelHeader] = dhimsFieldName;
+          matched = true;
+        }
+      });
+
+      if (!matched) {
+        unmapped.push(excelHeader);
+      }
+    });
+
+    console.log('🗺️  Auto-detected mapping:', {
+      total: excelHeaders.length,
+      mapped: Object.keys(mapping).length,
+      unmapped: unmapped.length,
+      mapping
+    });
+
+    return {
+      mapping,
+      unmapped,
+      totalMapped: Object.keys(mapping).length,
+      totalUnmapped: unmapped.length
+    };
+  }
+
+  /**
    * Update a single field mapping
    * @param {Object} currentMapping - Current mapping object
    * @param {String} excelColumn - Excel column to map

@@ -1,8 +1,12 @@
 // DHIMS2 Extension - Background Service Worker
 import apiInterceptor from './api-interceptor.js';
 import StorageManager from '../utils/storage-manager.js';
+import BatchUploader from './api-uploader.js';
 
 console.log('🚀 DHIMS2 Extension: Service Worker Started');
+
+// Global uploader instance
+let currentUploader = null;
 
 // Keepalive mechanism - prevents service worker from going idle
 let keepaliveInterval = null;
@@ -103,6 +107,26 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     case 'TOGGLE_DEBUG_MODE':
       handleToggleDebugMode(message.enabled, message.system, sendResponse);
+      break;
+
+    case 'START_BATCH_UPLOAD':
+      handleStartBatchUpload(message.apiConfig, message.records, sendResponse);
+      break;
+
+    case 'PAUSE_UPLOAD':
+      handlePauseUpload(sendResponse);
+      break;
+
+    case 'RESUME_UPLOAD':
+      handleResumeUpload(sendResponse);
+      break;
+
+    case 'CANCEL_UPLOAD':
+      handleCancelUpload(sendResponse);
+      break;
+
+    case 'GET_UPLOAD_STATUS':
+      handleGetUploadStatus(sendResponse);
       break;
 
     default:
@@ -263,6 +287,102 @@ async function handleClearDebugPayloads(system = 'dhims2', sendResponse) {
     sendResponse({ success: true, message: `Cleared ${system} payloads`, system });
   } catch (error) {
     console.error('Error clearing debug payloads:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle start batch upload request
+ */
+async function handleStartBatchUpload(apiConfig, records, sendResponse) {
+  try {
+    console.log('📤 Starting batch upload:', { total: records.length });
+
+    // Cancel any existing upload
+    if (currentUploader) {
+      currentUploader.cancel();
+    }
+
+    // Create new uploader
+    currentUploader = new BatchUploader(apiConfig, records);
+
+    // Start upload in background (don't await)
+    currentUploader.start().catch(error => {
+      console.error('Upload error:', error);
+    });
+
+    sendResponse({ success: true, message: 'Upload started' });
+  } catch (error) {
+    console.error('Error starting upload:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle pause upload request
+ */
+function handlePauseUpload(sendResponse) {
+  try {
+    if (currentUploader) {
+      currentUploader.pause();
+      sendResponse({ success: true, message: 'Upload paused' });
+    } else {
+      sendResponse({ success: false, error: 'No upload in progress' });
+    }
+  } catch (error) {
+    console.error('Error pausing upload:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle resume upload request
+ */
+function handleResumeUpload(sendResponse) {
+  try {
+    if (currentUploader) {
+      currentUploader.resume();
+      sendResponse({ success: true, message: 'Upload resumed' });
+    } else {
+      sendResponse({ success: false, error: 'No upload in progress' });
+    }
+  } catch (error) {
+    console.error('Error resuming upload:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle cancel upload request
+ */
+function handleCancelUpload(sendResponse) {
+  try {
+    if (currentUploader) {
+      currentUploader.cancel();
+      currentUploader = null;
+      sendResponse({ success: true, message: 'Upload cancelled' });
+    } else {
+      sendResponse({ success: false, error: 'No upload in progress' });
+    }
+  } catch (error) {
+    console.error('Error cancelling upload:', error);
+    sendResponse({ success: false, error: error.message });
+  }
+}
+
+/**
+ * Handle get upload status request
+ */
+function handleGetUploadStatus(sendResponse) {
+  try {
+    if (currentUploader) {
+      const status = currentUploader.getStatus();
+      sendResponse({ success: true, status });
+    } else {
+      sendResponse({ success: true, status: null });
+    }
+  } catch (error) {
+    console.error('Error getting upload status:', error);
     sendResponse({ success: false, error: error.message });
   }
 }

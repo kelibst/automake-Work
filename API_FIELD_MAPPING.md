@@ -32,13 +32,10 @@ POST https://events.chimgh.org/events/api/41/tracker?async=false
 | Speciality | xpzJAQC4DGe | Casualty | dropdown | Required (mapped from "Accident Emergency") |
 | Outcome of Discharge | OMN7CVW4IaY | Transferred | dropdown | Required (Discharge/Transferred/Referred/Died) |
 | Principal Diagnosis | yPXPzceTIvq | A35 - Tetanus | text | Required (with ICD code) |
-| Additional Diagnosis | ??? | NA | text | Optional - Need to find data element ID |
+| Additional Diagnosis | O15UNfCqavW | O67.9 - Intrapartum haemorrhage | text | Optional (with ICD code) ✅ DISCOVERED |
 | Surgical Procedure | dsVClbnOnm6 | false | boolean | Required (true/false or Yes/No) |
-| Cost of Treatment | ??? | 679 | number | Optional - Need to find data element ID |
+| Cost of Treatment | fRkwcThGCTM | 679 | number | Optional ✅ DISCOVERED |
 | NHIS Status | ETSl9Q3SUOG | false | boolean | Required (true/false or Yes/No) |
-| Provisional Diagnosis | ??? | NA | text | Optional - Need to find data element ID |
-| Main Department | ??? | ACCIDENT AND EMERGENCY | text | Optional - Need to find data element ID |
-| CC Code | ??? | NA | text | Optional - Need to find data element ID |
 
 ## Value Mappings Needed
 
@@ -73,19 +70,13 @@ POST https://events.chimgh.org/events/api/41/tracker?async=false
 ## Date Format
 Excel dates like "26-06-2025" must be converted to "2025-06-26" (ISO format)
 
-## Missing Data Elements
+## ✅ All Critical Data Elements Discovered!
 
-The following fields from your Excel don't have data element IDs yet:
-1. Additional Diagnosis
-2. Cost of Treatment
-3. Provisional Diagnosis
-4. Main Department
-5. CC Code
+**Update 2025-10-29:** Successfully discovered the missing field IDs:
+- ✅ Additional Diagnosis: **O15UNfCqavW**
+- ✅ Cost of Treatment: **fRkwcThGCTM**
 
-**Action Required:** We need to either:
-- Capture another form submission with these fields filled in
-- Look them up in DHIS2 metadata
-- Ask the DHIS2 admin for the data dictionary
+All 16 data elements needed for bulk upload are now mapped!
 
 ## Notes
 

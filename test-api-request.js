@@ -44,12 +44,13 @@ async function testAPIRequest() {
 
   console.log('🍪 Session Cookie Found:', jsessionCookie.value.substring(0, 20) + '...\n');
 
-  // Prepare the test data (last row from your Excel file)
+  // Prepare the test data (first row from JuneEmergency.xlsx)
+  // Patient: AGBONTOR COLLINS
   const testData = {
     "events": [
       {
         "orgUnit": "duCDqCRlWG1",  // This should match your organization
-        "occurredAt": "2025-06-24",  // Date of Admission: 24-06-2025
+        "occurredAt": "2025-06-26",  // Date of Admission: 26-06-2025
         "status": "COMPLETED",
         "notes": [],
         "program": "fFYTJRzD2qq",  // In-Patient Morbidity Program
@@ -57,15 +58,15 @@ async function testAPIRequest() {
         "dataValues": [
           {
             "dataElement": "h0Ef6ykTpNB",  // Patient Number
-            "value": "TEST-26295"  // Using CC Code as patient number
+            "value": "VR-A01-AAG3356"
           },
           {
             "dataElement": "nk15h7fzCLz",  // Address
-            "value": "GBI ATABU @ WAKE WILLIAM"
+            "value": "NEW BAIKA"
           },
           {
             "dataElement": "upqhIcii1iC",  // Age (number)
-            "value": "65"  // Estimated age for PENSIONER
+            "value": "20"  // From "20 Year(s)"
           },
           {
             "dataElement": "WZ5rS7QuECT",  // Age (unit)
@@ -73,23 +74,23 @@ async function testAPIRequest() {
           },
           {
             "dataElement": "fg8sMCaTOrK",  // Gender
-            "value": "Male"  // Not specified, using Male as default
+            "value": "Male"
           },
           {
             "dataElement": "qAWldjTeMIs",  // Occupation
-            "value": "Pensioner"  // PENSIONIER → Pensioner
+            "value": "Student"
           },
           {
             "dataElement": "Hi8Cp84CnZQ",  // Education
-            "value": "Tertiary"
+            "value": "SHS/Secondary"  // Changed from "SHS" to exact code
           },
           {
             "dataElement": "HsMaBh3wKed",  // Date of Admission
-            "value": "2025-06-24"
+            "value": "2025-06-26"
           },
           {
             "dataElement": "sIPe9r0NBbq",  // Date of Discharge
-            "value": "2025-06-26"
+            "value": "2025-06-27"
           },
           {
             "dataElement": "xpzJAQC4DGe",  // Speciality
@@ -97,11 +98,11 @@ async function testAPIRequest() {
           },
           {
             "dataElement": "OMN7CVW4IaY",  // Outcome
-            "value": "Discharge"
+            "value": "Transferred"  // Changed from "Referred" to "Transferred" (closest match)
           },
           {
             "dataElement": "yPXPzceTIvq",  // Principal Diagnosis
-            "value": "I10.00 - Essential (primary) hypertension"
+            "value": "A35 - Tetanus"  // Changed to exact code from option set
           },
           {
             "dataElement": "dsVClbnOnm6",  // Surgical Procedure
@@ -109,7 +110,7 @@ async function testAPIRequest() {
           },
           {
             "dataElement": "ETSl9Q3SUOG",  // NHIS Status
-            "value": "true"  // Yes
+            "value": "false"  // No
           }
         ]
       }

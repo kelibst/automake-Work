@@ -640,3 +640,195 @@ This file tracks major features and changes implemented in the DHIMS2 Batch Uplo
 ```
 
 ---
+
+## 2025-10-29
+
+### ✅ Created Missing Field Discovery Script
+**Time:** Morning
+**Description:** Implemented automated script to capture additional DHIS2 form fields (Additional Diagnosis and Cost of Treatment) that were not found in the initial API capture.
+
+**Technical Implementation:**
+
+#### Script: discover-missing-fields.js
+- Uses Playwright to launch browser and intercept POST requests
+- Specifically filters for `/tracker` endpoint requests
+- Provides clear step-by-step instructions for user
+- Captures complete payload with all data elements
+- Analyzes captured data to identify NEW data elements not in known list
+- Saves captured requests to `network-logs/missing-fields-discovery-{timestamp}.json`
+
+**Key Features:**
+- 🔍 Real-time console output showing captured data elements
+- 📊 Automatic analysis comparing against known field IDs
+- 🆕 Highlights newly discovered data element IDs
+- 💡 Intelligent suggestions (likely Additional Diagnosis or Cost)
+- 💾 JSON export of all captured requests
+- ⏰ 30-minute timeout (user can Ctrl+C earlier)
+
+**Known Data Elements (14 fields):**
+```javascript
+h0Ef6ykTpNB  // Patient Number
+nk15h7fzCLz  // Address
+upqhIcii1iC  // Age (number)
+WZ5rS7QuECT  // Age (unit)
+fg8sMCaTOrK  // Gender
+qAWldjTeMIs  // Occupation
+Hi8Cp84CnZQ  // Education
+HsMaBh3wKed  // Date of Admission
+sIPe9r0NBbq  // Date of Discharge
+xpzJAQC4DGe  // Speciality
+OMN7CVW4IaY  // Outcome
+yPXPzceTIvq  // Principal Diagnosis
+dsVClbnOnm6  // Surgical Procedure
+ETSl9Q3SUOG  // NHIS Status
+```
+
+**Target Missing Fields:**
+- Additional Diagnosis data element ID (unknown)
+- Cost of Treatment data element ID (unknown)
+
+**User Instructions:**
+1. Run: `node discover-missing-fields.js`
+2. Log in to DHIS2 when browser opens
+3. Navigate to In-Patient Morbidity form
+4. Fill in test record INCLUDING:
+   - Additional Diagnosis field (enter any diagnosis)
+   - Cost of Treatment field (enter any amount)
+5. Submit the form
+6. Check console for captured data elements
+7. New fields will be highlighted with 🆕 indicator
+8. Press Ctrl+C when done
+
+**Output Format:**
+```
+🎯 TRACKER POST REQUEST CAPTURED!
+═════════════════════════════════════════════════════════
+🔗 URL: https://events.chimgh.org/events/api/41/tracker?async=false
+⏰ Time: 2025-10-29T...
+
+📦 DATA ELEMENTS IN THIS REQUEST:
+─────────────────────────────────────────────────────────
+  1. h0Ef6ykTpNB: "VR-A01-AAG1234"
+  2. nk15h7fzCLz: "NEW BAIKA"
+  ...
+  15. ???: "A05 - Diarrhea"  ← NEW!
+  16. ???: "500"  ← NEW!
+
+🆕 NEW DATA ELEMENTS FOUND:
+─────────────────────────────────────────────────────────
+  📌 [ID]: "[value]"
+  📌 [ID]: "[value]"
+
+💡 These are likely:
+   - Additional Diagnosis
+   - Cost of Treatment
+```
+
+**Files Created:**
+- [discover-missing-fields.js](../discover-missing-fields.js) (150 lines)
+
+**Next Steps:**
+- User runs script to discover missing field IDs
+- Update `API_FIELD_MAPPING.md` with discovered IDs
+- Update Chrome Extension field mappings
+- Fetch option sets for newly discovered fields if needed
+
+**Context:**
+This script completes the data discovery phase identified in the comprehensive implementation plan. User previously requested "Option A" approach: capture another form submission with these fields filled to discover their data element IDs.
+
+---
+
+### ✅ Successfully Discovered Missing Field IDs
+**Time:** Morning (Continued)
+**Description:** Ran the discovery script and successfully identified the two missing data element IDs.
+
+**Discovery Results:**
+
+User submitted second row from Excel file (Patient No. VR-A01-AAA8071) with all fields filled including Additional Diagnosis and Cost.
+
+**🎯 NEW FIELDS DISCOVERED:**
+
+| Data Element ID | Value Captured | Field Name | Type |
+|----------------|----------------|------------|------|
+| **O15UNfCqavW** | "O67.9 - Intrapartum haemorrhage" | Additional Diagnosis | text (ICD code) |
+| **fRkwcThGCTM** | "679" | Cost of Treatment | number |
+
+**Complete Field List (16 Total):**
+```javascript
+// Personal Information
+h0Ef6ykTpNB  // Patient Number
+nk15h7fzCLz  // Address
+upqhIcii1iC  // Age (number)
+WZ5rS7QuECT  // Age (unit) - years/months/days
+fg8sMCaTOrK  // Gender - Male/Female
+qAWldjTeMIs  // Occupation
+Hi8Cp84CnZQ  // Education
+
+// Admission Details
+HsMaBh3wKed  // Date of Admission
+sIPe9r0NBbq  // Date of Discharge
+xpzJAQC4DGe  // Speciality (Casualty)
+
+// Medical Information
+yPXPzceTIvq  // Principal Diagnosis (ICD code)
+O15UNfCqavW  // Additional Diagnosis (ICD code) ✨ NEW
+dsVClbnOnm6  // Surgical Procedure (true/false)
+
+// Outcome & Financial
+OMN7CVW4IaY  // Outcome (Discharged/Transferred/Died)
+fRkwcThGCTM  // Cost of Treatment ✨ NEW
+ETSl9Q3SUOG  // NHIS Status (true/false)
+```
+
+**Files Updated:**
+- [API_FIELD_MAPPING.md](../API_FIELD_MAPPING.md) - Added discovered field IDs with ✅ markers
+- Removed "Missing Data Elements" section - all critical fields now mapped
+
+**Impact:**
+- ✅ Complete API field mapping achieved
+- ✅ Ready to build data cleaner with all 16 fields
+- ✅ Can now process full Excel uploads including Additional Diagnosis and Cost
+- ✅ No more unknown fields blocking implementation
+
+**Documentation Created:**
+- [FIELD_CONFIGURATION.json](../FIELD_CONFIGURATION.json) - Complete field configuration with all 16 fields, transformation algorithms, validation rules, and sample payloads (250 lines)
+- [DISCOVERY_COMPLETE.md](../DISCOVERY_COMPLETE.md) - Comprehensive discovery phase summary with field list, transformations, and next steps (280 lines)
+
+**Next Steps:**
+1. ~~Fetch option sets for Additional Diagnosis~~ (uses same 1,706 codes as Principal Diagnosis)
+2. Begin implementing data cleaner module with complete field mappings
+3. Build Excel parser to handle all 16 fields
+4. Create validation engine with full field set
+
+**Sample Captured Payload:**
+```json
+{
+  "events": [{
+    "orgUnit": "duCDqCRlWG1",
+    "program": "fFYTJRzD2qq",
+    "programStage": "LR7JT7ZNg8E",
+    "occurredAt": "2025-06-17",
+    "status": "COMPLETED",
+    "dataValues": [
+      { "dataElement": "h0Ef6ykTpNB", "value": "VR-A01-AAA8071" },
+      { "dataElement": "nk15h7fzCLz", "value": "LIKPE ABRANI" },
+      { "dataElement": "upqhIcii1iC", "value": "59" },
+      { "dataElement": "WZ5rS7QuECT", "value": "years" },
+      { "dataElement": "fg8sMCaTOrK", "value": "Female" },
+      { "dataElement": "qAWldjTeMIs", "value": "Trader / Shop Assistant" },
+      { "dataElement": "Hi8Cp84CnZQ", "value": "Tertiary" },
+      { "dataElement": "HsMaBh3wKed", "value": "2025-06-17" },
+      { "dataElement": "sIPe9r0NBbq", "value": "2025-06-18" },
+      { "dataElement": "xpzJAQC4DGe", "value": "Casualty" },
+      { "dataElement": "OMN7CVW4IaY", "value": "Transferred" },
+      { "dataElement": "yPXPzceTIvq", "value": "I64 - Stroke" },
+      { "dataElement": "O15UNfCqavW", "value": "O67.9 - Intrapartum haemorrhage" },
+      { "dataElement": "dsVClbnOnm6", "value": "false" },
+      { "dataElement": "ETSl9Q3SUOG", "value": "true" },
+      { "dataElement": "fRkwcThGCTM", "value": "679" }
+    ]
+  }]
+}
+```
+
+---

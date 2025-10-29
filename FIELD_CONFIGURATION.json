@@ -1,0 +1,340 @@
+{
+  "apiEndpoint": "https://events.chimgh.org/events/api/41/tracker?async=false",
+  "method": "POST",
+  "fixedFields": {
+    "orgUnit": "duCDqCRlWG1",
+    "program": "fFYTJRzD2qq",
+    "programStage": "LR7JT7ZNg8E",
+    "status": "COMPLETED",
+    "notes": []
+  },
+  "dataElements": {
+    "patientNumber": {
+      "id": "h0Ef6ykTpNB",
+      "excelColumn": "Patient No.",
+      "type": "text",
+      "required": true,
+      "example": "VR-A01-AAG3356",
+      "validation": "Pattern: VR-A##-AAA####"
+    },
+    "address": {
+      "id": "nk15h7fzCLz",
+      "excelColumn": "Locality/Address/Residence",
+      "type": "text",
+      "required": true,
+      "example": "NEW BAIKA"
+    },
+    "ageNumber": {
+      "id": "upqhIcii1iC",
+      "excelColumn": "Age",
+      "type": "number",
+      "required": true,
+      "example": "20",
+      "extraction": "Extract number from '20 Year(s)'"
+    },
+    "ageUnit": {
+      "id": "WZ5rS7QuECT",
+      "excelColumn": "Age",
+      "type": "dropdown",
+      "required": true,
+      "example": "years",
+      "options": ["years", "months", "days"],
+      "extraction": "Extract unit from '20 Year(s)' and normalize to lowercase plural"
+    },
+    "gender": {
+      "id": "fg8sMCaTOrK",
+      "excelColumn": "Gender",
+      "type": "dropdown",
+      "required": true,
+      "example": "Male",
+      "options": ["Male", "Female"]
+    },
+    "occupation": {
+      "id": "qAWldjTeMIs",
+      "excelColumn": "Occupation",
+      "type": "dropdown",
+      "required": true,
+      "example": "Student",
+      "optionSet": "fetch from DHIS2"
+    },
+    "education": {
+      "id": "Hi8Cp84CnZQ",
+      "excelColumn": "Educational Status",
+      "type": "dropdown",
+      "required": true,
+      "example": "SHS/Secondary",
+      "mapping": {
+        "SHS": "SHS/Secondary",
+        "JHS": "JHS/Middle School",
+        "Tertiary": "Tertiary"
+      }
+    },
+    "dateOfAdmission": {
+      "id": "HsMaBh3wKed",
+      "excelColumn": "Date of Admission",
+      "type": "date",
+      "required": true,
+      "example": "2025-06-26",
+      "format": "YYYY-MM-DD (ISO)",
+      "excelFormat": "DD-MM-YYYY or Excel serial number"
+    },
+    "dateOfDischarge": {
+      "id": "sIPe9r0NBbq",
+      "excelColumn": "Date of Discharge",
+      "type": "date",
+      "required": true,
+      "example": "2025-06-27",
+      "format": "YYYY-MM-DD (ISO)",
+      "validation": "Must be >= dateOfAdmission"
+    },
+    "speciality": {
+      "id": "xpzJAQC4DGe",
+      "excelColumn": "Speciality",
+      "type": "dropdown",
+      "required": true,
+      "example": "Casualty",
+      "mapping": {
+        "Accident Emergency": "Casualty",
+        "Casualty": "Casualty"
+      }
+    },
+    "outcome": {
+      "id": "OMN7CVW4IaY",
+      "excelColumn": "Outcome of Discharge",
+      "type": "dropdown",
+      "required": true,
+      "example": "Transferred",
+      "options": ["Absconded", "Discharged", "Transferred", "Unspecified", "Died"],
+      "mapping": {
+        "Referred": "Transferred",
+        "Discharge": "Discharged",
+        "Discharged": "Discharged",
+        "Transferred": "Transferred",
+        "Died": "Died"
+      }
+    },
+    "principalDiagnosis": {
+      "id": "yPXPzceTIvq",
+      "excelColumn": "Principal Diagnosis",
+      "type": "searchable",
+      "required": true,
+      "example": "A35 - Tetanus",
+      "format": "ICD code + description",
+      "excelFormat": "Description(ICD Code) e.g., 'Other tetanus(A35.00)'",
+      "matching": "Multi-level: exact → no-decimal → prefix → fuzzy",
+      "optionSet": "1,706 diagnosis codes (fetch from DHIS2)"
+    },
+    "additionalDiagnosis": {
+      "id": "O15UNfCqavW",
+      "excelColumn": "Additional Diagnosis",
+      "type": "searchable",
+      "required": false,
+      "example": "O67.9 - Intrapartum haemorrhage",
+      "format": "ICD code + description",
+      "matching": "Same as principalDiagnosis",
+      "optionSet": "Same 1,706 diagnosis codes"
+    },
+    "surgicalProcedure": {
+      "id": "dsVClbnOnm6",
+      "excelColumn": "Surgical Procedure",
+      "type": "boolean",
+      "required": true,
+      "example": "false",
+      "mapping": {
+        "Yes": "true",
+        "No": "false",
+        "true": "true",
+        "false": "false"
+      }
+    },
+    "cost": {
+      "id": "fRkwcThGCTM",
+      "excelColumn": "Cost of Treatment",
+      "type": "number",
+      "required": false,
+      "example": "679",
+      "validation": "Numeric, >= 0"
+    },
+    "nhisStatus": {
+      "id": "ETSl9Q3SUOG",
+      "excelColumn": "NHIS Status",
+      "type": "boolean",
+      "required": true,
+      "example": "false",
+      "mapping": {
+        "Yes": "true",
+        "No": "false",
+        "true": "true",
+        "false": "false"
+      }
+    }
+  },
+  "excelToApiMapping": [
+    {
+      "excelColumn": "Patient No.",
+      "dataElement": "h0Ef6ykTpNB",
+      "transformation": "direct"
+    },
+    {
+      "excelColumn": "Locality/Address/Residence",
+      "dataElement": "nk15h7fzCLz",
+      "transformation": "direct"
+    },
+    {
+      "excelColumn": "Age",
+      "dataElements": [
+        {
+          "id": "upqhIcii1iC",
+          "extraction": "Extract number using regex /(\d+)/"
+        },
+        {
+          "id": "WZ5rS7QuECT",
+          "extraction": "Extract unit using regex /(Year|Month|Day)/i and normalize to lowercase plural"
+        }
+      ]
+    },
+    {
+      "excelColumn": "Gender",
+      "dataElement": "fg8sMCaTOrK",
+      "transformation": "direct"
+    },
+    {
+      "excelColumn": "Occupation",
+      "dataElement": "qAWldjTeMIs",
+      "transformation": "validate against DHIS2 option set"
+    },
+    {
+      "excelColumn": "Educational Status",
+      "dataElement": "Hi8Cp84CnZQ",
+      "transformation": "map using education mapping table"
+    },
+    {
+      "excelColumn": "Date of Admission",
+      "dataElements": [
+        {
+          "id": "HsMaBh3wKed",
+          "transformation": "convert DD-MM-YYYY to YYYY-MM-DD"
+        },
+        {
+          "special": "occurredAt",
+          "transformation": "use same date as admission"
+        }
+      ]
+    },
+    {
+      "excelColumn": "Date of Discharge",
+      "dataElement": "sIPe9r0NBbq",
+      "transformation": "convert DD-MM-YYYY to YYYY-MM-DD"
+    },
+    {
+      "excelColumn": "Speciality",
+      "dataElement": "xpzJAQC4DGe",
+      "transformation": "map using speciality mapping table"
+    },
+    {
+      "excelColumn": "Outcome of Discharge",
+      "dataElement": "OMN7CVW4IaY",
+      "transformation": "map using outcome mapping table"
+    },
+    {
+      "excelColumn": "Principal Diagnosis",
+      "dataElement": "yPXPzceTIvq",
+      "transformation": "extract ICD code, match using multi-level algorithm"
+    },
+    {
+      "excelColumn": "Additional Diagnosis",
+      "dataElement": "O15UNfCqavW",
+      "transformation": "extract ICD code, match using multi-level algorithm, optional"
+    },
+    {
+      "excelColumn": "Surgical Procedure",
+      "dataElement": "dsVClbnOnm6",
+      "transformation": "map Yes/No to true/false"
+    },
+    {
+      "excelColumn": "Cost of Treatment",
+      "dataElement": "fRkwcThGCTM",
+      "transformation": "parse as number, optional"
+    },
+    {
+      "excelColumn": "NHIS Status",
+      "dataElement": "ETSl9Q3SUOG",
+      "transformation": "map Yes/No to true/false"
+    }
+  ],
+  "validationRules": [
+    {
+      "field": "patientNumber",
+      "rule": "Required, must match pattern VR-A##-AAA####"
+    },
+    {
+      "field": "dateOfDischarge",
+      "rule": "Must be >= dateOfAdmission"
+    },
+    {
+      "field": "ageNumber",
+      "rule": "Must be positive number"
+    },
+    {
+      "field": "cost",
+      "rule": "If present, must be >= 0"
+    },
+    {
+      "field": "gender",
+      "rule": "Must be Male or Female"
+    }
+  ],
+  "transformationAlgorithms": {
+    "age": {
+      "input": "20 Year(s)",
+      "steps": [
+        "Extract number: /(\d+)/ → '20'",
+        "Extract unit: /(Year|Month|Day)/i → 'Year'",
+        "Normalize: toLowerCase() + ensure plural → 'years'"
+      ],
+      "output": {
+        "number": "20",
+        "unit": "years"
+      }
+    },
+    "date": {
+      "input": "26-06-2025",
+      "steps": [
+        "Split by '-' → ['26', '06', '2025']",
+        "Rearrange: [year, month, day]",
+        "Join with '-': '2025-06-26'",
+        "Validate using Date constructor"
+      ],
+      "output": "2025-06-26"
+    },
+    "diagnosis": {
+      "input": "Other tetanus(A35.00)",
+      "steps": [
+        "Extract ICD from parentheses: /\(([A-Z]\d{2,3}\.?\d*)\)/ → 'A35.00'",
+        "Try exact match in 1,706 codes",
+        "If fail, remove decimal: 'A35.00' → 'A35'",
+        "Try exact match again",
+        "If fail, try prefix match",
+        "If fail, fuzzy match on text 'Other tetanus'",
+        "If still fail, show dropdown with suggestions"
+      ],
+      "output": "A35 - Tetanus"
+    },
+    "boolean": {
+      "input": "Yes",
+      "steps": [
+        "Convert to lowercase",
+        "Map: 'yes' → 'true', 'no' → 'false'"
+      ],
+      "output": "true"
+    }
+  },
+  "metadata": {
+    "discoveredDate": "2025-10-29",
+    "totalFields": 16,
+    "requiredFields": 14,
+    "optionalFields": 2,
+    "complexTransformations": 4,
+    "status": "complete"
+  }
+}

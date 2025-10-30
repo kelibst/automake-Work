@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Upload, Table, Settings, Play, Pause, SkipForward, SkipBack, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Upload, Table, Settings, Play, Pause, SkipForward, SkipBack, CheckCircle, AlertCircle, Loader2, Trash2 } from 'lucide-react';
 import ExcelParser from '../../utils/excel-parser';
 import StorageManager from '../../utils/storage-manager';
 import FormFieldMapper from '../components/FormFieldMapper';
@@ -62,6 +62,31 @@ function FormFiller() {
     } catch (error) {
       console.error('Error saving template:', error);
       alert('Failed to save template: ' + error.message);
+    }
+  };
+
+  // Handle template delete
+  const handleTemplateDelete = async (templateId, event) => {
+    event.stopPropagation(); // Prevent template selection when clicking delete
+
+    if (!confirm('Are you sure you want to delete this template?')) {
+      return;
+    }
+
+    try {
+      await StorageManager.deleteFormTemplate(templateId, activeSystem);
+      await loadTemplates();
+
+      // Clear selection if deleted template was selected
+      if (selectedTemplate && selectedTemplate.id === templateId) {
+        setSelectedTemplate(null);
+        setFieldMapping(null);
+      }
+
+      alert('Template deleted successfully!');
+    } catch (error) {
+      console.error('Error deleting template:', error);
+      alert('Failed to delete template: ' + error.message);
     }
   };
 
@@ -140,6 +165,37 @@ function FormFiller() {
     }
   };
 
+  // Helper function to parse age from Excel value
+  const parseAgeValue = (ageString) => {
+    if (!ageString) return { number: null, unit: null };
+
+    const str = String(ageString).trim();
+    const match = str.match(/(\d+)\s*(year|month|day|week)?s?/i);
+
+    if (match) {
+      const number = parseInt(match[1]);
+      let unit = (match[2] || 'year').toLowerCase();
+
+      // Normalize to plural form for dropdown matching
+      if (!unit.endsWith('s')) {
+        unit += 's';
+      }
+
+      // Capitalize first letter for DHIMS2 format
+      unit = unit.charAt(0).toUpperCase() + unit.slice(1);
+
+      return { number, unit };
+    }
+
+    // If just a number, assume years
+    const numMatch = str.match(/^(\d+)$/);
+    if (numMatch) {
+      return { number: parseInt(numMatch[1]), unit: 'Years' };
+    }
+
+    return { number: null, unit: null };
+  };
+
   // Fill current row
   const handleFillForm = async () => {
     if (!fieldMapping || !parsedData || !parsedData.records[selectedRow]) {
@@ -159,11 +215,25 @@ function FormFiller() {
         throw new Error('No active tab found');
       }
 
+      // Transform row data to handle age field splitting
+      const rowData = { ...parsedData.records[selectedRow] };
+
+      // Find age-related fields in mapping and transform them
+      fieldMapping.forEach(field => {
+        if (field.transform === 'age_number' && rowData[field.excelColumn]) {
+          const parsed = parseAgeValue(rowData[field.excelColumn]);
+          rowData[field.excelColumn + '_NUMBER'] = parsed.number;
+        } else if (field.transform === 'age_unit' && rowData[field.excelColumn]) {
+          const parsed = parseAgeValue(rowData[field.excelColumn]);
+          rowData[field.excelColumn + '_UNIT'] = parsed.unit;
+        }
+      });
+
       // Send fill form message to content script
       const response = await chrome.tabs.sendMessage(tab.id, {
         type: 'FILL_FORM',
         mapping: fieldMapping,
-        rowData: parsedData.records[selectedRow],
+        rowData: rowData,
         rowNumber: selectedRow + 1
       });
 
@@ -176,12 +246,7 @@ function FormFiller() {
         // Show success message
         alert('Form filled successfully! Please review and submit.');
 
-        // Auto-advance to next row if not on last row
-        if (selectedRow < totalRows - 1) {
-          setTimeout(() => {
-            handleNextRow();
-          }, 1000);
-        }
+        // Keep on current record - user will manually advance when ready
       } else {
         throw new Error(response.error || 'Form filling failed');
       }
@@ -353,9 +418,21 @@ function FormFiller() {
                         {template.fields.length} fields mapped • {template.system.toUpperCase()}
                       </p>
                     </div>
-                    <button className="px-3 py-1 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200">
-                      Use Template
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button
+                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded text-sm hover:bg-blue-200"
+                        onClick={() => handleTemplateSelect(template.id)}
+                      >
+                        Use Template
+                      </button>
+                      <button
+                        className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors"
+                        onClick={(e) => handleTemplateDelete(template.id, e)}
+                        title="Delete template"
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -439,23 +516,44 @@ function FormFiller() {
             </div>
           </div>
 
-          {/* Current row data preview */}
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
-            <h3 className="text-sm font-medium text-gray-900 mb-3">Current Row Data</h3>
+          {/* Current row data preview - ENHANCED */}
+          <div className="bg-white border border-gray-200 rounded-lg p-4 max-h-96 overflow-y-auto">
+            <h3 className="text-sm font-medium text-gray-900 mb-3 sticky top-0 bg-white pb-2 border-b">
+              Current Row Data - All Fields
+            </h3>
             <div className="space-y-2">
-              {getCurrentRowData() && fieldMapping && fieldMapping.slice(0, 5).map((field, index) => (
-                <div key={index} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">{field.formField}:</span>
-                  <span className="font-medium text-gray-900">
-                    {getCurrentRowData()[field.excelColumn] || '-'}
-                  </span>
-                </div>
-              ))}
-              {fieldMapping && fieldMapping.length > 5 && (
-                <p className="text-xs text-gray-500 text-center">
-                  ...and {fieldMapping.length - 5} more fields
-                </p>
-              )}
+              {getCurrentRowData() && fieldMapping && fieldMapping.map((field, index) => {
+                const value = field.transform === 'age_number'
+                  ? getCurrentRowData()[field.excelColumn + '_NUMBER']
+                  : field.transform === 'age_unit'
+                  ? getCurrentRowData()[field.excelColumn + '_UNIT']
+                  : getCurrentRowData()[field.excelColumn];
+
+                const isDropdown = field.type === 'searchable' || field.type === 'dropdown';
+
+                return (
+                  <div
+                    key={index}
+                    className={`flex items-start justify-between text-sm p-2 rounded ${
+                      isDropdown ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
+                    }`}
+                  >
+                    <span className="text-gray-700 font-medium flex-shrink-0 w-32">
+                      {field.formField}:
+                    </span>
+                    <span className={`font-semibold text-right break-words flex-1 ${
+                      isDropdown ? 'text-green-700' : 'text-gray-900'
+                    }`}>
+                      {value || '-'}
+                      {isDropdown && value && (
+                        <span className="ml-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded">
+                          SELECT
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

@@ -35,7 +35,9 @@
       "type": "text",
       "excelColumn": "Age",
       "required": true,
-      "fuzzyMatch": false
+      "fuzzyMatch": false,
+      "transform": "age_number",
+      "note": "Extracts number from '59 Year(s)' → '59'"
     },
     {
       "formField": "Patient Age (dropdown)",
@@ -44,7 +46,8 @@
       "excelColumn": "Age",
       "required": true,
       "fuzzyMatch": true,
-      "note": "React-Select dropdown - type to search"
+      "transform": "age_unit",
+      "note": "Extracts unit from '59 Year(s)' → 'Years' - React-Select dropdown"
     },
     {
       "formField": "Gender",

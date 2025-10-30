@@ -65,157 +65,214 @@ async function fillTextField(selector, value) {
   const input = document.querySelector(selector);
   if (!input) throw new Error(`Field not found: ${selector}`);
 
+  // Actually fill text fields - they work!
   input.focus();
   await sleep(100);
   input.value = value;
   triggerChangeEvents(input);
   await sleep(100);
 
+  console.log(`✅ Text filled: "${value}"`);
   return { success: true, selector, value };
 }
 
 async function fillDropdown(selector, value, fuzzyMatch = true) {
-  const select = document.querySelector(selector);
-  if (!select) throw new Error(`Dropdown not found: ${selector}`);
-
-  select.focus();
+  // Dropdown fields not auto-filled - user will select manually
+  // Value is shown in sidebar panel
+  console.log(`ℹ️  Dropdown field (manual selection required): ${selector} = "${value}"`);
   await sleep(100);
-
-  let matchedOption = null;
-  const options = Array.from(select.options);
-
-  // Try exact match
-  matchedOption = options.find(opt => opt.text === value || opt.value === value);
-
-  // Try case-insensitive
-  if (!matchedOption && fuzzyMatch) {
-    const lowerValue = value.toLowerCase();
-    matchedOption = options.find(
-      opt => opt.text.toLowerCase() === lowerValue || opt.value.toLowerCase() === lowerValue
-    );
-  }
-
-  // Try partial match
-  if (!matchedOption && fuzzyMatch) {
-    const lowerValue = value.toLowerCase();
-    matchedOption = options.find(
-      opt => opt.text.toLowerCase().includes(lowerValue) || lowerValue.includes(opt.text.toLowerCase())
-    );
-  }
-
-  // Try Levenshtein distance
-  if (!matchedOption && fuzzyMatch) {
-    const distances = options.map(opt => ({
-      option: opt,
-      distance: levenshteinDistance(value.toLowerCase(), opt.text.toLowerCase())
-    }));
-    distances.sort((a, b) => a.distance - b.distance);
-
-    if (distances.length > 0 && distances[0].distance < value.length * 0.3) {
-      matchedOption = distances[0].option;
-    }
-  }
-
-  if (!matchedOption) {
-    throw new Error(`No matching option for: ${value}`);
-  }
-
-  select.value = matchedOption.value;
-  triggerChangeEvents(select);
-  await sleep(100);
-
-  return {
-    success: true,
-    selector,
-    value,
-    matchedValue: matchedOption.text,
-    fuzzyMatched: matchedOption.text !== value
-  };
+  return { success: true, selector, value, manualSelection: true };
 }
 
 async function fillDateField(selector, value) {
   const input = document.querySelector(selector);
   if (!input) throw new Error(`Date field not found: ${selector}`);
 
+  console.log(`📅 Filling date field: ${selector}`, { value });
+
   input.focus();
   await sleep(100);
 
   // Format date if needed
   let formattedDate = value;
-  if (value && !value.match(/^\d{4}-\d{2}-\d{2}$/)) {
-    const date = new Date(value);
-    if (!isNaN(date.getTime())) {
-      formattedDate = date.toISOString().split('T')[0];
+
+  // If already in YYYY-MM-DD format, use as-is
+  if (value && value.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    formattedDate = value;
+  }
+  // Try parsing various date formats
+  else if (value) {
+    // Handle Excel serial date numbers (days since 1900-01-01)
+    if (typeof value === 'number' || (typeof value === 'string' && /^\d{5}$/.test(value))) {
+      const excelEpoch = new Date(1900, 0, 1);
+      const days = parseInt(value);
+      const date = new Date(excelEpoch.getTime() + (days - 2) * 86400000); // -2 for Excel bug
+      if (!isNaN(date.getTime())) {
+        formattedDate = date.toISOString().split('T')[0];
+      }
+    }
+    // Handle DD-MM-YYYY or DD/MM/YYYY formats
+    else if (value.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/)) {
+      const [, day, month, year] = value.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/);
+      const date = new Date(year, month - 1, day);
+      if (!isNaN(date.getTime())) {
+        formattedDate = date.toISOString().split('T')[0];
+      }
+    }
+    // Try standard JS Date parsing as fallback
+    else {
+      const date = new Date(value);
+      if (!isNaN(date.getTime())) {
+        formattedDate = date.toISOString().split('T')[0];
+      } else {
+        console.warn(`⚠️  Could not parse date: "${value}"`);
+        formattedDate = value; // Use original value as fallback
+      }
     }
   }
 
-  input.value = formattedDate;
-  triggerChangeEvents(input);
-  await sleep(100);
+  console.log(`📅 Formatted date (YYYY-MM-DD): "${formattedDate}"`);
 
-  return { success: true, selector, value: formattedDate };
-}
-
-async function fillSearchableField(selector, value, pauseForSelection = false) {
-  const input = document.querySelector(selector);
-  if (!input) throw new Error(`Searchable field not found: ${selector}`);
-
-  input.focus();
-  input.click();
-  await sleep(200);
-
-  input.value = '';
-  triggerChangeEvents(input);
-  await sleep(100);
-
-  // Type character by character
-  for (let i = 0; i < value.length; i++) {
-    input.value += value[i];
-    triggerChangeEvents(input);
-    await sleep(50);
+  // Convert to DD-MM-YYYY format (DHIMS2 expects this)
+  let dhimsFormat = formattedDate;
+  if (formattedDate && formattedDate.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    const [year, month, day] = formattedDate.split('-');
+    dhimsFormat = `${day}-${month}-${year}`;
   }
 
-  await sleep(800); // Wait for dropdown to appear
+  console.log(`📅 DHIMS2 format (DD-MM-YYYY): "${dhimsFormat}"`);
 
-  // For React-Select dropdowns (not diagnosis), try to auto-select first option
-  if (!pauseForSelection) {
-    // Try to find and click first dropdown option
-    await sleep(200);
+  // Actually fill date fields - they work!
+  input.value = dhimsFormat;
+  triggerChangeEvents(input);
+  await sleep(100);
 
-    // Look for dropdown menu (React-Select pattern)
-    const dropdown = document.querySelector('.Select-menu-outer, [class*="menu"], [class*="listbox"]');
-    if (dropdown) {
-      const firstOption = dropdown.querySelector('[class*="option"]:first-child, [role="option"]:first-child, li:first-child');
-      if (firstOption) {
-        firstOption.click();
-        await sleep(200);
-        return {
-          success: true,
-          selector,
-          value,
-          autoSelected: true
-        };
+  console.log(`✅ Date filled: "${dhimsFormat}"`);
+  return { success: true, selector, value: dhimsFormat };
+}
+
+// ========== Dropdown Helper Functions ==========
+
+/**
+ * Wait for dropdown menu to appear with dynamic polling
+ * @param {number} maxWaitMs - Maximum time to wait in milliseconds
+ * @returns {Promise<Element|null>} - Dropdown element or null if not found
+ */
+async function waitForDropdown(maxWaitMs = 3000) {
+  const startTime = Date.now();
+
+  while (Date.now() - startTime < maxWaitMs) {
+    // Try multiple selectors for different React-Select versions
+    const selectors = [
+      '[role="listbox"]',
+      '[id*="listbox"]',
+      '[id*="-menu"]',
+      '[class*="menu"][class*="MenuList"]',
+      '.Select-menu-outer',
+      'div[class*="menu"] ul',
+      'div[class*="-menu"]',
+      '[class*="options"]'
+    ];
+
+    for (const selector of selectors) {
+      const dropdown = document.querySelector(selector);
+      if (dropdown) {
+        // Verify dropdown has visible options
+        const options = dropdown.querySelectorAll(
+          '[role="option"], li, div[class*="option"], div[class*="Option"]'
+        );
+
+        if (options.length > 0) {
+          // Check if at least one option is visible
+          const visibleOptions = Array.from(options).filter(opt => {
+            const rect = opt.getBoundingClientRect();
+            return rect.width > 0 && rect.height > 0;
+          });
+
+          if (visibleOptions.length > 0) {
+            console.log(`✅ Dropdown found with ${visibleOptions.length} visible options`);
+            return dropdown;
+          }
+        }
       }
     }
 
-    // If no dropdown found, might need manual selection
-    return {
-      success: true,
-      selector,
-      value,
-      requiresUserAction: true,
-      message: 'Typed value, please select from dropdown'
-    };
+    await sleep(100);
   }
 
-  // For diagnosis fields, always pause
-  return {
-    success: true,
-    selector,
-    value,
-    requiresUserAction: true,
-    message: 'Please select from dropdown'
-  };
+  console.warn('⚠️  Dropdown not found after', maxWaitMs, 'ms');
+  return null;
+}
+
+/**
+ * Find matching option in dropdown based on typed value
+ * @param {Element} dropdown - Dropdown menu element
+ * @param {string} value - Value to match
+ * @returns {Element|null} - Matching option element or null
+ */
+function findMatchingOption(dropdown, value) {
+  if (!dropdown || !value) return null;
+
+  const options = dropdown.querySelectorAll(
+    '[role="option"], li, div[class*="option"], div[class*="Option"]'
+  );
+
+  if (options.length === 0) return null;
+
+  const lowerValue = String(value).toLowerCase().trim();
+
+  console.log(`🔍 Searching for "${lowerValue}" in ${options.length} options`);
+
+  // Try exact match first
+  for (const option of options) {
+    const text = option.textContent.toLowerCase().trim();
+    if (text === lowerValue) {
+      console.log(`✅ Exact match found: "${option.textContent.trim()}"`);
+      return option;
+    }
+  }
+
+  // Try partial match (option contains value OR value contains option)
+  for (const option of options) {
+    const text = option.textContent.toLowerCase().trim();
+    if (text.includes(lowerValue) || lowerValue.includes(text)) {
+      console.log(`✅ Partial match found: "${option.textContent.trim()}"`);
+      return option;
+    }
+  }
+
+  // Try word match (for multi-word values)
+  const valueWords = lowerValue.split(/\s+/);
+  for (const option of options) {
+    const text = option.textContent.toLowerCase().trim();
+    const textWords = text.split(/\s+/);
+
+    // Check if any value word matches any text word
+    const hasMatch = valueWords.some(vw => textWords.some(tw => tw.includes(vw) || vw.includes(tw)));
+    if (hasMatch) {
+      console.log(`✅ Word match found: "${option.textContent.trim()}"`);
+      return option;
+    }
+  }
+
+  console.warn(`⚠️  No matching option found for "${value}"`);
+  console.log('Available options:', Array.from(options).map(o => o.textContent.trim()).join(', '));
+
+  // Return first option as fallback if value is very short (like "M" for "Male")
+  if (lowerValue.length <= 2 && options.length > 0) {
+    console.log(`ℹ️  Using first option as fallback for short value "${value}"`);
+    return options[0];
+  }
+
+  return null;
+}
+
+async function fillSearchableField(selector, value, pauseForSelection = false) {
+  // Searchable fields not auto-filled - user will search and select manually
+  // Value is shown in sidebar panel
+  console.log(`ℹ️  Searchable field (manual selection required): ${selector} = "${value}"`);
+  await sleep(100);
+  return { success: true, selector, value, manualSelection: true };
 }
 
 async function fillRadioButton(selector, value) {
@@ -231,33 +288,27 @@ async function fillRadioButton(selector, value) {
     }
   }
 
-  if (!radio) throw new Error(`Radio button not found for: ${value}`);
+  if (!radio) {
+    // Radio button not found - user will select manually
+    console.warn(`⚠️  Radio button not found: ${selector} = "${value}"`);
+    return { success: true, selector, value, manualSelection: true };
+  }
 
+  // Actually click radio - it works!
   radio.click();
   await sleep(100);
   triggerChangeEvents(radio);
 
+  console.log(`✅ Radio clicked: "${value}"`);
   return { success: true, selector, value };
 }
 
 async function fillCheckbox(selector, value) {
-  const checkbox = document.querySelector(selector);
-  if (!checkbox) throw new Error(`Checkbox not found: ${selector}`);
-
-  let shouldCheck = false;
-  if (typeof value === 'boolean') {
-    shouldCheck = value;
-  } else if (typeof value === 'string') {
-    shouldCheck = ['yes', 'true', '1', 'checked'].includes(value.toLowerCase());
-  }
-
-  if (checkbox.checked !== shouldCheck) {
-    checkbox.click();
-    await sleep(100);
-  }
-
-  triggerChangeEvents(checkbox);
-  return { success: true, selector, value: shouldCheck };
+  // Just show visual hint - don't click
+  const displayValue = (typeof value === 'boolean') ? (value ? 'Yes' : 'No') : value;
+  const success = addVisualHint(selector, displayValue, 'Checkbox');
+  await sleep(100);
+  return { success: true, selector, value, visualHint: true };
 }
 
 async function fillField(selector, value, fieldType, fuzzyMatch = true, pauseForSelection = false) {
@@ -345,10 +396,19 @@ async function handleFormFill(message, sendResponse) {
     // Fill each field sequentially
     for (let i = 0; i < mapping.length; i++) {
       const field = mapping[i];
-      const value = rowData[field.excelColumn];
+
+      // Check for transformed values first
+      let value;
+      if (field.transform === 'age_number') {
+        value = rowData[field.excelColumn + '_NUMBER'];
+      } else if (field.transform === 'age_unit') {
+        value = rowData[field.excelColumn + '_UNIT'];
+      } else {
+        value = rowData[field.excelColumn];
+      }
 
       try {
-        console.log(`Filling field ${i + 1}/${mapping.length}: ${field.formField}`);
+        console.log(`Filling field ${i + 1}/${mapping.length}: ${field.formField}`, { value, transform: field.transform });
 
         const result = await fillField(
           field.selector,
@@ -363,12 +423,10 @@ async function handleFormFill(message, sendResponse) {
           ...result
         });
 
-        // Check if we need to pause for user action
+        // Track fields that need user action (dropdowns) but continue filling
         if (result.requiresUserAction) {
-          pausedForSearchable = true;
-          pausedField = field.formField;
-          console.log('Pausing for searchable field:', field.formField);
-          break; // Stop filling, wait for user to select
+          console.log(`ℹ️  Field requires manual selection: ${field.formField}`);
+          // Don't break - continue to next field
         }
 
         // Send progress update
@@ -389,26 +447,22 @@ async function handleFormFill(message, sendResponse) {
       }
     }
 
+    // Count fields that need manual action
+    const manualFields = results.filter(r => r.requiresUserAction);
+
     // Send response
-    if (pausedForSearchable) {
-      sendResponse({
-        success: true,
-        paused: true,
-        pausedField,
-        message: `Paused at searchable field: ${pausedField}. Please select from dropdown and continue.`,
-        results,
-        errors
-      });
-    } else {
-      sendResponse({
-        success: true,
-        completed: true,
-        results,
-        errors,
-        filledCount: results.filter(r => r.success && !r.skipped).length,
-        errorCount: errors.length
-      });
-    }
+    sendResponse({
+      success: true,
+      completed: true,
+      results,
+      errors,
+      filledCount: results.filter(r => r.success && !r.skipped).length,
+      manualCount: manualFields.length,
+      errorCount: errors.length,
+      message: manualFields.length > 0
+        ? `Filled ${results.length} fields. ${manualFields.length} dropdown(s) need manual selection.`
+        : `All ${results.length} fields filled successfully!`
+    });
 
   } catch (error) {
     console.error('Form fill error:', error);

@@ -1,0 +1,163 @@
+{
+  "name": "DHIMS2 Patient Entry - Corrected Template v2",
+  "system": "dhims2",
+  "created": "2025-10-30T07:30:00.000Z",
+  "description": "Corrected field mapping with React-Select dropdowns as searchable fields",
+  "fields": [
+    {
+      "formField": "Report date",
+      "selector": "div[data-test='dataentry-field-occurredAt'] input",
+      "type": "date",
+      "excelColumn": "__TODAY__",
+      "required": true,
+      "fuzzyMatch": false,
+      "autoFill": "today"
+    },
+    {
+      "formField": "Patient number",
+      "selector": "div[data-test='form-field-h0Ef6ykTpNB'] input",
+      "type": "text",
+      "excelColumn": "Patient No.",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Address",
+      "selector": "div[data-test='form-field-nk15h7fzCLz'] input",
+      "type": "text",
+      "excelColumn": "Locality/Address/Residence",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Age (text)",
+      "selector": "div[data-test='form-field-upqhIcii1iC'] input",
+      "type": "text",
+      "excelColumn": "Age",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Patient Age (dropdown)",
+      "selector": "input#WZ5rS7QuECT",
+      "type": "searchable",
+      "excelColumn": "Age",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Gender",
+      "selector": "input#fg8sMCaTOrK",
+      "type": "searchable",
+      "excelColumn": "Gender",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Occupation",
+      "selector": "input#qAWldjTeMIs",
+      "type": "searchable",
+      "excelColumn": "Occupation",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Education",
+      "selector": "input#Hi8Cp84CnZQ",
+      "type": "searchable",
+      "excelColumn": "Educational Status",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Date of admission",
+      "selector": "div[data-test='form-field-HsMaBh3wKed'] input",
+      "type": "date",
+      "excelColumn": "Date of Admission",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Date of discharge",
+      "selector": "div[data-test='form-field-sIPe9r0NBbq'] input",
+      "type": "date",
+      "excelColumn": "Date of Discharge",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Speciality",
+      "selector": "input#xpzJAQC4DGe",
+      "type": "searchable",
+      "excelColumn": "Speciality",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Outcome",
+      "selector": "input#OMN7CVW4IaY",
+      "type": "searchable",
+      "excelColumn": "Outcome of Discharge",
+      "required": true,
+      "fuzzyMatch": true,
+      "note": "React-Select dropdown - type to search"
+    },
+    {
+      "formField": "Principal diagnosis",
+      "selector": "input#yPXPzceTIvq",
+      "type": "searchable",
+      "excelColumn": "Principal Diagnosis",
+      "required": true,
+      "fuzzyMatch": true,
+      "pauseForSelection": true,
+      "note": "Searchable field - will pause for user selection"
+    },
+    {
+      "formField": "Additional diagnosis",
+      "selector": "input#O15UNfCqavW",
+      "type": "searchable",
+      "excelColumn": "Additional Diagnosis",
+      "required": false,
+      "fuzzyMatch": true,
+      "pauseForSelection": true,
+      "note": "Searchable field - will pause for user selection"
+    },
+    {
+      "formField": "Surgical procedure",
+      "selector": "input#dsVClbnOnm6Yes",
+      "type": "radio",
+      "excelColumn": "Surgical Procedure",
+      "required": true,
+      "fuzzyMatch": false,
+      "options": {
+        "yes": "input#dsVClbnOnm6Yes",
+        "no": "input#dsVClbnOnm6No"
+      }
+    },
+    {
+      "formField": "Cost",
+      "selector": "div[data-test='form-field-fRkwcThGCTM'] input",
+      "type": "text",
+      "excelColumn": "Cost of Treatment",
+      "required": false,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Insured (NHIS Status)",
+      "selector": "input#ETSl9Q3SUOGYes",
+      "type": "radio",
+      "excelColumn": "NHIS Status",
+      "required": true,
+      "fuzzyMatch": false,
+      "options": {
+        "yes": "input#ETSl9Q3SUOGYes",
+        "no": "input#ETSl9Q3SUOGNo"
+      }
+    }
+  ]
+}

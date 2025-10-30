@@ -262,6 +262,98 @@ class StorageManager {
   static async clearApiConfiguration() {
     await this.remove('apiConfiguration');
   }
+
+  // ========== Form Template Management Methods ==========
+
+  /**
+   * Get all form filling templates
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<Array>} Array of form template objects
+   */
+  static async getFormTemplates(system = null) {
+    const key = system ? `formTemplates_${system}` : 'formTemplates';
+    const templates = await this.get(key);
+    return templates || [];
+  }
+
+  /**
+   * Save a form filling template
+   * @param {Object} template - Form template object
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<void>}
+   */
+  static async saveFormTemplate(template, system = null) {
+    const key = system ? `formTemplates_${system}` : 'formTemplates';
+    const templates = await this.getFormTemplates(system);
+
+    // Find and update existing template or add new one
+    const existingIndex = templates.findIndex(t => t.id === template.id);
+    if (existingIndex >= 0) {
+      templates[existingIndex] = template;
+    } else {
+      templates.push(template);
+    }
+
+    await this.set(key, templates);
+  }
+
+  /**
+   * Get a specific form template by ID
+   * @param {string} templateId - Template ID
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<Object|null>} Template object or null
+   */
+  static async getFormTemplate(templateId, system = null) {
+    const templates = await this.getFormTemplates(system);
+    return templates.find(t => t.id === templateId) || null;
+  }
+
+  /**
+   * Delete a form template
+   * @param {string} templateId - Template ID
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<void>}
+   */
+  static async deleteFormTemplate(templateId, system = null) {
+    const key = system ? `formTemplates_${system}` : 'formTemplates';
+    const templates = await this.getFormTemplates(system);
+    const filtered = templates.filter(t => t.id !== templateId);
+    await this.set(key, filtered);
+  }
+
+  /**
+   * Update form template's last used timestamp
+   * @param {string} templateId - Template ID
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<void>}
+   */
+  static async updateFormTemplateLastUsed(templateId, system = null) {
+    const template = await this.getFormTemplate(templateId, system);
+    if (template) {
+      template.lastUsed = new Date().toISOString();
+      await this.saveFormTemplate(template, system);
+    }
+  }
+
+  /**
+   * Clear all form templates for a system
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<void>}
+   */
+  static async clearFormTemplates(system = null) {
+    const key = system ? `formTemplates_${system}` : 'formTemplates';
+    await this.set(key, []);
+  }
+
+  /**
+   * Get form template count
+   * @param {string} system - System name (dhims2, lhims, etc.)
+   * @returns {Promise<number>} Number of saved templates
+   */
+  static async getFormTemplateCount(system = null) {
+    const templates = await this.getFormTemplates(system);
+    return templates.length;
+  }
 }
 
 // Export convenience functions for common operations
@@ -277,5 +369,9 @@ export const getMappingTemplates = () => StorageManager.getMappingTemplates();
 export const saveMappingTemplate = (template) => StorageManager.saveMappingTemplate(template);
 export const getMappingTemplate = (id) => StorageManager.getMappingTemplate(id);
 export const deleteMappingTemplate = (id) => StorageManager.deleteMappingTemplate(id);
+export const getFormTemplates = (system) => StorageManager.getFormTemplates(system);
+export const saveFormTemplate = (template, system) => StorageManager.saveFormTemplate(template, system);
+export const getFormTemplate = (id, system) => StorageManager.getFormTemplate(id, system);
+export const deleteFormTemplate = (id, system) => StorageManager.deleteFormTemplate(id, system);
 
 export default StorageManager;

@@ -1,0 +1,144 @@
+{
+  "name": "DHIMS2 Patient Entry - Complete Template",
+  "system": "dhims2",
+  "created": "2025-10-30T07:00:00.000Z",
+  "description": "Complete field mapping for DHIMS2 In-Patient Morbidity and Mortality form",
+  "fields": [
+    {
+      "formField": "Patient number",
+      "selector": "div[data-test='form-field-h0Ef6ykTpNB'] input.textInput_input__UP93k",
+      "type": "text",
+      "excelColumn": "Patient No.",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Address",
+      "selector": "div[data-test='form-field-nk15h7fzCLz'] input.textInput_input__UP93k",
+      "type": "text",
+      "excelColumn": "Locality/Address/Residence",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Age (text)",
+      "selector": "div[data-test='form-field-upqhIcii1iC'] input.textInput_input__UP93k",
+      "type": "text",
+      "excelColumn": "Age",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Patient Age (dropdown)",
+      "selector": "input#WZ5rS7QuECT",
+      "type": "dropdown",
+      "excelColumn": "Age",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Gender",
+      "selector": "input#fg8sMCaTOrK",
+      "type": "dropdown",
+      "excelColumn": "Gender",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Occupation",
+      "selector": "input#qAWldjTeMIs",
+      "type": "dropdown",
+      "excelColumn": "Occupation",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Education",
+      "selector": "input#Hi8Cp84CnZQ",
+      "type": "dropdown",
+      "excelColumn": "Educational Status",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Date of admission",
+      "selector": "div[data-test='form-field-HsMaBh3wKed'] input.jsx-4253951613",
+      "type": "date",
+      "excelColumn": "Date of Admission",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Date of discharge",
+      "selector": "div[data-test='form-field-sIPe9r0NBbq'] input.jsx-4253951613",
+      "type": "date",
+      "excelColumn": "Date of Discharge",
+      "required": true,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Speciality",
+      "selector": "input#xpzJAQC4DGe",
+      "type": "dropdown",
+      "excelColumn": "Speciality",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Outcome",
+      "selector": "input#OMN7CVW4IaY",
+      "type": "dropdown",
+      "excelColumn": "Outcome of Discharge",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Principal diagnosis",
+      "selector": "input#yPXPzceTIvq",
+      "type": "searchable",
+      "excelColumn": "Principal Diagnosis",
+      "required": true,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Additional diagnosis",
+      "selector": "input#O15UNfCqavW",
+      "type": "searchable",
+      "excelColumn": "Additional Diagnosis",
+      "required": false,
+      "fuzzyMatch": true
+    },
+    {
+      "formField": "Surgical procedure",
+      "selector": "input#dsVClbnOnm6Yes",
+      "type": "radio",
+      "excelColumn": "Surgical Procedure",
+      "required": true,
+      "fuzzyMatch": false,
+      "options": {
+        "yes": "input#dsVClbnOnm6Yes",
+        "no": "input#dsVClbnOnm6No"
+      }
+    },
+    {
+      "formField": "Cost",
+      "selector": "div[data-test='form-field-fRkwcThGCTM'] input.textInput_input__UP93k",
+      "type": "text",
+      "excelColumn": "Cost of Treatment",
+      "required": false,
+      "fuzzyMatch": false
+    },
+    {
+      "formField": "Insured (NHIS Status)",
+      "selector": "input#ETSl9Q3SUOGYes",
+      "type": "radio",
+      "excelColumn": "NHIS Status",
+      "required": true,
+      "fuzzyMatch": false,
+      "options": {
+        "yes": "input#ETSl9Q3SUOGYes",
+        "no": "input#ETSl9Q3SUOGNo"
+      }
+    }
+  ]
+}

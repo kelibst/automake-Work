@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Upload as UploadIcon, Settings as SettingsIcon, Bug } from 'lucide-react';
+import { Activity, Upload as UploadIcon, Settings as SettingsIcon, Bug, MousePointerClick } from 'lucide-react';
 import Discovery from './pages/Discovery';
 import Upload from './pages/Upload';
 import Settings from './pages/Settings';
 import Debug from './pages/Debug';
+import FormFiller from './pages/FormFiller';
 import SystemSelector from './components/SystemSelector';
 import SystemStatus from './components/SystemStatus';
 
@@ -143,6 +144,20 @@ function App() {
             </button>
 
             <button
+              onClick={() => setActiveTab('formfiller')}
+              className={`flex-1 px-3 py-2 text-xs font-medium transition-colors ${
+                activeTab === 'formfiller'
+                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  : 'text-gray-600 hover:text-gray-800'
+              }`}
+            >
+              <div className="flex items-center justify-center gap-1.5">
+                <MousePointerClick className="w-3.5 h-3.5" />
+                <span>Form Fill</span>
+              </div>
+            </button>
+
+            <button
               onClick={() => setActiveTab('settings')}
               className={`flex-1 px-3 py-2 text-xs font-medium transition-colors ${
                 activeTab === 'settings'
@@ -186,6 +201,9 @@ function App() {
         )}
         {activeTab === 'upload' && (
           <Upload activeSystem={activeSystem} />
+        )}
+        {activeTab === 'formfiller' && (
+          <FormFiller activeSystem={activeSystem} />
         )}
         {activeTab === 'settings' && (
           <Settings activeSystem={activeSystem} />

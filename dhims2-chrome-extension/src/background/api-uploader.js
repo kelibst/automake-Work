@@ -4,6 +4,8 @@
  * with rate limiting, retry logic, and progress tracking
  */
 
+import debugLogger from '../utils/debug-logger.js';
+
 class BatchUploader {
   constructor(apiConfig, records) {
     this.apiConfig = apiConfig;
@@ -35,6 +37,18 @@ class BatchUploader {
       total: this.records.length,
       endpoint: endpointUrl
     });
+
+    console.log('\n═══════════════════════════════════════════════════════════');
+    console.log('🎯 BULK UPLOAD SESSION STARTED');
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('📊 Total Records:', this.records.length);
+    console.log('🔗 Endpoint:', endpointUrl);
+    console.log('📋 API Config:', {
+      program: this.apiConfig.payload_structure?.program,
+      orgUnit: this.apiConfig.payload_structure?.orgUnit,
+      programStage: this.apiConfig.payload_structure?.programStage
+    });
+    console.log('═══════════════════════════════════════════════════════════\n');
 
     for (let i = 0; i < this.records.length; i++) {
       // Check if cancelled
@@ -82,6 +96,17 @@ class BatchUploader {
       success: this.results.success,
       failed: this.results.failed
     });
+
+    console.log('\n═══════════════════════════════════════════════════════════');
+    console.log('🏁 BULK UPLOAD SESSION COMPLETED');
+    console.log('═══════════════════════════════════════════════════════════');
+    console.log('📊 Final Stats:');
+    console.log('  ✅ Successful:', this.results.success);
+    console.log('  ❌ Failed:', this.results.failed);
+    console.log('  📈 Success Rate:', `${((this.results.success / this.results.total) * 100).toFixed(1)}%`);
+    console.log('\n💡 To compare with manual submissions, run:');
+    console.log('   debugLogger.generateComparisonReport()');
+    console.log('═══════════════════════════════════════════════════════════\n');
   }
 
   /**
@@ -178,6 +203,7 @@ class BatchUploader {
    * Upload single record to DHIS2
    */
   async uploadRecord(record) {
+    const startTime = performance.now();
     const payload = this.buildPayload(record);
     const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl;
 
@@ -189,6 +215,11 @@ class BatchUploader {
       dataValueCount = payload.dataValues.length;
     }
 
+    const headers = {
+      'Content-Type': 'application/json',
+      ...this.apiConfig.endpoint.headers
+    };
+
     console.log('📤 Uploading record:', {
       rowNumber: record._rowNumber,
       endpoint: endpointUrl,
@@ -197,19 +228,29 @@ class BatchUploader {
       payload: payload // Full payload for debugging
     });
 
+    // Log detailed request info using debug logger
+    debugLogger.logRequest('bulk', {
+      url: endpointUrl,
+      method: 'POST',
+      headers: headers,
+      payload: payload,
+      rowNumber: record._rowNumber,
+      recordData: record
+    });
+
     const response = await fetch(endpointUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...this.apiConfig.endpoint.headers
-      },
+      headers: headers,
       body: JSON.stringify(payload)
     });
+
+    const duration = performance.now() - startTime;
 
     console.log('📥 Response received:', {
       status: response.status,
       statusText: response.statusText,
-      ok: response.ok
+      ok: response.ok,
+      duration: `${duration.toFixed(2)}ms`
     });
 
     if (!response.ok) {
@@ -218,6 +259,17 @@ class BatchUploader {
         status: response.status,
         error: errorText
       });
+
+      // Log failed response
+      debugLogger.logResponse('bulk', {
+        url: endpointUrl,
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+        headers: Object.fromEntries(response.headers.entries()),
+        duration: duration
+      });
+
       throw new Error(`HTTP ${response.status}: ${errorText}`);
     }
 
@@ -227,6 +279,16 @@ class BatchUploader {
       rowNumber: record._rowNumber,
       result: result,
       eventId: result.response?.importSummaries?.[0]?.reference || result.id || null
+    });
+
+    // Log successful response
+    debugLogger.logResponse('bulk', {
+      url: endpointUrl,
+      status: response.status,
+      statusText: response.statusText,
+      body: result,
+      headers: Object.fromEntries(response.headers.entries()),
+      duration: duration
     });
 
     // Check if DHIS2 reported any errors in response
@@ -253,14 +315,16 @@ class BatchUploader {
   buildPayload(record) {
     const dataValues = [];
 
-    console.log('🔨 Building payload for record:', {
-      recordFields: Object.keys(record),
-      fieldMappingsAvailable: Object.keys(this.apiConfig.fieldMappings || {}),
-      sampleRecordData: {
-        patientNumber: record.patientNumber,
-        age: record.age,
-        gender: record.gender
-      }
+    console.log('\n┌─────────────────────────────────────────────────────────┐');
+    console.log('│ 🔨 BUILDING PAYLOAD FOR RECORD                          │');
+    console.log('└─────────────────────────────────────────────────────────┘');
+    console.log('📋 Record Fields:', Object.keys(record).filter(k => !k.startsWith('_')));
+    console.log('📋 Available Field Mappings:', Object.keys(this.apiConfig.fieldMappings || {}));
+    console.log('📊 Sample Record Data:', {
+      patientNumber: record.patientNumber,
+      age: record.age,
+      gender: record.gender,
+      dateOfAdmission: record.dateOfAdmission
     });
 
     // Map each field to DHIS2 data element
@@ -283,10 +347,23 @@ class BatchUploader {
       }
     });
 
-    console.log('📊 After field mapping loop:', {
-      dataValuesCount: dataValues.length,
-      dataValues: dataValues
+    console.log('\n📊 Field Mapping Results:');
+    console.log('  Total dataValues created:', dataValues.length);
+    console.log('  Expected fields from config:', Object.keys(this.apiConfig.fieldMappings || {}).length);
+
+    // Show which fields were mapped
+    const mappedFields = dataValues.map(dv => {
+      const fieldName = Object.entries(this.apiConfig.fieldMappings || {})
+        .find(([, config]) => config.dataElement === dv.dataElement)?.[0];
+      return {
+        field: fieldName || 'unknown',
+        dataElement: dv.dataElement,
+        value: dv.value,
+        valueLength: String(dv.value).length
+      };
     });
+
+    console.table(mappedFields);
 
     // Use diagnosis codes if cleaned
     if (record.principalDiagnosis) {
@@ -314,20 +391,44 @@ class BatchUploader {
       program: this.apiConfig.payload_structure?.program,
       orgUnit: this.apiConfig.payload_structure?.orgUnit,
       programStage: this.apiConfig.payload_structure?.programStage,
-      eventDate: record.dateOfAdmission || new Date().toISOString().split('T')[0],
+      occurredAt: record.dateOfAdmission || new Date().toISOString().split('T')[0],  // Fixed: was eventDate
       status: 'COMPLETED',
       dataValues
     };
 
+    console.log('\n🏗️  Event Structure:');
+    console.log('  program:', event.program);
+    console.log('  orgUnit:', event.orgUnit);
+    console.log('  programStage:', event.programStage);
+    console.log('  occurredAt:', event.occurredAt);  // Fixed: was eventDate
+    console.log('  status:', event.status);
+    console.log('  dataValues count:', event.dataValues.length);
+
     // Check if we need to wrap in events array or tracker structure
     const endpointUrl = this.apiConfig.endpoint?.url || this.apiConfig.endpoint?.baseUrl || '';
-    if (endpointUrl.includes('/tracker')) {
-      return {
+    const isTrackerEndpoint = endpointUrl.includes('/tracker');
+
+    console.log('\n📦 Payload Wrapping:');
+    console.log('  Endpoint:', endpointUrl);
+    console.log('  Is Tracker Endpoint:', isTrackerEndpoint);
+    console.log('  Will wrap in events[]:', isTrackerEndpoint);
+
+    let finalPayload;
+    if (isTrackerEndpoint) {
+      finalPayload = {
         events: [event]
       };
     } else {
-      return event;
+      finalPayload = event;
     }
+
+    console.log('\n✅ Final Payload Structure:');
+    console.log('  Keys:', Object.keys(finalPayload));
+    console.log('  Payload Size:', JSON.stringify(finalPayload).length, 'bytes');
+    console.log('  Full Payload:', finalPayload);
+    console.log('└─────────────────────────────────────────────────────────┘\n');
+
+    return finalPayload;
   }
 
   /**

@@ -2,8 +2,14 @@
 import apiInterceptor from './api-interceptor.js';
 import StorageManager from '../utils/storage-manager.js';
 import BatchUploader from './api-uploader.js';
+import debugLogger from '../utils/debug-logger.js';
 
 console.log('🚀 DHIMS2 Extension: Service Worker Started');
+
+// Make debugLogger globally accessible for debugging
+globalThis.debugLogger = debugLogger;
+console.log('💡 Debug Logger available globally as: debugLogger');
+console.log('💡 Use debugLogger.generateComparisonReport() to compare manual vs bulk uploads');
 
 // Global uploader instance
 let currentUploader = null;

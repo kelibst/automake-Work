@@ -7,6 +7,7 @@
 
 import StorageManager from '../utils/storage-manager.js';
 import { FIELD_MAPPINGS, STATIC_VALUES, validateDiscoveredConfig } from '../utils/field-definitions.js';
+import debugLogger from '../utils/debug-logger.js';
 
 class APIInterceptor {
   constructor() {
@@ -165,10 +166,35 @@ class APIInterceptor {
       if (details.statusCode >= 200 && details.statusCode < 300) {
         console.log('🐛 DEBUG MODE: Saving request');
         await this.saveDebugPayload(request);
+
+        // Also log to debug logger for comparison
+        debugLogger.logRequest('manual', {
+          url: request.url,
+          method: request.method,
+          headers: details.responseHeaders ? this.parseHeaders(details.responseHeaders) : {},
+          payload: request.payload
+        });
+
+        debugLogger.logResponse('manual', {
+          url: request.url,
+          status: details.statusCode,
+          statusText: 'OK',
+          body: null, // We don't have response body in webRequest API
+          headers: details.responseHeaders ? this.parseHeaders(details.responseHeaders) : {}
+        });
       } else {
         console.log('❌ Request failed with status:', details.statusCode);
         // Still save failed requests in debug mode for troubleshooting
         await this.saveDebugPayload(request);
+
+        // Log error to debug logger
+        debugLogger.logResponse('manual', {
+          url: request.url,
+          status: details.statusCode,
+          statusText: 'ERROR',
+          body: null,
+          headers: details.responseHeaders ? this.parseHeaders(details.responseHeaders) : {}
+        });
       }
     } else {
       // Normal discovery mode - only capture event submissions
@@ -700,6 +726,22 @@ class APIInterceptor {
   clear() {
     this.capturedRequests.clear();
     console.log('🧹 Cleared captured requests');
+  }
+
+  /**
+   * Parse response headers from array format to object
+   */
+  parseHeaders(headersArray) {
+    if (!headersArray || !Array.isArray(headersArray)) return {};
+
+    const headers = {};
+    headersArray.forEach(header => {
+      if (header.name && header.value) {
+        headers[header.name] = header.value;
+      }
+    });
+
+    return headers;
   }
 
   /**

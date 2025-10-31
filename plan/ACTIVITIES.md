@@ -1126,3 +1126,237 @@ node process-and-upload.js
 ```
 
 ---
+
+## 2025-10-31
+
+### ✅ Enhanced Debug Logging System for Payload Comparison
+**Time:** Afternoon
+**Description:** Implemented comprehensive debug logging system to track and compare API requests between manual submissions and bulk uploads. This helps diagnose why bulk uploads succeed but don't reflect in the system by comparing exact routes, payloads, and headers.
+
+**Technical Implementation:**
+
+#### 1. Debug Logger Utility (`utils/debug-logger.js`) - 400 lines
+**Features:**
+- Centralized logging for both manual and bulk upload requests/responses
+- Detailed payload structure analysis
+- Side-by-side payload comparison
+- Header comparison with sensitive data masking
+- DataValues field-by-field comparison
+- Difference detection (missing fields, extra fields, value mismatches)
+- Export logs as JSON for offline analysis
+- Console table formatting for easy reading
+- Global accessibility for debugging
+
+**Key Methods:**
+- `logRequest()` - Log outgoing API request with full details
+- `logResponse()` - Log API response with status and body
+- `analyzePayload()` - Extract and analyze payload structure
+- `analyzeResponse()` - Extract event IDs, job IDs, errors
+- `comparePayloads()` - Side-by-side comparison with visual diff
+- `compareDataValues()` - Field-by-field comparison table
+- `compareHeaders()` - Header comparison with masking
+- `findMissingFields()` - Detect structural differences
+- `generateComparisonReport()` - Comprehensive comparison summary
+- `exportLogs()` - Export all logs as JSON
+
+**Analysis Output:**
+```javascript
+{
+  size: 2456,
+  hasEventsArray: true,
+  isWrapped: true,
+  structure: {
+    program: 'fFYTJRzD2qq',
+    orgUnit: 'duCDqCRlWG1',
+    dataValuesCount: 18
+  },
+  dataElements: [
+    { id: 'okahaacYKqO', value: 'VR-123', valueType: 'string' }
+  ]
+}
+```
+
+#### 2. Enhanced API Uploader (`background/api-uploader.js`) - 150 lines modified
+**Logging Enhancements:**
+- Session start banner with configuration summary
+- Detailed payload building logs with field mapping tables
+- Request timing with performance.now()
+- Complete header logging
+- Response body logging (success and error)
+- Payload size and structure analysis
+- Session completion summary with statistics
+- Integration with debugLogger for all uploads
+
+**Console Output Format:**
+```
+═══════════════════════════════════════════════════════════
+🎯 BULK UPLOAD SESSION STARTED
+═══════════════════════════════════════════════════════════
+📊 Total Records: 25
+🔗 Endpoint: https://events.chimgh.org/api/41/tracker
+
+┌─────────────────────────────────────────────────────────┐
+│ 🔨 BUILDING PAYLOAD FOR RECORD                          │
+└─────────────────────────────────────────────────────────┘
+
+📊 Field Mapping Results:
+[Table showing all mapped fields with data element IDs]
+
+🏗️  Event Structure:
+  program: fFYTJRzD2qq
+  dataValues count: 18
+
+📦 Payload Wrapping:
+  Is Tracker Endpoint: true
+  Will wrap in events[]: true
+
+✅ Final Payload Structure:
+  Keys: [events]
+  Payload Size: 2456 bytes
+  Full Payload: { events: [...] }
+└─────────────────────────────────────────────────────────┘
+
+🏁 BULK UPLOAD SESSION COMPLETED
+  ✅ Successful: 24
+  ❌ Failed: 1
+  📈 Success Rate: 96.0%
+
+💡 To compare with manual submissions, run:
+   debugLogger.generateComparisonReport()
+```
+
+#### 3. Enhanced API Interceptor (`background/api-interceptor.js`) - 60 lines modified
+**Debug Mode Integration:**
+- Captures manual submissions with debugLogger
+- Logs both request and response for manual entries
+- Parses response headers from array format
+- Integrates with existing debug payload storage
+- Maintains separate logs for manual vs bulk
+
+**Key Addition:**
+```javascript
+debugLogger.logRequest('manual', {
+  url: request.url,
+  method: request.method,
+  headers: this.parseHeaders(details.responseHeaders),
+  payload: request.payload
+});
+```
+
+#### 4. Service Worker Enhancement (`background/service-worker.js`)
+**Global Debug Access:**
+- Made debugLogger globally accessible
+- Available in service worker console as `debugLogger`
+- Console hints for usage
+- Accessible for manual debugging
+
+#### 5. Comprehensive Usage Guide (`DEBUG_LOGGING_GUIDE.md`) - 420 lines
+**Complete Documentation:**
+- Quick start guide (4 steps)
+- Detailed explanation of what gets logged
+- Sample console output for manual and bulk requests
+- Comparison report format and interpretation
+- Common issues to look for with examples
+- Advanced debugging techniques
+- Troubleshooting section
+- Example workflow
+
+**Common Issues Covered:**
+1. Endpoint mismatch
+2. Missing headers (authentication)
+3. Payload structure differences (wrapped vs unwrapped)
+4. Missing dataValues
+5. Data type mismatches (date formats)
+
+**Comparison Report Example:**
+```
+═══════════════════════════════════════════════════════════
+📊 COMPREHENSIVE COMPARISON REPORT
+═══════════════════════════════════════════════════════════
+
+🔗 Endpoint Comparison:
+  Manual: https://events.chimgh.org/api/41/tracker
+  Bulk:   https://events.chimgh.org/api/41/tracker
+  Match: ✅ YES
+
+📊 DataValues Comparison:
+┌──────────────┬──────────────┬──────────────┬───────┐
+│ DataElement  │ Manual Value │ Bulk Value   │ Match │
+├──────────────┼──────────────┼──────────────┼───────┤
+│ okahaacYKqO  │ VR-123       │ VR-123       │ ✅    │
+│ MSYrx2z1f8p  │ Accra        │ [MISSING]    │ ❌    │
+└──────────────┴──────────────┴──────────────┴───────┘
+
+📈 Summary: 17 matches, 1 mismatch
+```
+
+**Files Created:**
+- `src/utils/debug-logger.js` (400 lines)
+- `DEBUG_LOGGING_GUIDE.md` (420 lines)
+
+**Files Modified:**
+- `src/background/api-uploader.js` (+150 lines)
+- `src/background/api-interceptor.js` (+60 lines)
+- `src/background/service-worker.js` (+10 lines)
+
+**Total Impact:** ~1,040 lines across 5 files
+
+**Key Features:**
+- 🔍 Detailed request/response logging for both manual and bulk
+- 📊 Side-by-side payload comparison with visual diff
+- 📋 Field-by-field dataValues comparison
+- 🎯 Automatic difference detection
+- 📈 Statistical analysis of payloads
+- 💾 Export logs for offline analysis
+- 🎨 Color-coded console output with emoji markers
+- 📱 Comprehensive documentation with examples
+
+**User Benefits:**
+- **Root Cause Analysis:** Identify exact differences between manual and bulk uploads
+- **Header Verification:** Ensure authentication headers are copied correctly
+- **Payload Validation:** Verify payload structure matches manual submissions
+- **Field Mapping:** Confirm all fields are mapped correctly
+- **Quick Diagnosis:** Color-coded comparison tables show issues at a glance
+- **Documentation:** Export logs to share with team or save for later
+- **Troubleshooting:** Step-by-step guide for common issues
+
+**Usage Workflow:**
+1. Enable debug mode in extension
+2. Submit 2-3 manual records using "Save and Add Another"
+3. Extension captures all requests with full details
+4. Start bulk upload - extension logs everything
+5. Run `debugLogger.generateComparisonReport()` in console
+6. Review comparison report for differences
+7. Fix identified issues based on comparison
+
+**Debugging Commands:**
+```javascript
+// Generate comparison report
+debugLogger.generateComparisonReport()
+
+// Export all logs
+debugLogger.exportLogs()
+
+// Clear logs to start fresh
+debugLogger.clearLogs()
+
+// View all logs
+debugLogger.getAllLogs()
+
+// Manual payload comparison
+debugLogger.comparePayloads(manualPayload, bulkPayload)
+```
+
+**Next Steps:**
+1. User enables debug mode and submits manual records
+2. User starts bulk upload
+3. Run comparison report to identify discrepancies
+4. Fix any differences found (headers, payload structure, field mapping)
+5. Re-test with corrected configuration
+
+**Build Status:**
+- ✅ Successfully built with npm run build
+- ✅ No errors or warnings (except chunk size advisory)
+- ✅ Ready for testing in Chrome
+
+---

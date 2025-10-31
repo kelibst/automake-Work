@@ -11,9 +11,9 @@ export const DEFAULT_API_CONFIG = {
   discovered: true,
   timestamp: '2025-10-23T10:00:00Z',
   endpoint: {
-    url: 'https://events.chimgh.org/events/api/41/tracker',
+    url: 'https://events.chimgh.org/events/api/41/tracker?async=false',
     method: 'POST',
-    baseUrl: 'https://events.chimgh.org/events/api/41/tracker',
+    baseUrl: 'https://events.chimgh.org/events/api/41/tracker?async=false',
     headers: {
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
@@ -22,8 +22,8 @@ export const DEFAULT_API_CONFIG = {
   payload_structure: {
     program: 'fFYTJRzD2qq',
     orgUnit: 'duCDqCRlWG1',
-    programStage: 'cH9NADGoNwU',
-    eventDate: 'string (ISO date)',
+    programStage: 'LR7JT7ZNg8E',  // Fixed: was cH9NADGoNwU (wrong!)
+    occurredAt: 'string (ISO date)',  // Fixed: was eventDate (should be occurredAt)
     status: 'COMPLETED',
     dataValues: []
   },

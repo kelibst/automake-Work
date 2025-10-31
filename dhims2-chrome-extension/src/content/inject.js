@@ -403,6 +403,9 @@ async function handleFormFill(message, sendResponse) {
         value = rowData[field.excelColumn + '_NUMBER'];
       } else if (field.transform === 'age_unit') {
         value = rowData[field.excelColumn + '_UNIT'];
+      } else if (field.excelColumn === '__TODAY__' || field.autoFill === 'today') {
+        // Automatically fill with current date
+        value = '__TODAY__';
       } else {
         value = rowData[field.excelColumn];
       }

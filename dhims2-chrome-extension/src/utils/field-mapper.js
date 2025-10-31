@@ -165,12 +165,15 @@ class FieldMapper {
     });
 
     // Build event object
+    // occurredAt is automatically set to current date (day of entry)
+    const currentDate = new Date().toISOString().split('T')[0];
+
     const event = {
       program: this.staticValues.program,
       orgUnit: this.staticValues.orgUnit,
       programStage: this.staticValues.programStage,
       status: this.staticValues.status || 'COMPLETED',
-      occurredAt: this.extractDate(excelRecord) || new Date().toISOString().split('T')[0],
+      occurredAt: currentDate, // Automatically filled with current date
       dataValues
     };
 

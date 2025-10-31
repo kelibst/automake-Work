@@ -387,11 +387,14 @@ class BatchUploader {
     }
 
     // Build event
+    // occurredAt is automatically set to current date (day of entry)
+    const currentDate = new Date().toISOString().split('T')[0];
+
     const event = {
       program: this.apiConfig.payload_structure?.program,
       orgUnit: this.apiConfig.payload_structure?.orgUnit,
       programStage: this.apiConfig.payload_structure?.programStage,
-      occurredAt: record.dateOfAdmission || new Date().toISOString().split('T')[0],  // Fixed: was eventDate
+      occurredAt: currentDate,  // Automatically filled with current date
       status: 'COMPLETED',
       dataValues
     };

@@ -30,6 +30,12 @@ Successfully identified **ALL** data element IDs needed to upload In-Patient Mor
 
 ## Complete Field List
 
+### Automatic Fields (1 field - No Excel Mapping Required)
+
+| # | Field Name | Type | Value | Notes |
+|---|------------|------|-------|-------|
+| 0 | occurredAt | date | Current Date | ✨ **Automatically filled** with today's date (day of entry/upload). No Excel column needed. |
+
 ### Personal Information (7 fields)
 
 | # | Excel Column | Data Element ID | Type | Required | Notes |

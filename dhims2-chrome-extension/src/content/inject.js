@@ -86,23 +86,55 @@ async function fillDropdown(selector, value, fuzzyMatch = true) {
   }
 
   try {
-    // Focus and click the input to open dropdown
-    input.focus();
+    // Close any open dropdowns first by pressing Escape
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', keyCode: 27, bubbles: true }));
     await sleep(200);
-    input.click();
+
+    // Clear any existing value
+    input.value = '';
+    triggerChangeEvents(input);
+    await sleep(100);
+
+    // Focus the input
+    input.focus();
     await sleep(300);
 
-    // Type the value to filter options
-    input.value = value;
-    triggerChangeEvents(input);
-    await sleep(500); // Give React time to filter options
+    // Click to open dropdown
+    input.click();
+    await sleep(500);
+
+    // Type the value character by character (more reliable for React-Select)
+    for (let i = 0; i < value.length; i++) {
+      input.value += value[i];
+      triggerChangeEvents(input);
+      await sleep(50);
+    }
+
+    await sleep(600); // Give React time to filter options
 
     // Wait for dropdown menu to appear
     const dropdown = await waitForDropdown(3000);
 
     if (!dropdown) {
       console.warn(`⚠️  Dropdown menu did not appear for: ${selector}`);
-      return { success: false, error: 'Dropdown menu not found', selector, requiresUserAction: true };
+      // Try pressing arrow down to force open
+      input.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', keyCode: 40, bubbles: true }));
+      await sleep(500);
+
+      const dropdown2 = await waitForDropdown(2000);
+      if (!dropdown2) {
+        return { success: false, error: 'Dropdown menu not found', selector, requiresUserAction: true };
+      }
+
+      const matchingOption2 = findMatchingOption(dropdown2, value);
+      if (matchingOption2) {
+        matchingOption2.click();
+        await sleep(300);
+        console.log(`✅ Dropdown filled: "${value}"`);
+        return { success: true, selector, value };
+      }
+
+      return { success: false, error: 'No matching option', selector, requiresUserAction: true };
     }
 
     // Find matching option
@@ -370,31 +402,47 @@ async function fillSearchableField(selector, value, pauseForSelection = false) {
   return await fillDropdown(selector, value, true);
 }
 
-async function fillRadioButton(selector, value) {
-  let radio = document.querySelector(`${selector}[value="${value}"]`);
+async function fillRadioButton(selector, value, options = null) {
+  // If options object is provided, use it to get the correct selector
+  if (options && typeof options === 'object') {
+    const lowerValue = value.toString().toLowerCase();
+    const optionKey = lowerValue === 'yes' || lowerValue === 'true' || lowerValue === '1' ? 'yes' : 'no';
+
+    if (options[optionKey]) {
+      selector = options[optionKey];
+      console.log(`🔘 Using radio option: ${optionKey} → ${selector}`);
+    }
+  }
+
+  let radio = document.querySelector(selector);
 
   if (!radio) {
-    const labels = document.querySelectorAll(`${selector} label`);
+    // Try with value attribute
+    radio = document.querySelector(`${selector}[value="${value}"]`);
+  }
+
+  if (!radio) {
+    // Try finding by label text
+    const labels = document.querySelectorAll('label');
     for (const label of labels) {
       if (label.textContent.trim().toLowerCase() === value.toLowerCase()) {
-        radio = label.querySelector('input[type="radio"]') || label.previousElementSibling;
-        break;
+        radio = label.querySelector('input[type="radio"]') || document.querySelector(`input#${label.getAttribute('for')}`);
+        if (radio) break;
       }
     }
   }
 
   if (!radio) {
-    // Radio button not found - user will select manually
     console.warn(`⚠️  Radio button not found: ${selector} = "${value}"`);
-    return { success: true, selector, value, manualSelection: true };
+    return { success: false, error: 'Radio not found', selector, value, manualSelection: true };
   }
 
-  // Actually click radio - it works!
+  // Click the radio button
   radio.click();
   await sleep(100);
   triggerChangeEvents(radio);
 
-  console.log(`✅ Radio clicked: "${value}"`);
+  console.log(`✅ Radio clicked: "${value}" at ${selector}`);
   return { success: true, selector, value };
 }
 
@@ -406,7 +454,7 @@ async function fillCheckbox(selector, value) {
   return { success: true, selector, value, visualHint: true };
 }
 
-async function fillField(selector, value, fieldType, fuzzyMatch = true, pauseForSelection = false) {
+async function fillField(selector, value, fieldType, fuzzyMatch = true, pauseForSelection = false, options = null) {
   // Handle auto-fill values
   if (value === '__TODAY__' || value === 'today') {
     const today = new Date().toISOString().split('T')[0];
@@ -436,7 +484,7 @@ async function fillField(selector, value, fieldType, fuzzyMatch = true, pauseFor
       return await fillSearchableField(selector, value, pauseForSelection);
 
     case 'radio':
-      return await fillRadioButton(selector, value);
+      return await fillRadioButton(selector, value, options);
 
     case 'checkbox':
       return await fillCheckbox(selector, value);
@@ -513,7 +561,8 @@ async function handleFormFill(message, sendResponse) {
           value,
           field.type,
           field.fuzzyMatch !== false,
-          field.pauseForSelection || false
+          field.pauseForSelection || false,
+          field.options || null
         );
 
         results.push({

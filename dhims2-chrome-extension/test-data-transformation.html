@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Data Transformation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .test-case {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-left: 4px solid #3498db;
+    }
+    .test-case h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .before, .after {
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .before {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+    }
+    .after {
+      background: #d4edda;
+      border: 1px solid #28a745;
+    }
+    .label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .value {
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      padding: 5px;
+      background: white;
+      border-radius: 3px;
+    }
+    .success {
+      color: #28a745;
+    }
+    .summary {
+      background: #e7f3ff;
+      border: 2px solid #3498db;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    code {
+      background: #263238;
+      color: #aed581;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Data Transformation Test</h1>
+    <p>Testing the data transformer logic with sample Excel values</p>
+
+    <div id="testResults"></div>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      <div id="summary"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Import the DataTransformer class
+    import DataTransformer from './src/utils/data-transformer.js';
+
+    const transformer = new DataTransformer();
+    const resultsDiv = document.getElementById('testResults');
+    const summaryDiv = document.getElementById('summary');
+
+    // Test cases
+    const testCases = [
+      {
+        name: 'Education: SHS → SHS/Secondary',
+        input: { 'Educational Status': 'SHS' },
+        expectedField: 'Educational Status',
+        expectedValue: 'SHS/Secondary'
+      },
+      {
+        name: 'Education: JHS → JHS/Middle School',
+        input: { 'Educational Status': 'JHS' },
+        expectedField: 'Educational Status',
+        expectedValue: 'JHS/Middle School'
+      },
+      {
+        name: 'Speciality: Accident Emergency → Casualty',
+        input: { 'Speciality': 'Accident Emergency' },
+        expectedField: 'Speciality',
+        expectedValue: 'Casualty'
+      },
+      {
+        name: 'Speciality: General → Casualty',
+        input: { 'Speciality': 'General' },
+        expectedField: 'Speciality',
+        expectedValue: 'Casualty'
+      },
+      {
+        name: 'Outcome: Referred → Transferred',
+        input: { 'Outcome of Discharge': 'Referred' },
+        expectedField: 'Outcome of Discharge',
+        expectedValue: 'Transferred'
+      },
+      {
+        name: 'Outcome: Discharge → Discharged',
+        input: { 'Outcome of Discharge': 'Discharge' },
+        expectedField: 'Outcome of Discharge',
+        expectedValue: 'Discharged'
+      },
+      {
+        name: 'Age: Split "20 Year(s)" into number and unit',
+        input: { 'Age': '20 Year(s)' },
+        expectedField: 'Age_NUMBER',
+        expectedValue: '20',
+        extraCheck: { field: 'Age_UNIT', value: 'Years' }
+      },
+      {
+        name: 'Age: Split "6 Month(s)" into number and unit',
+        input: { 'Age': '6 Month(s)' },
+        expectedField: 'Age_NUMBER',
+        expectedValue: '6',
+        extraCheck: { field: 'Age_UNIT', value: 'Months' }
+      },
+      {
+        name: 'Gender: male → Male',
+        input: { 'Gender': 'male' },
+        expectedField: 'Gender',
+        expectedValue: 'Male'
+      },
+      {
+        name: 'Gender: FEMALE → Female',
+        input: { 'Gender': 'FEMALE' },
+        expectedField: 'Gender',
+        expectedValue: 'Female'
+      },
+      {
+        name: 'Boolean: yes → Yes',
+        input: { 'Surgical Procedure': 'yes' },
+        expectedField: 'Surgical Procedure',
+        expectedValue: 'Yes'
+      },
+      {
+        name: 'Boolean: NO → No',
+        input: { 'NHIS Status': 'NO' },
+        expectedField: 'NHIS Status',
+        expectedValue: 'No'
+      },
+      {
+        name: 'Occupation: TRADER → Trader / Shop Assistant',
+        input: { 'Occupation': 'TRADER' },
+        expectedField: 'Occupation',
+        expectedValue: 'Trader / Shop Assistant'
+      }
+    ];
+
+    let passed = 0;
+    let failed = 0;
+
+    testCases.forEach((testCase, index) => {
+      const result = transformer.transformRow(testCase.input, index);
+      const transformed = result.data;
+
+      const actualValue = transformed[testCase.expectedField];
+      const isPassed = actualValue === testCase.expectedValue;
+
+      if (isPassed) passed++;
+      else failed++;
+
+      // Check extra field if specified
+      let extraPassed = true;
+      if (testCase.extraCheck) {
+        const extraValue = transformed[testCase.extraCheck.field];
+        extraPassed = extraValue === testCase.extraCheck.value;
+        if (!extraPassed) failed++;
+      }
+
+      const testDiv = document.createElement('div');
+      testDiv.className = 'test-case';
+      testDiv.innerHTML = `
+        <h3>${isPassed && extraPassed ? '✅' : '❌'} ${testCase.name}</h3>
+        <div class="comparison">
+          <div class="before">
+            <div class="label">📥 Input:</div>
+            <div class="value">${JSON.stringify(testCase.input, null, 2)}</div>
+          </div>
+          <div class="after">
+            <div class="label">📤 Output:</div>
+            <div class="value">
+              ${testCase.expectedField}: <strong>${actualValue}</strong>
+              ${testCase.extraCheck ? `<br>${testCase.extraCheck.field}: <strong>${transformed[testCase.extraCheck.field]}</strong>` : ''}
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 10px;">
+          <strong>Expected:</strong> <code>${testCase.expectedValue}</code>
+          ${testCase.extraCheck ? `| <code>${testCase.extraCheck.value}</code>` : ''}
+          <br>
+          <strong>Result:</strong> <span class="success">${isPassed && extraPassed ? 'PASS' : 'FAIL'}</span>
+        </div>
+      `;
+
+      resultsDiv.appendChild(testDiv);
+    });
+
+    // Summary
+    summaryDiv.innerHTML = `
+      <p><strong>Total Tests:</strong> ${testCases.length}</p>
+      <p><strong>Passed:</strong> <span style="color: #28a745; font-size: 20px;">${passed}</span></p>
+      <p><strong>Failed:</strong> <span style="color: #dc3545; font-size: 20px;">${failed}</span></p>
+      <p><strong>Success Rate:</strong> ${((passed / testCases.length) * 100).toFixed(1)}%</p>
+      <hr>
+      <h3>Transformations Applied:</h3>
+      <ul>
+        <li>✅ Education mappings (SHS, JHS, Tertiary, etc.)</li>
+        <li>✅ Speciality mappings (Accident Emergency, General → Casualty)</li>
+        <li>✅ Outcome mappings (Referred, Discharge → Transferred, Discharged)</li>
+        <li>✅ Age splitting (number and unit extraction)</li>
+        <li>✅ Gender normalization (capitalize first letter)</li>
+        <li>✅ Boolean normalization (yes/no → Yes/No)</li>
+        <li>✅ Occupation mappings (TRADER, PENSIONER, etc.)</li>
+      </ul>
+    `;
+  </script>
+</body>
+</html>

@@ -77,11 +77,53 @@ async function fillTextField(selector, value) {
 }
 
 async function fillDropdown(selector, value, fuzzyMatch = true) {
-  // Dropdown fields not auto-filled - user will select manually
-  // Value is shown in sidebar panel
-  console.log(`ℹ️  Dropdown field (manual selection required): ${selector} = "${value}"`);
-  await sleep(100);
-  return { success: true, selector, value, manualSelection: true };
+  console.log(`🔽 Filling dropdown: ${selector} = "${value}"`);
+
+  const input = document.querySelector(selector);
+  if (!input) {
+    console.warn(`⚠️  Dropdown input not found: ${selector}`);
+    return { success: false, error: 'Input not found', selector };
+  }
+
+  try {
+    // Focus and click the input to open dropdown
+    input.focus();
+    await sleep(200);
+    input.click();
+    await sleep(300);
+
+    // Type the value to filter options
+    input.value = value;
+    triggerChangeEvents(input);
+    await sleep(500); // Give React time to filter options
+
+    // Wait for dropdown menu to appear
+    const dropdown = await waitForDropdown(3000);
+
+    if (!dropdown) {
+      console.warn(`⚠️  Dropdown menu did not appear for: ${selector}`);
+      return { success: false, error: 'Dropdown menu not found', selector, requiresUserAction: true };
+    }
+
+    // Find matching option
+    const matchingOption = findMatchingOption(dropdown, value);
+
+    if (!matchingOption) {
+      console.warn(`⚠️  No matching option found for: "${value}"`);
+      return { success: false, error: 'No matching option', selector, value, requiresUserAction: true };
+    }
+
+    // Click the matching option
+    matchingOption.click();
+    await sleep(300);
+
+    console.log(`✅ Dropdown filled: "${value}"`);
+    return { success: true, selector, value };
+
+  } catch (error) {
+    console.error(`❌ Error filling dropdown ${selector}:`, error);
+    return { success: false, error: error.message, selector, requiresUserAction: true };
+  }
 }
 
 async function fillDateField(selector, value) {
@@ -162,25 +204,46 @@ async function waitForDropdown(maxWaitMs = 3000) {
   const startTime = Date.now();
 
   while (Date.now() - startTime < maxWaitMs) {
-    // Try multiple selectors for different React-Select versions
+    // Try multiple selectors for different React-Select versions and virtualized-select
     const selectors = [
+      // Standard React-Select
       '[role="listbox"]',
       '[id*="listbox"]',
       '[id*="-menu"]',
       '[class*="menu"][class*="MenuList"]',
+      // Virtualized Select (DHIS2 specific)
       '.Select-menu-outer',
+      '.Select-menu',
+      '.VirtualizedSelectMenu',
+      'div[class*="Select-menu"]',
+      // Generic patterns
       'div[class*="menu"] ul',
       'div[class*="-menu"]',
-      '[class*="options"]'
+      '[class*="options"]',
+      '.Select.is-open .Select-menu-outer'
     ];
 
     for (const selector of selectors) {
       const dropdown = document.querySelector(selector);
       if (dropdown) {
         // Verify dropdown has visible options
-        const options = dropdown.querySelectorAll(
-          '[role="option"], li, div[class*="option"], div[class*="Option"]'
-        );
+        const optionSelectors = [
+          '[role="option"]',
+          'li',
+          'div[class*="option"]',
+          'div[class*="Option"]',
+          '.VirtualizedSelectOption',
+          '.Select-option'
+        ];
+
+        let options = [];
+        for (const optSelector of optionSelectors) {
+          const found = dropdown.querySelectorAll(optSelector);
+          if (found.length > 0) {
+            options = found;
+            break;
+          }
+        }
 
         if (options.length > 0) {
           // Check if at least one option is visible
@@ -190,7 +253,7 @@ async function waitForDropdown(maxWaitMs = 3000) {
           });
 
           if (visibleOptions.length > 0) {
-            console.log(`✅ Dropdown found with ${visibleOptions.length} visible options`);
+            console.log(`✅ Dropdown found with ${visibleOptions.length} visible options using selector: ${selector}`);
             return dropdown;
           }
         }
@@ -213,11 +276,29 @@ async function waitForDropdown(maxWaitMs = 3000) {
 function findMatchingOption(dropdown, value) {
   if (!dropdown || !value) return null;
 
-  const options = dropdown.querySelectorAll(
-    '[role="option"], li, div[class*="option"], div[class*="Option"]'
-  );
+  // Try multiple selectors to find options
+  const optionSelectors = [
+    '[role="option"]',
+    'li',
+    'div[class*="option"]',
+    'div[class*="Option"]',
+    '.VirtualizedSelectOption',
+    '.Select-option'
+  ];
 
-  if (options.length === 0) return null;
+  let options = [];
+  for (const selector of optionSelectors) {
+    const found = dropdown.querySelectorAll(selector);
+    if (found.length > 0) {
+      options = found;
+      break;
+    }
+  }
+
+  if (options.length === 0) {
+    console.warn('⚠️  No options found in dropdown');
+    return null;
+  }
 
   const lowerValue = String(value).toLowerCase().trim();
 
@@ -228,6 +309,15 @@ function findMatchingOption(dropdown, value) {
     const text = option.textContent.toLowerCase().trim();
     if (text === lowerValue) {
       console.log(`✅ Exact match found: "${option.textContent.trim()}"`);
+      return option;
+    }
+  }
+
+  // Try case-insensitive starts with
+  for (const option of options) {
+    const text = option.textContent.toLowerCase().trim();
+    if (text.startsWith(lowerValue)) {
+      console.log(`✅ Starts-with match found: "${option.textContent.trim()}"`);
       return option;
     }
   }
@@ -256,7 +346,7 @@ function findMatchingOption(dropdown, value) {
   }
 
   console.warn(`⚠️  No matching option found for "${value}"`);
-  console.log('Available options:', Array.from(options).map(o => o.textContent.trim()).join(', '));
+  console.log('Available options:', Array.from(options).slice(0, 10).map(o => o.textContent.trim()).join(', '));
 
   // Return first option as fallback if value is very short (like "M" for "Male")
   if (lowerValue.length <= 2 && options.length > 0) {
@@ -268,11 +358,16 @@ function findMatchingOption(dropdown, value) {
 }
 
 async function fillSearchableField(selector, value, pauseForSelection = false) {
-  // Searchable fields not auto-filled - user will search and select manually
-  // Value is shown in sidebar panel
-  console.log(`ℹ️  Searchable field (manual selection required): ${selector} = "${value}"`);
-  await sleep(100);
-  return { success: true, selector, value, manualSelection: true };
+  console.log(`🔍 Filling searchable field: ${selector} = "${value}"`);
+
+  // If pauseForSelection is true (e.g., for diagnosis fields), just show message
+  if (pauseForSelection) {
+    console.log(`ℹ️  Searchable field requires manual selection: ${selector}`);
+    return { success: true, selector, value, manualSelection: true, pauseForSelection: true };
+  }
+
+  // For other searchable fields (Gender, Occupation, Education, etc.), auto-fill like dropdowns
+  return await fillDropdown(selector, value, true);
 }
 
 async function fillRadioButton(selector, value) {

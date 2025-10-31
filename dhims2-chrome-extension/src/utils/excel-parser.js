@@ -4,6 +4,7 @@
  */
 
 import * as XLSX from 'xlsx';
+import DataTransformer from './data-transformer.js';
 
 class ExcelParser {
   /**
@@ -147,11 +148,16 @@ class ExcelParser {
         return record;
       });
 
+    // Apply data transformations (clean and normalize data)
+    console.log(`🔄 Applying data transformations to ${records.length} records...`);
+    const transformer = new DataTransformer();
+    const transformedRecords = transformer.transformAll(records);
+
     return {
       sheetName,
       headers,
-      records,
-      totalRecords: records.length
+      records: transformedRecords,
+      totalRecords: transformedRecords.length
     };
   }
 
